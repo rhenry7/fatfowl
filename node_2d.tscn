@@ -1,0 +1,277 @@
+[gd_scene load_steps=37 format=3 uid="uid://bqstytux2devd"]
+
+[ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
+[ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
+[ext_resource type="Texture2D" uid="uid://cygk7vweck5il" path="res://background/blue-background.png" id="2_ebxd8"]
+[ext_resource type="Texture2D" uid="uid://ccimbrwjcher2" path="res://background/dark-blue-cloud.png" id="3_2u7jv"]
+[ext_resource type="Texture2D" uid="uid://brx8etyntbh3e" path="res://birdfly-1.png" id="3_rjqkl"]
+[ext_resource type="Texture2D" uid="uid://bpb2rxxg63jvt" path="res://background/dark-purple-cloud.png" id="4_24dk6"]
+[ext_resource type="Texture2D" uid="uid://p1dctarnwp8l" path="res://Illustration_sans_titre-1 2.png" id="4_fs4d3"]
+[ext_resource type="Texture2D" uid="uid://dq02cbpibmmb5" path="res://birdfly-2.png" id="5_7vxoj"]
+[ext_resource type="Texture2D" uid="uid://c14da2ailb05r" path="res://background/soft-purple-cloud.png" id="5_mryly"]
+[ext_resource type="Script" uid="uid://ba00vydfpvodi" path="res://area_2d.gd" id="6_4d7sh"]
+[ext_resource type="Texture2D" uid="uid://bleoad3w7u5tt" path="res://Illustration_sans_titre-2 2.png" id="6_ei405"]
+[ext_resource type="Script" uid="uid://4ygro8r40664" path="res://visible_on_screen_notifier_2d.gd" id="6_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://dpg2a7scy3qqx" path="res://background/softer-purple-cloud.png" id="6_kq1c5"]
+[ext_resource type="Texture2D" uid="uid://baholgtbtj341" path="res://birdlfy-3.png" id="7_e8dv2"]
+[ext_resource type="Texture2D" uid="uid://cbpsuo0mrrvcf" path="res://background/lightest-purple.png" id="7_ornx7"]
+[ext_resource type="Texture2D" uid="uid://k5dh85u0s07e" path="res://Untitled_Artwork-1.png" id="8_flf07"]
+[ext_resource type="Texture2D" uid="uid://dvpjyg2fakgso" path="res://Untitled_Artwork-2.png" id="9_k73cj"]
+[ext_resource type="Texture2D" uid="uid://d68o1e11owii" path="res://Untitled_Artwork-3.png" id="10_rjqkl"]
+[ext_resource type="Texture2D" uid="uid://70f30qnmhtp2" path="res://Untitled_Artwork-4.png" id="11_fs4d3"]
+[ext_resource type="Texture2D" uid="uid://cmpk78j25l7i6" path="res://Untitled_Artwork-5.png" id="12_7vxoj"]
+[ext_resource type="Texture2D" uid="uid://1kcr6pimtvbj" path="res://Untitled_Artwork-6.png" id="13_ei405"]
+[ext_resource type="Texture2D" uid="uid://d3j43q4md1381" path="res://zapped.png" id="14_2u7jv"]
+[ext_resource type="Texture2D" uid="uid://rgctq8lo8khn" path="res://Untitled_Artwork-7.png" id="14_e8dv2"]
+[ext_resource type="Texture2D" uid="uid://d4fv1blje7cu6" path="res://Untitled_Artwork-8.png" id="15_2nhjh"]
+[ext_resource type="Texture2D" uid="uid://b2ug4uah64ikc" path="res://Untitled_Artwork-9.png" id="16_bjha6"]
+[ext_resource type="Texture2D" uid="uid://34racowvu7w8" path="res://play-btn.png" id="24_gt76g"]
+[ext_resource type="Texture2D" uid="uid://do1b0o07d8yly" path="res://audio/pause-btn.png" id="25_1fr6y"]
+[ext_resource type="Texture2D" uid="uid://x3t6jdy4gc21" path="res://feather-heart.png" id="26_24dk6"]
+[ext_resource type="Texture2D" uid="uid://sqquem4dop3l" path="res://game-over-card.png" id="29_24dk6"]
+[ext_resource type="AudioStream" uid="uid://cmwicrc4ner01" path="res://audio/bird-beat-2.ogg" id="30_24dk6"]
+[ext_resource type="AudioStream" uid="uid://dgfdklhnah2rf" path="res://audio/zapped-sound.ogg" id="31_24dk6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rj586"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rjqkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fs4d3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7vxoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ei405")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_e8dv2")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_2u7jv")
+}],
+"loop": true,
+"name": &"shocked",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rjqkl"]
+radius = 217.03687
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fs4d3"]
+radius = 211.05923
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
+size = Vector2(304, 453)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4d7sh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_flf07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_k73cj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rjqkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fs4d3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7vxoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ei405")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_e8dv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2nhjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_bjha6")
+}],
+"loop": true,
+"name": &"shock",
+"speed": 12.0
+}]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(2299, 1142)
+script = ExtResource("1_2hxjc")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-66, -129)
+
+[node name="clouds-bg" type="Parallax2D" parent="."]
+scroll_offset = Vector2(2233, 909)
+autoscroll = Vector2(-150, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="clouds-bg"]
+position = Vector2(-2302, -1041)
+texture = ExtResource("2_ebxd8")
+
+[node name="clouds-back" type="Parallax2D" parent="."]
+repeat_size = Vector2(4481, 0)
+autoscroll = Vector2(-5, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="clouds-back"]
+position = Vector2(201.00003, 150.99998)
+scale = Vector2(1.1170688, 1.0537109)
+texture = ExtResource("3_2u7jv")
+
+[node name="clouds-middle" type="Parallax2D" parent="."]
+repeat_size = Vector2(4481, 0)
+autoscroll = Vector2(-15, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="clouds-middle"]
+position = Vector2(-41.812386, -283.81238)
+scale = Vector2(1.2675658, 1.2683715)
+texture = ExtResource("4_24dk6")
+
+[node name="clouds-front2" type="Parallax2D" parent="."]
+repeat_size = Vector2(4481, 0)
+autoscroll = Vector2(-20, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="clouds-front2"]
+position = Vector2(854.5625, -376.18747)
+scale = Vector2(2.2356737, 1.0587767)
+texture = ExtResource("5_mryly")
+
+[node name="clouds-front3" type="Parallax2D" parent="."]
+repeat_size = Vector2(4481, 0)
+autoscroll = Vector2(-25, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="clouds-front3"]
+position = Vector2(-1083, 121.999954)
+scale = Vector2(1.4644214, 0.8372803)
+texture = ExtResource("6_kq1c5")
+
+[node name="clouds-front" type="Parallax2D" parent="clouds-front3"]
+repeat_size = Vector2(4481, 0)
+autoscroll = Vector2(-25, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="clouds-front3/clouds-front"]
+position = Vector2(-1814.0001, 380)
+scale = Vector2(1.1884496, 0.9515381)
+texture = ExtResource("7_ornx7")
+
+[node name="Bird" type="CharacterBody2D" parent="."]
+position = Vector2(236, 93)
+script = ExtResource("1_0hol4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bird"]
+position = Vector2(-961.00006, 67)
+scale = Vector2(0.4902343, 0.46688977)
+sprite_frames = SubResource("SpriteFrames_rj586")
+animation = &"shocked"
+autoplay = "fly"
+frame_progress = 0.768586
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bird"]
+position = Vector2(-1019, 111)
+shape = SubResource("CircleShape2D_rjqkl")
+
+[node name="Hurtbox" type="Area2D" parent="Bird"]
+position = Vector2(0, 111)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bird/Hurtbox"]
+position = Vector2(-1007, 15)
+shape = SubResource("CircleShape2D_fs4d3")
+
+[node name="Cloud" type="Area2D" parent="."]
+position = Vector2(-1831, -683)
+script = ExtResource("6_4d7sh")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Cloud"]
+position = Vector2(412, -346)
+rect = Rect2(569, -410, 710, 762)
+script = ExtResource("6_ir8iy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cloud"]
+position = Vector2(1258, -278.5)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Cloud2D" type="AnimatedSprite2D" parent="Cloud"]
+position = Vector2(1297, -472)
+scale = Vector2(0.6663404, 0.6298081)
+sprite_frames = SubResource("SpriteFrames_4d7sh")
+animation = &"shock"
+autoplay = "shock"
+frame_progress = 0.42161652
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HeartsContainer" type="HBoxContainer" parent="UI"]
+offset_left = -2.0
+offset_top = 77.0
+offset_right = 773.0
+offset_bottom = 302.0
+alignment = 1
+
+[node name="Heart1" type="TextureRect" parent="UI/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("26_24dk6")
+expand_mode = 3
+
+[node name="Heart2" type="TextureRect" parent="UI/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("26_24dk6")
+expand_mode = 3
+
+[node name="Heart3" type="TextureRect" parent="UI/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("26_24dk6")
+expand_mode = 3
+
+[node name="Pause_Play" type="TextureButton" parent="UI"]
+process_mode = 3
+visible = false
+offset_left = 2504.0
+offset_top = 85.0
+offset_right = 2632.0
+offset_bottom = 235.0
+focus_mode = 0
+toggle_mode = true
+action_mode = 0
+texture_normal = ExtResource("24_gt76g")
+texture_pressed = ExtResource("25_1fr6y")
+
+[node name="GameOver" type="TextureButton" parent="UI"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -520.0
+offset_top = -450.0
+offset_right = 520.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("29_24dk6")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("30_24dk6")
+autoplay = true
+
+[node name="Zapped" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("31_24dk6")
+
+[connection signal="body_entered" from="Cloud" to="Bird" method="_on_area_2d_body_entered"]
+[connection signal="toggled" from="UI/Pause_Play" to="." method="_on_pause_play_toggled"]
+[connection signal="pressed" from="UI/GameOver" to="." method="_on_game_over_pressed"]
