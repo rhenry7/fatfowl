@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d68o1e11owii"
-path="res://.godot/imported/Untitled_Artwork-3.png-fbd84967eb3bf5f9f28583285f31807e.ctex"
+uid="uid://gt7og7o4rj8j"
+path="res://.godot/imported/Zeus.png-e885074091311105050739e4f7baadd8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Untitled_Artwork-3.png"
-dest_files=["res://.godot/imported/Untitled_Artwork-3.png-fbd84967eb3bf5f9f28583285f31807e.ctex"]
+source_file="res://clouds/Zeus.png"
+dest_files=["res://.godot/imported/Zeus.png-e885074091311105050739e4f7baadd8.ctex"]
 
 [params]
 

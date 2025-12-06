@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=38 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -9,28 +9,29 @@
 [ext_resource type="Texture2D" uid="uid://p1dctarnwp8l" path="res://Illustration_sans_titre-1 2.png" id="4_fs4d3"]
 [ext_resource type="Texture2D" uid="uid://dq02cbpibmmb5" path="res://birdfly-2.png" id="5_7vxoj"]
 [ext_resource type="Texture2D" uid="uid://c14da2ailb05r" path="res://background/soft-purple-cloud.png" id="5_mryly"]
+[ext_resource type="Texture2D" uid="uid://dofppk7ddi2uk" path="res://zeus-2.png" id="6_2u7jv"]
 [ext_resource type="Script" uid="uid://ba00vydfpvodi" path="res://area_2d.gd" id="6_4d7sh"]
 [ext_resource type="Texture2D" uid="uid://bleoad3w7u5tt" path="res://Illustration_sans_titre-2 2.png" id="6_ei405"]
 [ext_resource type="Script" uid="uid://4ygro8r40664" path="res://visible_on_screen_notifier_2d.gd" id="6_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://dpg2a7scy3qqx" path="res://background/softer-purple-cloud.png" id="6_kq1c5"]
+[ext_resource type="Script" uid="uid://bvrhf46s0n0ut" path="res://zeus.gd" id="7_24dk6"]
 [ext_resource type="Texture2D" uid="uid://baholgtbtj341" path="res://birdlfy-3.png" id="7_e8dv2"]
 [ext_resource type="Texture2D" uid="uid://cbpsuo0mrrvcf" path="res://background/lightest-purple.png" id="7_ornx7"]
-[ext_resource type="Texture2D" uid="uid://k5dh85u0s07e" path="res://Untitled_Artwork-1.png" id="8_flf07"]
-[ext_resource type="Texture2D" uid="uid://dvpjyg2fakgso" path="res://Untitled_Artwork-2.png" id="9_k73cj"]
-[ext_resource type="Texture2D" uid="uid://d68o1e11owii" path="res://Untitled_Artwork-3.png" id="10_rjqkl"]
-[ext_resource type="Texture2D" uid="uid://70f30qnmhtp2" path="res://Untitled_Artwork-4.png" id="11_fs4d3"]
-[ext_resource type="Texture2D" uid="uid://cmpk78j25l7i6" path="res://Untitled_Artwork-5.png" id="12_7vxoj"]
-[ext_resource type="Texture2D" uid="uid://1kcr6pimtvbj" path="res://Untitled_Artwork-6.png" id="13_ei405"]
 [ext_resource type="Texture2D" uid="uid://d3j43q4md1381" path="res://zapped.png" id="14_2u7jv"]
-[ext_resource type="Texture2D" uid="uid://rgctq8lo8khn" path="res://Untitled_Artwork-7.png" id="14_e8dv2"]
-[ext_resource type="Texture2D" uid="uid://d4fv1blje7cu6" path="res://Untitled_Artwork-8.png" id="15_2nhjh"]
-[ext_resource type="Texture2D" uid="uid://b2ug4uah64ikc" path="res://Untitled_Artwork-9.png" id="16_bjha6"]
+[ext_resource type="Texture2D" uid="uid://bi4us1elmbmx4" path="res://clouds/cloudman-1.png" id="17_24dk6"]
+[ext_resource type="Texture2D" uid="uid://cjyg77mwu3vr4" path="res://clouds/cloudman-2.png" id="18_mryly"]
+[ext_resource type="Texture2D" uid="uid://co821iwvdiqbp" path="res://clouds/cloudman-3.png" id="19_kq1c5"]
+[ext_resource type="Texture2D" uid="uid://dbuoccmy0slxp" path="res://clouds/cloudman-4.png" id="20_ornx7"]
+[ext_resource type="Texture2D" uid="uid://d08wkwcqsp0ve" path="res://clouds/cloudman-5.png" id="21_cnnru"]
+[ext_resource type="Texture2D" uid="uid://bqp8hqb0nf6qp" path="res://clouds/cloudman-6.png" id="22_540hr"]
+[ext_resource type="Texture2D" uid="uid://psq6gqf3qjlu" path="res://clouds/cloudman-7.png" id="23_6ip5v"]
 [ext_resource type="Texture2D" uid="uid://34racowvu7w8" path="res://play-btn.png" id="24_gt76g"]
 [ext_resource type="Texture2D" uid="uid://do1b0o07d8yly" path="res://audio/pause-btn.png" id="25_1fr6y"]
 [ext_resource type="Texture2D" uid="uid://x3t6jdy4gc21" path="res://feather-heart.png" id="26_24dk6"]
 [ext_resource type="Texture2D" uid="uid://sqquem4dop3l" path="res://game-over-card.png" id="29_24dk6"]
 [ext_resource type="AudioStream" uid="uid://cmwicrc4ner01" path="res://audio/bird-beat-2.ogg" id="30_24dk6"]
 [ext_resource type="AudioStream" uid="uid://dgfdklhnah2rf" path="res://audio/zapped-sound.ogg" id="31_24dk6"]
+[ext_resource type="AudioStream" uid="uid://d368vnlo65joe" path="res://audio/zeus-intro.ogg" id="32_mryly"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rj586"]
 animations = [{
@@ -64,10 +65,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rjqkl"]
-radius = 217.03687
+radius = 133.24039
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fs4d3"]
-radius = 211.05923
+radius = 132.3707
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
 size = Vector2(304, 453)
@@ -76,31 +77,25 @@ size = Vector2(304, 453)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_flf07")
+"texture": ExtResource("17_24dk6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_k73cj")
+"texture": ExtResource("18_mryly")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_rjqkl")
+"texture": ExtResource("19_kq1c5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_fs4d3")
+"texture": ExtResource("20_ornx7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_7vxoj")
+"texture": ExtResource("21_cnnru")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_ei405")
+"texture": ExtResource("22_540hr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_e8dv2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_2nhjh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_bjha6")
+"texture": ExtResource("23_6ip5v")
 }],
 "loop": true,
 "name": &"shock",
@@ -151,6 +146,12 @@ position = Vector2(854.5625, -376.18747)
 scale = Vector2(2.2356737, 1.0587767)
 texture = ExtResource("5_mryly")
 
+[node name="Zeus" type="Sprite2D" parent="."]
+position = Vector2(59, -124)
+scale = Vector2(1.2478814, 1.2615854)
+texture = ExtResource("6_2u7jv")
+script = ExtResource("7_24dk6")
+
 [node name="clouds-front3" type="Parallax2D" parent="."]
 repeat_size = Vector2(4481, 0)
 autoscroll = Vector2(-40, 0)
@@ -174,22 +175,22 @@ position = Vector2(236, 93)
 script = ExtResource("1_0hol4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bird"]
-position = Vector2(-961.00006, 67)
-scale = Vector2(0.4902343, 0.46688977)
+position = Vector2(-973.00006, 154)
+scale = Vector2(0.32031253, 0.30505955)
 sprite_frames = SubResource("SpriteFrames_rj586")
 animation = &"fly"
 autoplay = "fly"
 frame_progress = 0.5928339
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bird"]
-position = Vector2(-1019, 111)
+position = Vector2(-1013, 202)
 shape = SubResource("CircleShape2D_rjqkl")
 
 [node name="Hurtbox" type="Area2D" parent="Bird"]
 position = Vector2(0, 111)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bird/Hurtbox"]
-position = Vector2(-1007, 15)
+position = Vector2(-1004, 84)
 shape = SubResource("CircleShape2D_fs4d3")
 
 [node name="Cloud" type="Area2D" parent="."]
@@ -271,6 +272,9 @@ autoplay = true
 
 [node name="Zapped" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("31_24dk6")
+
+[node name="ZeusIntro" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("32_mryly")
 
 [connection signal="body_entered" from="Cloud" to="Bird" method="_on_area_2d_body_entered"]
 [connection signal="toggled" from="UI/Pause_Play" to="." method="_on_pause_play_toggled"]

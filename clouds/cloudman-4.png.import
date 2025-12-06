@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvpjyg2fakgso"
-path="res://.godot/imported/Untitled_Artwork-2.png-43ce2e770f70d736b874a8cc03733135.ctex"
+uid="uid://dbuoccmy0slxp"
+path="res://.godot/imported/cloudman-4.png-d367af5260de45198c18813ecc257047.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Untitled_Artwork-2.png"
-dest_files=["res://.godot/imported/Untitled_Artwork-2.png-43ce2e770f70d736b874a8cc03733135.ctex"]
+source_file="res://clouds/cloudman-4.png"
+dest_files=["res://.godot/imported/cloudman-4.png-d367af5260de45198c18813ecc257047.ctex"]
 
 [params]
 
