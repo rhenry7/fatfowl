@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=39 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -32,6 +32,7 @@
 [ext_resource type="AudioStream" uid="uid://cmwicrc4ner01" path="res://audio/bird-beat-2.ogg" id="30_24dk6"]
 [ext_resource type="AudioStream" uid="uid://dgfdklhnah2rf" path="res://audio/zapped-sound.ogg" id="31_24dk6"]
 [ext_resource type="AudioStream" uid="uid://d368vnlo65joe" path="res://audio/zeus-intro.ogg" id="32_mryly"]
+[ext_resource type="AudioStream" uid="uid://ntaaruhwoknc" path="res://audio/zeus-game-over.ogg" id="33_kq1c5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rj586"]
 animations = [{
@@ -166,7 +167,7 @@ repeat_size = Vector2(4481, 0)
 autoscroll = Vector2(-80, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="clouds-front"]
-position = Vector2(-1814.0001, 380)
+position = Vector2(-1021.0002, 346)
 scale = Vector2(1.1884496, 0.9515381)
 texture = ExtResource("7_ornx7")
 
@@ -268,6 +269,7 @@ texture_normal = ExtResource("29_24dk6")
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("30_24dk6")
+volume_db = -6.976
 autoplay = true
 
 [node name="Zapped" type="AudioStreamPlayer2D" parent="."]
@@ -275,6 +277,9 @@ stream = ExtResource("31_24dk6")
 
 [node name="ZeusIntro" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("32_mryly")
+
+[node name="ZeusOutro" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("33_kq1c5")
 
 [connection signal="body_entered" from="Cloud" to="Bird" method="_on_area_2d_body_entered"]
 [connection signal="toggled" from="UI/Pause_Play" to="." method="_on_pause_play_toggled"]

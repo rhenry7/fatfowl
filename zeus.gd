@@ -1,8 +1,8 @@
 extends Sprite2D
 
 func introTaunt() -> void:
-	var intro = get_tree().current_scene.get_node("ZeusIntro")
 	await get_tree().create_timer(10).timeout
+	var intro = get_tree().current_scene.get_node("ZeusIntro")
 	intro.play()
 
 # Called when the node enters the scene tree for the first time.
@@ -11,7 +11,7 @@ func _ready() -> void:
 	modulate.a = 0.0
 	
 	var tween = create_tween()
-	tween.tween_property(self, "modulate:a", 1.0, 30.0).from(0.0)
+	tween.tween_property(self, "modulate:a", 1.0, 120.0).from(0.0)
 	introTaunt()
 
 

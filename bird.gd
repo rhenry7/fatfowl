@@ -60,6 +60,8 @@ func die():
 		music.stop()
 		await get_tree().create_timer(1).timeout
 		get_tree().current_scene.get_node("Bird").visible = false
+		var outro = get_tree().current_scene.get_node("ZeusOutro")
+		outro.play()
 		#get_tree().current_scene.get_node("UI/Pause_Play").disabled = true
 	
 
