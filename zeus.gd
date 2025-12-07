@@ -2,7 +2,7 @@ extends Sprite2D
 
 func introTaunt() -> void:
 	await get_tree().create_timer(10).timeout
-	var intro = get_tree().current_scene.get_node("ZeusIntro")
+	var intro = get_tree().current_scene.get_node("Pausable/ZeusIntro")
 	intro.play()
 
 # Called when the node enters the scene tree for the first time.

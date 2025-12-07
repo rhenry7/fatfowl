@@ -11,8 +11,8 @@ var HEARTS := MAX_HEARTS
 var IS_DEAD := false
 
 @onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
-@onready var hearts_container := get_tree().current_scene.get_node("UI/HeartsContainer")
-@onready var game_over_card := get_tree().current_scene.get_node("UI/GameOver")
+@onready var hearts_container := get_tree().current_scene.get_node("Pausable/UI/HeartsContainer")
+@onready var game_over_card := get_tree().current_scene.get_node("Pausable/UI/GameOver")
 
 func remove_heart():
 	if HEARTS <= 0:
@@ -42,7 +42,7 @@ func take_damage():
 	if IS_DEAD:
 		return
 	remove_heart()
-	var zapped = get_tree().current_scene.get_node("Zapped")
+	var zapped = get_tree().current_scene.get_node("Pausable/Zapped")
 	zapped.play()
 	print("Player took damage! Hearts left:", HEARTS)
 	sprite.play("shocked")
@@ -54,20 +54,20 @@ func die():
 	IS_DEAD = true
 	print("GAME OVER")
 	if IS_DEAD:
-		get_tree().current_scene.get_node("Bird").process_mode = Node.PROCESS_MODE_DISABLED
-		get_tree().current_scene.get_node("UI/GameOver").visible = true
-		var music = get_tree().current_scene.get_node("Music")
+		get_tree().current_scene.get_node("Pausable/Bird").process_mode = Node.PROCESS_MODE_DISABLED
+		get_tree().current_scene.get_node("Pausable/UI/GameOver").visible = true
+		var music = get_tree().current_scene.get_node("Pausable/Music")
 		music.stop()
 		await get_tree().create_timer(1).timeout
-		get_tree().current_scene.get_node("Bird").visible = false
-		var outro = get_tree().current_scene.get_node("ZeusOutro")
+		get_tree().current_scene.get_node("Pausable/Bird").visible = false
+		var outro = get_tree().current_scene.get_node("Pausable/ZeusOutro")
 		outro.play()
 		#get_tree().current_scene.get_node("UI/Pause_Play").disabled = true
 	
 
 func respawn() -> void:
-	position.x = 200
-	position.y = 450
+	position.x = -200
+	position.y = -1350
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

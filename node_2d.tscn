@@ -104,78 +104,82 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
+process_mode = 3
 position = Vector2(2299, 1142)
 script = ExtResource("1_2hxjc")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Pausable" type="Node2D" parent="."]
+process_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="Pausable"]
 position = Vector2(-66, -129)
 
-[node name="clouds-bg" type="Parallax2D" parent="."]
+[node name="clouds-bg" type="Parallax2D" parent="Pausable"]
 scroll_offset = Vector2(2233, 909)
 autoscroll = Vector2(-10, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="clouds-bg"]
+[node name="Sprite2D" type="Sprite2D" parent="Pausable/clouds-bg"]
 position = Vector2(-2302, -1041)
 texture = ExtResource("2_ebxd8")
 
-[node name="clouds-back" type="Parallax2D" parent="."]
+[node name="clouds-back" type="Parallax2D" parent="Pausable"]
 repeat_size = Vector2(4481, 0)
 autoscroll = Vector2(-15, 0)
 repeat_times = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="clouds-back"]
+[node name="Sprite2D" type="Sprite2D" parent="Pausable/clouds-back"]
 position = Vector2(82.999825, 92.99996)
 scale = Vector2(1.064343, 1.1103514)
 texture = ExtResource("3_2u7jv")
 
-[node name="clouds-middle" type="Parallax2D" parent="."]
+[node name="clouds-middle" type="Parallax2D" parent="Pausable"]
 repeat_size = Vector2(4481, 0)
 autoscroll = Vector2(-25, 0)
 repeat_times = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="clouds-middle"]
+[node name="Sprite2D" type="Sprite2D" parent="Pausable/clouds-middle"]
 position = Vector2(-41.812386, -283.81238)
 scale = Vector2(1.2675658, 1.2683715)
 texture = ExtResource("4_24dk6")
 
-[node name="clouds-front2" type="Parallax2D" parent="."]
+[node name="clouds-front2" type="Parallax2D" parent="Pausable"]
 repeat_size = Vector2(4481, 0)
 autoscroll = Vector2(-30, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="clouds-front2"]
+[node name="Sprite2D" type="Sprite2D" parent="Pausable/clouds-front2"]
 position = Vector2(854.5625, -376.18747)
 scale = Vector2(2.2356737, 1.0587767)
 texture = ExtResource("5_mryly")
 
-[node name="Zeus" type="Sprite2D" parent="."]
+[node name="Zeus" type="Sprite2D" parent="Pausable"]
 position = Vector2(59, -124)
 scale = Vector2(1.2478814, 1.2615854)
 texture = ExtResource("6_2u7jv")
 script = ExtResource("7_24dk6")
 
-[node name="clouds-front3" type="Parallax2D" parent="."]
+[node name="clouds-front3" type="Parallax2D" parent="Pausable"]
 repeat_size = Vector2(4481, 0)
 autoscroll = Vector2(-40, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="clouds-front3"]
+[node name="Sprite2D" type="Sprite2D" parent="Pausable/clouds-front3"]
 position = Vector2(-1083, 121.999954)
 scale = Vector2(1.4644214, 0.8372803)
 texture = ExtResource("6_kq1c5")
 
-[node name="clouds-front" type="Parallax2D" parent="."]
+[node name="clouds-front" type="Parallax2D" parent="Pausable"]
 repeat_size = Vector2(4481, 0)
 autoscroll = Vector2(-80, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="clouds-front"]
+[node name="Sprite2D" type="Sprite2D" parent="Pausable/clouds-front"]
 position = Vector2(-1021.0002, 346)
 scale = Vector2(1.1884496, 0.9515381)
 texture = ExtResource("7_ornx7")
 
-[node name="Bird" type="CharacterBody2D" parent="."]
+[node name="Bird" type="CharacterBody2D" parent="Pausable"]
 position = Vector2(236, 93)
 script = ExtResource("1_0hol4")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bird"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Bird"]
 position = Vector2(-973.00006, 154)
 scale = Vector2(0.32031253, 0.30505955)
 sprite_frames = SubResource("SpriteFrames_rj586")
@@ -183,31 +187,31 @@ animation = &"fly"
 autoplay = "fly"
 frame_progress = 0.5928339
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bird"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Bird"]
 position = Vector2(-1013, 202)
 shape = SubResource("CircleShape2D_rjqkl")
 
-[node name="Hurtbox" type="Area2D" parent="Bird"]
+[node name="Hurtbox" type="Area2D" parent="Pausable/Bird"]
 position = Vector2(0, 111)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bird/Hurtbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Bird/Hurtbox"]
 position = Vector2(-1004, 84)
 shape = SubResource("CircleShape2D_fs4d3")
 
-[node name="Cloud" type="Area2D" parent="."]
+[node name="Cloud" type="Area2D" parent="Pausable"]
 position = Vector2(-1831, -683)
 script = ExtResource("6_4d7sh")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Cloud"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Pausable/Cloud"]
 position = Vector2(412, -346)
 rect = Rect2(569, -410, 710, 762)
 script = ExtResource("6_ir8iy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cloud"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Cloud"]
 position = Vector2(1258, -278.5)
 shape = SubResource("RectangleShape2D_4d7sh")
 
-[node name="Cloud2D" type="AnimatedSprite2D" parent="Cloud"]
+[node name="Cloud2D" type="AnimatedSprite2D" parent="Pausable/Cloud"]
 position = Vector2(1297, -472)
 scale = Vector2(0.6663404, 0.6298081)
 sprite_frames = SubResource("SpriteFrames_4d7sh")
@@ -215,31 +219,31 @@ animation = &"shock"
 autoplay = "shock"
 frame_progress = 0.3619433
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="Pausable"]
 
-[node name="HeartsContainer" type="HBoxContainer" parent="UI"]
+[node name="HeartsContainer" type="HBoxContainer" parent="Pausable/UI"]
 offset_left = -2.0
 offset_top = 77.0
 offset_right = 773.0
 offset_bottom = 302.0
 alignment = 1
 
-[node name="Heart1" type="TextureRect" parent="UI/HeartsContainer"]
+[node name="Heart1" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
 layout_mode = 2
 texture = ExtResource("26_24dk6")
 expand_mode = 3
 
-[node name="Heart2" type="TextureRect" parent="UI/HeartsContainer"]
+[node name="Heart2" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
 layout_mode = 2
 texture = ExtResource("26_24dk6")
 expand_mode = 3
 
-[node name="Heart3" type="TextureRect" parent="UI/HeartsContainer"]
+[node name="Heart3" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
 layout_mode = 2
 texture = ExtResource("26_24dk6")
 expand_mode = 3
 
-[node name="Pause_Play" type="TextureButton" parent="UI"]
+[node name="Pause_Play" type="TextureButton" parent="Pausable/UI"]
 process_mode = 3
 visible = false
 offset_left = 2504.0
@@ -252,7 +256,7 @@ action_mode = 0
 texture_normal = ExtResource("24_gt76g")
 texture_pressed = ExtResource("25_1fr6y")
 
-[node name="GameOver" type="TextureButton" parent="UI"]
+[node name="GameOver" type="TextureButton" parent="Pausable/UI"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -267,20 +271,20 @@ grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("29_24dk6")
 
-[node name="Music" type="AudioStreamPlayer2D" parent="."]
+[node name="Music" type="AudioStreamPlayer2D" parent="Pausable"]
 stream = ExtResource("30_24dk6")
 volume_db = -6.976
 autoplay = true
 
-[node name="Zapped" type="AudioStreamPlayer2D" parent="."]
+[node name="Zapped" type="AudioStreamPlayer2D" parent="Pausable"]
 stream = ExtResource("31_24dk6")
 
-[node name="ZeusIntro" type="AudioStreamPlayer2D" parent="."]
+[node name="ZeusIntro" type="AudioStreamPlayer2D" parent="Pausable"]
 stream = ExtResource("32_mryly")
 
-[node name="ZeusOutro" type="AudioStreamPlayer2D" parent="."]
+[node name="ZeusOutro" type="AudioStreamPlayer2D" parent="Pausable"]
 stream = ExtResource("33_kq1c5")
 
-[connection signal="body_entered" from="Cloud" to="Bird" method="_on_area_2d_body_entered"]
-[connection signal="toggled" from="UI/Pause_Play" to="." method="_on_pause_play_toggled"]
-[connection signal="pressed" from="UI/GameOver" to="." method="_on_game_over_pressed"]
+[connection signal="body_entered" from="Pausable/Cloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
+[connection signal="toggled" from="Pausable/UI/Pause_Play" to="." method="_on_pause_play_toggled"]
+[connection signal="pressed" from="Pausable/UI/GameOver" to="." method="_on_game_over_pressed"]
