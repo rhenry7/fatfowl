@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const GRAVITY = 1200.0
+const GRAVITY = 1500.0
 const FLAP_STRENGTH = -400.0
 const FLAP_STRENGTH_X = 600.0 
 const SPEED = 10.0 
@@ -92,9 +92,6 @@ func _physics_process(delta: float) -> void:
 		sprite.play("fly")
 		
 		
-		
-
-
 	## Get the input direction and handle the movement/deceleration.
 	## As good practice, you should replace UI actions with custom gameplay actions.
 	#var direction := Input.get_axis("ui_left", "ui_right")
