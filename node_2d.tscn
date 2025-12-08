@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=63 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -34,6 +34,25 @@
 [ext_resource type="AudioStream" uid="uid://dgfdklhnah2rf" path="res://audio/zapped-sound.ogg" id="31_24dk6"]
 [ext_resource type="AudioStream" uid="uid://d368vnlo65joe" path="res://audio/zeus-intro.ogg" id="32_mryly"]
 [ext_resource type="AudioStream" uid="uid://ntaaruhwoknc" path="res://audio/zeus-game-over.ogg" id="33_kq1c5"]
+[ext_resource type="Texture2D" uid="uid://ceh0j2q2a2633" path="res://LightningPath/Untitled_Artwork-12.png" id="35_0xo8l"]
+[ext_resource type="Texture2D" uid="uid://faxosj3xtsuy" path="res://Hand-6.png" id="35_7plk7"]
+[ext_resource type="Script" uid="uid://ca8ktf2mx8808" path="res://zeus_hand.gd" id="35_ytlpd"]
+[ext_resource type="Texture2D" uid="uid://cjafge32gnqfq" path="res://Hand-5.png" id="36_fbwgr"]
+[ext_resource type="Texture2D" uid="uid://c48aqeopyq0ub" path="res://LightningPath/Untitled_Artwork-2 4.png" id="36_xfyss"]
+[ext_resource type="Texture2D" uid="uid://be2w465obwu71" path="res://LightningPath/Untitled_Artwork-3 4.png" id="37_3ngjr"]
+[ext_resource type="Texture2D" uid="uid://s2ugukdv35ha" path="res://Hand-4.png" id="37_7mj2a"]
+[ext_resource type="Texture2D" uid="uid://dff7gid2ymowv" path="res://Hand-3.png" id="38_fshgd"]
+[ext_resource type="Texture2D" uid="uid://bdmkx8e5vr40v" path="res://LightningPath/Untitled_Artwork-6 2.png" id="38_qilgh"]
+[ext_resource type="Texture2D" uid="uid://yyv62d1cflxq" path="res://LightningPath/Untitled_Artwork-4 4.png" id="39_4qosj"]
+[ext_resource type="Texture2D" uid="uid://d1pc62arefead" path="res://Hand-2.png" id="39_lbrxf"]
+[ext_resource type="Texture2D" uid="uid://dtqk7q1avlo0p" path="res://LightningPath/Untitled_Artwork-5 3.png" id="40_cjlbh"]
+[ext_resource type="Texture2D" uid="uid://gu1u8c37bpsl" path="res://Hand-1.png" id="40_xjt7e"]
+[ext_resource type="Texture2D" uid="uid://bvxrwupavfdxw" path="res://LightningPath/Untitled_Artwork-8 2.png" id="41_kfelt"]
+[ext_resource type="Texture2D" uid="uid://c57kgg116sst5" path="res://LightningPath/Untitled_Artwork-7 2.png" id="42_ytlpd"]
+[ext_resource type="Texture2D" uid="uid://dr2t1unsiyhml" path="res://LightningPath/Untitled_Artwork-9 2.png" id="43_2v765"]
+[ext_resource type="Texture2D" uid="uid://gogu80h3ad25" path="res://LightningPath/Untitled_Artwork-10.png" id="44_b8fb0"]
+[ext_resource type="Texture2D" uid="uid://b7818yd26oa5g" path="res://LightningPath/Untitled_Artwork-11.png" id="45_ma08v"]
+[ext_resource type="Texture2D" uid="uid://bwg3xoss3ncd5" path="res://LightningPath/Untitled_Artwork-1 4.png" id="46_s32dh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rj586"]
 animations = [{
@@ -104,6 +123,82 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_0xo8l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_7plk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_7mj2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_fbwgr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_fshgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_lbrxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_xjt7e")
+}],
+"loop": true,
+"name": &"HandWave",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7plk7"]
+size = Vector2(809, 1378.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kfelt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_xfyss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_s32dh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_3ngjr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_4qosj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_cjlbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_qilgh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_ytlpd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_kfelt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_2v765")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_b8fb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_ma08v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_0xo8l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 25.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ytlpd"]
+size = Vector2(432.75, 3382)
+
 [node name="Node2D" type="Node2D"]
 process_mode = 3
 position = Vector2(2299, 1142)
@@ -148,7 +243,7 @@ repeat_size = Vector2(4481, 0)
 autoscroll = Vector2(-30, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Pausable/clouds-front2"]
-position = Vector2(854.5625, -376.18747)
+position = Vector2(-302, 240.00003)
 scale = Vector2(2.2356737, 1.0587767)
 texture = ExtResource("5_mryly")
 
@@ -181,7 +276,7 @@ position = Vector2(-812, 114)
 script = ExtResource("1_0hol4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Bird"]
-position = Vector2(-1356.0001, 153)
+position = Vector2(-1201, 153)
 scale = Vector2(0.32031253, 0.30505955)
 sprite_frames = SubResource("SpriteFrames_rj586")
 animation = &"fly"
@@ -189,17 +284,18 @@ autoplay = "fly"
 frame_progress = 0.5928339
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Bird"]
-position = Vector2(-1396, 212)
+position = Vector2(-1235, 202)
 shape = SubResource("CircleShape2D_rjqkl")
 
 [node name="Hurtbox" type="Area2D" parent="Pausable/Bird"]
 position = Vector2(0, 111)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Bird/Hurtbox"]
-position = Vector2(-1389, 90)
+position = Vector2(-1231, 84)
 shape = SubResource("CircleShape2D_fs4d3")
 
 [node name="Cloud" type="Area2D" parent="Pausable"]
+process_mode = 4
 position = Vector2(-1831, -683)
 script = ExtResource("6_4d7sh")
 
@@ -294,6 +390,38 @@ stream = ExtResource("32_mryly")
 
 [node name="ZeusOutro" type="AudioStreamPlayer2D" parent="Pausable"]
 stream = ExtResource("33_kq1c5")
+
+[node name="ZeusHand" type="CharacterBody2D" parent="Pausable"]
+unique_name_in_owner = true
+position = Vector2(-5, 1066)
+script = ExtResource("35_ytlpd")
+
+[node name="ZeusHandAnimation" type="AnimatedSprite2D" parent="Pausable/ZeusHand"]
+position = Vector2(605, 507)
+scale = Vector2(0.7731059, 0.69334567)
+sprite_frames = SubResource("SpriteFrames_0xo8l")
+animation = &"HandWave"
+autoplay = "HandWave"
+frame_progress = 0.6631915
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/ZeusHand"]
+visible = false
+position = Vector2(572, 613.25)
+shape = SubResource("RectangleShape2D_7plk7")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Pausable/ZeusHand/CollisionShape2D"]
+position = Vector2(-572, -613.25)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/ZeusHand/CollisionShape2D/CharacterBody2D"]
+position = Vector2(742.00006, -50.99994)
+scale = Vector2(0.23535146, 1.5834959)
+sprite_frames = SubResource("SpriteFrames_kfelt")
+autoplay = "default"
+frame_progress = 0.9715707
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/ZeusHand/CollisionShape2D/CharacterBody2D"]
+position = Vector2(732, -67)
+shape = SubResource("RectangleShape2D_ytlpd")
 
 [connection signal="body_entered" from="Pausable/Cloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
 [connection signal="toggled" from="Pausable/UI/Pause_Play" to="." method="_on_pause_play_toggled"]

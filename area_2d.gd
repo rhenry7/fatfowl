@@ -1,11 +1,14 @@
 extends Area2D
 
-@export var speed := 1250.0
+@export var speed := 1000.0
 @export var right_spawn_x := 500.0
 @export var top_y := -400.0
 @export var bottom_y := 1200.0
 
+
+
 func _process(delta: float) -> void:
+	set_physics_process(false)
 	position.x -= speed * delta
 	
 	if position.x < -2500:
