@@ -177,11 +177,11 @@ scale = Vector2(1.1884496, 0.9515381)
 texture = ExtResource("7_ornx7")
 
 [node name="Bird" type="CharacterBody2D" parent="Pausable"]
-position = Vector2(236, 93)
+position = Vector2(-812, 114)
 script = ExtResource("1_0hol4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Bird"]
-position = Vector2(-973.00006, 154)
+position = Vector2(-1356.0001, 153)
 scale = Vector2(0.32031253, 0.30505955)
 sprite_frames = SubResource("SpriteFrames_rj586")
 animation = &"fly"
@@ -189,14 +189,14 @@ autoplay = "fly"
 frame_progress = 0.5928339
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Bird"]
-position = Vector2(-1013, 202)
+position = Vector2(-1396, 212)
 shape = SubResource("CircleShape2D_rjqkl")
 
 [node name="Hurtbox" type="Area2D" parent="Pausable/Bird"]
 position = Vector2(0, 111)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Bird/Hurtbox"]
-position = Vector2(-1004, 84)
+position = Vector2(-1389, 90)
 shape = SubResource("CircleShape2D_fs4d3")
 
 [node name="Cloud" type="Area2D" parent="Pausable"]
