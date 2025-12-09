@@ -22,3 +22,4 @@ func respawn(cam: Camera2D = null) -> void:
 	var random_y = randf_range(top_y, bottom_y)
 	modulate.a = 1.0        # restore visibility
 	position = Vector2(right_x, random_y)
+	

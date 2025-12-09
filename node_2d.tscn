@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=65 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -89,7 +89,7 @@ animations = [{
 radius = 133.24039
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fs4d3"]
-radius = 132.3707
+radius = 263.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
 size = Vector2(304, 453)
@@ -148,6 +148,12 @@ animations = [{
 "name": &"HandWave",
 "speed": 10.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2v765"]
+size = Vector2(1133, 1965)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8fb0"]
+size = Vector2(640, 1375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7plk7"]
 size = Vector2(809, 1378.5)
@@ -288,10 +294,10 @@ position = Vector2(-1235, 202)
 shape = SubResource("CircleShape2D_rjqkl")
 
 [node name="Hurtbox" type="Area2D" parent="Pausable/Bird"]
-position = Vector2(0, 111)
+position = Vector2(-6, 129)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Bird/Hurtbox"]
-position = Vector2(-1231, 84)
+position = Vector2(-1227, -51)
 shape = SubResource("CircleShape2D_fs4d3")
 
 [node name="Cloud" type="Area2D" parent="Pausable"]
@@ -397,14 +403,26 @@ position = Vector2(-5, 1066)
 script = ExtResource("35_ytlpd")
 
 [node name="ZeusHandAnimation" type="AnimatedSprite2D" parent="Pausable/ZeusHand"]
-position = Vector2(605, 507)
+position = Vector2(542, 627)
 scale = Vector2(0.7731059, 0.69334567)
 sprite_frames = SubResource("SpriteFrames_0xo8l")
 animation = &"HandWave"
 autoplay = "HandWave"
-frame_progress = 0.6631915
+frame_progress = 0.7830532
+
+[node name="Hurtbox" type="Area2D" parent="Pausable/ZeusHand"]
+position = Vector2(62, -120)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/ZeusHand/Hurtbox"]
+position = Vector2(434.5, 724.5)
+shape = SubResource("RectangleShape2D_2v765")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pausable/ZeusHand/Hurtbox"]
+position = Vector2(890, 559.5)
+shape = SubResource("RectangleShape2D_b8fb0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/ZeusHand"]
+process_mode = 4
 visible = false
 position = Vector2(572, 613.25)
 shape = SubResource("RectangleShape2D_7plk7")
@@ -413,11 +431,11 @@ shape = SubResource("RectangleShape2D_7plk7")
 position = Vector2(-572, -613.25)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/ZeusHand/CollisionShape2D/CharacterBody2D"]
-position = Vector2(742.00006, -50.99994)
-scale = Vector2(0.23535146, 1.5834959)
+position = Vector2(742.00006, -494.25003)
+scale = Vector2(0.23535146, 2.0163572)
 sprite_frames = SubResource("SpriteFrames_kfelt")
 autoplay = "default"
-frame_progress = 0.9715707
+frame_progress = 0.39488128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/ZeusHand/CollisionShape2D/CharacterBody2D"]
 position = Vector2(732, -67)

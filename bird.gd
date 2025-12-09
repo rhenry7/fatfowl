@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const GRAVITY = 2000.0
 const FLAP_STRENGTH = -400.0
-const FLAP_STRENGTH_X = 600.0 
+const FLAP_STRENGTH_X = 3000.0 
 const SPEED = 10.0 
 const TOP_Y = -850
 const BOTTOM_Y = 1500

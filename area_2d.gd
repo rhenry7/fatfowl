@@ -8,9 +8,7 @@ extends Area2D
 
 
 func _process(delta: float) -> void:
-	set_physics_process(false)
 	position.x -= speed * delta
-	
 	if position.x < -2500:
 		respawn()
 
