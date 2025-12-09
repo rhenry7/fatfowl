@@ -9,7 +9,6 @@ func introTaunt() -> void:
 func _ready() -> void:
 	# Start invsible
 	modulate.a = 0.0
-	
 	var tween = create_tween()
 	tween.tween_property(self, "modulate:a", 0.8, 120.0).from(0.0)
 	introTaunt()
