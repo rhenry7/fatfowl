@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=69 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -18,16 +18,18 @@
 [ext_resource type="Texture2D" uid="uid://baholgtbtj341" path="res://birdlfy-3.png" id="7_e8dv2"]
 [ext_resource type="Texture2D" uid="uid://cbpsuo0mrrvcf" path="res://background/lightest-purple.png" id="7_ornx7"]
 [ext_resource type="Texture2D" uid="uid://d3j43q4md1381" path="res://zapped.png" id="14_2u7jv"]
-[ext_resource type="Texture2D" uid="uid://bi4us1elmbmx4" path="res://clouds/cloudman-1.png" id="17_24dk6"]
-[ext_resource type="Texture2D" uid="uid://cjyg77mwu3vr4" path="res://clouds/cloudman-2.png" id="18_mryly"]
-[ext_resource type="Texture2D" uid="uid://co821iwvdiqbp" path="res://clouds/cloudman-3.png" id="19_kq1c5"]
-[ext_resource type="Texture2D" uid="uid://dbuoccmy0slxp" path="res://clouds/cloudman-4.png" id="20_ornx7"]
-[ext_resource type="Texture2D" uid="uid://d08wkwcqsp0ve" path="res://clouds/cloudman-5.png" id="21_cnnru"]
-[ext_resource type="Texture2D" uid="uid://bqp8hqb0nf6qp" path="res://clouds/cloudman-6.png" id="22_540hr"]
-[ext_resource type="Texture2D" uid="uid://psq6gqf3qjlu" path="res://clouds/cloudman-7.png" id="23_6ip5v"]
+[ext_resource type="Texture2D" uid="uid://cp7q2476cn87c" path="res://clouds/AngryCloud-1.png" id="19_ma08v"]
+[ext_resource type="Texture2D" uid="uid://clt6rkt7shbvn" path="res://clouds/AngryCloud-2.png" id="20_s32dh"]
+[ext_resource type="Texture2D" uid="uid://o0jujcwlusy3" path="res://clouds/AngryCloud-3.png" id="21_037st"]
+[ext_resource type="Texture2D" uid="uid://swxsy2dhp21f" path="res://clouds/AngryCloud-4.png" id="22_6orn5"]
+[ext_resource type="Texture2D" uid="uid://drydettk4u5kc" path="res://clouds/AngryCloud-5.png" id="23_whnp6"]
+[ext_resource type="Texture2D" uid="uid://cvlwnph2bk5pv" path="res://clouds/AngryCloud-6.png" id="24_22e24"]
 [ext_resource type="Texture2D" uid="uid://34racowvu7w8" path="res://play-btn.png" id="24_gt76g"]
 [ext_resource type="Texture2D" uid="uid://do1b0o07d8yly" path="res://audio/pause-btn.png" id="25_1fr6y"]
+[ext_resource type="Texture2D" uid="uid://b6tbtvrerxu5q" path="res://clouds/AngryCloud-7.png" id="25_m7xe6"]
 [ext_resource type="Texture2D" uid="uid://x3t6jdy4gc21" path="res://feather-heart.png" id="26_24dk6"]
+[ext_resource type="Texture2D" uid="uid://b8t1p3vtq31p" path="res://clouds/AngryCloud-8.png" id="26_wqmsq"]
+[ext_resource type="Texture2D" uid="uid://dy87jlh28gqpo" path="res://clouds/AngryCloud-9.png" id="27_fkgk1"]
 [ext_resource type="Texture2D" uid="uid://sqquem4dop3l" path="res://game-over-card.png" id="29_24dk6"]
 [ext_resource type="AudioStream" uid="uid://cmwicrc4ner01" path="res://audio/bird-beat-2.ogg" id="30_24dk6"]
 [ext_resource type="Script" uid="uid://b4fjrten6yiec" path="res://distance.gd" id="30_ornx7"]
@@ -99,25 +101,31 @@ size = Vector2(304, 453)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("17_24dk6")
+"texture": ExtResource("19_ma08v")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_mryly")
+"texture": ExtResource("20_s32dh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_kq1c5")
+"texture": ExtResource("21_037st")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_ornx7")
+"texture": ExtResource("22_6orn5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_cnnru")
+"texture": ExtResource("23_whnp6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("22_540hr")
+"texture": ExtResource("24_22e24")
 }, {
 "duration": 1.0,
-"texture": ExtResource("23_6ip5v")
+"texture": ExtResource("25_m7xe6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_wqmsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_fkgk1")
 }],
 "loop": true,
 "name": &"shock",
@@ -410,7 +418,7 @@ scale = Vector2(0.7731059, 0.69334567)
 sprite_frames = SubResource("SpriteFrames_0xo8l")
 animation = &"HandWave"
 autoplay = "HandWave"
-frame_progress = 0.17255604
+frame_progress = 0.5936984
 
 [node name="Hurtbox" type="Area2D" parent="Pausable/ZeusHand"]
 position = Vector2(62, -120)
@@ -435,7 +443,7 @@ position = Vector2(737, 571.75)
 scale = Vector2(0.23535146, 2.0163572)
 sprite_frames = SubResource("SpriteFrames_kfelt")
 autoplay = "default"
-frame_progress = 0.8333485
+frame_progress = 0.8992875
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/LargeBolt"]
 process_mode = 4
