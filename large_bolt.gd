@@ -1,5 +1,24 @@
-extends CharacterBody2D
+extends Area2D
 @onready var bolt = get_tree().current_scene.get_node("Pausable/LargeBolt")
+
+func deactivate():
+	visible = false
+	set_physics_process(false)
+	set_process(false)
+
+	for child in get_children():
+		if child is CollisionShape2D:
+			child.disabled = true
+
+
+func activate():
+	visible = true
+	set_physics_process(true)
+	set_process(true)
+
+	for child in get_children():
+		if child is CollisionShape2D:
+			child.disabled = false
 
 func _ready() -> void:
 	respawn()
@@ -8,7 +27,7 @@ func respawn() -> void:
 	modulate.a = 0.0
 	while true:
 		# Wait 15 seconds before starting
-		await get_tree().create_timer(15, false, true).timeout
+		await get_tree().create_timer(1, false, true).timeout
 		
 		if not get_tree().paused:
 			# Slide hand into frame

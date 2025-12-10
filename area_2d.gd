@@ -5,6 +5,27 @@ extends Area2D
 @export var top_y := -400.0
 @export var bottom_y := 1200.0
 
+func deactivate():
+	visible = false
+	set_physics_process(false)
+	set_process(false)
+	speed = 0.0
+
+	for child in get_children():
+		if child is CollisionShape2D:
+			child.disabled = true
+
+
+func activate():
+	visible = true
+	set_physics_process(true)
+	set_process(true)
+	speed = 1000
+
+	for child in get_children():
+		if child is CollisionShape2D:
+			child.disabled = false
+
 func _process(delta: float) -> void:
 	position.x -= speed * delta
 	if position.x < -2700:
@@ -28,4 +49,4 @@ func speed_increase_loop() -> void:
 	while true:
 		await get_tree().create_timer(10, false, true).timeout
 		if !get_tree().paused:
-			speed += 50
+			speed += 250

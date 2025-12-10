@@ -27,6 +27,7 @@ func on_damage(amount):
 	print("damage received:", amount)
 
 func _ready() -> void:
+	print("Global Position: ", global_position)
 	position.x = 100
 	position.y = -500
 	$Hurtbox.body_entered.connect(_on_body_entered)
