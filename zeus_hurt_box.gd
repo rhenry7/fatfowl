@@ -36,7 +36,6 @@ func _ready():
 func _on_hit(body: Node2D) -> void:
 	if body.name == "Bird":
 		body.take_damage()
-		print("Hand and bird meet")
 		
 func respawn() -> void:
 	while true:

@@ -395,10 +395,6 @@ script = ExtResource("26_s32dh")
 process_mode = 4
 position = Vector2(568, 704)
 script = ExtResource("6_4d7sh")
-speed = null
-right_spawn_x = null
-top_y = null
-bottom_y = null
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Enemies/Cloud"]
 position = Vector2(380, -789)

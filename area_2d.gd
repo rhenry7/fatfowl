@@ -28,7 +28,7 @@ func activate():
 
 func _process(delta: float) -> void:
 	position.x -= speed * delta
-	if position.x < -2700:
+	if position.x < -2500:
 		respawn()
 
 func respawn() -> void:
@@ -43,7 +43,6 @@ func _ready():
 func _on_hit(body: Node2D) -> void:
 	if body.name == "Bird":
 		body.take_damage()
-		print("cloud and bird meet")
 		
 func speed_increase_loop() -> void:
 	while true:
