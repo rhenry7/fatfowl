@@ -28,9 +28,9 @@ func on_damage(amount):
 
 func _ready() -> void:
 	print("Global Position: ", global_position)
-	position.x = 100
+	position.x = 10
 	position.y = -500
-	$Hurtbox.body_entered.connect(_on_body_entered)
+	$BirdHurtBox.body_entered.connect(_on_body_entered)
 	sprite.play("fly")
 
 func _on_body_entered(body):

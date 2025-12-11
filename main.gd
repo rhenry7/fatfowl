@@ -21,3 +21,7 @@ func _input(event: InputEvent) -> void:
 
 func _on_game_over_pressed() -> void:
 	get_tree().reload_current_scene() # Replace with function body.
+
+
+func _on_zeus_hurt_box_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

@@ -1,5 +1,5 @@
 extends Area2D
-@onready var bolt = get_tree().current_scene.get_node("Pausable/LargeBolt")
+@onready var bolt = $AnimatedSprite2D
 
 func deactivate():
 	visible = false

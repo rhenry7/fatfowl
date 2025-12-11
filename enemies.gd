@@ -1,13 +1,13 @@
 extends Node
 
 @onready var enemies = [
-	$ZeusHand,
-	get_tree().current_scene.get_node("Enemies/Cloud"),
-	get_tree().current_scene.get_node("Enemies/LargeBolt"),
+	$ZeusHurtBox,
+	$Cloud,
+	$LargeBolt,
 ]
 
 var current_enemy_index := 0
-var display_duration := 25.0   # seconds per enemy
+var display_duration := 60.0   # seconds per enemy
 
 func _ready():
 	print(get_path())
