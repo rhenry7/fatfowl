@@ -7,17 +7,18 @@ func deactivate():
 	visible = false
 	set_physics_process(false)
 	set_process(false)
-
+	collision_layer = 0
+	collision_mask = 0
 	for child in get_children():
 		if child is CollisionShape2D:
 			child.disabled = true
-
 
 func activate():
 	visible = true
 	set_physics_process(true)
 	set_process(true)
-
+	collision_layer = 1  # Or whatever your original layer was
+	collision_mask = 1   # Or whatever your original mask was
 	for child in get_children():
 		if child is CollisionShape2D:
 			child.disabled = false
@@ -26,8 +27,8 @@ func _process(delta: float) -> void:
 	pass
 
 func _ready():  
-	position.x = randf_range(-1500, 1500)
-	position.y = 1200
+	position.x = 500
+	position.y = 2000
 	respawn()
 	add_to_group("hazard")
 	connect("body_entered", Callable(self, "_on_hit"))
@@ -42,8 +43,9 @@ func respawn() -> void:
 		# Wait 15 seconds before starting
 		#await get_tree().create_timer(0, false, true).timeout
 		if not get_tree().paused:
+			set_collision_layer_value(1, true);
 			# Slide hand into frame
-			var final_pos: Vector2 = Vector2(randf_range(-1500, 1500), 300)
+			var final_pos: Vector2 = Vector2(randf_range(-1500, 500), 300)
 			var tween = create_tween()
 			tween.tween_property(hand, "position", final_pos, 5.0)
 			#

@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=69 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://cvlwnph2bk5pv" path="res://clouds/AngryCloud-6.png" id="24_22e24"]
 [ext_resource type="Texture2D" uid="uid://34racowvu7w8" path="res://play-btn.png" id="24_gt76g"]
 [ext_resource type="Texture2D" uid="uid://do1b0o07d8yly" path="res://audio/pause-btn.png" id="25_1fr6y"]
+[ext_resource type="AudioStream" uid="uid://bfpwb278uw6nd" path="res://thunder.ogg" id="25_037st"]
 [ext_resource type="Texture2D" uid="uid://b6tbtvrerxu5q" path="res://clouds/AngryCloud-7.png" id="25_m7xe6"]
 [ext_resource type="Texture2D" uid="uid://x3t6jdy4gc21" path="res://feather-heart.png" id="26_24dk6"]
 [ext_resource type="Script" uid="uid://b47yv7wncgea2" path="res://enemies.gd" id="26_s32dh"]
@@ -90,10 +91,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rjqkl"]
-radius = 252.55699
+radius = 205.2364
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fs4d3"]
-radius = 263.0
+radius = 177.0452
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
 size = Vector2(304, 453)
@@ -134,7 +135,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s32dh"]
-size = Vector2(1034, 1248)
+size = Vector2(1034, 1489)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2v765"]
 size = Vector2(927, 930)
@@ -143,22 +144,22 @@ size = Vector2(927, 930)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("35_7plk7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("37_7mj2a")
-}, {
-"duration": 1.0,
-"texture": ExtResource("36_fbwgr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("38_fshgd")
+"texture": ExtResource("40_xjt7e")
 }, {
 "duration": 1.0,
 "texture": ExtResource("39_lbrxf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("40_xjt7e")
+"texture": ExtResource("38_fshgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_fbwgr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_7plk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_7mj2a")
 }],
 "loop": true,
 "name": &"HandWave",
@@ -298,7 +299,7 @@ autoplay = "fly"
 frame_progress = 0.5928339
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Bird"]
-position = Vector2(-1238, 92)
+position = Vector2(-1244, 115)
 rotation = -0.74358714
 shape = SubResource("CircleShape2D_rjqkl")
 
@@ -306,7 +307,7 @@ shape = SubResource("CircleShape2D_rjqkl")
 position = Vector2(-6, 129)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Bird/BirdHurtBox"]
-position = Vector2(-1234, -29)
+position = Vector2(-1224, 22)
 shape = SubResource("CircleShape2D_fs4d3")
 
 [node name="UI" type="CanvasLayer" parent="Pausable"]
@@ -372,7 +373,7 @@ script = ExtResource("30_ornx7")
 
 [node name="Music" type="AudioStreamPlayer2D" parent="Pausable"]
 stream = ExtResource("30_24dk6")
-volume_db = -80.0
+volume_db = -20.748
 autoplay = true
 
 [node name="Zapped" type="AudioStreamPlayer2D" parent="Pausable"]
@@ -381,6 +382,9 @@ stream = ExtResource("31_24dk6")
 [node name="ZeusIntro" type="AudioStreamPlayer2D" parent="Pausable"]
 stream = ExtResource("32_mryly")
 
+[node name="Thunder" type="AudioStreamPlayer2D" parent="Pausable"]
+stream = ExtResource("25_037st")
+
 [node name="ZeusOutro" type="AudioStreamPlayer2D" parent="Pausable"]
 stream = ExtResource("33_kq1c5")
 
@@ -388,32 +392,39 @@ stream = ExtResource("33_kq1c5")
 script = ExtResource("26_s32dh")
 
 [node name="Cloud" type="Area2D" parent="Enemies"]
-position = Vector2(-1831, -683)
+process_mode = 4
+position = Vector2(568, 704)
 script = ExtResource("6_4d7sh")
+speed = null
+right_spawn_x = null
+top_y = null
+bottom_y = null
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Enemies/Cloud"]
-position = Vector2(412, -346)
-rect = Rect2(569, -410, 710, 762)
+position = Vector2(380, -789)
+rect = Rect2(672, -410, 405, 650)
 script = ExtResource("6_ir8iy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Cloud"]
-position = Vector2(1258, -278.5)
+position = Vector2(1255, -828)
 shape = SubResource("RectangleShape2D_4d7sh")
 
 [node name="Cloud2D" type="AnimatedSprite2D" parent="Enemies/Cloud"]
-position = Vector2(1297, -472)
-scale = Vector2(0.6663404, 0.6298081)
+position = Vector2(1307, -850)
+scale = Vector2(0.38551843, 0.36438224)
 sprite_frames = SubResource("SpriteFrames_4d7sh")
 animation = &"shock"
 autoplay = "shock"
-frame_progress = 0.3619433
 
 [node name="ZeusHurtBox" type="Area2D" parent="Enemies"]
+process_mode = 4
 position = Vector2(58, 995)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("39_037st")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/ZeusHurtBox"]
-position = Vector2(561, -25)
+position = Vector2(561, -145.5)
 shape = SubResource("RectangleShape2D_s32dh")
 
 [node name="ZeusHand" type="CharacterBody2D" parent="Enemies/ZeusHurtBox"]
@@ -424,14 +435,17 @@ position = Vector2(577.5, 998)
 shape = SubResource("RectangleShape2D_2v765")
 
 [node name="ZeusHandAnimation" type="AnimatedSprite2D" parent="Enemies/ZeusHurtBox/ZeusHand"]
-position = Vector2(613, 834)
+position = Vector2(440, 747)
 scale = Vector2(0.7731059, 0.69334567)
 sprite_frames = SubResource("SpriteFrames_0xo8l")
 animation = &"HandWave"
 autoplay = "HandWave"
-frame_progress = 0.4872254
+frame_progress = 0.27945107
 
 [node name="LargeBolt" type="Area2D" parent="Enemies"]
+process_mode = 4
+monitoring = false
+monitorable = false
 script = ExtResource("42_2v765")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/LargeBolt"]
@@ -443,9 +457,10 @@ position = Vector2(737, 571.75)
 scale = Vector2(0.23535146, 2.0163572)
 sprite_frames = SubResource("SpriteFrames_kfelt")
 autoplay = "default"
-frame_progress = 0.66233546
+frame_progress = 0.3673437
 
 [connection signal="toggled" from="Pausable/UI/Pause_Play" to="." method="_on_pause_play_toggled"]
 [connection signal="pressed" from="Pausable/UI/GameOver" to="." method="_on_game_over_pressed"]
 [connection signal="body_entered" from="Enemies/Cloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Enemies/ZeusHurtBox" to="Pausable/Bird" method="_on_body_entered"]
+[connection signal="body_entered" from="Enemies/LargeBolt" to="Pausable/Bird" method="_on_body_entered"]

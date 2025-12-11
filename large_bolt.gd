@@ -1,39 +1,55 @@
 extends Area2D
-@onready var bolt = $AnimatedSprite2D
 
 func deactivate():
 	visible = false
 	set_physics_process(false)
 	set_process(false)
-
+	collision_layer = 0
+	collision_mask = 0
 	for child in get_children():
 		if child is CollisionShape2D:
 			child.disabled = true
-
 
 func activate():
 	visible = true
 	set_physics_process(true)
 	set_process(true)
-
+	collision_layer = 1  # Or whatever your original layer was
+	collision_mask = 1   # Or whatever your original mask was
 	for child in get_children():
 		if child is CollisionShape2D:
 			child.disabled = false
 
 func _ready() -> void:
+	add_to_group("hazard")
+	connect("body_entered", Callable(self, "_on_hit"))
 	respawn()
+	
+func _on_hit(body: Node2D) -> void:
+	if body.name == "Bird":
+		body.take_damage()
+		print("LargeBolt and bird meet")
 
 func respawn() -> void:
+
 	modulate.a = 0.0
 	while true:
 		# Wait 15 seconds before starting
+			#var intro = get_tree().current_scene.get_node("Pausable/Thunder")
+	#intro.play()
 		await get_tree().create_timer(1, false, true).timeout
+		var intro = get_tree().current_scene.get_node("Pausable/Thunder")
+		intro.play()
+		
 		
 		if not get_tree().paused:
+			
 			# Slide hand into frame
-			position.x = randf_range(-1500, 400)
+			position.x = randf_range(-1000, 400)
 			var tween = create_tween()
-			tween.tween_property(self, "modulate:a", 1, 5.0).from(0.0)
+			tween.tween_property(self, "modulate:a", 0, 1).from(2.0)
+			await get_tree().create_timer(3, false, true).timeout
+	
 			#var final_pos: Vector2 = Vector2(randf_range(-1500, 400), -200)
 			#tween.tween_property(bolt, "position", final_pos, 4.0)
 			
@@ -45,7 +61,6 @@ func respawn() -> void:
 			# Slide hand out of frame
  			#tween.tween_property(self, "modulate:a", 0.1, 5.0).from(1.0)
 			var tween_out = create_tween()
-			tween_out.tween_property(self, "modulate:a", 0, 5.0).from(1.0)
-			
+			tween_out.tween_property(self, "modulate:a", 1, 0).from(3.0)
 			# Wait for exit animation to finish
 			await tween_out.finished
