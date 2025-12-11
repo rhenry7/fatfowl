@@ -34,12 +34,9 @@ func respawn() -> void:
 
 	modulate.a = 0.0
 	while true:
-		# Wait 15 seconds before starting
-			#var intro = get_tree().current_scene.get_node("Pausable/Thunder")
-	#intro.play()
-		await get_tree().create_timer(1, false, true).timeout
 		var intro = get_tree().current_scene.get_node("Pausable/Thunder")
 		intro.play()
+		await get_tree().create_timer(5, false, true).timeout
 		
 		
 		if not get_tree().paused:
