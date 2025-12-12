@@ -36,8 +36,20 @@ func _ready() -> void:
 
 func _on_body_entered(body):
 	print("Collision with:", body.name)
+	if body.is_in_group("ZeusHand"):
+		hide_body()
 	if body.is_in_group("hazard"):
 		take_damage()
+	
+		
+func hide_body(): # Blink 5 times per second
+	print("hide body function")
+	sprite.visible = false
+	await get_tree().create_timer(3).timeout
+	sprite.visible = true
+	position.x = 10
+	position.y = -500
+
 
 func take_damage():
 	if IS_DEAD or is_invincible:

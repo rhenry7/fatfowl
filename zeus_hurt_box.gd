@@ -1,5 +1,6 @@
 extends Area2D
 @onready var hand := $"."
+@onready var sprite:AnimatedSprite2D = $ZeusHand/ZeusHandAnimation
 var max_left = -1000
 var max_right = 600
 
@@ -31,11 +32,17 @@ func _ready():
 	position.y = 2000
 	respawn()
 	add_to_group("hazard")
+	add_to_group("ZeusHand")
 	connect("body_entered", Callable(self, "_on_hit"))
 
 func _on_hit(body: Node2D) -> void:
 	if body.name == "Bird":
+		body.hide_body()
 		body.take_damage()
+		sprite.play("HandGrab")
+		await get_tree().create_timer(3, false, true).timeout
+		sprite.play("HandWave")
+
 		
 func respawn() -> void:
 	while true:
