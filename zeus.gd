@@ -11,7 +11,7 @@ func _ready() -> void:
 	introTaunt()
 	modulate.a = 0.0
 	var tween = create_tween()
-	tween.tween_property(self, "modulate:a", 0.8, 120.0).from(0.0)
+	tween.tween_property(self, "modulate:a", 0.6, 120.0).from(0.0)
 
 
 

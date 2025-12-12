@@ -1,8 +1,8 @@
 extends Node
 @onready var enemies = [
-	#$ZeusHurtBox,
-	#$LargeBolt,
 	$Cloud,
+	$ZeusHurtBox,
+	$LargeBolt,
 ]
 var current_enemy_index := 0
 var display_duration := 30.0   # seconds per enemy

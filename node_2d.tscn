@@ -107,7 +107,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rjqkl"]
-radius = 205.2364
+radius = 173.97128
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fs4d3"]
 radius = 177.0452
@@ -189,7 +189,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s32dh"]
-size = Vector2(1226, 1062)
+size = Vector2(1033, 875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2v765"]
 size = Vector2(650, 648)
@@ -370,7 +370,7 @@ autoplay = "fly"
 frame_progress = 0.5928339
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Bird"]
-position = Vector2(-1244, 115)
+position = Vector2(-1235, 160)
 rotation = -0.74358714
 shape = SubResource("CircleShape2D_rjqkl")
 
@@ -391,51 +391,61 @@ offset_bottom = 302.0
 alignment = 1
 
 [node name="Heart1" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+visible = false
 layout_mode = 2
 texture = ExtResource("17_t3mf0")
 expand_mode = 3
 
 [node name="Heart2" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+visible = false
 layout_mode = 2
 texture = ExtResource("17_t3mf0")
 expand_mode = 3
 
 [node name="Heart3" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+visible = false
 layout_mode = 2
 texture = ExtResource("17_t3mf0")
 expand_mode = 3
 
 [node name="Heart4" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+visible = false
 layout_mode = 2
 texture = ExtResource("17_t3mf0")
 expand_mode = 3
 
 [node name="Heart5" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+visible = false
 layout_mode = 2
 texture = ExtResource("17_t3mf0")
 expand_mode = 3
 
 [node name="Heart6" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+visible = false
 layout_mode = 2
 texture = ExtResource("17_t3mf0")
 expand_mode = 3
 
 [node name="Heart7" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+visible = false
 layout_mode = 2
 texture = ExtResource("17_t3mf0")
 expand_mode = 3
 
 [node name="Heart8" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+visible = false
 layout_mode = 2
 texture = ExtResource("17_t3mf0")
 expand_mode = 3
 
 [node name="Heart9" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+visible = false
 layout_mode = 2
 texture = ExtResource("17_t3mf0")
 expand_mode = 3
 
 [node name="Heart10" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+visible = false
 layout_mode = 2
 texture = ExtResource("17_t3mf0")
 expand_mode = 3
@@ -549,7 +559,7 @@ collision_mask = 2
 script = ExtResource("39_037st")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/ZeusHurtBox"]
-position = Vector2(699, -255)
+position = Vector2(695.5, -231.5)
 shape = SubResource("RectangleShape2D_s32dh")
 
 [node name="ZeusHand" type="CharacterBody2D" parent="Enemies/ZeusHurtBox"]
@@ -560,8 +570,8 @@ position = Vector2(713, 818)
 shape = SubResource("RectangleShape2D_2v765")
 
 [node name="ZeusHandAnimation" type="AnimatedSprite2D" parent="Enemies/ZeusHurtBox/ZeusHand"]
-position = Vector2(901, 1354)
-scale = Vector2(0.7731059, 0.69334567)
+position = Vector2(724.00006, 988)
+scale = Vector2(0.7934134, 0.69866747)
 sprite_frames = SubResource("SpriteFrames_0xo8l")
 animation = &"HandWave"
 autoplay = "HandWave"

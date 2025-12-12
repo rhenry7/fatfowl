@@ -55,9 +55,9 @@ func respawn() -> void:
 		if not get_tree().paused:
 			set_collision_layer_value(1, true);
 			# Slide hand into frame
-			var final_pos: Vector2 = Vector2(randf_range(-2000, 500), 400)
+			var final_pos: Vector2 = Vector2(randf_range(-2000, 500), 350)
 			var tween = create_tween()
-			tween.tween_property(hand, "position", final_pos, 5.0)
+			tween.tween_property(hand, "position", final_pos, 2.0)
 			#
 			## Wait for tween to finish
 			await tween.finished

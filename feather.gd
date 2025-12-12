@@ -3,17 +3,16 @@ extends Area2D
 
 # === Export Variables (adjustable in Inspector) ===
 @export var health_amount: int = 20  # Amount of health/hearts to give player
-@export var fall_speed: float = 200.0  # Pixels per second the feather falls
+@export var fall_speed: float = 800.0  # Pixels per second the feather falls
 @export var respawn_height: float = -150.0  # Y position above screen to respawn at
 @export var bottom_limit: float = 900.0  # Y position where feather respawns if missed
-
-# === Node References ===
 @onready var animated_sprite = $FallingFeather  # Reference to the animated sprite
+@onready var collision = $CollisionShape2D
 
 func _ready():
 	# Set initial starting position
-	position.x = 1000
-	position.y = -1200
+	position.x = 200
+	position.y = -2500
 	
 	# Connect the collision signal to detect when player touches feather
 	body_entered.connect(_on_body_entered)
@@ -32,10 +31,13 @@ func _process(delta: float) -> void:
 		respawn()
 
 func respawn() -> void:
+	collision.disabled = false;
+	animated_sprite.visible = true
+	await get_tree().create_timer(3).timeout
 	# Reset feather to top of screen
 	position.y = -1700
 	# Randomize horizontal position for variety
-	position.x = randf_range(100, 2500)
+	position.x = randf_range(800, 2500)
 
 func _on_body_entered(body):
 	# Check if the object that collided is the player
@@ -44,6 +46,8 @@ func _on_body_entered(body):
 		if body.has_method("heal"):
 			# Give player 1 heart (change to health_amount if you want to use the export variable)
 			body.heal(1)
+			collision.disabled = true
+			animated_sprite.visible = false
 		
 		# Respawn feather at top immediately after collection
 		respawn()

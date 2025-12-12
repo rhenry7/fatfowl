@@ -5,11 +5,11 @@ const FLAP_STRENGTH_X = 500.0
 const SPEED = 10.0 
 const TOP_Y = -850
 const BOTTOM_Y = 1500 
-const MAX_HEARTS := 10   
-var HEARTS := 10
+const MAX_HEARTS := 5   
+var HEARTS := 0
 var IS_DEAD := false
 var is_invincible := false
-var invincibility_duration := 1.0  # 1 second of invincibility
+var invincibility_duration := 3.0  # 1 second of invincibility
 
 @onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
 @onready var hearts_container := get_tree().current_scene.get_node("Pausable/UI/HeartsContainer")
@@ -28,6 +28,8 @@ func add_heart():
 		return
 	# Get the heart that was previously hidden
 	var heart_to_show = hearts_container.get_child(HEARTS)
+	if heart_to_show.visible == false:
+		heart_to_show.visible = true
 	var c = heart_to_show.modulate
 	heart_to_show.modulate = Color(c.r, c.g, c.b, 1.0)
 	HEARTS += 1
@@ -65,13 +67,12 @@ func hide_body(): # Blink 5 times per second
 	await get_tree().create_timer(3).timeout
 	sprite.visible = true
 	position.x = -600
-	position.y = -500
+	position.y = -2000
 		
 
 func take_damage():
-	if IS_DEAD or is_invincible:
+	if IS_DEAD:
 		return  # Ignore damage if dead or invincible
-	
 	
 	# Start invincibility period
 	is_invincible = true
