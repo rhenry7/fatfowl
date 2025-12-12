@@ -37,8 +37,8 @@ func respawn() -> void:
 	while true:
 		var thunder = get_tree().current_scene.get_node("Pausable/Thunder")
 		thunder.play()
-		await get_tree().create_timer(5, false, true).timeout
-		if position.x < -2000:
+		await get_tree().create_timer(7, false, true).timeout
+		if position.x < -1900:
 			max_right = 500
 		position.x = max_right
 		max_right -= 1000
