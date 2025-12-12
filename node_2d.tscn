@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=85 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -49,10 +49,12 @@
 [ext_resource type="Texture2D" uid="uid://ceh0j2q2a2633" path="res://LightningPath/Untitled_Artwork-12.png" id="35_0xo8l"]
 [ext_resource type="Texture2D" uid="uid://faxosj3xtsuy" path="res://Hand-6.png" id="35_7plk7"]
 [ext_resource type="Texture2D" uid="uid://j0th5tamsrky" path="res://Untitled_Artwork-9 2.png" id="35_thyvg"]
+[ext_resource type="AudioStream" uid="uid://bgsblpl3pr1lt" path="res://audio/laugh.ogg" id="36_5fipt"]
 [ext_resource type="Texture2D" uid="uid://cjafge32gnqfq" path="res://Hand-5.png" id="36_fbwgr"]
 [ext_resource type="Texture2D" uid="uid://c48aqeopyq0ub" path="res://LightningPath/Untitled_Artwork-2 4.png" id="36_xfyss"]
 [ext_resource type="Texture2D" uid="uid://be2w465obwu71" path="res://LightningPath/Untitled_Artwork-3 4.png" id="37_3ngjr"]
 [ext_resource type="Texture2D" uid="uid://s2ugukdv35ha" path="res://Hand-4.png" id="37_7mj2a"]
+[ext_resource type="AudioStream" uid="uid://ccx6cx05rkwvy" path="res://audio/strangle.ogg" id="37_j02gt"]
 [ext_resource type="Texture2D" uid="uid://dff7gid2ymowv" path="res://Hand-3.png" id="38_fshgd"]
 [ext_resource type="Texture2D" uid="uid://bdmkx8e5vr40v" path="res://LightningPath/Untitled_Artwork-6 2.png" id="38_qilgh"]
 [ext_resource type="Texture2D" uid="uid://yyv62d1cflxq" path="res://LightningPath/Untitled_Artwork-4 4.png" id="39_4qosj"]
@@ -183,10 +185,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s32dh"]
-size = Vector2(924, 1358)
+size = Vector2(1226, 1062)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2v765"]
-size = Vector2(927, 930)
+size = Vector2(650, 648)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0xo8l"]
 animations = [{
@@ -463,6 +465,13 @@ animation = &"falling"
 autoplay = "falling"
 frame_progress = 0.26487443
 
+[node name="ZeusLaugh" type="AudioStreamPlayer2D" parent="Pausable"]
+stream = ExtResource("36_5fipt")
+volume_db = 6.842
+
+[node name="Strangle" type="AudioStreamPlayer2D" parent="Pausable"]
+stream = ExtResource("37_j02gt")
+
 [node name="Enemies" type="Node2D" parent="."]
 script = ExtResource("26_s32dh")
 
@@ -495,18 +504,18 @@ collision_mask = 2
 script = ExtResource("39_037st")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/ZeusHurtBox"]
-position = Vector2(616, -80)
+position = Vector2(699, -255)
 shape = SubResource("RectangleShape2D_s32dh")
 
 [node name="ZeusHand" type="CharacterBody2D" parent="Enemies/ZeusHurtBox"]
 position = Vector2(-58, -995)
 
 [node name="ZeusHandHurtBox" type="CollisionShape2D" parent="Enemies/ZeusHurtBox/ZeusHand"]
-position = Vector2(577.5, 998)
+position = Vector2(713, 818)
 shape = SubResource("RectangleShape2D_2v765")
 
 [node name="ZeusHandAnimation" type="AnimatedSprite2D" parent="Enemies/ZeusHurtBox/ZeusHand"]
-position = Vector2(792, 713)
+position = Vector2(756, 734)
 scale = Vector2(0.7731059, 0.69334567)
 sprite_frames = SubResource("SpriteFrames_0xo8l")
 animation = &"HandWave"

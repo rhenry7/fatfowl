@@ -47,7 +47,7 @@ func hide_body(): # Blink 5 times per second
 	sprite.visible = false
 	await get_tree().create_timer(3).timeout
 	sprite.visible = true
-	position.x = 10
+	position.x = -600
 	position.y = -500
 
 
@@ -55,15 +55,14 @@ func take_damage():
 	if IS_DEAD or is_invincible:
 		return  # Ignore damage if dead or invincible
 	
-	remove_heart()
-	var zapped = get_tree().current_scene.get_node("Pausable/Zapped")
-	zapped.play()
-	print("Player took damage! Hearts left:", HEARTS)
-	sprite.play("shocked")
 	
 	# Start invincibility period
 	is_invincible = true
 	start_invincibility_visual()
+	remove_heart()
+	
+	print("Player took damage! Hearts left:", HEARTS)
+	sprite.play("shocked")
 	
 	if HEARTS <= 0:
 		die()
