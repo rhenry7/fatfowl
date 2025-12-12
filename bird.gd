@@ -4,9 +4,9 @@ const FLAP_STRENGTH = -400.0
 const FLAP_STRENGTH_X = 500.0 
 const SPEED = 10.0 
 const TOP_Y = -850
-const BOTTOM_Y = 1500
-const MAX_HEARTS := 3   
-var HEARTS := MAX_HEARTS
+const BOTTOM_Y = 1500 
+const MAX_HEARTS := 10   
+var HEARTS := 10
 var IS_DEAD := false
 var is_invincible := false
 var invincibility_duration := 1.0  # 1 second of invincibility
@@ -22,12 +22,27 @@ func remove_heart():
 	var heart_to_hide = hearts_container.get_child(HEARTS)
 	var c = heart_to_hide.modulate
 	heart_to_hide.modulate = Color(c.r, c.g, c.b, 0.0)
+	
+func add_heart():
+	if IS_DEAD or MAX_HEARTS == HEARTS:
+		return
+	# Get the heart that was previously hidden
+	var heart_to_show = hearts_container.get_child(HEARTS)
+	var c = heart_to_show.modulate
+	heart_to_show.modulate = Color(c.r, c.g, c.b, 1.0)
+	HEARTS += 1
+
+func heal(amount: int):
+	for i in range(amount):
+		add_heart()
+	print("Healed! Current health: ", HEARTS, "/", MAX_HEARTS)
 
 func on_damage(amount):
 	#Effects.flash_opacity(sprite)
 	print("damage received:", amount)
 
 func _ready() -> void:
+	add_to_group("player")
 	print("Global Position: ", global_position)
 	position.x = 10
 	position.y = -500
@@ -40,6 +55,8 @@ func _on_body_entered(body):
 		hide_body()
 	if body.is_in_group("hazard"):
 		take_damage()
+	if body.is_in_group("heal"):
+		heal(1)
 	
 		
 func hide_body(): # Blink 5 times per second
@@ -49,7 +66,7 @@ func hide_body(): # Blink 5 times per second
 	sprite.visible = true
 	position.x = -600
 	position.y = -500
-
+		
 
 func take_damage():
 	if IS_DEAD or is_invincible:

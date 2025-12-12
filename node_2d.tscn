@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=87 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -32,6 +32,7 @@
 [ext_resource type="Script" uid="uid://b47yv7wncgea2" path="res://enemies.gd" id="26_s32dh"]
 [ext_resource type="Texture2D" uid="uid://b8t1p3vtq31p" path="res://clouds/AngryCloud-8.png" id="26_wqmsq"]
 [ext_resource type="Texture2D" uid="uid://dy87jlh28gqpo" path="res://clouds/AngryCloud-9.png" id="27_fkgk1"]
+[ext_resource type="Script" uid="uid://dm0awobaq716y" path="res://feather.gd" id="27_j02gt"]
 [ext_resource type="Texture2D" uid="uid://c0vj0l5kurjd6" path="res://Untitled_Artwork-1 4.png" id="27_t3mf0"]
 [ext_resource type="Texture2D" uid="uid://cd8vl2eoaejt8" path="res://Untitled_Artwork-2 4.png" id="28_kejda"]
 [ext_resource type="Texture2D" uid="uid://sqquem4dop3l" path="res://game-over-card.png" id="29_24dk6"]
@@ -145,6 +146,9 @@ animations = [{
 "name": &"falling",
 "speed": 10.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thyvg"]
+size = Vector2(220, 135)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
 size = Vector2(304, 453)
@@ -353,7 +357,7 @@ position = Vector2(-1021.0002, 346)
 scale = Vector2(1.1884496, 0.9515381)
 texture = ExtResource("7_ornx7")
 
-[node name="Bird" type="CharacterBody2D" parent="Pausable"]
+[node name="Bird" type="CharacterBody2D" parent="Pausable" groups=["player"]]
 position = Vector2(-812, 114)
 script = ExtResource("1_0hol4")
 
@@ -397,6 +401,41 @@ texture = ExtResource("17_t3mf0")
 expand_mode = 3
 
 [node name="Heart3" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("17_t3mf0")
+expand_mode = 3
+
+[node name="Heart4" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("17_t3mf0")
+expand_mode = 3
+
+[node name="Heart5" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("17_t3mf0")
+expand_mode = 3
+
+[node name="Heart6" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("17_t3mf0")
+expand_mode = 3
+
+[node name="Heart7" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("17_t3mf0")
+expand_mode = 3
+
+[node name="Heart8" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("17_t3mf0")
+expand_mode = 3
+
+[node name="Heart9" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("17_t3mf0")
+expand_mode = 3
+
+[node name="Heart10" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
 layout_mode = 2
 texture = ExtResource("17_t3mf0")
 expand_mode = 3
@@ -456,14 +495,20 @@ stream = ExtResource("25_037st")
 [node name="ZeusOutro" type="AudioStreamPlayer2D" parent="Pausable"]
 stream = ExtResource("33_kq1c5")
 
-[node name="FallingFeather" type="AnimatedSprite2D" parent="Pausable"]
-visible = false
-position = Vector2(-1405, 156.99997)
+[node name="Feather" type="Area2D" parent="Pausable"]
+script = ExtResource("27_j02gt")
+
+[node name="FallingFeather" type="AnimatedSprite2D" parent="Pausable/Feather"]
+position = Vector2(-1391, 550)
 scale = Vector2(0.15396003, 0.15396005)
 sprite_frames = SubResource("SpriteFrames_nsnm2")
 animation = &"falling"
 autoplay = "falling"
 frame_progress = 0.26487443
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Feather"]
+position = Vector2(-1400, 558.5)
+shape = SubResource("RectangleShape2D_thyvg")
 
 [node name="ZeusLaugh" type="AudioStreamPlayer2D" parent="Pausable"]
 stream = ExtResource("36_5fipt")
@@ -515,7 +560,7 @@ position = Vector2(713, 818)
 shape = SubResource("RectangleShape2D_2v765")
 
 [node name="ZeusHandAnimation" type="AnimatedSprite2D" parent="Enemies/ZeusHurtBox/ZeusHand"]
-position = Vector2(756, 734)
+position = Vector2(901, 1354)
 scale = Vector2(0.7731059, 0.69334567)
 sprite_frames = SubResource("SpriteFrames_0xo8l")
 animation = &"HandWave"
@@ -539,6 +584,7 @@ frame_progress = 0.3673437
 
 [connection signal="toggled" from="Pausable/UI/Pause_Play" to="." method="_on_pause_play_toggled"]
 [connection signal="pressed" from="Pausable/UI/GameOver" to="." method="_on_game_over_pressed"]
+[connection signal="body_entered" from="Pausable/Feather" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Enemies/Cloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Enemies/ZeusHurtBox" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Enemies/LargeBolt" to="Pausable/Bird" method="_on_body_entered"]
