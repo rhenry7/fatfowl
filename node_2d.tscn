@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=83 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -67,6 +67,10 @@
 [ext_resource type="Texture2D" uid="uid://gogu80h3ad25" path="res://LightningPath/Untitled_Artwork-10.png" id="44_b8fb0"]
 [ext_resource type="Texture2D" uid="uid://b7818yd26oa5g" path="res://LightningPath/Untitled_Artwork-11.png" id="45_ma08v"]
 [ext_resource type="Texture2D" uid="uid://bwg3xoss3ncd5" path="res://LightningPath/Untitled_Artwork-1 4.png" id="46_s32dh"]
+[ext_resource type="Texture2D" uid="uid://bafieualswj0e" path="res://BirdGrab-1.png" id="49_qu7as"]
+[ext_resource type="Texture2D" uid="uid://bdevpd2sa045e" path="res://BirdGrab-2.png" id="50_lyuya"]
+[ext_resource type="Texture2D" uid="uid://p0q6nn4r117x" path="res://BirdGrab-3.png" id="51_5fipt"]
+[ext_resource type="Texture2D" uid="uid://cym402crmco3d" path="res://BirdGrab-4.png" id="52_j02gt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rj586"]
 animations = [{
@@ -179,29 +183,29 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s32dh"]
-size = Vector2(1034, 1489)
+size = Vector2(924, 1358)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2v765"]
 size = Vector2(927, 930)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t3mf0"]
-load_path = "res://.godot/imported/BirdGrab.png-0ff2530e8343b483cb16cfed1734acb2.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0xo8l"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_t3mf0")
+"texture": ExtResource("49_qu7as")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_t3mf0")
+"texture": ExtResource("50_lyuya")
 }, {
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_t3mf0")
+"texture": ExtResource("51_5fipt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_j02gt")
 }],
 "loop": true,
 "name": &"HandGrab",
-"speed": 5.0
+"speed": 18.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -424,6 +428,7 @@ grow_vertical = 2
 texture_normal = ExtResource("29_24dk6")
 
 [node name="Distance" type="RichTextLabel" parent="Pausable/UI"]
+visible = false
 offset_left = 40.0
 offset_top = 45.0
 offset_right = 343.0
@@ -490,7 +495,7 @@ collision_mask = 2
 script = ExtResource("39_037st")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/ZeusHurtBox"]
-position = Vector2(561, -145.5)
+position = Vector2(616, -80)
 shape = SubResource("RectangleShape2D_s32dh")
 
 [node name="ZeusHand" type="CharacterBody2D" parent="Enemies/ZeusHurtBox"]
@@ -504,7 +509,7 @@ shape = SubResource("RectangleShape2D_2v765")
 position = Vector2(792, 713)
 scale = Vector2(0.7731059, 0.69334567)
 sprite_frames = SubResource("SpriteFrames_0xo8l")
-animation = &"HandGrab"
+animation = &"HandWave"
 autoplay = "HandWave"
 
 [node name="LargeBolt" type="Area2D" parent="Enemies"]
