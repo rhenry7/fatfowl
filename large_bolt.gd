@@ -1,5 +1,7 @@
 extends Area2D
 
+var max_right := 500;
+
 func deactivate():
 	visible = false
 	set_physics_process(false)
@@ -11,6 +13,7 @@ func deactivate():
 			child.disabled = true
 
 func activate():
+	max_right = 500
 	visible = true
 	set_physics_process(true)
 	set_process(true)
@@ -19,6 +22,8 @@ func activate():
 	for child in get_children():
 		if child is CollisionShape2D:
 			child.disabled = false
+
+
 
 func _ready() -> void:
 	add_to_group("hazard")
@@ -30,21 +35,19 @@ func _on_hit(body: Node2D) -> void:
 		body.take_damage()
 
 func respawn() -> void:
-
 	modulate.a = 0.0
 	while true:
+		await get_tree().create_timer(5, false, true).timeout
 		var intro = get_tree().current_scene.get_node("Pausable/Thunder")
 		intro.play()
-		await get_tree().create_timer(5, false, true).timeout
-		
-		
+		if position.x < -2000:
+			max_right = 500
+		position.x = max_right
+		max_right -= 800
 		if not get_tree().paused:
-			
-			# Slide hand into frame
-			position.x = randf_range(-1000, 400)
 			var tween = create_tween()
-			tween.tween_property(self, "modulate:a", 0, 1).from(2.0)
-			await get_tree().create_timer(3, false, true).timeout
+			tween.tween_property(self, "modulate:a", 0, 1).from(1.0)
+			await get_tree().create_timer(1, false, true).timeout
 	
 			#var final_pos: Vector2 = Vector2(randf_range(-1500, 400), -200)
 			#tween.tween_property(bolt, "position", final_pos, 4.0)
@@ -57,6 +60,7 @@ func respawn() -> void:
 			# Slide hand out of frame
  			#tween.tween_property(self, "modulate:a", 0.1, 5.0).from(1.0)
 			var tween_out = create_tween()
-			tween_out.tween_property(self, "modulate:a", 1, 0).from(3.0)
+			tween_out.tween_property(self, "modulate:a", 1, 0).from(1.0)
 			# Wait for exit animation to finish
 			await tween_out.finished
+			print(max_right)

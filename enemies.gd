@@ -1,7 +1,7 @@
 extends Node
 @onready var enemies = [
-	$Cloud,
 	$LargeBolt,
+	$Cloud,
 	$ZeusHurtBox,
 ]
 var current_enemy_index := 0
