@@ -47,4 +47,4 @@ func _on_hit(body: Node2D) -> void:
 func speed_increase_loop() -> void:
 	while true:
 		await get_tree().create_timer(10, false, true).timeout
-		speed += 50
+		speed += 250
