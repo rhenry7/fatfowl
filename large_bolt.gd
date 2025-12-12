@@ -23,8 +23,6 @@ func activate():
 		if child is CollisionShape2D:
 			child.disabled = false
 
-
-
 func _ready() -> void:
 	add_to_group("hazard")
 	connect("body_entered", Callable(self, "_on_hit"))
@@ -37,13 +35,13 @@ func _on_hit(body: Node2D) -> void:
 func respawn() -> void:
 	modulate.a = 0.0
 	while true:
+		var thunder = get_tree().current_scene.get_node("Pausable/Thunder")
+		thunder.play()
 		await get_tree().create_timer(5, false, true).timeout
-		var intro = get_tree().current_scene.get_node("Pausable/Thunder")
-		intro.play()
 		if position.x < -2000:
 			max_right = 500
 		position.x = max_right
-		max_right -= 800
+		max_right -= 1000
 		if not get_tree().paused:
 			var tween = create_tween()
 			tween.tween_property(self, "modulate:a", 0, 1).from(1.0)
