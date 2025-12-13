@@ -1,18 +1,20 @@
 extends Node
 @onready var enemies = [
-	#$SadCloud,
-	#$HappyCloud,
-	#$Cloud,
-	$ZeusHurtBox,
-	$LargeBolt,
+	$SadCloud,
+	$HappyCloud,
+	$Cloud,
 ]
 var current_enemy_index := 0
-var display_duration := 15.0   # seconds per enemy
+var display_duration := 30.0   # seconds per enemy
 var enemy_buffer := 3
-var initial_delay := 12.0
+var initial_delay := .0
 
 func _ready():
-	await get_tree().create_timer(initial_delay).timeout
+	print(get_path())
+	# Enemies are already disabled in editor, so their _ready() won't run
+	# Wait before starting the cycle
+	await get_tree().create_timer(5).timeout
+	# start the cycle
 	cycle_enemies()
 	
 func cycle_enemies() -> void:

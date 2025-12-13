@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed := 500.0
+@export var speed := 300.0
 @export var right_spawn_x := 200.0
 @export var top_y := 200.0
 @export var bottom_y := 1000.0
@@ -49,4 +49,4 @@ func _on_hit(body: Node2D) -> void:
 func speed_increase_loop() -> void:
 	while true:
 		await get_tree().create_timer(5, false, true).timeout
-		speed += 250
+		speed += 50

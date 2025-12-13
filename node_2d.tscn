@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=108 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dq02cbpibmmb5" path="res://birdfly-2.png" id="5_7vxoj"]
 [ext_resource type="Texture2D" uid="uid://c14da2ailb05r" path="res://background/soft-purple-cloud.png" id="5_mryly"]
 [ext_resource type="Texture2D" uid="uid://dofppk7ddi2uk" path="res://zeus-2.png" id="6_2u7jv"]
-[ext_resource type="Script" uid="uid://ba00vydfpvodi" path="res://area_2d.gd" id="6_4d7sh"]
+[ext_resource type="Script" uid="uid://ba00vydfpvodi" path="res://cloud_enemies.gd" id="6_4d7sh"]
 [ext_resource type="Texture2D" uid="uid://bleoad3w7u5tt" path="res://Illustration_sans_titre-2 2.png" id="6_ei405"]
 [ext_resource type="Script" uid="uid://4ygro8r40664" path="res://visible_on_screen_notifier_2d.gd" id="6_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://dpg2a7scy3qqx" path="res://background/softer-purple-cloud.png" id="6_kq1c5"]
@@ -65,15 +65,36 @@
 [ext_resource type="Texture2D" uid="uid://gu1u8c37bpsl" path="res://Hand-1.png" id="40_xjt7e"]
 [ext_resource type="Texture2D" uid="uid://bvxrwupavfdxw" path="res://LightningPath/Untitled_Artwork-8 2.png" id="41_kfelt"]
 [ext_resource type="Script" uid="uid://xadxndgnm5tw" path="res://large_bolt.gd" id="42_2v765"]
+[ext_resource type="Texture2D" uid="uid://bmcww7mxrinqr" path="res://enemies/happycloud/happy_thunder-1 6.png" id="42_thyvg"]
 [ext_resource type="Texture2D" uid="uid://c57kgg116sst5" path="res://LightningPath/Untitled_Artwork-7 2.png" id="42_ytlpd"]
 [ext_resource type="Texture2D" uid="uid://dr2t1unsiyhml" path="res://LightningPath/Untitled_Artwork-9 2.png" id="43_2v765"]
+[ext_resource type="Texture2D" uid="uid://k4jms15hw4jt" path="res://enemies/happycloud/happy_thunder-2 5.png" id="43_nsnm2"]
 [ext_resource type="Texture2D" uid="uid://gogu80h3ad25" path="res://LightningPath/Untitled_Artwork-10.png" id="44_b8fb0"]
+[ext_resource type="Texture2D" uid="uid://bvyj1sxj8qaab" path="res://enemies/happycloud/happy_thunder-3 5.png" id="44_f8kvm"]
+[ext_resource type="Texture2D" uid="uid://tfuqegekcjgp" path="res://enemies/happycloud/happy_thunder-4 5.png" id="45_3hhlv"]
 [ext_resource type="Texture2D" uid="uid://b7818yd26oa5g" path="res://LightningPath/Untitled_Artwork-11.png" id="45_ma08v"]
+[ext_resource type="Texture2D" uid="uid://cmowkrdk52l4" path="res://enemies/happycloud/happy_thunder-5 4.png" id="46_d88dk"]
 [ext_resource type="Texture2D" uid="uid://bwg3xoss3ncd5" path="res://LightningPath/Untitled_Artwork-1 4.png" id="46_s32dh"]
+[ext_resource type="Texture2D" uid="uid://2xjnnb2tibf1" path="res://enemies/happycloud/happy_thunder-6 3.png" id="47_122lf"]
+[ext_resource type="Texture2D" uid="uid://cf2mfosywro2v" path="res://enemies/happycloud/happy_thunder-7 3.png" id="48_r3ryn"]
+[ext_resource type="Texture2D" uid="uid://du3k5dxbh0ql2" path="res://enemies/happycloud/happy_thunder-8 3.png" id="49_7ct8v"]
 [ext_resource type="Texture2D" uid="uid://bafieualswj0e" path="res://BirdGrab-1.png" id="49_qu7as"]
 [ext_resource type="Texture2D" uid="uid://bdevpd2sa045e" path="res://BirdGrab-2.png" id="50_lyuya"]
+[ext_resource type="Texture2D" uid="uid://fa5rdwqw35s5" path="res://enemies/happycloud/happy_thunder-9 3.png" id="50_sg3tl"]
+[ext_resource type="Texture2D" uid="uid://pgqv6mpr0iuu" path="res://enemies/happycloud/happy_thunder-10.png" id="51_0fsb4"]
 [ext_resource type="Texture2D" uid="uid://p0q6nn4r117x" path="res://BirdGrab-3.png" id="51_5fipt"]
 [ext_resource type="Texture2D" uid="uid://cym402crmco3d" path="res://BirdGrab-4.png" id="52_j02gt"]
+[ext_resource type="Texture2D" uid="uid://b5p42h5tedng3" path="res://enemies/sadcloud/Background.png" id="61_n63ng"]
+[ext_resource type="Texture2D" uid="uid://du5q5o7no3o4p" path="res://enemies/sadcloud/sad_thunder-2 5.png" id="62_wnn4a"]
+[ext_resource type="Texture2D" uid="uid://fx4s882hsbdk" path="res://enemies/sadcloud/sad_thunder-3 5.png" id="63_1aygh"]
+[ext_resource type="Texture2D" uid="uid://b2ty4gnh7dqoa" path="res://enemies/sadcloud/sad_thunder-4 5.png" id="64_td2a2"]
+[ext_resource type="Texture2D" uid="uid://4jpt4te3vrek" path="res://enemies/sadcloud/sad_thunder-5 4.png" id="65_c6xte"]
+[ext_resource type="Texture2D" uid="uid://cd85xmmmgjnq6" path="res://enemies/sadcloud/sad_thunder-6 3.png" id="66_inwkr"]
+[ext_resource type="Texture2D" uid="uid://d3k6gvbxgkmhs" path="res://enemies/sadcloud/sad_thunder-7 3.png" id="67_0dcxc"]
+[ext_resource type="Texture2D" uid="uid://c6weo3fo8hcl4" path="res://enemies/sadcloud/sad_thunder-8 3.png" id="68_j2pq0"]
+[ext_resource type="Texture2D" uid="uid://b1j8f7f44lndw" path="res://enemies/sadcloud/sad_thunder-9 3.png" id="69_r8aua"]
+[ext_resource type="Texture2D" uid="uid://d0jxvnea7f5mr" path="res://enemies/sadcloud/sad_thunder-10.png" id="70_sduiw"]
+[ext_resource type="Script" uid="uid://cbruw0twcmkfo" path="res://enemies_cloud.gd" id="95_wnn4a"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rj586"]
 animations = [{
@@ -157,6 +178,41 @@ size = Vector2(304, 453)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("42_thyvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_nsnm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_f8kvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_3hhlv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_d88dk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_122lf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_r3ryn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_7ct8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_sg3tl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_0fsb4")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("19_ma08v")
 }, {
 "duration": 1.0,
@@ -184,7 +240,42 @@ animations = [{
 "texture": ExtResource("27_fkgk1")
 }],
 "loop": true,
-"name": &"shock",
+"name": &"mean",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("61_n63ng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_wnn4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_1aygh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_td2a2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_c6xte")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_inwkr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_0dcxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_j2pq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_r8aua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_sduiw")
+}],
+"loop": true,
+"name": &"sad",
 "speed": 12.0
 }]
 
@@ -391,11 +482,13 @@ offset_bottom = 302.0
 alignment = 1
 
 [node name="Heart1" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+visible = false
 layout_mode = 2
 texture = ExtResource("17_t3mf0")
 expand_mode = 3
 
 [node name="Heart2" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+visible = false
 layout_mode = 2
 texture = ExtResource("17_t3mf0")
 expand_mode = 3
@@ -530,8 +623,13 @@ script = ExtResource("26_s32dh")
 
 [node name="Cloud" type="Area2D" parent="Enemies"]
 process_mode = 4
+visible = false
 position = Vector2(568, 704)
 script = ExtResource("6_4d7sh")
+speed = null
+right_spawn_x = null
+top_y = null
+bottom_y = null
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Enemies/Cloud"]
 position = Vector2(380, -789)
@@ -542,15 +640,68 @@ script = ExtResource("6_ir8iy")
 position = Vector2(1255, -828)
 shape = SubResource("RectangleShape2D_4d7sh")
 
-[node name="Cloud2D" type="AnimatedSprite2D" parent="Enemies/Cloud"]
+[node name="MeanCloud" type="AnimatedSprite2D" parent="Enemies/Cloud"]
 position = Vector2(1307, -850)
 scale = Vector2(0.38551843, 0.36438224)
 sprite_frames = SubResource("SpriteFrames_4d7sh")
-animation = &"shock"
-autoplay = "shock"
+animation = &"mean"
+autoplay = "mean"
+
+[node name="SadCloud" type="Area2D" parent="Enemies"]
+process_mode = 4
+visible = false
+position = Vector2(568, 704)
+script = ExtResource("6_4d7sh")
+speed = null
+right_spawn_x = null
+top_y = null
+bottom_y = null
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Enemies/SadCloud"]
+position = Vector2(380, -789)
+rect = Rect2(672, -410, 405, 650)
+script = ExtResource("6_ir8iy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/SadCloud"]
+position = Vector2(1255, -828)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="SadCloud" type="AnimatedSprite2D" parent="Enemies/SadCloud"]
+position = Vector2(1307, -850)
+scale = Vector2(0.38551843, 0.36438224)
+sprite_frames = SubResource("SpriteFrames_4d7sh")
+animation = &"sad"
+autoplay = "sad"
+
+[node name="HappyCloud" type="Area2D" parent="Enemies"]
+process_mode = 4
+visible = false
+position = Vector2(568, 704)
+script = ExtResource("6_4d7sh")
+speed = null
+right_spawn_x = null
+top_y = null
+bottom_y = null
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Enemies/HappyCloud"]
+position = Vector2(380, -789)
+rect = Rect2(672, -410, 405, 650)
+script = ExtResource("6_ir8iy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/HappyCloud"]
+position = Vector2(1255, -828)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="HappyCloud" type="AnimatedSprite2D" parent="Enemies/HappyCloud"]
+position = Vector2(1307, -850)
+scale = Vector2(0.38551843, 0.36438224)
+sprite_frames = SubResource("SpriteFrames_4d7sh")
+animation = &"happy"
+autoplay = "happy"
 
 [node name="ZeusHurtBox" type="Area2D" parent="Enemies"]
 process_mode = 4
+visible = false
 position = Vector2(58, 995)
 collision_layer = 2
 collision_mask = 2
@@ -576,6 +727,7 @@ autoplay = "HandWave"
 
 [node name="LargeBolt" type="Area2D" parent="Enemies"]
 process_mode = 4
+visible = false
 position = Vector2(-142, -6)
 script = ExtResource("42_2v765")
 
@@ -590,9 +742,140 @@ sprite_frames = SubResource("SpriteFrames_kfelt")
 autoplay = "default"
 frame_progress = 0.3673437
 
+[node name="CloudEnemies" type="Node2D" parent="."]
+script = ExtResource("95_wnn4a")
+
+[node name="Cloud" type="Area2D" parent="CloudEnemies"]
+process_mode = 4
+visible = false
+position = Vector2(568, 704)
+script = ExtResource("6_4d7sh")
+speed = null
+right_spawn_x = null
+top_y = null
+bottom_y = null
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="CloudEnemies/Cloud"]
+position = Vector2(380, -789)
+rect = Rect2(672, -410, 405, 650)
+script = ExtResource("6_ir8iy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudEnemies/Cloud"]
+position = Vector2(1255, -828)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="MeanCloud" type="AnimatedSprite2D" parent="CloudEnemies/Cloud"]
+position = Vector2(1307, -850)
+scale = Vector2(0.38551843, 0.36438224)
+sprite_frames = SubResource("SpriteFrames_4d7sh")
+animation = &"mean"
+autoplay = "mean"
+
+[node name="SadCloud" type="Area2D" parent="CloudEnemies"]
+process_mode = 4
+visible = false
+position = Vector2(568, 704)
+script = ExtResource("6_4d7sh")
+speed = null
+right_spawn_x = null
+top_y = null
+bottom_y = null
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="CloudEnemies/SadCloud"]
+position = Vector2(380, -789)
+rect = Rect2(672, -410, 405, 650)
+script = ExtResource("6_ir8iy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudEnemies/SadCloud"]
+position = Vector2(1255, -828)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="SadCloud" type="AnimatedSprite2D" parent="CloudEnemies/SadCloud"]
+position = Vector2(1307, -850)
+scale = Vector2(0.38551843, 0.36438224)
+sprite_frames = SubResource("SpriteFrames_4d7sh")
+animation = &"sad"
+autoplay = "sad"
+
+[node name="HappyCloud" type="Area2D" parent="CloudEnemies"]
+process_mode = 4
+visible = false
+position = Vector2(568, 704)
+script = ExtResource("6_4d7sh")
+speed = null
+right_spawn_x = null
+top_y = null
+bottom_y = null
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="CloudEnemies/HappyCloud"]
+position = Vector2(380, -789)
+rect = Rect2(672, -410, 405, 650)
+script = ExtResource("6_ir8iy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudEnemies/HappyCloud"]
+position = Vector2(1255, -828)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="HappyCloud" type="AnimatedSprite2D" parent="CloudEnemies/HappyCloud"]
+position = Vector2(1307, -850)
+scale = Vector2(0.38551843, 0.36438224)
+sprite_frames = SubResource("SpriteFrames_4d7sh")
+animation = &"happy"
+autoplay = "happy"
+
+[node name="ZeusHurtBox" type="Area2D" parent="CloudEnemies"]
+process_mode = 4
+visible = false
+position = Vector2(58, 995)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("39_037st")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudEnemies/ZeusHurtBox"]
+position = Vector2(695.5, -231.5)
+shape = SubResource("RectangleShape2D_s32dh")
+
+[node name="ZeusHand" type="CharacterBody2D" parent="CloudEnemies/ZeusHurtBox"]
+position = Vector2(-58, -995)
+
+[node name="ZeusHandHurtBox" type="CollisionShape2D" parent="CloudEnemies/ZeusHurtBox/ZeusHand"]
+position = Vector2(713, 818)
+shape = SubResource("RectangleShape2D_2v765")
+
+[node name="ZeusHandAnimation" type="AnimatedSprite2D" parent="CloudEnemies/ZeusHurtBox/ZeusHand"]
+position = Vector2(724.00006, 988)
+scale = Vector2(0.7934134, 0.69866747)
+sprite_frames = SubResource("SpriteFrames_0xo8l")
+animation = &"HandWave"
+autoplay = "HandWave"
+
+[node name="LargeBolt" type="Area2D" parent="CloudEnemies"]
+process_mode = 4
+visible = false
+position = Vector2(-142, -6)
+script = ExtResource("42_2v765")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudEnemies/LargeBolt"]
+position = Vector2(711.5, 199)
+shape = SubResource("RectangleShape2D_ma08v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CloudEnemies/LargeBolt"]
+position = Vector2(715.5, 454)
+scale = Vector2(0.1645507, 2.0163572)
+sprite_frames = SubResource("SpriteFrames_kfelt")
+autoplay = "default"
+frame_progress = 0.3673437
+
 [connection signal="toggled" from="Pausable/UI/Pause_Play" to="." method="_on_pause_play_toggled"]
 [connection signal="pressed" from="Pausable/UI/GameOver" to="." method="_on_game_over_pressed"]
 [connection signal="body_entered" from="Pausable/Feather" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Enemies/Cloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Enemies/SadCloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Enemies/HappyCloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Enemies/ZeusHurtBox" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Enemies/LargeBolt" to="Pausable/Bird" method="_on_body_entered"]
+[connection signal="body_entered" from="CloudEnemies/Cloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="CloudEnemies/SadCloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="CloudEnemies/HappyCloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="CloudEnemies/ZeusHurtBox" to="Pausable/Bird" method="_on_body_entered"]
+[connection signal="body_entered" from="CloudEnemies/LargeBolt" to="Pausable/Bird" method="_on_body_entered"]
