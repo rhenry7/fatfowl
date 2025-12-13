@@ -391,13 +391,11 @@ offset_bottom = 302.0
 alignment = 1
 
 [node name="Heart1" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
-visible = false
 layout_mode = 2
 texture = ExtResource("17_t3mf0")
 expand_mode = 3
 
 [node name="Heart2" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
-visible = false
 layout_mode = 2
 texture = ExtResource("17_t3mf0")
 expand_mode = 3

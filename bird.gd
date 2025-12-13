@@ -6,7 +6,7 @@ const SPEED = 10.0
 const TOP_Y = -850
 const BOTTOM_Y = 1500 
 const MAX_HEARTS := 5   
-var HEARTS := 0
+var HEARTS := 3
 var IS_DEAD := false
 var is_invincible := false
 var invincibility_duration := 3.0 
@@ -131,13 +131,5 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_pressed("fly-left"):
 		velocity.x = -FLAP_STRENGTH_X
 		sprite.play("fly")
-		
-		
-	## Get the input direction and handle the movement/deceleration.
-	## As good practice, you should replace UI actions with custom gameplay actions.
-	#var direction := Input.get_axis("ui_left", "ui_right")
-	#if direction:
-		#velocity.x = direction * SPEED 
-	#else:
-		#velocity.x = move_toward(velocity.x, 0, SPEED)
+
 	move_and_slide()
