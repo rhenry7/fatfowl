@@ -626,10 +626,6 @@ process_mode = 4
 visible = false
 position = Vector2(568, 704)
 script = ExtResource("6_4d7sh")
-speed = null
-right_spawn_x = null
-top_y = null
-bottom_y = null
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Enemies/Cloud"]
 position = Vector2(380, -789)
@@ -652,10 +648,6 @@ process_mode = 4
 visible = false
 position = Vector2(568, 704)
 script = ExtResource("6_4d7sh")
-speed = null
-right_spawn_x = null
-top_y = null
-bottom_y = null
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Enemies/SadCloud"]
 position = Vector2(380, -789)
@@ -678,10 +670,6 @@ process_mode = 4
 visible = false
 position = Vector2(568, 704)
 script = ExtResource("6_4d7sh")
-speed = null
-right_spawn_x = null
-top_y = null
-bottom_y = null
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Enemies/HappyCloud"]
 position = Vector2(380, -789)
@@ -750,10 +738,6 @@ process_mode = 4
 visible = false
 position = Vector2(568, 704)
 script = ExtResource("6_4d7sh")
-speed = null
-right_spawn_x = null
-top_y = null
-bottom_y = null
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="CloudEnemies/Cloud"]
 position = Vector2(380, -789)
@@ -776,10 +760,6 @@ process_mode = 4
 visible = false
 position = Vector2(568, 704)
 script = ExtResource("6_4d7sh")
-speed = null
-right_spawn_x = null
-top_y = null
-bottom_y = null
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="CloudEnemies/SadCloud"]
 position = Vector2(380, -789)
@@ -802,10 +782,6 @@ process_mode = 4
 visible = false
 position = Vector2(568, 704)
 script = ExtResource("6_4d7sh")
-speed = null
-right_spawn_x = null
-top_y = null
-bottom_y = null
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="CloudEnemies/HappyCloud"]
 position = Vector2(380, -789)

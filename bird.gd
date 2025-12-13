@@ -5,7 +5,7 @@ const FLAP_STRENGTH_X = 400.0
 const SPEED = 10.0 
 const TOP_Y = -850
 const BOTTOM_Y = 1500 
-const MAX_HEARTS := 3   
+const MAX_HEARTS := 5   
 var HEARTS := 0
 var IS_DEAD := false
 var is_invincible := false
@@ -16,7 +16,7 @@ var invincibility_duration := 3.0
 @onready var game_over_card := get_tree().current_scene.get_node("Pausable/UI/GameOver")
 
 func remove_heart():
-	if HEARTS <= 0:
+	if HEARTS <= 0 or is_invincible:
 		return
 	HEARTS -= 1
 	var heart_to_hide = hearts_container.get_child(HEARTS)
@@ -69,9 +69,9 @@ func take_damage():
 		return  # Ignore damage if dead or invincible
 	
 	# Start invincibility period
+	remove_heart()
 	is_invincible = true
 	start_invincibility_visual()
-	remove_heart()
 	
 	print("Player took damage! Hearts left:", HEARTS)
 	sprite.play("shocked")
@@ -80,7 +80,7 @@ func take_damage():
 		die()
 	else:
 		# End invincibility after duration
-		await get_tree().create_timer(invincibility_duration).timeout
+		await get_tree().create_timer(5).timeout
 		is_invincible = false
 
 # Visual feedback during invincibility
