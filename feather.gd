@@ -31,8 +31,6 @@ func _process(delta: float) -> void:
 		respawn()
 
 func respawn() -> void:
-	collision.disabled = false;
-	animated_sprite.visible = true
 	await get_tree().create_timer(3).timeout
 	# Reset feather to top of screen
 	position.y = -1700
@@ -41,13 +39,11 @@ func respawn() -> void:
 
 func _on_body_entered(body):
 	# Check if the object that collided is the player
+	# call_deferred(collision).disabled = true
 	if body.is_in_group("player"):
 		# Check if player has a heal method
 		if body.has_method("heal"):
 			# Give player 1 heart (change to health_amount if you want to use the export variable)
 			body.heal(1)
-			collision.disabled = true
-			animated_sprite.visible = false
-		
 		# Respawn feather at top immediately after collection
 		respawn()
