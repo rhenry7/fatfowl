@@ -9,7 +9,7 @@ const MAX_HEARTS := 5
 var HEARTS := 0
 var IS_DEAD := false
 var is_invincible := false
-var invincibility_duration := 3.0  # 1 second of invincibility
+var invincibility_duration := 3.0 
 
 @onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
 @onready var hearts_container := get_tree().current_scene.get_node("Pausable/UI/HeartsContainer")
@@ -39,10 +39,6 @@ func heal(amount: int):
 		add_heart()
 	print("Healed! Current health: ", HEARTS, "/", MAX_HEARTS)
 
-func on_damage(amount):
-	#Effects.flash_opacity(sprite)
-	print("damage received:", amount)
-
 func _ready() -> void:
 	add_to_group("player")
 	print("Global Position: ", global_position)
@@ -60,7 +56,6 @@ func _on_body_entered(body):
 	if body.is_in_group("heal"):
 		heal(1)
 	
-		
 func hide_body(): # Blink 5 times per second
 	print("hide body function")
 	sprite.visible = false
@@ -69,7 +64,6 @@ func hide_body(): # Blink 5 times per second
 	position.x = -600
 	position.y = -2000
 		
-
 func take_damage():
 	if IS_DEAD:
 		return  # Ignore damage if dead or invincible
