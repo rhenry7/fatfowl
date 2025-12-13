@@ -31,11 +31,11 @@ func _process(delta: float) -> void:
 		respawn()
 
 func respawn() -> void:
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(2).timeout
 	# Reset feather to top of screen
 	position.y = -1700
 	# Randomize horizontal position for variety
-	position.x = randf_range(800, 2500)
+	position.x = randf_range(400, 2500)
 
 func _on_body_entered(body):
 	# Check if the object that collided is the player
