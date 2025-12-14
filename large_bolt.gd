@@ -26,6 +26,7 @@ func activate():
 	process_mode = Node.PROCESS_MODE_INHERIT
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_DISABLED
 	add_to_group("hazard")
 	connect("body_entered", Callable(self, "_on_hit"))
 	respawn()

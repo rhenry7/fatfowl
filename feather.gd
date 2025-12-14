@@ -23,12 +23,13 @@ func _ready():
 func _process(delta: float) -> void:
 	# Move feather downward each frame
 	position.y += fall_speed * delta
-	
 	# Check if feather has fallen past the bottom of the screen
 	if position.y > bottom_limit:
 		respawn()
 
 func respawn() -> void:
+	await get_tree().create_timer(20).timeout
+	animated_sprite.visible = true
 	# Reset feather to top of screen
 	position.y = -2000
 	position.x = randf_range(400, 2500)
@@ -43,4 +44,5 @@ func _on_body_entered(body):
 			# Give player 1 heart (change to health_amount if you want to use the export variable)
 			body.heal(1)
 			get_tree().current_scene.get_node("Pausable/Bloop").play()
+			animated_sprite.visible = false
 		# Respawn feather at top immediately after collection

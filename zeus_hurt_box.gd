@@ -30,12 +30,13 @@ func _process(delta: float) -> void:
 	pass
 
 func _ready():  
+	process_mode = Node.PROCESS_MODE_DISABLED
 	position.x = 500
 	position.y = 2000
-	respawn()
 	add_to_group("hazard")
 	add_to_group("ZeusHand")
 	connect("body_entered", Callable(self, "_on_hit"))
+	respawn()
 
 func _on_hit(body: Node2D) -> void:
 	if body.name == "Bird":
@@ -62,11 +63,10 @@ func respawn() -> void:
 		# Wait 15 seconds before starting
 		#await get_tree().create_timer(0, false, true).timeout
 		if not get_tree().paused:
-			set_collision_layer_value(1, true);
 			# Slide hand into frame
 			var final_pos: Vector2 = Vector2(randf_range(-2000, 500), 350)
 			var tween = create_tween()
-			tween.tween_property(hand, "position", final_pos, 5.0)
+			tween.tween_property(hand, "position", final_pos, 10.0)
 			#
 			## Wait for tween to finish
 			await tween.finished

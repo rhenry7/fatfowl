@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var speed := 150.0
+@export var speed := 550.0
 @export var spawn_margin := 100.0
 @export var right_spawn_offset := 200.0
 @export var top_y := -2200.0

@@ -228,7 +228,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thyvg"]
-size = Vector2(220, 135)
+size = Vector2(203, 116)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
 size = Vector2(304, 453)
@@ -547,19 +547,16 @@ offset_bottom = 302.0
 alignment = 1
 
 [node name="Heart1" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
-visible = false
 layout_mode = 2
 texture = ExtResource("17_t3mf0")
 expand_mode = 3
 
 [node name="Heart2" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
-visible = false
 layout_mode = 2
 texture = ExtResource("17_t3mf0")
 expand_mode = 3
 
 [node name="Heart3" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
-visible = false
 layout_mode = 2
 texture = ExtResource("17_t3mf0")
 expand_mode = 3
@@ -655,7 +652,7 @@ script = ExtResource("29_sduiw")
 script = ExtResource("27_j02gt")
 
 [node name="FallingFeather" type="AnimatedSprite2D" parent="Pausable/Feather"]
-position = Vector2(-1391, 550)
+position = Vector2(-1390, 559)
 scale = Vector2(0.15396003, 0.15396005)
 sprite_frames = SubResource("SpriteFrames_nsnm2")
 animation = &"falling"
@@ -663,7 +660,7 @@ autoplay = "falling"
 frame_progress = 0.26487443
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Feather"]
-position = Vector2(-1400, 558.5)
+position = Vector2(-1399, 582)
 shape = SubResource("RectangleShape2D_thyvg")
 
 [node name="Music" type="AudioStreamPlayer2D" parent="Pausable"]
