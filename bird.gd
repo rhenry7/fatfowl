@@ -116,7 +116,11 @@ func die():
 	print("GAME OVER")
 	if IS_DEAD:
 		get_tree().current_scene.get_node("Pausable/Bird").process_mode = Node.PROCESS_MODE_DISABLED
+		var scrollSprite: AnimatedSprite2D = get_tree().current_scene.get_node("Pausable/UI/GameOverScroll")
+		get_tree().current_scene.get_node("Pausable/UI/GameOverScroll").visible = true
 		get_tree().current_scene.get_node("Pausable/UI/GameOver").visible = true
+		await get_tree().create_timer(0.5).timeout
+		scrollSprite.play()
 		var music = get_tree().current_scene.get_node("Pausable/Music")
 		music.stop()
 		await get_tree().create_timer(1).timeout
@@ -130,6 +134,8 @@ func respawn() -> void:
 	position.y = -1350
 
 func _physics_process(delta: float) -> void:
+	if IS_DEAD:
+		return
 	# Add the gravity.
 	velocity.y += GRAVITY * delta
 	velocity.y = clamp(velocity.y, FLAP_STRENGTH, GRAVITY)

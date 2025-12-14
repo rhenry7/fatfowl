@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=118 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -22,20 +22,29 @@
 [ext_resource type="Texture2D" uid="uid://cp7q2476cn87c" path="res://clouds/AngryCloud-1.png" id="19_ma08v"]
 [ext_resource type="Texture2D" uid="uid://clt6rkt7shbvn" path="res://clouds/AngryCloud-2.png" id="20_s32dh"]
 [ext_resource type="Texture2D" uid="uid://o0jujcwlusy3" path="res://clouds/AngryCloud-3.png" id="21_037st"]
+[ext_resource type="Script" uid="uid://t763jfb8brkm" path="res://game_over_button.gd" id="21_ld5wt"]
 [ext_resource type="Texture2D" uid="uid://swxsy2dhp21f" path="res://clouds/AngryCloud-4.png" id="22_6orn5"]
+[ext_resource type="Texture2D" uid="uid://c51bq08yu7lxx" path="res://gameoverscrolls/GAMEOVER-1.png" id="22_r8aua"]
+[ext_resource type="Texture2D" uid="uid://dmic8iiibtpyn" path="res://gameoverscrolls/GAMEOVER-2.png" id="23_sduiw"]
 [ext_resource type="Texture2D" uid="uid://drydettk4u5kc" path="res://clouds/AngryCloud-5.png" id="23_whnp6"]
 [ext_resource type="Texture2D" uid="uid://cvlwnph2bk5pv" path="res://clouds/AngryCloud-6.png" id="24_22e24"]
 [ext_resource type="Texture2D" uid="uid://34racowvu7w8" path="res://play-btn.png" id="24_gt76g"]
+[ext_resource type="Texture2D" uid="uid://bsijxscg8dr6s" path="res://gameoverscrolls/GAMEOVER-3.png" id="24_ld5wt"]
 [ext_resource type="Texture2D" uid="uid://do1b0o07d8yly" path="res://audio/pause-btn.png" id="25_1fr6y"]
 [ext_resource type="AudioStream" uid="uid://bfpwb278uw6nd" path="res://thunder.ogg" id="25_037st"]
 [ext_resource type="Texture2D" uid="uid://b6tbtvrerxu5q" path="res://clouds/AngryCloud-7.png" id="25_m7xe6"]
+[ext_resource type="Texture2D" uid="uid://c86npws5vfhpn" path="res://gameoverscrolls/GAMEOVER-4.png" id="25_wcv2n"]
+[ext_resource type="Texture2D" uid="uid://bgloa2mfu437l" path="res://gameoverscrolls/GAMEOVER-5.png" id="26_b0j31"]
 [ext_resource type="Script" uid="uid://b47yv7wncgea2" path="res://enemies.gd" id="26_s32dh"]
 [ext_resource type="Texture2D" uid="uid://b8t1p3vtq31p" path="res://clouds/AngryCloud-8.png" id="26_wqmsq"]
 [ext_resource type="Texture2D" uid="uid://dy87jlh28gqpo" path="res://clouds/AngryCloud-9.png" id="27_fkgk1"]
 [ext_resource type="Script" uid="uid://dm0awobaq716y" path="res://feather.gd" id="27_j02gt"]
 [ext_resource type="Texture2D" uid="uid://c0vj0l5kurjd6" path="res://Untitled_Artwork-1 4.png" id="27_t3mf0"]
+[ext_resource type="Texture2D" uid="uid://ckvkgj1dairjn" path="res://gameoverscrolls/GAMEOVER-6.png" id="27_xgqcr"]
+[ext_resource type="Texture2D" uid="uid://c105vq25jss5f" path="res://gameoverscrolls/GAMEOVER-7.png" id="28_6jj3b"]
 [ext_resource type="Texture2D" uid="uid://cd8vl2eoaejt8" path="res://Untitled_Artwork-2 4.png" id="28_kejda"]
 [ext_resource type="Texture2D" uid="uid://sqquem4dop3l" path="res://game-over-card.png" id="29_24dk6"]
+[ext_resource type="Script" uid="uid://827l47dwryni" path="res://game_over_scroll.gd" id="29_sduiw"]
 [ext_resource type="Texture2D" uid="uid://burruk55unybg" path="res://Untitled_Artwork-3 4.png" id="29_uqk8q"]
 [ext_resource type="Texture2D" uid="uid://po6x3uugsypu" path="res://Untitled_Artwork-4 4.png" id="30_6uidu"]
 [ext_resource type="AudioStream" uid="uid://cmwicrc4ner01" path="res://audio/bird-beat-2.ogg" id="30_24dk6"]
@@ -132,6 +141,35 @@ radius = 173.97128
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fs4d3"]
 radius = 177.0452
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5mre3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_r8aua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_sduiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ld5wt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_wcv2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_b0j31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_xgqcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_6jj3b")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nsnm2"]
 animations = [{
@@ -568,6 +606,7 @@ offset_bottom = 450.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("29_24dk6")
+script = ExtResource("21_ld5wt")
 
 [node name="Distance" type="RichTextLabel" parent="Pausable/UI"]
 visible = false
@@ -579,7 +618,14 @@ bbcode_enabled = true
 text = "0"
 script = ExtResource("30_ornx7")
 
+[node name="GameOverScroll" type="AnimatedSprite2D" parent="Pausable/UI"]
+visible = false
+position = Vector2(1726, 874)
+sprite_frames = SubResource("SpriteFrames_5mre3")
+script = ExtResource("29_sduiw")
+
 [node name="Music" type="AudioStreamPlayer2D" parent="Pausable"]
+visible = false
 stream = ExtResource("30_24dk6")
 volume_db = -6.304
 autoplay = true
