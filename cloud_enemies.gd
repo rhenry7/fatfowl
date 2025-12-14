@@ -17,6 +17,8 @@ func deactivate():
 
 
 func activate():
+	position.x = 500
+	position.y = randf_range(top_y, bottom_y)
 	visible = true
 	set_physics_process(true)
 	set_process(true)
@@ -48,4 +50,4 @@ func _on_hit(body: Node2D) -> void:
 func speed_increase_loop() -> void:
 	while true:
 		await get_tree().create_timer(5.0, false, true).timeout
-		speed += 500
+		speed += 100

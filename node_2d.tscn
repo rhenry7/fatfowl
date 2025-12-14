@@ -1,4 +1,4 @@
-[gd_scene load_steps=121 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=131 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -85,14 +85,24 @@
 [ext_resource type="Texture2D" uid="uid://cmowkrdk52l4" path="res://enemies/happycloud/happy_thunder-5 4.png" id="46_d88dk"]
 [ext_resource type="Texture2D" uid="uid://bwg3xoss3ncd5" path="res://LightningPath/Untitled_Artwork-1 4.png" id="46_s32dh"]
 [ext_resource type="Texture2D" uid="uid://2xjnnb2tibf1" path="res://enemies/happycloud/happy_thunder-6 3.png" id="47_122lf"]
+[ext_resource type="AudioStream" uid="uid://mjclw1xun8ur" path="res://audio/zeus/zeus_rant_1.ogg" id="48_bxemi"]
 [ext_resource type="Texture2D" uid="uid://cf2mfosywro2v" path="res://enemies/happycloud/happy_thunder-7 3.png" id="48_r3ryn"]
 [ext_resource type="Texture2D" uid="uid://du3k5dxbh0ql2" path="res://enemies/happycloud/happy_thunder-8 3.png" id="49_7ct8v"]
+[ext_resource type="AudioStream" uid="uid://bnchmbuo6rkhd" path="res://audio/zeus/zeus_rant_2.ogg" id="49_qoxh5"]
 [ext_resource type="Texture2D" uid="uid://bafieualswj0e" path="res://BirdGrab-1.png" id="49_qu7as"]
+[ext_resource type="AudioStream" uid="uid://b8w05j4qevf0b" path="res://audio/zeus/zeus_rant_3.ogg" id="50_d8e56"]
 [ext_resource type="Texture2D" uid="uid://bdevpd2sa045e" path="res://BirdGrab-2.png" id="50_lyuya"]
 [ext_resource type="Texture2D" uid="uid://fa5rdwqw35s5" path="res://enemies/happycloud/happy_thunder-9 3.png" id="50_sg3tl"]
 [ext_resource type="Texture2D" uid="uid://pgqv6mpr0iuu" path="res://enemies/happycloud/happy_thunder-10.png" id="51_0fsb4"]
 [ext_resource type="Texture2D" uid="uid://p0q6nn4r117x" path="res://BirdGrab-3.png" id="51_5fipt"]
+[ext_resource type="AudioStream" uid="uid://bjax2maov1yb8" path="res://audio/zeus/accept_your_fate.ogg" id="51_jinwr"]
 [ext_resource type="Texture2D" uid="uid://cym402crmco3d" path="res://BirdGrab-4.png" id="52_j02gt"]
+[ext_resource type="AudioStream" uid="uid://q1l7xvq3w2n3" path="res://audio/zeus/fear_the_power.ogg" id="52_qwoqy"]
+[ext_resource type="AudioStream" uid="uid://b2hpvxxxamx2x" path="res://audio/zeus/zeus_annihilation_taunt.ogg" id="53_dkifn"]
+[ext_resource type="AudioStream" uid="uid://dg7f2mqkl855d" path="res://audio/zeus/zeus_demise_taunt.ogg" id="54_oixsq"]
+[ext_resource type="AudioStream" uid="uid://c3xumpaopglkf" path="res://audio/zeus/zeus_grab_taunt.ogg" id="55_uo258"]
+[ext_resource type="AudioStream" uid="uid://dkibprluixr8i" path="res://audio/zeus/game_over.ogg" id="56_d8e56"]
+[ext_resource type="AudioStream" uid="uid://kxusgq0s5ovb" path="res://audio/blooop.ogg" id="56_qoxh5"]
 [ext_resource type="Texture2D" uid="uid://b5p42h5tedng3" path="res://enemies/sadcloud/Background.png" id="61_n63ng"]
 [ext_resource type="Texture2D" uid="uid://du5q5o7no3o4p" path="res://enemies/sadcloud/sad_thunder-2 5.png" id="62_wnn4a"]
 [ext_resource type="Texture2D" uid="uid://fx4s882hsbdk" path="res://enemies/sadcloud/sad_thunder-3 5.png" id="63_1aygh"]
@@ -641,6 +651,21 @@ position = Vector2(1726, 874)
 sprite_frames = SubResource("SpriteFrames_5mre3")
 script = ExtResource("29_sduiw")
 
+[node name="Feather" type="Area2D" parent="Pausable"]
+script = ExtResource("27_j02gt")
+
+[node name="FallingFeather" type="AnimatedSprite2D" parent="Pausable/Feather"]
+position = Vector2(-1391, 550)
+scale = Vector2(0.15396003, 0.15396005)
+sprite_frames = SubResource("SpriteFrames_nsnm2")
+animation = &"falling"
+autoplay = "falling"
+frame_progress = 0.26487443
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Feather"]
+position = Vector2(-1400, 558.5)
+shape = SubResource("RectangleShape2D_thyvg")
+
 [node name="Music" type="AudioStreamPlayer2D" parent="Pausable"]
 visible = false
 stream = ExtResource("30_24dk6")
@@ -659,27 +684,42 @@ stream = ExtResource("25_037st")
 [node name="ZeusOutro" type="AudioStreamPlayer2D" parent="Pausable"]
 stream = ExtResource("33_kq1c5")
 
-[node name="Feather" type="Area2D" parent="Pausable"]
-script = ExtResource("27_j02gt")
-
-[node name="FallingFeather" type="AnimatedSprite2D" parent="Pausable/Feather"]
-position = Vector2(-1391, 550)
-scale = Vector2(0.15396003, 0.15396005)
-sprite_frames = SubResource("SpriteFrames_nsnm2")
-animation = &"falling"
-autoplay = "falling"
-frame_progress = 0.26487443
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Feather"]
-position = Vector2(-1400, 558.5)
-shape = SubResource("RectangleShape2D_thyvg")
-
 [node name="ZeusLaugh" type="AudioStreamPlayer2D" parent="Pausable"]
 stream = ExtResource("36_5fipt")
 volume_db = 6.842
 
 [node name="Strangle" type="AudioStreamPlayer2D" parent="Pausable"]
 stream = ExtResource("37_j02gt")
+
+[node name="ZeusRant1" type="AudioStreamPlayer2D" parent="Pausable"]
+stream = ExtResource("48_bxemi")
+
+[node name="ZeusRant2" type="AudioStreamPlayer2D" parent="Pausable"]
+stream = ExtResource("49_qoxh5")
+
+[node name="ZeusRant3" type="AudioStreamPlayer2D" parent="Pausable"]
+stream = ExtResource("50_d8e56")
+
+[node name="AcceptYourFate" type="AudioStreamPlayer2D" parent="Pausable"]
+stream = ExtResource("51_jinwr")
+
+[node name="FearThePower" type="AudioStreamPlayer2D" parent="Pausable"]
+stream = ExtResource("52_qwoqy")
+
+[node name="Annihilation" type="AudioStreamPlayer2D" parent="Pausable"]
+stream = ExtResource("53_dkifn")
+
+[node name="Demise" type="AudioStreamPlayer2D" parent="Pausable"]
+stream = ExtResource("54_oixsq")
+
+[node name="GrabTaunt" type="AudioStreamPlayer2D" parent="Pausable"]
+stream = ExtResource("55_uo258")
+
+[node name="GameOver" type="AudioStreamPlayer2D" parent="Pausable"]
+stream = ExtResource("56_d8e56")
+
+[node name="Bloop" type="AudioStreamPlayer2D" parent="Pausable"]
+stream = ExtResource("56_qoxh5")
 
 [node name="Enemies" type="Node2D" parent="."]
 script = ExtResource("26_s32dh")

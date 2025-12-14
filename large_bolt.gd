@@ -14,7 +14,7 @@ func deactivate():
 	process_mode = Node.PROCESS_MODE_DISABLED
 
 func activate():
-	max_right = 500
+	position.x = max_right
 	visible = true
 	set_physics_process(true)
 	set_process(true)
@@ -34,6 +34,7 @@ func _on_hit(body: Node2D) -> void:
 	if body.name == "Bird":
 		var zapped = get_tree().current_scene.get_node("Pausable/Zapped")
 		zapped.play()
+		get_tree().current_scene.get_node("Pausable/FearThePower").play()
 		body.take_damage()
 
 func respawn() -> void:

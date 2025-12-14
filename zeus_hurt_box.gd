@@ -15,6 +15,8 @@ func deactivate():
 			child.disabled = true
 
 func activate():
+	position.x = 500
+	position.y = 2000
 	visible = true
 	set_physics_process(true)
 	set_process(true)
@@ -44,6 +46,7 @@ func _on_hit(body: Node2D) -> void:
 		body.hide_body()
 		body.take_damage()
 		sprite.play("HandGrab")	
+		#get_tree().current_scene.get_node("Pausable/GrabTaunt").play()
 			# Stay on screen time
 		await get_tree().create_timer(3, false, true).timeout
 		sprite.play("HandWave")
