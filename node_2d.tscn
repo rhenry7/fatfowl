@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=121 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -328,11 +328,11 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s32dh"]
-size = Vector2(1033, 875)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ld5wt"]
+radius = 508.56317
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2v765"]
-size = Vector2(650, 648)
+[sub_resource type="CircleShape2D" id="CircleShape2D_wcv2n"]
+radius = 404.04083
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0xo8l"]
 animations = [{
@@ -423,6 +423,12 @@ animations = [{
 "name": &"default",
 "speed": 25.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s32dh"]
+size = Vector2(1033, 875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2v765"]
+size = Vector2(569, 581)
 
 [node name="Node2D" type="Node2D"]
 process_mode = 3
@@ -746,7 +752,6 @@ autoplay = "happy"
 
 [node name="ZeusHurtBox" type="Area2D" parent="Enemies"]
 process_mode = 4
-visible = false
 position = Vector2(58, 995)
 collision_layer = 2
 collision_mask = 2
@@ -754,17 +759,18 @@ script = ExtResource("39_037st")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/ZeusHurtBox"]
 position = Vector2(695.5, -231.5)
-shape = SubResource("RectangleShape2D_s32dh")
+rotation = -0.7853982
+shape = SubResource("CircleShape2D_ld5wt")
 
 [node name="ZeusHand" type="CharacterBody2D" parent="Enemies/ZeusHurtBox"]
 position = Vector2(-58, -995)
 
 [node name="ZeusHandHurtBox" type="CollisionShape2D" parent="Enemies/ZeusHurtBox/ZeusHand"]
-position = Vector2(713, 818)
-shape = SubResource("RectangleShape2D_2v765")
+position = Vector2(748, 751)
+shape = SubResource("CircleShape2D_wcv2n")
 
 [node name="ZeusHandAnimation" type="AnimatedSprite2D" parent="Enemies/ZeusHurtBox/ZeusHand"]
-position = Vector2(724.00006, 988)
+position = Vector2(779.00006, 796)
 scale = Vector2(0.7934134, 0.69866747)
 sprite_frames = SubResource("SpriteFrames_0xo8l")
 animation = &"HandWave"
