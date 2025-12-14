@@ -1,9 +1,9 @@
 extends Area2D
 
-@export var speed := 300.0
-@export var right_spawn_x := 200.0
-@export var top_y := 200.0
-@export var bottom_y := 1000.0
+@onready var speed := 3000.0
+@onready var right_spawn_x := 200.0
+@onready var top_y := 200.0
+@onready var bottom_y := 1000.0
 
 func deactivate():
 	visible = false
@@ -20,7 +20,6 @@ func activate():
 	visible = true
 	set_physics_process(true)
 	set_process(true)
-	speed = 1000
 
 	for child in get_children():
 		if child is CollisionShape2D:
@@ -48,5 +47,5 @@ func _on_hit(body: Node2D) -> void:
 		
 func speed_increase_loop() -> void:
 	while true:
-		await get_tree().create_timer(3, false, true).timeout
-		speed += 100
+		await get_tree().create_timer(5.0, false, true).timeout
+		speed += 500

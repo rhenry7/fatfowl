@@ -1,4 +1,5 @@
-extends Sprite2D
+extends AnimatedSprite2D
+@onready var sprite: AnimatedSprite2D = $"."
 
 func introTaunt() -> void:
 	await get_tree().create_timer(5).timeout
@@ -11,7 +12,9 @@ func _ready() -> void:
 	introTaunt()
 	modulate.a = 0.0
 	var tween = create_tween()
-	tween.tween_property(self, "modulate:a", 0.6, 120.0).from(0.0)
+	tween.tween_property(self, "modulate:a", 0.6, 20.0).from(0.0)
+	await get_tree().create_timer(30).timeout
+	sprite.play()
 
 
 
