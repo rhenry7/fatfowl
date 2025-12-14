@@ -11,6 +11,7 @@ func deactivate():
 	for child in get_children():
 		if child is CollisionShape2D:
 			child.disabled = true
+	process_mode = Node.PROCESS_MODE_DISABLED
 
 func activate():
 	max_right = 500
@@ -22,6 +23,7 @@ func activate():
 	for child in get_children():
 		if child is CollisionShape2D:
 			child.disabled = false
+	process_mode = Node.PROCESS_MODE_INHERIT
 
 func _ready() -> void:
 	add_to_group("hazard")

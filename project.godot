@@ -23,6 +23,8 @@ Effects="*res://utilities/Effects.gd"
 
 window/size/viewport_width=4476
 window/size/viewport_height=2048
+window/size/resizable=false
+window/size/borderless=true
 
 [input]
 

@@ -28,7 +28,7 @@ func activate():
 
 func _process(delta: float) -> void:
 	position.x -= speed * delta
-	if position.x < -2500:
+	if position.x < -3500:
 		respawn()
 
 func respawn() -> void:
@@ -48,5 +48,5 @@ func _on_hit(body: Node2D) -> void:
 		
 func speed_increase_loop() -> void:
 	while true:
-		await get_tree().create_timer(5, false, true).timeout
-		speed += 50
+		await get_tree().create_timer(3, false, true).timeout
+		speed += 100

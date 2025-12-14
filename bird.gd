@@ -15,6 +15,25 @@ var invincibility_duration := 3.0
 @onready var hearts_container := get_tree().current_scene.get_node("Pausable/UI/HeartsContainer")
 @onready var game_over_card := get_tree().current_scene.get_node("Pausable/UI/GameOver")
 
+func fall_damage():
+	# fall_damage_sound
+	remove_heart()
+	if IS_DEAD:
+		return  # Ignore damage if dead or invincible
+	
+	# Start invincibility period
+	remove_heart()
+	is_invincible = true
+	respawn()
+	start_invincibility_visual()
+	
+	if HEARTS <= 0:
+		die()
+	else:
+		# End invincibility after duration
+		await get_tree().create_timer(2).timeout
+		is_invincible = false
+
 func remove_heart():
 	if HEARTS <= 0 or is_invincible:
 		return
@@ -120,7 +139,7 @@ func _physics_process(delta: float) -> void:
 	
 	if(position.y > 1000):
 		# take_damage()
-		respawn()
+		fall_damage()
 		
 	if Input.is_action_just_pressed("fly"):
 		velocity.y = FLAP_STRENGTH
