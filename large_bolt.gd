@@ -1,6 +1,19 @@
 extends Area2D
-
 var max_right := 500;
+
+func disable_collision():
+	monitoring = false
+	monitorable = false
+	for child in get_children():
+		if child is CollisionShape2D:
+			child.set_deferred("disabled", true)
+
+func enable_collision():
+	monitoring = true
+	monitorable = true
+	for child in get_children():
+		if child is CollisionShape2D:
+			child.set_deferred("disabled", false)
 
 func deactivate():
 	visible = false
@@ -12,7 +25,8 @@ func deactivate():
 		if child is CollisionShape2D:
 			child.disabled = true
 	process_mode = Node.PROCESS_MODE_DISABLED
-
+	
+	
 func activate():
 	position.x = max_right
 	visible = true
@@ -24,7 +38,6 @@ func activate():
 		if child is CollisionShape2D:
 			child.disabled = false
 	process_mode = Node.PROCESS_MODE_INHERIT
-
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_DISABLED
 	add_to_group("hazard")
@@ -37,34 +50,39 @@ func _on_hit(body: Node2D) -> void:
 		zapped.play()
 		get_tree().current_scene.get_node("Pausable/FearThePower").play()
 		body.take_damage()
-
+		
 func respawn() -> void:
-	modulate.a = 0.0
 	while true:
 		var thunder = get_tree().current_scene.get_node("Pausable/Thunder")
 		thunder.play()
 		await get_tree().create_timer(5, false, true).timeout
+		
+		# Reset to right side if too far left
 		if position.x < -1900:
 			max_right = 500
+		
+		# Always spawn at max_right position
 		position.x = max_right
 		max_right -= 1000
+		
 		if not get_tree().paused:
+			# Fade in - lightning appears
 			var tween = create_tween()
-			tween.tween_property(self, "modulate:a", 0, 1).from(1.0)
+			tween.tween_property(self, "modulate:a", 1.0, 1).from(0.0)
+			await tween.finished
+			
+			# Enable collision when fully visible
+			enable_collision()
+			
+			# Wait while visible and active
 			await get_tree().create_timer(1, false, true).timeout
-	
-			#var final_pos: Vector2 = Vector2(randf_range(-1500, 400), -200)
-			#tween.tween_property(bolt, "position", final_pos, 4.0)
 			
-			# Wait for tween to finish
-			#await tween.finished
-			# Stay on screen for 15 seconds
-			#await get_tree().create_timer(3, false, true).timeout
-			
-			# Slide hand out of frame
- 			#tween.tween_property(self, "modulate:a", 0.1, 5.0).from(1.0)
+			# Fade out - lightning disappears
 			var tween_out = create_tween()
-			tween_out.tween_property(self, "modulate:a", 1, 0).from(1.0)
-			# Wait for exit animation to finish
+			tween_out.tween_property(self, "modulate:a", 0.0, 1).from(1.0)
+			
+			# Disable collision when starting to fade
+			disable_collision()
+			
 			await tween_out.finished
-			print(max_right)
+			print("Lightning at x:", max_right, "- Collision disabled")

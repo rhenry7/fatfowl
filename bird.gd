@@ -9,29 +9,26 @@ const MAX_HEARTS := 3
 var HEARTS := 3
 var IS_DEAD := false
 var is_invincible := false
-var invincibility_duration := 1.0 
+var invincibility_duration := 2.0  # Increased to match usage
 
 @onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
 @onready var hearts_container := get_tree().current_scene.get_node("Pausable/UI/HeartsContainer")
 @onready var game_over_card := get_tree().current_scene.get_node("Pausable/UI/GameOver")
 
 func fall_damage():
-	# fall_damage_sound
-	remove_heart()
-	if IS_DEAD:
+	if IS_DEAD or is_invincible:
 		return  # Ignore damage if dead or invincible
 	
 	# Start invincibility period
-	remove_heart()
+	remove_heart()  # Only call once
 	is_invincible = true
 	respawn()
-	start_invincibility_visual()
+	await start_invincibility_visual()  # Wait for visual to complete
 	
 	if HEARTS <= 0:
 		die()
 	else:
 		# End invincibility after duration
-		await get_tree().create_timer(2).timeout
 		is_invincible = false
 
 func remove_heart():
@@ -47,8 +44,7 @@ func add_heart():
 		return
 	# Get the heart that was previously hidden
 	var heart_to_show = hearts_container.get_child(HEARTS)
-	if heart_to_show.visible == false:
-		heart_to_show.visible = true
+	heart_to_show.visible = true  # Ensure it's visible
 	var c = heart_to_show.modulate
 	heart_to_show.modulate = Color(c.r, c.g, c.b, 1.0)
 	HEARTS += 1
@@ -75,22 +71,23 @@ func _on_body_entered(body):
 	if body.is_in_group("heal"):
 		heal(1)
 	
-func hide_body(): # Blink 5 times per second
+func hide_body():
 	print("hide body function")
 	sprite.visible = false
+	is_invincible = true
 	await get_tree().create_timer(3).timeout
 	sprite.visible = true
+	is_invincible = false
 	position.x = -600
 	position.y = -2000
 		
 func take_damage():
-	if IS_DEAD:
+	if IS_DEAD or is_invincible:
 		return  # Ignore damage if dead or invincible
 	
 	# Start invincibility period
 	remove_heart()
 	is_invincible = true
-	start_invincibility_visual()
 	
 	print("Player took damage! Hearts left:", HEARTS)
 	sprite.play("shocked")
@@ -98,37 +95,40 @@ func take_damage():
 	if HEARTS <= 0:
 		die()
 	else:
-		# End invincibility after duration
-		await get_tree().create_timer(5).timeout
+		# Run invincibility visual and timer
+		await start_invincibility_visual()
 		is_invincible = false
 
 # Visual feedback during invincibility
 func start_invincibility_visual():
-	# Blink effect - runs in parallel with invincibility timer
-	for i in range(int(invincibility_duration * 5)):  # Blink 5 times per second
+	# Blink effect - now matches invincibility_duration
+	var blink_count = int(invincibility_duration * 5)  # 5 blinks per second
+	for i in range(blink_count):
 		sprite.modulate.a = 0.5  # Semi-transparent
 		await get_tree().create_timer(0.1).timeout
 		sprite.modulate.a = 1.0  # Fully visible
 		await get_tree().create_timer(0.1).timeout
+	
+	# Ensure sprite is fully visible at the end
+	sprite.modulate.a = 1.0
 
 func die():
 	IS_DEAD = true
 	print("GAME OVER")
-	if IS_DEAD:
-		get_tree().current_scene.get_node("Pausable/Bird").process_mode = Node.PROCESS_MODE_DISABLED
-		var scrollSprite: AnimatedSprite2D = get_tree().current_scene.get_node("Pausable/UI/GameOverScroll")
-		get_tree().current_scene.get_node("Pausable/UI/GameOverScroll").visible = true
-		get_tree().current_scene.get_node("Pausable/UI/GameOver").visible = true
-		await get_tree().create_timer(0.5).timeout
-		scrollSprite.play()
-		var music = get_tree().current_scene.get_node("Pausable/Music")
-		music.stop()
-		await get_tree().create_timer(1).timeout
-		get_tree().current_scene.get_node("Pausable/Bird").visible = false
-		get_tree().current_scene.get_node("Pausable/GameOver").play()
-		await get_tree().create_timer(5.0).timeout
-		get_tree().current_scene.get_node("Pausable/ZeusOutro").play()
-		#get_tree().current_scene.get_node("UI/Pause_Play").disabled = true
+	
+	get_tree().current_scene.get_node("Pausable/Bird").process_mode = Node.PROCESS_MODE_DISABLED
+	var scrollSprite: AnimatedSprite2D = get_tree().current_scene.get_node("Pausable/UI/GameOverScroll")
+	get_tree().current_scene.get_node("Pausable/UI/GameOverScroll").visible = true
+	get_tree().current_scene.get_node("Pausable/UI/GameOver").visible = true
+	await get_tree().create_timer(0.5).timeout
+	scrollSprite.play()
+	var music = get_tree().current_scene.get_node("Pausable/Music")
+	music.stop()
+	await get_tree().create_timer(1).timeout
+	get_tree().current_scene.get_node("Pausable/Bird").visible = false
+	get_tree().current_scene.get_node("Pausable/GameOver").play()
+	await get_tree().create_timer(5.0).timeout
+	get_tree().current_scene.get_node("Pausable/AcceptYourFate").play()
 	
 func respawn() -> void:
 	position.x = -200
@@ -145,7 +145,6 @@ func _physics_process(delta: float) -> void:
 	position.x = clamp(position.x, -250, 2500)
 	
 	if(position.y > 1000):
-		# take_damage()
 		fall_damage()
 		
 	if Input.is_action_just_pressed("fly"):

@@ -3,8 +3,8 @@ extends Node
 	#$SadCloud,
 	#$HappyCloud,
 	#$Cloud,
-	$ZeusHurtBox,
 	$LargeBolt,
+	$ZeusHurtBox,
 ]
 var current_enemy_index := 0
 var display_duration := 15.0   # seconds per enemy
