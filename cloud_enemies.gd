@@ -39,7 +39,7 @@ func respawn() -> void:
 	speed_increase_loop()
 
 func _ready():
-	position.x = randf_range(100, 1000)
+	position.x = 2000
 	position.y = randf_range(400, 2000)
 	add_to_group("hazard")
 	connect("body_entered", Callable(self, "_on_hit"))

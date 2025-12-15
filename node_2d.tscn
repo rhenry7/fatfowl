@@ -1,4 +1,4 @@
-[gd_scene load_steps=140 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=141 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -123,6 +123,7 @@
 [ext_resource type="Texture2D" uid="uid://b1j8f7f44lndw" path="res://enemies/sadcloud/sad_thunder-9 3.png" id="69_r8aua"]
 [ext_resource type="Texture2D" uid="uid://d0jxvnea7f5mr" path="res://enemies/sadcloud/sad_thunder-10.png" id="70_sduiw"]
 [ext_resource type="Script" uid="uid://cbruw0twcmkfo" path="res://enemies_cloud.gd" id="95_wnn4a"]
+[ext_resource type="Script" uid="uid://ca486p5afoxmf" path="res://start_menu.gd" id="124_4rgxs"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jinwr"]
 animations = [{
@@ -198,7 +199,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nsnm2"]
@@ -480,7 +481,6 @@ animations = [{
 
 [node name="Node2D" type="Node2D"]
 process_mode = 3
-position = Vector2(2299, 1142)
 script = ExtResource("1_2hxjc")
 metadata/_edit_horizontal_guides_ = [-904.0, 1416.0]
 
@@ -671,6 +671,7 @@ texture_normal = ExtResource("29_24dk6")
 script = ExtResource("21_ld5wt")
 
 [node name="Distance" type="RichTextLabel" parent="Pausable/UI"]
+visible = false
 anchors_preset = -1
 anchor_right = 0.108
 anchor_bottom = 0.087000005
@@ -761,135 +762,171 @@ stream = ExtResource("56_d8e56")
 [node name="Bloop" type="AudioStreamPlayer2D" parent="Pausable"]
 stream = ExtResource("56_qoxh5")
 
-[node name="Enemies" type="Node2D" parent="."]
+[node name="Enemies" type="Node2D" parent="Pausable"]
 script = ExtResource("26_s32dh")
 
-[node name="ZeusFist" type="Area2D" parent="Enemies"]
+[node name="ZeusFist" type="Area2D" parent="Pausable/Enemies"]
 process_mode = 4
 script = ExtResource("58_qwoqy")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemies/ZeusFist"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Enemies/ZeusFist"]
 position = Vector2(-11, 65)
 scale = Vector2(0.71895427, 0.71895415)
 sprite_frames = SubResource("SpriteFrames_oixsq")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/ZeusFist"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Enemies/ZeusFist"]
 position = Vector2(20, 108)
 shape = SubResource("RectangleShape2D_uo258")
 
-[node name="ZeusHurtBox" type="Area2D" parent="Enemies"]
+[node name="ZeusHurtBox" type="Area2D" parent="Pausable/Enemies"]
 process_mode = 4
 position = Vector2(58, 995)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("39_037st")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/ZeusHurtBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Enemies/ZeusHurtBox"]
 position = Vector2(695.5, -231.5)
 rotation = -0.7853982
 shape = SubResource("CircleShape2D_ld5wt")
 
-[node name="ZeusHand" type="CharacterBody2D" parent="Enemies/ZeusHurtBox"]
+[node name="ZeusHand" type="CharacterBody2D" parent="Pausable/Enemies/ZeusHurtBox"]
 position = Vector2(-58, -995)
 
-[node name="ZeusHandHurtBox" type="CollisionShape2D" parent="Enemies/ZeusHurtBox/ZeusHand"]
+[node name="ZeusHandHurtBox" type="CollisionShape2D" parent="Pausable/Enemies/ZeusHurtBox/ZeusHand"]
 position = Vector2(748, 751)
 shape = SubResource("CircleShape2D_wcv2n")
 
-[node name="ZeusHandAnimation" type="AnimatedSprite2D" parent="Enemies/ZeusHurtBox/ZeusHand"]
+[node name="ZeusHandAnimation" type="AnimatedSprite2D" parent="Pausable/Enemies/ZeusHurtBox/ZeusHand"]
 position = Vector2(779.00006, 881)
 scale = Vector2(0.7934134, 0.69866747)
 sprite_frames = SubResource("SpriteFrames_0xo8l")
 animation = &"HandWave"
 autoplay = "HandWave"
 
-[node name="LargeBolt" type="Area2D" parent="Enemies"]
+[node name="LargeBolt" type="Area2D" parent="Pausable/Enemies"]
 process_mode = 4
 visible = false
 position = Vector2(-142, -6)
 script = ExtResource("42_2v765")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/LargeBolt"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Enemies/LargeBolt"]
 position = Vector2(711.5, 199)
 shape = SubResource("RectangleShape2D_ma08v")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemies/LargeBolt"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Enemies/LargeBolt"]
 position = Vector2(715.5, 454)
 scale = Vector2(0.1645507, 2.0163572)
 sprite_frames = SubResource("SpriteFrames_kfelt")
 autoplay = "default"
 frame_progress = 0.3673437
 
-[node name="CloudEnemies" type="Node2D" parent="."]
+[node name="CloudEnemies" type="Node2D" parent="Pausable"]
 script = ExtResource("95_wnn4a")
 
-[node name="Cloud" type="Area2D" parent="CloudEnemies"]
+[node name="Cloud" type="Area2D" parent="Pausable/CloudEnemies"]
 position = Vector2(568, 704)
 script = ExtResource("6_4d7sh")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="CloudEnemies/Cloud"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Pausable/CloudEnemies/Cloud"]
 position = Vector2(380, -789)
 rect = Rect2(672, -410, 405, 650)
 script = ExtResource("6_ir8iy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudEnemies/Cloud"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/CloudEnemies/Cloud"]
 position = Vector2(1255, -828)
 shape = SubResource("RectangleShape2D_4d7sh")
 
-[node name="MeanCloud" type="AnimatedSprite2D" parent="CloudEnemies/Cloud"]
+[node name="MeanCloud" type="AnimatedSprite2D" parent="Pausable/CloudEnemies/Cloud"]
 position = Vector2(1307, -850)
 scale = Vector2(0.38551843, 0.36438224)
 sprite_frames = SubResource("SpriteFrames_4d7sh")
 animation = &"mean"
 autoplay = "mean"
 
-[node name="SadCloud" type="Area2D" parent="CloudEnemies"]
+[node name="SadCloud" type="Area2D" parent="Pausable/CloudEnemies"]
 position = Vector2(568, 704)
 script = ExtResource("6_4d7sh")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="CloudEnemies/SadCloud"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Pausable/CloudEnemies/SadCloud"]
 position = Vector2(380, -789)
 rect = Rect2(672, -410, 405, 650)
 script = ExtResource("6_ir8iy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudEnemies/SadCloud"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/CloudEnemies/SadCloud"]
 position = Vector2(1255, -828)
 shape = SubResource("RectangleShape2D_4d7sh")
 
-[node name="SadCloud" type="AnimatedSprite2D" parent="CloudEnemies/SadCloud"]
+[node name="SadCloud" type="AnimatedSprite2D" parent="Pausable/CloudEnemies/SadCloud"]
 position = Vector2(1307, -850)
 scale = Vector2(0.38551843, 0.36438224)
 sprite_frames = SubResource("SpriteFrames_4d7sh")
 animation = &"sad"
 autoplay = "sad"
 
-[node name="HappyCloud" type="Area2D" parent="CloudEnemies"]
+[node name="HappyCloud" type="Area2D" parent="Pausable/CloudEnemies"]
 position = Vector2(568, 704)
 script = ExtResource("6_4d7sh")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="CloudEnemies/HappyCloud"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Pausable/CloudEnemies/HappyCloud"]
 position = Vector2(380, -789)
 rect = Rect2(672, -410, 405, 650)
 script = ExtResource("6_ir8iy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudEnemies/HappyCloud"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/CloudEnemies/HappyCloud"]
 position = Vector2(1255, -828)
 shape = SubResource("RectangleShape2D_4d7sh")
 
-[node name="HappyCloud" type="AnimatedSprite2D" parent="CloudEnemies/HappyCloud"]
+[node name="HappyCloud" type="AnimatedSprite2D" parent="Pausable/CloudEnemies/HappyCloud"]
 position = Vector2(1307, -850)
 scale = Vector2(0.38551843, 0.36438224)
 sprite_frames = SubResource("SpriteFrames_4d7sh")
 animation = &"happy"
 autoplay = "happy"
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -286.0
+offset_top = 137.5
+offset_right = 274.5
+offset_bottom = 137.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.347
+anchor_right = 0.5
+anchor_bottom = 0.347
+offset_left = -980.25
+offset_top = -518.5
+offset_right = 841.75
+offset_bottom = 309.5
+
+[node name="StartMenu" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(266, -72.5)
+scale = Vector2(1.0043945, 0.9949807)
+sprite_frames = SubResource("SpriteFrames_5mre3")
+autoplay = "default"
+frame = 6
+frame_progress = 1.0
+script = ExtResource("124_4rgxs")
+
 [connection signal="toggled" from="Pausable/UI/Pause_Play" to="." method="_on_pause_play_toggled"]
 [connection signal="pressed" from="Pausable/UI/GameOver" to="." method="_on_game_over_pressed"]
 [connection signal="body_entered" from="Pausable/Feather" to="Pausable/Bird" method="_on_body_entered"]
-[connection signal="body_entered" from="Enemies/ZeusFist" to="Pausable/Bird" method="_on_body_entered"]
-[connection signal="body_entered" from="Enemies/ZeusHurtBox" to="Pausable/Bird" method="_on_body_entered"]
-[connection signal="body_entered" from="Enemies/LargeBolt" to="Pausable/Bird" method="_on_body_entered"]
-[connection signal="body_entered" from="CloudEnemies/Cloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="CloudEnemies/SadCloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="CloudEnemies/HappyCloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Pausable/Enemies/ZeusFist" to="Pausable/Bird" method="_on_body_entered"]
+[connection signal="body_entered" from="Pausable/Enemies/ZeusHurtBox" to="Pausable/Bird" method="_on_body_entered"]
+[connection signal="body_entered" from="Pausable/Enemies/LargeBolt" to="Pausable/Bird" method="_on_body_entered"]
+[connection signal="body_entered" from="Pausable/CloudEnemies/Cloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Pausable/CloudEnemies/SadCloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Pausable/CloudEnemies/HappyCloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
+[connection signal="pressed" from="Control/StartButton" to="." method="_on_start_button_pressed"]
