@@ -767,6 +767,7 @@ script = ExtResource("26_s32dh")
 
 [node name="ZeusFist" type="Area2D" parent="Pausable/Enemies"]
 process_mode = 4
+visible = false
 script = ExtResource("58_qwoqy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Enemies/ZeusFist"]
@@ -781,6 +782,7 @@ shape = SubResource("RectangleShape2D_uo258")
 
 [node name="ZeusHurtBox" type="Area2D" parent="Pausable/Enemies"]
 process_mode = 4
+visible = false
 position = Vector2(58, 995)
 collision_layer = 2
 collision_mask = 2

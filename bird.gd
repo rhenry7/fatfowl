@@ -126,7 +126,6 @@ func die():
 	get_tree().current_scene.get_node("Pausable/Bird").visible = false
 	get_tree().current_scene.get_node("Pausable/GameOver").play()
 	await get_tree().create_timer(5.0).timeout
-	get_tree().current_scene.get_node("Pausable/AcceptYourFate").play()
 	
 func respawn() -> void:
 	position.x = -200
