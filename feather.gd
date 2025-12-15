@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 		respawn()
 
 func respawn() -> void:
-	await get_tree().create_timer(20).timeout
+	await get_tree().create_timer(5).timeout
 	animated_sprite.visible = true
 	# Reset feather to top of screen
 	position.y = -2000

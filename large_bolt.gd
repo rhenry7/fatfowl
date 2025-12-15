@@ -55,7 +55,7 @@ func respawn() -> void:
 	while true:
 		var thunder = get_tree().current_scene.get_node("Pausable/Thunder")
 		thunder.play()
-		await get_tree().create_timer(5, false, true).timeout
+		await get_tree().create_timer(1, false, true).timeout
 		
 		# Reset to right side if too far left
 		if position.x < -1900:
@@ -63,7 +63,7 @@ func respawn() -> void:
 		
 		# Always spawn at max_right position
 		position.x = max_right
-		max_right -= 1000
+		max_right -= 400
 		
 		if not get_tree().paused:
 			# Fade in - lightning appears

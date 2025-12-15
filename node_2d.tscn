@@ -1,4 +1,4 @@
-[gd_scene load_steps=131 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=129 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -230,6 +230,102 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thyvg"]
 size = Vector2(203, 116)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ld5wt"]
+radius = 508.56317
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wcv2n"]
+radius = 404.04083
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0xo8l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("49_qu7as")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_lyuya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_5fipt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_j02gt")
+}],
+"loop": true,
+"name": &"HandGrab",
+"speed": 18.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_xjt7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_lbrxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_fshgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_fbwgr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_7plk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_7mj2a")
+}],
+"loop": true,
+"name": &"HandWave",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ma08v"]
+size = Vector2(159, 3175)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kfelt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_xfyss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_s32dh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_3ngjr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_4qosj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_cjlbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_qilgh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_ytlpd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_kfelt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_2v765")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_b8fb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_ma08v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_0xo8l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 25.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
 size = Vector2(304, 453)
 
@@ -337,108 +433,6 @@ animations = [{
 "name": &"sad",
 "speed": 12.0
 }]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ld5wt"]
-radius = 508.56317
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_wcv2n"]
-radius = 404.04083
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0xo8l"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("49_qu7as")
-}, {
-"duration": 1.0,
-"texture": ExtResource("50_lyuya")
-}, {
-"duration": 1.0,
-"texture": ExtResource("51_5fipt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("52_j02gt")
-}],
-"loop": true,
-"name": &"HandGrab",
-"speed": 18.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("40_xjt7e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("39_lbrxf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("38_fshgd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("36_fbwgr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_7plk7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("37_7mj2a")
-}],
-"loop": true,
-"name": &"HandWave",
-"speed": 10.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ma08v"]
-size = Vector2(159, 3175)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_kfelt"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("36_xfyss")
-}, {
-"duration": 1.0,
-"texture": ExtResource("46_s32dh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("37_3ngjr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("39_4qosj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("40_cjlbh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("38_qilgh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("42_ytlpd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("41_kfelt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("43_2v765")
-}, {
-"duration": 1.0,
-"texture": ExtResource("44_b8fb0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("45_ma08v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_0xo8l")
-}],
-"loop": true,
-"name": &"default",
-"speed": 25.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s32dh"]
-size = Vector2(1033, 875)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2v765"]
-size = Vector2(569, 581)
 
 [node name="Node2D" type="Node2D"]
 process_mode = 3
@@ -721,72 +715,6 @@ stream = ExtResource("56_qoxh5")
 [node name="Enemies" type="Node2D" parent="."]
 script = ExtResource("26_s32dh")
 
-[node name="Cloud" type="Area2D" parent="Enemies"]
-process_mode = 4
-visible = false
-position = Vector2(568, 704)
-script = ExtResource("6_4d7sh")
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Enemies/Cloud"]
-position = Vector2(380, -789)
-rect = Rect2(672, -410, 405, 650)
-script = ExtResource("6_ir8iy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Cloud"]
-position = Vector2(1255, -828)
-shape = SubResource("RectangleShape2D_4d7sh")
-
-[node name="MeanCloud" type="AnimatedSprite2D" parent="Enemies/Cloud"]
-position = Vector2(1307, -850)
-scale = Vector2(0.38551843, 0.36438224)
-sprite_frames = SubResource("SpriteFrames_4d7sh")
-animation = &"mean"
-autoplay = "mean"
-
-[node name="SadCloud" type="Area2D" parent="Enemies"]
-process_mode = 4
-visible = false
-position = Vector2(568, 704)
-script = ExtResource("6_4d7sh")
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Enemies/SadCloud"]
-position = Vector2(380, -789)
-rect = Rect2(672, -410, 405, 650)
-script = ExtResource("6_ir8iy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/SadCloud"]
-position = Vector2(1255, -828)
-shape = SubResource("RectangleShape2D_4d7sh")
-
-[node name="SadCloud" type="AnimatedSprite2D" parent="Enemies/SadCloud"]
-position = Vector2(1307, -850)
-scale = Vector2(0.38551843, 0.36438224)
-sprite_frames = SubResource("SpriteFrames_4d7sh")
-animation = &"sad"
-autoplay = "sad"
-
-[node name="HappyCloud" type="Area2D" parent="Enemies"]
-process_mode = 4
-visible = false
-position = Vector2(568, 704)
-script = ExtResource("6_4d7sh")
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Enemies/HappyCloud"]
-position = Vector2(380, -789)
-rect = Rect2(672, -410, 405, 650)
-script = ExtResource("6_ir8iy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/HappyCloud"]
-position = Vector2(1255, -828)
-shape = SubResource("RectangleShape2D_4d7sh")
-
-[node name="HappyCloud" type="AnimatedSprite2D" parent="Enemies/HappyCloud"]
-position = Vector2(1307, -850)
-scale = Vector2(0.38551843, 0.36438224)
-sprite_frames = SubResource("SpriteFrames_4d7sh")
-animation = &"happy"
-autoplay = "happy"
-
 [node name="ZeusHurtBox" type="Area2D" parent="Enemies"]
 process_mode = 4
 position = Vector2(58, 995)
@@ -834,8 +762,6 @@ frame_progress = 0.3673437
 script = ExtResource("95_wnn4a")
 
 [node name="Cloud" type="Area2D" parent="CloudEnemies"]
-process_mode = 4
-visible = false
 position = Vector2(568, 704)
 script = ExtResource("6_4d7sh")
 
@@ -856,8 +782,6 @@ animation = &"mean"
 autoplay = "mean"
 
 [node name="SadCloud" type="Area2D" parent="CloudEnemies"]
-process_mode = 4
-visible = false
 position = Vector2(568, 704)
 script = ExtResource("6_4d7sh")
 
@@ -878,8 +802,6 @@ animation = &"sad"
 autoplay = "sad"
 
 [node name="HappyCloud" type="Area2D" parent="CloudEnemies"]
-process_mode = 4
-visible = false
 position = Vector2(568, 704)
 script = ExtResource("6_4d7sh")
 
@@ -899,59 +821,11 @@ sprite_frames = SubResource("SpriteFrames_4d7sh")
 animation = &"happy"
 autoplay = "happy"
 
-[node name="ZeusHurtBox" type="Area2D" parent="CloudEnemies"]
-process_mode = 4
-visible = false
-position = Vector2(58, 995)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("39_037st")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudEnemies/ZeusHurtBox"]
-position = Vector2(695.5, -231.5)
-shape = SubResource("RectangleShape2D_s32dh")
-
-[node name="ZeusHand" type="CharacterBody2D" parent="CloudEnemies/ZeusHurtBox"]
-position = Vector2(-58, -995)
-
-[node name="ZeusHandHurtBox" type="CollisionShape2D" parent="CloudEnemies/ZeusHurtBox/ZeusHand"]
-position = Vector2(713, 818)
-shape = SubResource("RectangleShape2D_2v765")
-
-[node name="ZeusHandAnimation" type="AnimatedSprite2D" parent="CloudEnemies/ZeusHurtBox/ZeusHand"]
-position = Vector2(724.00006, 988)
-scale = Vector2(0.7934134, 0.69866747)
-sprite_frames = SubResource("SpriteFrames_0xo8l")
-animation = &"HandWave"
-autoplay = "HandWave"
-
-[node name="LargeBolt" type="Area2D" parent="CloudEnemies"]
-process_mode = 4
-visible = false
-position = Vector2(-142, -6)
-script = ExtResource("42_2v765")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudEnemies/LargeBolt"]
-position = Vector2(711.5, 199)
-shape = SubResource("RectangleShape2D_ma08v")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CloudEnemies/LargeBolt"]
-position = Vector2(715.5, 454)
-scale = Vector2(0.1645507, 2.0163572)
-sprite_frames = SubResource("SpriteFrames_kfelt")
-autoplay = "default"
-frame_progress = 0.3673437
-
 [connection signal="toggled" from="Pausable/UI/Pause_Play" to="." method="_on_pause_play_toggled"]
 [connection signal="pressed" from="Pausable/UI/GameOver" to="." method="_on_game_over_pressed"]
 [connection signal="body_entered" from="Pausable/Feather" to="Pausable/Bird" method="_on_body_entered"]
-[connection signal="body_entered" from="Enemies/Cloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Enemies/SadCloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Enemies/HappyCloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Enemies/ZeusHurtBox" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Enemies/LargeBolt" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="CloudEnemies/Cloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="CloudEnemies/SadCloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="CloudEnemies/HappyCloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="CloudEnemies/ZeusHurtBox" to="Pausable/Bird" method="_on_body_entered"]
-[connection signal="body_entered" from="CloudEnemies/LargeBolt" to="Pausable/Bird" method="_on_body_entered"]

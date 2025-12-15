@@ -1,15 +1,12 @@
 extends Node
 @onready var enemies = [
-	#$SadCloud,
-	#$HappyCloud,
-	#$Cloud,
 	$ZeusHurtBox,
 	$LargeBolt,
 ]
 var current_enemy_index := 0
-var display_duration := 15.0   # seconds per enemy
-var enemy_buffer := 3
-var initial_delay := 12.0
+var display_duration := 30.0   # seconds per enemy
+var enemy_buffer := 2
+var initial_delay := 10.0
 
 func _ready():
 	await get_tree().create_timer(initial_delay).timeout

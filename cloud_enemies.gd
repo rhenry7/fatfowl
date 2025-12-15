@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var speed := 3000.0
+var speed := randf_range(10, 1000)
 @onready var right_spawn_x := 200.0
 @onready var top_y := 200.0
 @onready var bottom_y := 1000.0
@@ -10,6 +10,7 @@ func deactivate():
 	set_physics_process(false)
 	set_process(false)
 	speed = 0.0
+
 
 	for child in get_children():
 		if child is CollisionShape2D:
@@ -33,11 +34,13 @@ func _process(delta: float) -> void:
 		respawn()
 
 func respawn() -> void:
-	position.y = randf_range(top_y, bottom_y)
-	position.x = 500
+	position.y = randf_range(-500, 2000)
+	position.x = randf_range(100, 2000)
+	speed_increase_loop()
 
 func _ready():
-	speed_increase_loop()
+	position.x = randf_range(100, 1000)
+	position.y = randf_range(400, 2000)
 	add_to_group("hazard")
 	connect("body_entered", Callable(self, "_on_hit"))
 
@@ -48,6 +51,4 @@ func _on_hit(body: Node2D) -> void:
 		body.take_damage()
 		
 func speed_increase_loop() -> void:
-	while true:
-		await get_tree().create_timer(2.0, false, true).timeout
-		speed += 100
+	speed += randf_range(10, 50)

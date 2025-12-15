@@ -5,7 +5,7 @@ extends Node
 	$Cloud,
 ]
 var current_enemy_index := 0
-var display_duration := 30.0   # seconds per enemy
+var display_duration := 10.0   # seconds per enemy
 var enemy_buffer := 3
 var initial_delay := .0
 
@@ -15,7 +15,7 @@ func _ready():
 	# Wait before starting the cycle
 	await get_tree().create_timer(5).timeout
 	# start the cycle
-	cycle_enemies()
+	#cycle_enemies()
 	
 func cycle_enemies() -> void:
 	while true:
