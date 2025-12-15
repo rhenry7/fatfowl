@@ -3,7 +3,7 @@ extends Area2D
 
 # === Export Variables (adjustable in Inspector) ===
 @export var health_amount: int = 20  # Amount of health/hearts to give player
-@export var fall_speed: float = 1000.0  # Pixels per second the feather falls
+@export var fall_speed: float = 800.0  # Pixels per second the feather falls
 @export var bottom_limit: float = 1400.0  # Y position where feather respawns if missed
 @onready var animated_sprite = $FallingFeather  # Reference to the animated sprite
 @onready var collision = $CollisionShape2D
@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 		respawn()
 
 func respawn() -> void:
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(2).timeout
 	animated_sprite.visible = true
 	# Reset feather to top of screen
 	position.y = -2000
