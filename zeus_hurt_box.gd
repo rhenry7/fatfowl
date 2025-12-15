@@ -67,7 +67,6 @@ func respawn() -> void:
 			var final_pos: Vector2 = Vector2(randf_range(-2000, 500), 350)
 			var tween = create_tween()
 			tween.tween_property(hand, "position", final_pos, 10.0)
-			#
 			## Wait for tween to finish
 			await tween.finished
 			

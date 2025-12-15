@@ -74,14 +74,13 @@ func _on_body_entered(body):
 func hide_body():
 	print("hide body function")
 	sprite.visible = false
-	is_invincible = true
 	await get_tree().create_timer(3).timeout
 	sprite.visible = true
-	is_invincible = false
 	position.x = -600
 	position.y = -2000
 		
 func take_damage():
+	print("is invincible", is_invincible)
 	if IS_DEAD or is_invincible:
 		return  # Ignore damage if dead or invincible
 	

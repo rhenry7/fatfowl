@@ -10,7 +10,7 @@ extends Area2D
 
 func _ready():
 	# Set initial starting position
-	#position.x = 200
+	position.x = 2000
 	position.y = -3000
 	
 	# Connect the collision signal to detect when player touches feather

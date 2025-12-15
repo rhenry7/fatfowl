@@ -21,10 +21,10 @@ Effects="*res://utilities/Effects.gd"
 
 [display]
 
-window/size/viewport_width=4476
-window/size/viewport_height=2048
+window/size/viewport_width=3200
+window/size/viewport_height=1600
 window/size/resizable=false
-window/size/borderless=true
+window/stretch/mode="viewport"
 
 [input]
 
