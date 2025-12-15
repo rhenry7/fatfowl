@@ -1,4 +1,4 @@
-[gd_scene load_steps=129 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=140 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -103,12 +103,21 @@
 [ext_resource type="AudioStream" uid="uid://c3xumpaopglkf" path="res://audio/zeus/zeus_grab_taunt.ogg" id="55_uo258"]
 [ext_resource type="AudioStream" uid="uid://dkibprluixr8i" path="res://audio/zeus/game_over.ogg" id="56_d8e56"]
 [ext_resource type="AudioStream" uid="uid://kxusgq0s5ovb" path="res://audio/blooop.ogg" id="56_qoxh5"]
+[ext_resource type="Script" uid="uid://cmspows46h524" path="res://zeus_fist.gd" id="58_qwoqy"]
+[ext_resource type="Texture2D" uid="uid://v7iyinduf2xn" path="res://animation/zeus/punch/zeus_punch-1 7.png" id="59_xa4jy"]
+[ext_resource type="Texture2D" uid="uid://qy0ai2ga2k2r" path="res://animation/zeus/punch/zeus_punch-2 5.png" id="60_4rgxs"]
+[ext_resource type="Texture2D" uid="uid://c2w45oeghk6xd" path="res://animation/zeus/punch/zeus_punch-3 5.png" id="61_88olm"]
 [ext_resource type="Texture2D" uid="uid://b5p42h5tedng3" path="res://enemies/sadcloud/Background.png" id="61_n63ng"]
+[ext_resource type="Texture2D" uid="uid://ddgeni16hqala" path="res://animation/zeus/punch/zeus_punch-4 5.png" id="62_kkr25"]
 [ext_resource type="Texture2D" uid="uid://du5q5o7no3o4p" path="res://enemies/sadcloud/sad_thunder-2 5.png" id="62_wnn4a"]
 [ext_resource type="Texture2D" uid="uid://fx4s882hsbdk" path="res://enemies/sadcloud/sad_thunder-3 5.png" id="63_1aygh"]
+[ext_resource type="Texture2D" uid="uid://cf3scd0oamih2" path="res://animation/zeus/punch/zeus_punch-5 4.png" id="63_fibx4"]
+[ext_resource type="Texture2D" uid="uid://djfdndsu0ydgg" path="res://animation/zeus/punch/zeus_punch-6 3.png" id="64_7kqy5"]
 [ext_resource type="Texture2D" uid="uid://b2ty4gnh7dqoa" path="res://enemies/sadcloud/sad_thunder-4 5.png" id="64_td2a2"]
 [ext_resource type="Texture2D" uid="uid://4jpt4te3vrek" path="res://enemies/sadcloud/sad_thunder-5 4.png" id="65_c6xte"]
+[ext_resource type="Texture2D" uid="uid://dj58gsfgdndxt" path="res://animation/zeus/punch/zeus_punch-7 3.png" id="65_e1h34"]
 [ext_resource type="Texture2D" uid="uid://cd85xmmmgjnq6" path="res://enemies/sadcloud/sad_thunder-6 3.png" id="66_inwkr"]
+[ext_resource type="Texture2D" uid="uid://c7q2uwqg2q8l8" path="res://animation/zeus/punch/zeus_punch-8 3.png" id="66_ywe1r"]
 [ext_resource type="Texture2D" uid="uid://d3k6gvbxgkmhs" path="res://enemies/sadcloud/sad_thunder-7 3.png" id="67_0dcxc"]
 [ext_resource type="Texture2D" uid="uid://c6weo3fo8hcl4" path="res://enemies/sadcloud/sad_thunder-8 3.png" id="68_j2pq0"]
 [ext_resource type="Texture2D" uid="uid://b1j8f7f44lndw" path="res://enemies/sadcloud/sad_thunder-9 3.png" id="69_r8aua"]
@@ -229,6 +238,41 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thyvg"]
 size = Vector2(203, 116)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oixsq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("59_xa4jy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_4rgxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_88olm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_kkr25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_fibx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_7kqy5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_e1h34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_ywe1r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uo258"]
+size = Vector2(794, 1030)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ld5wt"]
 radius = 508.56317
@@ -720,6 +764,20 @@ stream = ExtResource("56_qoxh5")
 [node name="Enemies" type="Node2D" parent="."]
 script = ExtResource("26_s32dh")
 
+[node name="ZeusFist" type="Area2D" parent="Enemies"]
+process_mode = 4
+script = ExtResource("58_qwoqy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemies/ZeusFist"]
+position = Vector2(-11, 65)
+scale = Vector2(0.71895427, 0.71895415)
+sprite_frames = SubResource("SpriteFrames_oixsq")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/ZeusFist"]
+position = Vector2(20, 108)
+shape = SubResource("RectangleShape2D_uo258")
+
 [node name="ZeusHurtBox" type="Area2D" parent="Enemies"]
 process_mode = 4
 position = Vector2(58, 995)
@@ -740,7 +798,7 @@ position = Vector2(748, 751)
 shape = SubResource("CircleShape2D_wcv2n")
 
 [node name="ZeusHandAnimation" type="AnimatedSprite2D" parent="Enemies/ZeusHurtBox/ZeusHand"]
-position = Vector2(779.00006, 796)
+position = Vector2(779.00006, 881)
 scale = Vector2(0.7934134, 0.69866747)
 sprite_frames = SubResource("SpriteFrames_0xo8l")
 animation = &"HandWave"
@@ -829,6 +887,7 @@ autoplay = "happy"
 [connection signal="toggled" from="Pausable/UI/Pause_Play" to="." method="_on_pause_play_toggled"]
 [connection signal="pressed" from="Pausable/UI/GameOver" to="." method="_on_game_over_pressed"]
 [connection signal="body_entered" from="Pausable/Feather" to="Pausable/Bird" method="_on_body_entered"]
+[connection signal="body_entered" from="Enemies/ZeusFist" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Enemies/ZeusHurtBox" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Enemies/LargeBolt" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="CloudEnemies/Cloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]

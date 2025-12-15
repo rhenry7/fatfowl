@@ -1,5 +1,6 @@
 extends Node
 @onready var enemies = [
+	$ZeusFist,
 	$ZeusHurtBox,
 	$LargeBolt,
 ]
