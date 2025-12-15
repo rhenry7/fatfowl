@@ -13,4 +13,4 @@ func _ready() -> void:
 func _on_timer_timeout() -> void:
 	distance += 1
 	var distanceText = get_tree().current_scene.get_node("Pausable/UI/Distance")
-	distanceText.text = str(distance) + " meters"
+	distanceText.text = str(distance) + "M"

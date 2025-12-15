@@ -114,7 +114,6 @@ func start_invincibility_visual():
 func die():
 	IS_DEAD = true
 	print("GAME OVER")
-	
 	get_tree().current_scene.get_node("Pausable/Bird").process_mode = Node.PROCESS_MODE_DISABLED
 	var scrollSprite: AnimatedSprite2D = get_tree().current_scene.get_node("Pausable/UI/GameOverScroll")
 	get_tree().current_scene.get_node("Pausable/UI/GameOverScroll").visible = true

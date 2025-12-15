@@ -627,13 +627,18 @@ texture_normal = ExtResource("29_24dk6")
 script = ExtResource("21_ld5wt")
 
 [node name="Distance" type="RichTextLabel" parent="Pausable/UI"]
-visible = false
-offset_left = 40.0
-offset_top = 45.0
-offset_right = 343.0
-offset_bottom = 224.0
+anchors_preset = -1
+anchor_right = 0.108
+anchor_bottom = 0.087000005
+offset_left = 568.0
+offset_top = 41.0
+offset_right = 831.4
+offset_bottom = 199.79999
+theme_override_font_sizes/normal_font_size = 129
 bbcode_enabled = true
 text = "0"
+fit_content = true
+tab_size = 6
 script = ExtResource("30_ornx7")
 
 [node name="GameOverScroll" type="AnimatedSprite2D" parent="Pausable/UI"]
