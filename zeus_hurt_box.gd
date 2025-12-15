@@ -51,11 +51,11 @@ func _on_hit(body: Node2D) -> void:
 			# Stay on screen time
 		await get_tree().create_timer(3, false, true).timeout
 		sprite.play("HandWave")
-			# Slide hand out of frame
-		var off_screen_pos: Vector2 = Vector2(randf_range(-100, 1000), 1000)  # or wherever "out of frame" is
-		var tween_out = create_tween()
-		tween_out.tween_property(hand, "position", off_screen_pos, 4.0)
-		await get_tree().create_timer(3, false, true).timeout
+			## Slide hand out of frame
+		#var off_screen_pos: Vector2 = Vector2(randf_range(-100, 1000), 1000)  # or wherever "out of frame" is
+		#var tween_out = create_tween()
+		#tween_out.tween_property(hand, "position", off_screen_pos, 4.0)
+		#await get_tree().create_timer(3, false, true).timeout
 
 		
 func respawn() -> void:
@@ -64,7 +64,7 @@ func respawn() -> void:
 		#await get_tree().create_timer(0, false, true).timeout
 		if not get_tree().paused:
 			# Slide hand into frame
-			var final_pos: Vector2 = Vector2(randf_range(-2000, 500), 350)
+			var final_pos: Vector2 = Vector2(250, 350)
 			var tween = create_tween()
 			tween.tween_property(hand, "position", final_pos, 10.0)
 			## Wait for tween to finish
