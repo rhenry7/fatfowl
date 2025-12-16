@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed := randf_range(10, 500)
+var speed := randf_range(10, 800)
 @onready var right_spawn_x := 200.0
 @onready var top_y := 200.0
 @onready var bottom_y := 900.0
@@ -51,6 +51,7 @@ func _on_hit(body: Node2D) -> void:
 		body.take_damage()
 		
 func speed_increase_loop() -> void:
-	if speed >= 2000:
+	print("current speed", speed)
+	if speed >= 1000:
 		return
 	speed += 50

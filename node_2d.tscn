@@ -982,7 +982,7 @@ position = Vector2(768, 0)
 scale = Vector2(0.4325446, 0.43254477)
 sprite_frames = SubResource("SpriteFrames_mxju4")
 autoplay = "default"
-frame_progress = 0.5983943
+frame_progress = 0.9958759
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Surfer"]
 position = Vector2(688, 4)

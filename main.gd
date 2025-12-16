@@ -42,7 +42,6 @@ func _on_zeus_hurt_box_body_entered(body: Node2D) -> void:
 
 func _on_start_button_pressed() -> void:
 	get_tree().paused = false
-	get_tree().current_scene.get_node("Pausable/Prepare").play()
 	#var tween = create_tween()
 	#tween.tween_property(startMenu, "modulate:a", 0.0, 1.0).from(1.0)
 	#await tween.finished
@@ -51,4 +50,6 @@ func _on_start_button_pressed() -> void:
 	cloudEnemies.visible = true
 	zeusBody.visible = true
 	player.visible = true
-	pass # Replace with function body.
+	get_tree().current_scene.get_node("Pausable/Prepare").play()
+	await get_tree().create_timer(3, false, true).timeout
+	get_tree().current_scene.get_node("Pausable/Thunder").play()

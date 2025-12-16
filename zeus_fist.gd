@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 
 func _ready():  
 	#process_mode = Node.PROCESS_MODE_DISABLED
-	position.y = 2000
+	global_position = Vector2(2000, randf_range(400, 2000))
 	add_to_group("hazard")
 	add_to_group("ZeusHand")
 	connect("body_entered", Callable(self, "_on_hit"))
