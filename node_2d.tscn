@@ -1,4 +1,4 @@
-[gd_scene load_steps=149 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=150 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -86,6 +86,7 @@
 [ext_resource type="Texture2D" uid="uid://k4jms15hw4jt" path="res://enemies/happycloud/happy_thunder-2 5.png" id="43_nsnm2"]
 [ext_resource type="Texture2D" uid="uid://gogu80h3ad25" path="res://LightningPath/Untitled_Artwork-10.png" id="44_b8fb0"]
 [ext_resource type="Texture2D" uid="uid://bvyj1sxj8qaab" path="res://enemies/happycloud/happy_thunder-3 5.png" id="44_f8kvm"]
+[ext_resource type="AudioStream" uid="uid://caw0owvqbqr32" path="res://audio/zeus/prepare2.ogg" id="44_pjm8v"]
 [ext_resource type="Texture2D" uid="uid://tfuqegekcjgp" path="res://enemies/happycloud/happy_thunder-4 5.png" id="45_3hhlv"]
 [ext_resource type="Texture2D" uid="uid://b7818yd26oa5g" path="res://LightningPath/Untitled_Artwork-11.png" id="45_ma08v"]
 [ext_resource type="Texture2D" uid="uid://cmowkrdk52l4" path="res://enemies/happycloud/happy_thunder-5 4.png" id="46_d88dk"]
@@ -684,6 +685,9 @@ stream = ExtResource("56_d8e56")
 [node name="Bloop" type="AudioStreamPlayer2D" parent="Pausable"]
 stream = ExtResource("56_qoxh5")
 
+[node name="Prepare" type="AudioStreamPlayer2D" parent="Pausable"]
+stream = ExtResource("44_pjm8v")
+
 [node name="Enemies" type="Node2D" parent="Pausable"]
 script = ExtResource("26_s32dh")
 
@@ -909,6 +913,7 @@ texture_normal = ExtResource("29_24dk6")
 script = ExtResource("21_ld5wt")
 
 [node name="Distance" type="RichTextLabel" parent="Pausable/UI"]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
