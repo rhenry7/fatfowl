@@ -6,8 +6,8 @@ extends Node
 ]
 var current_enemy_index := 0
 var display_duration := 30.0   # seconds per enemy
-var enemy_buffer := 2
-var initial_delay := 10.0
+var enemy_buffer := 5.0
+var initial_delay := 15.0
 
 func _ready():
 	await get_tree().create_timer(initial_delay).timeout

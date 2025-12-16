@@ -5,8 +5,8 @@ const FLAP_STRENGTH_X = 400.0
 const SPEED = 10.0 
 const TOP_Y = -850
 const BOTTOM_Y = 1500 
-const MAX_HEARTS := 3   
-var HEARTS := 3
+const MAX_HEARTS := 5   
+var HEARTS := 5
 var IS_DEAD := false
 var is_invincible := false
 var invincibility_duration := 2.0  # Increased to match usage
@@ -14,6 +14,8 @@ var invincibility_duration := 2.0  # Increased to match usage
 @onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
 @onready var hearts_container := get_tree().current_scene.get_node("Pausable/UI/HeartsContainer")
 @onready var game_over_card := get_tree().current_scene.get_node("Pausable/UI/GameOver")
+@onready var distanceText = get_tree().current_scene.get_node("Pausable/UI/Distance")
+@onready var feathers:int = 12
 
 func fall_damage():
 	if IS_DEAD or is_invincible:
@@ -48,19 +50,23 @@ func add_heart():
 	var c = heart_to_show.modulate
 	heart_to_show.modulate = Color(c.r, c.g, c.b, 1.0)
 	HEARTS += 1
-
-func heal(amount: int):
+ 
+func heal(amount: int): 
 	for i in range(amount):
 		add_heart()
+	feathers += 1
+	distanceText.text = str(feathers)
 	print("Healed! Current health: ", HEARTS, "/", MAX_HEARTS)
 
 func _ready() -> void:
+	distanceText.text = str(feathers)
 	add_to_group("player")
 	print("Global Position: ", global_position)
 	position.x = 10
 	position.y = -500
 	$BirdHurtBox.body_entered.connect(_on_body_entered)
 	sprite.play("fly")
+
 
 func _on_body_entered(body):
 	print("Collision with:", body.name)
@@ -70,6 +76,7 @@ func _on_body_entered(body):
 		take_damage()
 	if body.is_in_group("heal"):
 		heal(1)
+
 	
 func hide_body():
 	print("hide body function")

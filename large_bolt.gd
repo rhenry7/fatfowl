@@ -39,6 +39,8 @@ func activate():
 			child.disabled = false
 	process_mode = Node.PROCESS_MODE_INHERIT
 func _ready() -> void:
+	var thunder = get_tree().current_scene.get_node("Pausable/Thunder")
+	thunder.play()
 	process_mode = Node.PROCESS_MODE_DISABLED
 	add_to_group("hazard")
 	connect("body_entered", Callable(self, "_on_hit"))

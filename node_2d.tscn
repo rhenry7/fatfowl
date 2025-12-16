@@ -2,21 +2,21 @@
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
-[ext_resource type="Texture2D" uid="uid://cygk7vweck5il" path="res://background/blue-background.png" id="2_ebxd8"]
-[ext_resource type="Texture2D" uid="uid://ccimbrwjcher2" path="res://background/dark-blue-cloud.png" id="3_2u7jv"]
+[ext_resource type="Texture2D" uid="uid://d01bxm766bmqr" path="res://background/cloud-background-1 8.png" id="2_pjm8v"]
+[ext_resource type="Texture2D" uid="uid://kv41vhd8xvtm" path="res://background/cloud-background-2 5.png" id="3_nlgyc"]
 [ext_resource type="Texture2D" uid="uid://brx8etyntbh3e" path="res://birdfly-1.png" id="3_rjqkl"]
-[ext_resource type="Texture2D" uid="uid://bpb2rxxg63jvt" path="res://background/dark-purple-cloud.png" id="4_24dk6"]
 [ext_resource type="Texture2D" uid="uid://p1dctarnwp8l" path="res://Illustration_sans_titre-1 2.png" id="4_fs4d3"]
+[ext_resource type="Texture2D" uid="uid://dupxyc48hji7r" path="res://background/cloud-background-4 5.png" id="4_oojoh"]
 [ext_resource type="Texture2D" uid="uid://dq02cbpibmmb5" path="res://birdfly-2.png" id="5_7vxoj"]
-[ext_resource type="Texture2D" uid="uid://c14da2ailb05r" path="res://background/soft-purple-cloud.png" id="5_mryly"]
+[ext_resource type="Texture2D" uid="uid://dl5ldsb7kib6d" path="res://background/cloud-background-5 4.png" id="5_c7o6v"]
 [ext_resource type="Script" uid="uid://ba00vydfpvodi" path="res://cloud_enemies.gd" id="6_4d7sh"]
 [ext_resource type="Texture2D" uid="uid://bleoad3w7u5tt" path="res://Illustration_sans_titre-2 2.png" id="6_ei405"]
 [ext_resource type="Script" uid="uid://4ygro8r40664" path="res://visible_on_screen_notifier_2d.gd" id="6_ir8iy"]
-[ext_resource type="Texture2D" uid="uid://dpg2a7scy3qqx" path="res://background/softer-purple-cloud.png" id="6_kq1c5"]
 [ext_resource type="Texture2D" uid="uid://dj2ahnrb20836" path="res://zeus_face/Zeus.png" id="6_ld5wt"]
 [ext_resource type="Script" uid="uid://bvrhf46s0n0ut" path="res://zeus.gd" id="7_24dk6"]
 [ext_resource type="Texture2D" uid="uid://baholgtbtj341" path="res://birdlfy-3.png" id="7_e8dv2"]
-[ext_resource type="Texture2D" uid="uid://cbpsuo0mrrvcf" path="res://background/lightest-purple.png" id="7_ornx7"]
+[ext_resource type="Texture2D" uid="uid://7g2dpex1r1ah" path="res://background/cloud-background-6 3.png" id="8_5i8vy"]
+[ext_resource type="Texture2D" uid="uid://yycqa7r8161x" path="res://background/cloud-background-7 3.png" id="9_43vxp"]
 [ext_resource type="Texture2D" uid="uid://d3j43q4md1381" path="res://zapped.png" id="14_2u7jv"]
 [ext_resource type="Texture2D" uid="uid://juke25qyquea" path="res://feather-life.png" id="17_t3mf0"]
 [ext_resource type="Texture2D" uid="uid://cp7q2476cn87c" path="res://clouds/AngryCloud-1.png" id="19_ma08v"]
@@ -55,7 +55,6 @@
 [ext_resource type="Texture2D" uid="uid://drp6fjuqoyjur" path="res://animation/pausemenu/pause-menu-7.png" id="29_ywe1r"]
 [ext_resource type="Texture2D" uid="uid://po6x3uugsypu" path="res://Untitled_Artwork-4 4.png" id="30_6uidu"]
 [ext_resource type="AudioStream" uid="uid://cmwicrc4ner01" path="res://audio/bird-beat-2.ogg" id="30_24dk6"]
-[ext_resource type="Script" uid="uid://b4fjrten6yiec" path="res://distance.gd" id="30_ornx7"]
 [ext_resource type="AudioStream" uid="uid://dgfdklhnah2rf" path="res://audio/zapped-sound.ogg" id="31_24dk6"]
 [ext_resource type="Texture2D" uid="uid://bjx86nawr6pso" path="res://Untitled_Artwork-5 3.png" id="31_qu7as"]
 [ext_resource type="Texture2D" uid="uid://46jmvj6f3qbu" path="res://Untitled_Artwork-6 2.png" id="32_lyuya"]
@@ -180,35 +179,6 @@ radius = 173.97128
 [sub_resource type="CircleShape2D" id="CircleShape2D_fs4d3"]
 radius = 177.0452
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_pjm8v"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("22_r8aua")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_sduiw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_ld5wt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_wcv2n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_b0j31")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_xgqcr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_6jj3b")
-}],
-"loop": false,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_nsnm2"]
 animations = [{
 "frames": [{
@@ -246,41 +216,6 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thyvg"]
 size = Vector2(203, 116)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_oixsq"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("59_xa4jy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("60_4rgxs")
-}, {
-"duration": 1.0,
-"texture": ExtResource("61_88olm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("62_kkr25")
-}, {
-"duration": 1.0,
-"texture": ExtResource("63_fibx4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("64_7kqy5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("65_e1h34")
-}, {
-"duration": 1.0,
-"texture": ExtResource("66_ywe1r")
-}],
-"loop": true,
-"name": &"default",
-"speed": 12.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uo258"]
-size = Vector2(794, 1030)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ld5wt"]
 radius = 508.56317
@@ -377,6 +312,44 @@ animations = [{
 "name": &"default",
 "speed": 25.0
 }]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oixsq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("59_xa4jy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_4rgxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_88olm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_kkr25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_fibx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_7kqy5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_e1h34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_ywe1r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uo258"]
+size = Vector2(812, 884)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjm8v"]
+size = Vector2(654, 626)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
 size = Vector2(304, 453)
@@ -486,6 +459,35 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_pjm8v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_r8aua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_sduiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ld5wt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_wcv2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_b0j31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_xgqcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_6jj3b")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_5mre3"]
 animations = [{
 "frames": [{
@@ -531,8 +533,9 @@ scroll_offset = Vector2(2233, 909)
 autoscroll = Vector2(-10, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Pausable/clouds-bg"]
-position = Vector2(-2302, -1041)
-texture = ExtResource("2_ebxd8")
+position = Vector2(-41, -2640)
+scale = Vector2(1.5255532, 1.7001663)
+texture = ExtResource("2_pjm8v")
 
 [node name="clouds-back" type="Parallax2D" parent="Pausable"]
 repeat_size = Vector2(4481, 0)
@@ -542,7 +545,7 @@ repeat_times = 2
 [node name="Sprite2D" type="Sprite2D" parent="Pausable/clouds-back"]
 position = Vector2(82.999825, 92.99996)
 scale = Vector2(1.064343, 1.1103514)
-texture = ExtResource("3_2u7jv")
+texture = ExtResource("3_nlgyc")
 
 [node name="clouds-middle" type="Parallax2D" parent="Pausable"]
 repeat_size = Vector2(4481, 0)
@@ -552,7 +555,7 @@ repeat_times = 2
 [node name="Sprite2D" type="Sprite2D" parent="Pausable/clouds-middle"]
 position = Vector2(-41.812386, -283.81238)
 scale = Vector2(1.2675658, 1.2683715)
-texture = ExtResource("4_24dk6")
+texture = ExtResource("4_oojoh")
 
 [node name="clouds-front2" type="Parallax2D" parent="Pausable"]
 repeat_size = Vector2(4481, 0)
@@ -561,7 +564,7 @@ autoscroll = Vector2(-30, 0)
 [node name="Sprite2D" type="Sprite2D" parent="Pausable/clouds-front2"]
 position = Vector2(-302, 240.00003)
 scale = Vector2(2.2356737, 1.0587767)
-texture = ExtResource("5_mryly")
+texture = ExtResource("5_c7o6v")
 
 [node name="Zeus" type="AnimatedSprite2D" parent="Pausable"]
 position = Vector2(59, -124)
@@ -576,7 +579,7 @@ autoscroll = Vector2(-40, 0)
 [node name="Sprite2D" type="Sprite2D" parent="Pausable/clouds-front3"]
 position = Vector2(-1083, 121.999954)
 scale = Vector2(1.4644214, 0.8372803)
-texture = ExtResource("6_kq1c5")
+texture = ExtResource("8_5i8vy")
 
 [node name="clouds-front" type="Parallax2D" parent="Pausable"]
 repeat_size = Vector2(4481, 0)
@@ -585,7 +588,7 @@ autoscroll = Vector2(-80, 0)
 [node name="Sprite2D" type="Sprite2D" parent="Pausable/clouds-front"]
 position = Vector2(-1021.0002, 346)
 scale = Vector2(1.1884496, 0.9515381)
-texture = ExtResource("7_ornx7")
+texture = ExtResource("9_43vxp")
 
 [node name="Bird" type="CharacterBody2D" parent="Pausable" groups=["player"]]
 position = Vector2(-812, 114)
@@ -610,122 +613,6 @@ position = Vector2(-6, 129)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Bird/BirdHurtBox"]
 position = Vector2(-1224, 22)
 shape = SubResource("CircleShape2D_fs4d3")
-
-[node name="UI" type="CanvasLayer" parent="Pausable"]
-
-[node name="HeartsContainer" type="HBoxContainer" parent="Pausable/UI"]
-offset_left = -2.0
-offset_top = 77.0
-offset_right = 773.0
-offset_bottom = 302.0
-alignment = 1
-
-[node name="Heart1" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
-layout_mode = 2
-texture = ExtResource("17_t3mf0")
-expand_mode = 3
-
-[node name="Heart2" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
-layout_mode = 2
-texture = ExtResource("17_t3mf0")
-expand_mode = 3
-
-[node name="Heart3" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
-layout_mode = 2
-texture = ExtResource("17_t3mf0")
-expand_mode = 3
-
-[node name="Heart4" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
-visible = false
-layout_mode = 2
-texture = ExtResource("17_t3mf0")
-expand_mode = 3
-
-[node name="Heart5" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
-visible = false
-layout_mode = 2
-texture = ExtResource("17_t3mf0")
-expand_mode = 3
-
-[node name="Heart6" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
-visible = false
-layout_mode = 2
-texture = ExtResource("17_t3mf0")
-expand_mode = 3
-
-[node name="Heart7" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
-visible = false
-layout_mode = 2
-texture = ExtResource("17_t3mf0")
-expand_mode = 3
-
-[node name="Heart8" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
-visible = false
-layout_mode = 2
-texture = ExtResource("17_t3mf0")
-expand_mode = 3
-
-[node name="Heart9" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
-visible = false
-layout_mode = 2
-texture = ExtResource("17_t3mf0")
-expand_mode = 3
-
-[node name="Heart10" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
-visible = false
-layout_mode = 2
-texture = ExtResource("17_t3mf0")
-expand_mode = 3
-
-[node name="Pause_Play" type="TextureButton" parent="Pausable/UI"]
-process_mode = 3
-visible = false
-offset_left = 2504.0
-offset_top = 85.0
-offset_right = 2632.0
-offset_bottom = 235.0
-focus_mode = 0
-toggle_mode = true
-action_mode = 0
-texture_normal = ExtResource("24_gt76g")
-texture_pressed = ExtResource("25_1fr6y")
-
-[node name="GameOver" type="TextureButton" parent="Pausable/UI"]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -520.0
-offset_top = -450.0
-offset_right = 520.0
-offset_bottom = 450.0
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("29_24dk6")
-script = ExtResource("21_ld5wt")
-
-[node name="Distance" type="RichTextLabel" parent="Pausable/UI"]
-visible = false
-anchors_preset = -1
-anchor_right = 0.108
-anchor_bottom = 0.087000005
-offset_left = 568.0
-offset_top = 41.0
-offset_right = 831.4
-offset_bottom = 199.79999
-theme_override_font_sizes/normal_font_size = 129
-bbcode_enabled = true
-text = "0"
-fit_content = true
-tab_size = 6
-script = ExtResource("30_ornx7")
-
-[node name="GameOverScroll" type="AnimatedSprite2D" parent="Pausable/UI"]
-visible = false
-sprite_frames = SubResource("SpriteFrames_pjm8v")
-script = ExtResource("29_sduiw")
 
 [node name="Feather" type="Area2D" parent="Pausable"]
 script = ExtResource("27_j02gt")
@@ -800,21 +687,6 @@ stream = ExtResource("56_qoxh5")
 [node name="Enemies" type="Node2D" parent="Pausable"]
 script = ExtResource("26_s32dh")
 
-[node name="ZeusFist" type="Area2D" parent="Pausable/Enemies"]
-process_mode = 4
-visible = false
-script = ExtResource("58_qwoqy")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Enemies/ZeusFist"]
-position = Vector2(-11, 65)
-scale = Vector2(0.71895427, 0.71895415)
-sprite_frames = SubResource("SpriteFrames_oixsq")
-autoplay = "default"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Enemies/ZeusFist"]
-position = Vector2(20, 108)
-shape = SubResource("RectangleShape2D_uo258")
-
 [node name="ZeusHurtBox" type="Area2D" parent="Pausable/Enemies"]
 process_mode = 4
 visible = false
@@ -858,6 +730,27 @@ scale = Vector2(0.1645507, 2.0163572)
 sprite_frames = SubResource("SpriteFrames_kfelt")
 autoplay = "default"
 frame_progress = 0.3673437
+
+[node name="ZeusFist" type="Area2D" parent="Pausable/Enemies"]
+process_mode = 4
+position = Vector2(-72.5, 111)
+script = ExtResource("58_qwoqy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Enemies/ZeusFist"]
+position = Vector2(-11, 65)
+scale = Vector2(0.71895427, 0.71895415)
+sprite_frames = SubResource("SpriteFrames_oixsq")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Enemies/ZeusFist"]
+position = Vector2(-45, 15)
+shape = SubResource("RectangleShape2D_uo258")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Pausable/Enemies/ZeusFist"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Enemies/ZeusFist/CharacterBody2D"]
+position = Vector2(-41.5, -5)
+shape = SubResource("RectangleShape2D_pjm8v")
 
 [node name="CloudEnemies" type="Node2D" parent="Pausable"]
 script = ExtResource("95_wnn4a")
@@ -922,6 +815,116 @@ sprite_frames = SubResource("SpriteFrames_4d7sh")
 animation = &"happy"
 autoplay = "happy"
 
+[node name="UI" type="CanvasLayer" parent="Pausable"]
+
+[node name="HeartsContainer" type="HBoxContainer" parent="Pausable/UI"]
+offset_left = -2.0
+offset_top = 77.0
+offset_right = 773.0
+offset_bottom = 302.0
+alignment = 1
+
+[node name="Heart1" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("17_t3mf0")
+expand_mode = 3
+
+[node name="Heart2" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("17_t3mf0")
+expand_mode = 3
+
+[node name="Heart3" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("17_t3mf0")
+expand_mode = 3
+
+[node name="Heart4" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("17_t3mf0")
+expand_mode = 3
+
+[node name="Heart5" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("17_t3mf0")
+expand_mode = 3
+
+[node name="Heart6" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("17_t3mf0")
+expand_mode = 3
+
+[node name="Heart7" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("17_t3mf0")
+expand_mode = 3
+
+[node name="Heart8" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("17_t3mf0")
+expand_mode = 3
+
+[node name="Heart9" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("17_t3mf0")
+expand_mode = 3
+
+[node name="Heart10" type="TextureRect" parent="Pausable/UI/HeartsContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("17_t3mf0")
+expand_mode = 3
+
+[node name="Pause_Play" type="TextureButton" parent="Pausable/UI"]
+process_mode = 3
+visible = false
+offset_left = 2504.0
+offset_top = 85.0
+offset_right = 2632.0
+offset_bottom = 235.0
+focus_mode = 0
+toggle_mode = true
+action_mode = 0
+texture_normal = ExtResource("24_gt76g")
+texture_pressed = ExtResource("25_1fr6y")
+
+[node name="GameOver" type="TextureButton" parent="Pausable/UI"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -520.0
+offset_top = -450.0
+offset_right = 520.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("29_24dk6")
+script = ExtResource("21_ld5wt")
+
+[node name="Distance" type="RichTextLabel" parent="Pausable/UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -263.3999
+offset_bottom = 158.79999
+grow_horizontal = 0
+theme_override_font_sizes/normal_font_size = 129
+bbcode_enabled = true
+fit_content = true
+tab_size = 6
+
+[node name="GameOverScroll" type="AnimatedSprite2D" parent="Pausable/UI"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_pjm8v")
+script = ExtResource("29_sduiw")
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 8
@@ -949,20 +952,20 @@ offset_right = 841.75
 offset_bottom = 309.5
 
 [node name="StartMenu" type="AnimatedSprite2D" parent="Control"]
-position = Vector2(266, -72.5)
+position = Vector2(306, -237.49994)
 scale = Vector2(1.0043945, 0.9949807)
 sprite_frames = SubResource("SpriteFrames_5mre3")
 animation = &"pause"
 autoplay = "pause"
 script = ExtResource("124_4rgxs")
 
-[connection signal="toggled" from="Pausable/UI/Pause_Play" to="." method="_on_pause_play_toggled"]
-[connection signal="pressed" from="Pausable/UI/GameOver" to="." method="_on_game_over_pressed"]
 [connection signal="body_entered" from="Pausable/Feather" to="Pausable/Bird" method="_on_body_entered"]
-[connection signal="body_entered" from="Pausable/Enemies/ZeusFist" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Pausable/Enemies/ZeusHurtBox" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Pausable/Enemies/LargeBolt" to="Pausable/Bird" method="_on_body_entered"]
+[connection signal="body_entered" from="Pausable/Enemies/ZeusFist" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Pausable/CloudEnemies/Cloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Pausable/CloudEnemies/SadCloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Pausable/CloudEnemies/HappyCloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
+[connection signal="toggled" from="Pausable/UI/Pause_Play" to="." method="_on_pause_play_toggled"]
+[connection signal="pressed" from="Pausable/UI/GameOver" to="." method="_on_game_over_pressed"]
 [connection signal="pressed" from="Control/StartButton" to="." method="_on_start_button_pressed"]

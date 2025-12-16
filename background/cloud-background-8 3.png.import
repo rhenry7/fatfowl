@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpg2a7scy3qqx"
-path="res://.godot/imported/softer-purple-cloud.png-868cd690a68ff6822d2e62d3941c9d73.ctex"
+uid="uid://d1whuent1dx8s"
+path="res://.godot/imported/cloud-background-8 3.png-703f300a1f218a4d0a0cb6fa1e831dea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://background/softer-purple-cloud.png"
-dest_files=["res://.godot/imported/softer-purple-cloud.png-868cd690a68ff6822d2e62d3941c9d73.ctex"]
+source_file="res://background/cloud-background-8 3.png"
+dest_files=["res://.godot/imported/cloud-background-8 3.png-703f300a1f218a4d0a0cb6fa1e831dea.ctex"]
 
 [params]
 

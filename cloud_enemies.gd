@@ -1,9 +1,9 @@
 extends Area2D
 
-var speed := randf_range(10, 1000)
+var speed := randf_range(10, 500)
 @onready var right_spawn_x := 200.0
 @onready var top_y := 200.0
-@onready var bottom_y := 1000.0
+@onready var bottom_y := 900.0
 
 func deactivate():
 	visible = false
