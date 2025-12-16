@@ -51,4 +51,6 @@ func _on_hit(body: Node2D) -> void:
 		body.take_damage()
 		
 func speed_increase_loop() -> void:
-	speed += randf_range(10, 50)
+	if speed >= 2000:
+		return
+	speed += 50

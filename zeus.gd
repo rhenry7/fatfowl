@@ -8,7 +8,7 @@ func _ready() -> void:
 	# Start invsible
 	modulate.a = 0.0
 	await get_tree().create_timer(5).timeout
-	get_tree().current_scene.get_node("Pausable/FearThePower").play()
+	#get_tree().current_scene.get_node("Pausable/FearThePower").play()
 	var tween = create_tween()
 	tween.tween_property(self, "modulate:a", 0.6, 120.0).from(0.0)
 	#await get_tree().create_timer(30).timeout

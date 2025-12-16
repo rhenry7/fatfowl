@@ -38,9 +38,8 @@ func activate():
 		if child is CollisionShape2D:
 			child.disabled = false
 	process_mode = Node.PROCESS_MODE_INHERIT
+	
 func _ready() -> void:
-	var thunder = get_tree().current_scene.get_node("Pausable/Thunder")
-	thunder.play()
 	process_mode = Node.PROCESS_MODE_DISABLED
 	add_to_group("hazard")
 	connect("body_entered", Callable(self, "_on_hit"))
@@ -55,8 +54,6 @@ func _on_hit(body: Node2D) -> void:
 		
 func respawn() -> void:
 	while true:
-		var thunder = get_tree().current_scene.get_node("Pausable/Thunder")
-		thunder.play()		
 		# Reset to right side if too far left
 		if position.x < -1900:
 			max_right = 500
@@ -71,6 +68,8 @@ func respawn() -> void:
 			tween.tween_property(self, "modulate:a", 1.0, 2).from(0.0)
 			await tween.finished
 			
+			var thunder = get_tree().current_scene.get_node("Pausable/Thunder")
+			thunder.play()		
 			# Enable collision when fully visible
 			enable_collision()
 			

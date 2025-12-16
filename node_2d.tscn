@@ -1,4 +1,4 @@
-[gd_scene load_steps=150 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=161 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -131,6 +131,15 @@
 [ext_resource type="Texture2D" uid="uid://d0jxvnea7f5mr" path="res://enemies/sadcloud/sad_thunder-10.png" id="70_sduiw"]
 [ext_resource type="Script" uid="uid://cbruw0twcmkfo" path="res://enemies_cloud.gd" id="95_wnn4a"]
 [ext_resource type="Script" uid="uid://ca486p5afoxmf" path="res://start_menu.gd" id="124_4rgxs"]
+[ext_resource type="Script" uid="uid://dycgdx2yjrx87" path="res://surfer.gd" id="124_b481h"]
+[ext_resource type="Texture2D" uid="uid://coe0kgq6vsd3c" path="res://animation/SurferZeus/surfer-1 8.png" id="125_uhvdc"]
+[ext_resource type="Texture2D" uid="uid://bwlqvwrq318xr" path="res://animation/SurferZeus/surfer-2 5.png" id="126_aq07h"]
+[ext_resource type="Texture2D" uid="uid://3uktsvdgvtmj" path="res://animation/SurferZeus/surfer-3 5.png" id="127_qphy4"]
+[ext_resource type="Texture2D" uid="uid://cyg2g17snj4l" path="res://animation/SurferZeus/surfer-4 5.png" id="128_oxvno"]
+[ext_resource type="Texture2D" uid="uid://bepr0ivo1urk7" path="res://animation/SurferZeus/surfer-5 4.png" id="129_xotjc"]
+[ext_resource type="Texture2D" uid="uid://ceypxfnkusdxp" path="res://animation/SurferZeus/surfer-6 3.png" id="130_5f7vl"]
+[ext_resource type="Texture2D" uid="uid://cnb24yntl4aef" path="res://animation/SurferZeus/surfer-7 3.png" id="131_py13h"]
+[ext_resource type="Texture2D" uid="uid://48fw4ai3k3s1" path="res://animation/SurferZeus/surfer-8 3.png" id="132_e8f3a"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jinwr"]
 animations = [{
@@ -347,10 +356,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uo258"]
-size = Vector2(812, 884)
+size = Vector2(681, 556)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjm8v"]
-size = Vector2(654, 626)
+size = Vector2(526, 484)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
 size = Vector2(304, 453)
@@ -488,6 +497,41 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mxju4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("125_uhvdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_aq07h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_qphy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_oxvno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_xotjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_5f7vl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_py13h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_e8f3a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iukfe"]
+size = Vector2(150, 408)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5mre3"]
 animations = [{
@@ -747,13 +791,13 @@ sprite_frames = SubResource("SpriteFrames_oixsq")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Enemies/ZeusFist"]
-position = Vector2(-45, 15)
+position = Vector2(-41, -7)
 shape = SubResource("RectangleShape2D_uo258")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Pausable/Enemies/ZeusFist"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Enemies/ZeusFist/CharacterBody2D"]
-position = Vector2(-41.5, -5)
+position = Vector2(-37.5, 9)
 shape = SubResource("RectangleShape2D_pjm8v")
 
 [node name="CloudEnemies" type="Node2D" parent="Pausable"]
@@ -930,6 +974,20 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_pjm8v")
 script = ExtResource("29_sduiw")
 
+[node name="Surfer" type="Area2D" parent="Pausable"]
+script = ExtResource("124_b481h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Surfer"]
+position = Vector2(768, 0)
+scale = Vector2(0.4325446, 0.43254477)
+sprite_frames = SubResource("SpriteFrames_mxju4")
+autoplay = "default"
+frame_progress = 0.5983943
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Surfer"]
+position = Vector2(688, 4)
+shape = SubResource("RectangleShape2D_iukfe")
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 8
@@ -973,4 +1031,5 @@ script = ExtResource("124_4rgxs")
 [connection signal="body_entered" from="Pausable/CloudEnemies/HappyCloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
 [connection signal="toggled" from="Pausable/UI/Pause_Play" to="." method="_on_pause_play_toggled"]
 [connection signal="pressed" from="Pausable/UI/GameOver" to="." method="_on_game_over_pressed"]
+[connection signal="body_entered" from="Pausable/Surfer" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="pressed" from="Control/StartButton" to="." method="_on_start_button_pressed"]
