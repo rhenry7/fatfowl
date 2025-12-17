@@ -1,4 +1,4 @@
-[gd_scene load_steps=161 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=162 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -89,6 +89,7 @@
 [ext_resource type="AudioStream" uid="uid://caw0owvqbqr32" path="res://audio/zeus/prepare2.ogg" id="44_pjm8v"]
 [ext_resource type="Texture2D" uid="uid://tfuqegekcjgp" path="res://enemies/happycloud/happy_thunder-4 5.png" id="45_3hhlv"]
 [ext_resource type="Texture2D" uid="uid://b7818yd26oa5g" path="res://LightningPath/Untitled_Artwork-11.png" id="45_ma08v"]
+[ext_resource type="AudioStream" uid="uid://b0twa32ldpfl5" path="res://audio/paper.ogg" id="45_uhvdc"]
 [ext_resource type="Texture2D" uid="uid://cmowkrdk52l4" path="res://enemies/happycloud/happy_thunder-5 4.png" id="46_d88dk"]
 [ext_resource type="Texture2D" uid="uid://bwg3xoss3ncd5" path="res://LightningPath/Untitled_Artwork-1 4.png" id="46_s32dh"]
 [ext_resource type="Texture2D" uid="uid://2xjnnb2tibf1" path="res://enemies/happycloud/happy_thunder-6 3.png" id="47_122lf"]
@@ -531,7 +532,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iukfe"]
-size = Vector2(150, 408)
+size = Vector2(210, 456)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5mre3"]
 animations = [{
@@ -982,10 +983,10 @@ position = Vector2(768, 0)
 scale = Vector2(0.4325446, 0.43254477)
 sprite_frames = SubResource("SpriteFrames_mxju4")
 autoplay = "default"
-frame_progress = 0.9958759
+frame_progress = 0.73266757
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Surfer"]
-position = Vector2(688, 4)
+position = Vector2(702, -25)
 shape = SubResource("RectangleShape2D_iukfe")
 
 [node name="Control" type="Control" parent="."]
@@ -1002,6 +1003,10 @@ offset_bottom = 137.5
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Paper" type="AudioStreamPlayer2D" parent="Control"]
+position = Vector2(286, -137.5)
+stream = ExtResource("45_uhvdc")
+
 [node name="StartButton" type="TextureButton" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
@@ -1015,11 +1020,10 @@ offset_right = 841.75
 offset_bottom = 309.5
 
 [node name="StartMenu" type="AnimatedSprite2D" parent="Control"]
-position = Vector2(306, -237.49994)
+position = Vector2(421.00003, -238.49998)
 scale = Vector2(1.0043945, 0.9949807)
 sprite_frames = SubResource("SpriteFrames_5mre3")
 animation = &"pause"
-autoplay = "pause"
 script = ExtResource("124_4rgxs")
 
 [connection signal="body_entered" from="Pausable/Feather" to="Pausable/Bird" method="_on_body_entered"]
