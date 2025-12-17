@@ -50,6 +50,7 @@ func _on_start_button_pressed() -> void:
 	cloudEnemies.visible = true
 	zeusBody.visible = true
 	player.visible = true
+	await get_tree().create_timer(1, false, true).timeout
 	get_tree().current_scene.get_node("Pausable/Prepare").play()
 	await get_tree().create_timer(3, false, true).timeout
 	get_tree().current_scene.get_node("Pausable/Thunder").play()

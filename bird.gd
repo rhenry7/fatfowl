@@ -6,7 +6,7 @@ const SPEED = 10.0
 const TOP_Y = -850
 const BOTTOM_Y = 1500 
 const MAX_HEARTS := 5   
-var HEARTS := 5
+var HEARTS := 3
 var IS_DEAD := false
 var is_invincible := false
 var invincibility_duration := 2.0  # Increased to match usage
@@ -21,6 +21,7 @@ func fall_damage():
 	if IS_DEAD or is_invincible:
 		return  # Ignore damage if dead or invincible
 	
+	get_tree().current_scene.get_node("Pausable/FallDamage").play()
 	# Start invincibility period
 	remove_heart()  # Only call once
 	is_invincible = true
@@ -133,7 +134,8 @@ func die():
 	await get_tree().create_timer(1).timeout
 	get_tree().current_scene.get_node("Pausable/Bird").visible = false
 	get_tree().current_scene.get_node("Pausable/GameOver").play()
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(10.0).timeout
+	get_tree().current_scene.get_node("Pausable/ZeusRant2").play()
 	
 func respawn() -> void:
 	position.x = -200

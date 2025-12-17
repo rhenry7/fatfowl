@@ -38,8 +38,11 @@ func _ready():
 
 func _on_hit(body: Node2D) -> void:
 	if body.name == "Bird":
-		get_tree().current_scene.get_node("Pausable/AcceptYourFate").play()
 		body.take_damage()
+		get_tree().current_scene.get_node("Pausable/Punch").play()
+		get_tree().current_scene.get_node("Pausable/FallDamage").play()
+		await get_tree().create_timer(0.5, false, true).timeout
+		get_tree().current_scene.get_node("Pausable/AcceptYourFate").play()
 		#var off_screen_pos: Vector2 = Vector2(randf_range(-100, 1000), 1000)  # or wherever "out of frame" is
 		#var tween_out = create_tween()
 		#tween_out.tween_property(hand, "position", off_screen_pos, 4.0)
