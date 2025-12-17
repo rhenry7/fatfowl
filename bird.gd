@@ -125,6 +125,7 @@ func die():
 	var scrollSprite: AnimatedSprite2D = get_tree().current_scene.get_node("Pausable/UI/GameOverScroll")
 	get_tree().current_scene.get_node("Pausable/UI/GameOverScroll").visible = true
 	get_tree().current_scene.get_node("Pausable/UI/GameOver").visible = true
+	get_tree().current_scene.get_node("Control/Paper").play()
 	await get_tree().create_timer(0.5).timeout
 	scrollSprite.play()
 	var music = get_tree().current_scene.get_node("Pausable/Music")
