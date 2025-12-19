@@ -44,8 +44,8 @@ func _on_hit(body: Node2D) -> void:
 		strangle.play()
 		var laugh = get_tree().current_scene.get_node("Pausable/ZeusLaugh")
 		laugh.play()
-		body.hide_body()
 		body.take_damage()
+		body.hide_body()
 		sprite.play("HandGrab")	
 		#get_tree().current_scene.get_node("Pausable/GrabTaunt").play()
 			# Stay on screen time

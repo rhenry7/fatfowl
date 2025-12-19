@@ -1,5 +1,5 @@
 extends CharacterBody2D
-const GRAVITY = 2000.0
+var GRAVITY = 2000
 const FLAP_STRENGTH = -350.0
 const FLAP_STRENGTH_X = 400.0 
 const SPEED = 10.0 
@@ -63,7 +63,7 @@ func _ready() -> void:
 	distanceText.text = str(feathers)
 	add_to_group("player")
 	print("Global Position: ", global_position)
-	position.x = 10
+	position.x = 300
 	position.y = -500
 	$BirdHurtBox.body_entered.connect(_on_body_entered)
 	sprite.play("fly")
@@ -81,9 +81,13 @@ func _on_body_entered(body):
 	
 func hide_body():
 	print("hide body function")
+	is_invincible = true
+	GRAVITY = 0 
 	sprite.visible = false
 	await get_tree().create_timer(3).timeout
 	sprite.visible = true
+	is_invincible = false
+	GRAVITY = 2000
 	position.x = -600
 	position.y = -2000
 		
@@ -138,7 +142,7 @@ func die():
 	get_tree().current_scene.get_node("Pausable/ZeusRant2").play()
 	
 func respawn() -> void:
-	position.x = -200
+	position.x = -100
 	position.y = -1350
 
 func _physics_process(delta: float) -> void:
