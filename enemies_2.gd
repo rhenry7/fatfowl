@@ -5,8 +5,8 @@ extends Node
 	$LargeBolt,
 ]
 var current_enemy_index := 0
-var display_duration := 15.0   # seconds per enemy
-var enemy_buffer := 15.0
+var display_duration := 10.0   # seconds per enemy
+var enemy_buffer := 5.0
 var initial_delay := 10.0
 
 func _ready():
