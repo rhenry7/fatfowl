@@ -4,6 +4,8 @@ extends Node2D
 @onready var cloudEnemies = $"Pausable/CloudEnemies"
 @onready var zeusBody = $"Pausable/Enemies"
 @onready var player = $"Pausable/Bird"
+@onready var surfer = $"Pausable/Surfer"
+@onready var zeusFist = $Pausable/Enemies/ZeusFist
 
 
 
@@ -14,8 +16,10 @@ func _ready() -> void:
 	cloudEnemies.visible = false
 	zeusBody.visible = false
 	player.visible = false
+	surfer.visible = false
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	get_tree().paused = true
+	zeusFist.position = Vector2(2000, 2000)
 	pass # Replace with function body.
 
 func toggle_pause() -> void:
@@ -54,3 +58,4 @@ func _on_start_button_pressed() -> void:
 	get_tree().current_scene.get_node("Pausable/Prepare").play()
 	await get_tree().create_timer(3, false, true).timeout
 	get_tree().current_scene.get_node("Pausable/Thunder").play()
+	surfer.visible = true

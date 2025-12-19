@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var speed := 700
+@onready var speed := 100
 @onready var right_spawn_x := 200.0
 @onready var top_y := 200.0
 @onready var bottom_y := 900.0
@@ -16,6 +16,7 @@ func respawn() -> void:
 	# speed_increase_loop()
 
 func _ready():
+	await get_tree().create_timer(20, false, true).timeout
 	position.x = 4000
 	add_to_group("hazard")
 	connect("body_entered", Callable(self, "_on_hit"))

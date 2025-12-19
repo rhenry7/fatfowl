@@ -1,9 +1,11 @@
-[gd_scene load_steps=164 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=168 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
-[ext_resource type="Texture2D" uid="uid://d01bxm766bmqr" path="res://background/cloud-background-1 8.png" id="2_pjm8v"]
+[ext_resource type="Texture2D" uid="uid://0rkut7xq4kyi" path="res://background/cloud-background-12.png" id="2_py13h"]
+[ext_resource type="Texture2D" uid="uid://bhqjmv6d2jbgq" path="res://clouds-bg.png" id="2_qphy4"]
 [ext_resource type="Texture2D" uid="uid://kv41vhd8xvtm" path="res://background/cloud-background-2 5.png" id="3_nlgyc"]
+[ext_resource type="Texture2D" uid="uid://b6ocxrkhyqhtk" path="res://background/bg_sky/Untitled_Artwork-8 3.png" id="3_py13h"]
 [ext_resource type="Texture2D" uid="uid://brx8etyntbh3e" path="res://birdfly-1.png" id="3_rjqkl"]
 [ext_resource type="Texture2D" uid="uid://p1dctarnwp8l" path="res://Illustration_sans_titre-1 2.png" id="4_fs4d3"]
 [ext_resource type="Texture2D" uid="uid://dupxyc48hji7r" path="res://background/cloud-background-4 5.png" id="4_oojoh"]
@@ -17,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://baholgtbtj341" path="res://birdlfy-3.png" id="7_e8dv2"]
 [ext_resource type="Texture2D" uid="uid://7g2dpex1r1ah" path="res://background/cloud-background-6 3.png" id="8_5i8vy"]
 [ext_resource type="Texture2D" uid="uid://yycqa7r8161x" path="res://background/cloud-background-7 3.png" id="9_43vxp"]
+[ext_resource type="Texture2D" uid="uid://bwmoha67f8v4y" path="res://background/bg_sky/Untitled_Artwork-2 5.png" id="11_e8f3a"]
+[ext_resource type="Texture2D" uid="uid://dffqcu6brgsxm" path="res://background/bg_sky/Untitled_Artwork-5 4.png" id="12_mxju4"]
 [ext_resource type="Texture2D" uid="uid://d3j43q4md1381" path="res://zapped.png" id="14_2u7jv"]
 [ext_resource type="Texture2D" uid="uid://juke25qyquea" path="res://feather-life.png" id="17_t3mf0"]
 [ext_resource type="Texture2D" uid="uid://cp7q2476cn87c" path="res://clouds/AngryCloud-1.png" id="19_ma08v"]
@@ -573,26 +577,42 @@ metadata/_edit_horizontal_guides_ = [-904.0, 1416.0]
 [node name="Pausable" type="Node2D" parent="."]
 process_mode = 1
 
+[node name="Sprite2D2" type="Sprite2D" parent="Pausable"]
+position = Vector2(311, 0)
+scale = Vector2(1.0440389, 1.4176952)
+texture = ExtResource("2_py13h")
+
+[node name="Parallax2D3" type="Parallax2D" parent="Pausable"]
+scale = Vector2(40.627876, 2.2419608)
+scroll_scale = Vector2(0.5, 1)
+autoscroll = Vector2(-10, 0)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Pausable/Parallax2D3"]
+position = Vector2(31, 0)
+scale = Vector2(-54.61519, 8.456075)
+texture = ExtResource("3_py13h")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Pausable"]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Pausable"]
+visible = false
+scale = Vector2(1.0603372, 1.1955034)
+texture = ExtResource("2_qphy4")
+
 [node name="Camera2D" type="Camera2D" parent="Pausable"]
+visible = false
 position = Vector2(-66, -129)
 
-[node name="clouds-bg" type="Parallax2D" parent="Pausable"]
-scroll_offset = Vector2(2233, 909)
-autoscroll = Vector2(-50, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Pausable/clouds-bg"]
-position = Vector2(-41, -2640)
-scale = Vector2(1.5255532, 1.7001663)
-texture = ExtResource("2_pjm8v")
-
 [node name="clouds-back" type="Parallax2D" parent="Pausable"]
+visible = false
 repeat_size = Vector2(4496, 0)
 autoscroll = Vector2(-30, 0)
 repeat_times = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Pausable/clouds-back"]
 position = Vector2(83, -486)
-scale = Vector2(1.064343, 1.1103514)
+scale = Vector2(1.4018586, 1.371701)
 texture = ExtResource("3_nlgyc")
 
 [node name="clouds-front" type="Parallax2D" parent="Pausable"]
@@ -612,8 +632,9 @@ autoscroll = Vector2(-25, 0)
 repeat_times = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Pausable/clouds-middle"]
+visible = false
 position = Vector2(-50.812, -264.812)
-scale = Vector2(1.2675658, 1.2683715)
+scale = Vector2(-0.7419037, 0.7906267)
 texture = ExtResource("4_oojoh")
 
 [node name="clouds-front2" type="Parallax2D" parent="Pausable"]
@@ -622,7 +643,7 @@ autoscroll = Vector2(-100, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Pausable/clouds-front2"]
 position = Vector2(-302, -142)
-scale = Vector2(2.2356737, 1.0587767)
+scale = Vector2(1.1650759, 0.90014344)
 texture = ExtResource("5_c7o6v")
 
 [node name="Zeus" type="AnimatedSprite2D" parent="Pausable"]
@@ -631,16 +652,41 @@ scale = Vector2(1.2478814, 1.2615854)
 sprite_frames = SubResource("SpriteFrames_jinwr")
 script = ExtResource("7_24dk6")
 
+[node name="Parallax2D2" type="Parallax2D" parent="Pausable"]
+repeat_size = Vector2(4000, 0)
+autoscroll = Vector2(-40, 0)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Pausable/Parallax2D2"]
+texture = ExtResource("11_e8f3a")
+
+[node name="Parallax2D4" type="Parallax2D" parent="Pausable"]
+repeat_size = Vector2(3000, 0)
+autoscroll = Vector2(-10, 0)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Pausable/Parallax2D4"]
+texture = ExtResource("12_mxju4")
+
+[node name="Parallax2D" type="Parallax2D" parent="Pausable"]
+scroll_scale = Vector2(0.5, 1)
+repeat_size = Vector2(3666, 0)
+autoscroll = Vector2(-100, 0)
+
+[node name="Sprite2D7" type="Sprite2D" parent="Pausable/Parallax2D"]
+texture = ExtResource("3_py13h")
+
 [node name="clouds-front3" type="Parallax2D" parent="Pausable"]
+visible = false
 repeat_size = Vector2(4481, 0)
 autoscroll = Vector2(-40, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Pausable/clouds-front3"]
+visible = false
 position = Vector2(-1083, -73)
-scale = Vector2(1.4644214, 0.8372803)
+scale = Vector2(0.7844207, 0.8372803)
 texture = ExtResource("8_5i8vy")
 
 [node name="Bird" type="CharacterBody2D" parent="Pausable" groups=["player"]]
+visible = false
 position = Vector2(-812, 114)
 script = ExtResource("1_0hol4")
 

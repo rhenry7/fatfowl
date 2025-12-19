@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed := randf_range(10, 800)
+var speed := randf_range(10, 300)
 @onready var right_spawn_x := 200.0
 @onready var top_y := 200.0
 @onready var bottom_y := 900.0

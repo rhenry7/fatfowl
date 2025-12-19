@@ -134,7 +134,7 @@ func die():
 	await get_tree().create_timer(1).timeout
 	get_tree().current_scene.get_node("Pausable/Bird").visible = false
 	get_tree().current_scene.get_node("Pausable/GameOver").play()
-	await get_tree().create_timer(10.0).timeout
+	await get_tree().create_timer(5.0).timeout
 	get_tree().current_scene.get_node("Pausable/ZeusRant2").play()
 	
 func respawn() -> void:
