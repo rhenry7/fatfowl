@@ -283,7 +283,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"HandWave",
-"speed": 10.0
+"speed": 12.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ma08v"]
@@ -831,7 +831,6 @@ autoplay = "HandWave"
 
 [node name="LargeBolt" type="Area2D" parent="Pausable/Enemies"]
 process_mode = 4
-visible = false
 position = Vector2(-142, -6)
 script = ExtResource("42_2v765")
 
@@ -870,12 +869,10 @@ position = Vector2(-37.5, 232)
 shape = SubResource("RectangleShape2D_pjm8v")
 
 [node name="Enemies2" type="Node2D" parent="Pausable"]
-visible = false
 script = ExtResource("87_iukfe")
 
 [node name="ZeusHurtBox" type="Area2D" parent="Pausable/Enemies2"]
 process_mode = 4
-visible = false
 position = Vector2(58, 995)
 collision_layer = 2
 collision_mask = 2
@@ -902,7 +899,6 @@ autoplay = "HandWave"
 
 [node name="LargeBolt" type="Area2D" parent="Pausable/Enemies2"]
 process_mode = 4
-visible = false
 position = Vector2(-142, -6)
 script = ExtResource("42_2v765")
 
@@ -919,7 +915,6 @@ frame_progress = 0.3673437
 
 [node name="ZeusFist" type="Area2D" parent="Pausable/Enemies2"]
 process_mode = 4
-visible = false
 position = Vector2(-72.5, 232)
 script = ExtResource("58_qwoqy")
 
