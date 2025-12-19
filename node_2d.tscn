@@ -538,7 +538,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iukfe"]
-size = Vector2(210, 456)
+size = Vector2(148, 169)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5mre3"]
 animations = [{
@@ -579,7 +579,7 @@ process_mode = 1
 
 [node name="Sprite2D2" type="Sprite2D" parent="Pausable"]
 position = Vector2(311, 0)
-scale = Vector2(1.0440389, 1.4176952)
+scale = Vector2(8.044, 11.418)
 texture = ExtResource("2_py13h")
 
 [node name="Parallax2D3" type="Parallax2D" parent="Pausable"]
@@ -654,14 +654,14 @@ script = ExtResource("7_24dk6")
 
 [node name="Parallax2D2" type="Parallax2D" parent="Pausable"]
 repeat_size = Vector2(4000, 0)
-autoscroll = Vector2(-40, 0)
+autoscroll = Vector2(-15, 0)
 
 [node name="Sprite2D4" type="Sprite2D" parent="Pausable/Parallax2D2"]
 texture = ExtResource("11_e8f3a")
 
 [node name="Parallax2D4" type="Parallax2D" parent="Pausable"]
 repeat_size = Vector2(3000, 0)
-autoscroll = Vector2(-10, 0)
+autoscroll = Vector2(-25, 0)
 
 [node name="Sprite2D6" type="Sprite2D" parent="Pausable/Parallax2D4"]
 texture = ExtResource("12_mxju4")
@@ -669,7 +669,7 @@ texture = ExtResource("12_mxju4")
 [node name="Parallax2D" type="Parallax2D" parent="Pausable"]
 scroll_scale = Vector2(0.5, 1)
 repeat_size = Vector2(3666, 0)
-autoscroll = Vector2(-100, 0)
+autoscroll = Vector2(-5, 0)
 
 [node name="Sprite2D7" type="Sprite2D" parent="Pausable/Parallax2D"]
 texture = ExtResource("3_py13h")
@@ -1035,17 +1035,22 @@ sprite_frames = SubResource("SpriteFrames_pjm8v")
 script = ExtResource("29_sduiw")
 
 [node name="Surfer" type="Area2D" parent="Pausable"]
+process_mode = 4
+visible = false
 script = ExtResource("124_b481h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Surfer"]
+visible = false
 position = Vector2(768, 0)
-scale = Vector2(0.4325446, 0.43254477)
+scale = Vector2(0.15254459, 0.15254465)
 sprite_frames = SubResource("SpriteFrames_mxju4")
 autoplay = "default"
 frame_progress = 0.73266757
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Surfer"]
-position = Vector2(702, -25)
+visible = false
+position = Vector2(733, 4.5)
+scale = Vector2(0.52, 1)
 shape = SubResource("RectangleShape2D_iukfe")
 
 [node name="Control" type="Control" parent="."]
