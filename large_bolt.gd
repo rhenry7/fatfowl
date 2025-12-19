@@ -55,7 +55,7 @@ func _on_hit(body: Node2D) -> void:
 func respawn() -> void:
 	while true:
 		# Reset to right side if too far left
-		if position.x < -1900:
+		if position.x < -2000:
 			max_right = 500
 		
 		# Always spawn at max_right position
@@ -65,11 +65,10 @@ func respawn() -> void:
 		if not get_tree().paused:
 			# Fade in - lightning appears
 			var tween = create_tween()
+			#var thunder = get_tree().current_scene.get_node("Pausable/Thunder")
+			#thunder.play()		
 			tween.tween_property(self, "modulate:a", 1.0, 2).from(0.0)
 			await tween.finished
-			
-			var thunder = get_tree().current_scene.get_node("Pausable/Thunder")
-			thunder.play()		
 			# Enable collision when fully visible
 			enable_collision()
 			

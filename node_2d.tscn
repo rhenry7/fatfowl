@@ -287,7 +287,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ma08v"]
-size = Vector2(377, 3175)
+size = Vector2(280.5, 3175)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kfelt"]
 animations = [{
@@ -870,6 +870,7 @@ position = Vector2(-37.5, 232)
 shape = SubResource("RectangleShape2D_pjm8v")
 
 [node name="Enemies2" type="Node2D" parent="Pausable"]
+visible = false
 script = ExtResource("87_iukfe")
 
 [node name="ZeusHurtBox" type="Area2D" parent="Pausable/Enemies2"]
@@ -1106,6 +1107,22 @@ offset_bottom = 158.79999
 grow_horizontal = 0
 theme_override_font_sizes/normal_font_size = 129
 bbcode_enabled = true
+fit_content = true
+tab_size = 6
+
+[node name="Feathers_" type="RichTextLabel" parent="Pausable/UI"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -806.0
+offset_top = 21.0
+offset_right = -186.0
+offset_bottom = 197.0
+grow_horizontal = 0
+theme_override_font_sizes/normal_font_size = 129
+bbcode_enabled = true
+text = "Feathers: "
 fit_content = true
 tab_size = 6
 

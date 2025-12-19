@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 		respawn()
 
 func respawn() -> void:
-	position.y = randf_range(-500, 2000)
+	position.y = randf_range(-100, 1000)
 	position.x = randf_range(100, 2000)
 	speed_increase_loop()
 
