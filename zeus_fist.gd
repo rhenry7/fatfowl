@@ -67,7 +67,7 @@ func respawn() -> void:
 			
 			var off_screen_pos: Vector2 = Vector2(vert, 4000)  # or wherever "out of frame" is
 			var tween_out = create_tween()
-			tween_out.tween_property(hand, "position", off_screen_pos, 0.5)
+			tween_out.tween_property(hand, "position", off_screen_pos, 5.0)
 			
 			# Wait for exit animation to finish
 			await tween_out.finished

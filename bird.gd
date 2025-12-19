@@ -5,7 +5,7 @@ const FLAP_STRENGTH_X = 400.0
 const SPEED = 10.0 
 const TOP_Y = -850
 const BOTTOM_Y = 1500 
-const MAX_HEARTS := 5   
+const MAX_HEARTS := 3   
 var HEARTS := 3
 var IS_DEAD := false
 var is_invincible := false
@@ -15,7 +15,7 @@ var invincibility_duration := 2.0  # Increased to match usage
 @onready var hearts_container := get_tree().current_scene.get_node("Pausable/UI/HeartsContainer")
 @onready var game_over_card := get_tree().current_scene.get_node("Pausable/UI/GameOver")
 @onready var distanceText = get_tree().current_scene.get_node("Pausable/UI/Distance")
-@onready var feathers:int = 12
+@onready var feathers:int = 0
 
 func fall_damage():
 	if IS_DEAD or is_invincible:
@@ -88,7 +88,7 @@ func hide_body():
 	sprite.visible = true
 	is_invincible = false
 	GRAVITY = 2000
-	position.x = -600
+	position.x = 300
 	position.y = -2000
 		
 func take_damage():

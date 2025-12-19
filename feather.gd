@@ -43,6 +43,7 @@ func _on_body_entered(body):
 			# Give player 1 heart (change to health_amount if you want to use the export variable)
 			body.heal(1)
 			position.y = -3000
+			position.x = randf_range(400, 2000)
 			get_tree().current_scene.get_node("Pausable/Bloop").play()
 
 		# Respawn feather at top immediately after collection

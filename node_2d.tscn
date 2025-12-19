@@ -799,6 +799,7 @@ stream = ExtResource("45_aq07h")
 stream = ExtResource("46_qphy4")
 
 [node name="Enemies" type="Node2D" parent="Pausable"]
+visible = false
 script = ExtResource("26_s32dh")
 
 [node name="ZeusHurtBox" type="Area2D" parent="Pausable/Enemies"]
@@ -909,14 +910,15 @@ position = Vector2(711.5, 199)
 shape = SubResource("RectangleShape2D_ma08v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Enemies2/LargeBolt"]
-position = Vector2(715.5, 454)
-scale = Vector2(0.1645507, 2.0163572)
+position = Vector2(687.5, 546.375)
+scale = Vector2(0.36083978, 1.9261473)
 sprite_frames = SubResource("SpriteFrames_kfelt")
 autoplay = "default"
 frame_progress = 0.3673437
 
 [node name="ZeusFist" type="Area2D" parent="Pausable/Enemies2"]
 process_mode = 4
+visible = false
 position = Vector2(-72.5, 232)
 script = ExtResource("58_qwoqy")
 
@@ -1096,7 +1098,6 @@ texture_normal = ExtResource("29_24dk6")
 script = ExtResource("21_ld5wt")
 
 [node name="Distance" type="RichTextLabel" parent="Pausable/UI"]
-visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
