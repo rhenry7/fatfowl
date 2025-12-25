@@ -1,4 +1,4 @@
-[gd_scene load_steps=184 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=185 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -161,6 +161,7 @@
 [ext_resource type="Texture2D" uid="uid://ceypxfnkusdxp" path="res://animation/SurferZeus/surfer-6 3.png" id="130_5f7vl"]
 [ext_resource type="Texture2D" uid="uid://cnb24yntl4aef" path="res://animation/SurferZeus/surfer-7 3.png" id="131_py13h"]
 [ext_resource type="Texture2D" uid="uid://48fw4ai3k3s1" path="res://animation/SurferZeus/surfer-8 3.png" id="132_e8f3a"]
+[ext_resource type="FontFile" uid="uid://b1qfifjoh852g" path="res://Greek-Freak.ttf" id="136_pl55l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jinwr"]
 animations = [{
@@ -294,7 +295,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"CoinDrop",
-"speed": 10.0
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ld5wt"]
@@ -870,7 +871,7 @@ scale = Vector2(0.18948922, 0.18948922)
 sprite_frames = SubResource("SpriteFrames_xotjc")
 animation = &"falling"
 autoplay = "falling"
-frame_progress = 0.35263574
+frame_progress = 0.11172022
 
 [node name="Coin" type="Area2D" parent="Pausable" groups=["coin"]]
 script = ExtResource("23_qphy4")
@@ -881,7 +882,7 @@ scale = Vector2(0.32665637, 0.3266564)
 sprite_frames = SubResource("SpriteFrames_nsnm2")
 animation = &"CoinDrop"
 autoplay = "CoinDrop"
-frame_progress = 0.5390676
+frame_progress = 0.40777633
 
 [node name="CoinShape" type="CollisionShape2D" parent="Pausable/Coin"]
 position = Vector2(-1389, 556)
@@ -1192,13 +1193,18 @@ texture_normal = ExtResource("29_24dk6")
 script = ExtResource("21_ld5wt")
 
 [node name="Distance" type="RichTextLabel" parent="Pausable/UI"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -263.3999
-offset_bottom = 158.79999
+anchors_preset = -1
+anchor_left = 0.97
+anchor_top = 0.05
+anchor_right = 0.97
+anchor_bottom = 0.05
+offset_left = -191.0
+offset_top = -16.0
+offset_right = 72.3999
+offset_bottom = 142.79999
 grow_horizontal = 0
-theme_override_colors/default_color = Color(1, 0.827451, 0, 1)
+theme_override_colors/default_color = Color(0.9406359, 0.94063586, 0.94063574, 1)
+theme_override_fonts/normal_font = ExtResource("136_pl55l")
 theme_override_font_sizes/normal_font_size = 129
 bbcode_enabled = true
 fit_content = true
