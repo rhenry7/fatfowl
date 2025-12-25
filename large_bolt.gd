@@ -50,6 +50,7 @@ func activate():
 	
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_DISABLED
+	position.x = 500
 	add_to_group("hazard")
 	connect("body_entered", Callable(self, "_on_hit"))
 # Left edge center

@@ -168,7 +168,7 @@ animations = [{
 [sub_resource type="SpriteFrames" id="SpriteFrames_ctgg3"]
 animations = [{
 "frames": [{
-"duration": 1.51,
+"duration": 1.0,
 "texture": ExtResource("31_ojpun")
 }, {
 "duration": 1.0,
@@ -180,7 +180,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("37_pl55l")
 }, {
-"duration": 1.0,
+"duration": 10.0,
 "texture": ExtResource("38_j1mq8")
 }, {
 "duration": 1.0,
@@ -226,7 +226,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rjqkl"]
-radius = 173.97128
+radius = 577.99225
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fs4d3"]
 radius = 177.0452
@@ -799,28 +799,30 @@ scale = Vector2(0.7844207, 0.8372803)
 texture = ExtResource("8_5i8vy")
 
 [node name="Bird" type="CharacterBody2D" parent="Pausable" groups=["player"]]
-visible = false
 position = Vector2(-812, 114)
 script = ExtResource("1_0hol4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Bird"]
 position = Vector2(-1201, 153)
-scale = Vector2(0.32031253, 0.30505955)
+scale = Vector2(0.22, 0.211)
 sprite_frames = SubResource("SpriteFrames_rj586")
 animation = &"fly"
 autoplay = "fly"
 frame_progress = 0.5928339
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Bird"]
-position = Vector2(-1235, 160)
+position = Vector2(-1232, 161)
 rotation = -0.74358714
+scale = Vector2(0.22, 0.211)
 shape = SubResource("CircleShape2D_rjqkl")
 
 [node name="BirdHurtBox" type="Area2D" parent="Pausable/Bird"]
 position = Vector2(-6, 129)
+scale = Vector2(0.22, 0.211)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Bird/BirdHurtBox"]
-position = Vector2(-1224, 22)
+position = Vector2(-5577.272, 184.83414)
+scale = Vector2(3.12, 2.992)
 shape = SubResource("CircleShape2D_fs4d3")
 
 [node name="Feather" type="Area2D" parent="Pausable"]
@@ -836,7 +838,7 @@ scale = Vector2(0.18948922, 0.18948922)
 sprite_frames = SubResource("SpriteFrames_xotjc")
 animation = &"falling"
 autoplay = "falling"
-frame_progress = 0.7119959
+frame_progress = 0.84769076
 
 [node name="Coin" type="Area2D" parent="Pausable" groups=["coin"]]
 script = ExtResource("23_qphy4")
