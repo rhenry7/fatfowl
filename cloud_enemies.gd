@@ -54,4 +54,4 @@ func speed_increase_loop() -> void:
 	print("current speed", speed)
 	if speed >= 1500:
 		return
-	speed += 50
+	speed += 100

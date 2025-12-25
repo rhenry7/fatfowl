@@ -1,6 +1,7 @@
 extends CharacterBody2D
 var GRAVITY = 2000
-const FLAP_STRENGTH = -350.0
+# const FLAP_STRENGTH = -350.0 # original speed 
+const FLAP_STRENGTH = -500.0
 const FLAP_STRENGTH_X = 400.0 
 const SPEED = 10.0 
 const TOP_Y = -850

@@ -1,4 +1,4 @@
-[gd_scene load_steps=168 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=176 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -59,8 +59,11 @@
 [ext_resource type="Texture2D" uid="uid://po6x3uugsypu" path="res://Untitled_Artwork-4 4.png" id="30_6uidu"]
 [ext_resource type="AudioStream" uid="uid://cmwicrc4ner01" path="res://audio/bird-beat-2.ogg" id="30_24dk6"]
 [ext_resource type="AudioStream" uid="uid://dgfdklhnah2rf" path="res://audio/zapped-sound.ogg" id="31_24dk6"]
+[ext_resource type="Texture2D" uid="uid://cnyjvbfr71xsp" path="res://animation/zeus/blink/ZeusBlink-1 8.png" id="31_ojpun"]
 [ext_resource type="Texture2D" uid="uid://bjx86nawr6pso" path="res://Untitled_Artwork-5 3.png" id="31_qu7as"]
 [ext_resource type="AudioStream" uid="uid://d368vnlo65joe" path="res://audio/zeus-intro.ogg" id="32_mryly"]
+[ext_resource type="Texture2D" uid="uid://dp7pk7vrx3xa7" path="res://animation/zeus/blink/ZeusBlink-2 5.png" id="32_xke0j"]
+[ext_resource type="Texture2D" uid="uid://d2j4415n7hapk" path="res://animation/zeus/blink/ZeusBlink-3 5.png" id="33_53ibr"]
 [ext_resource type="AudioStream" uid="uid://ntaaruhwoknc" path="res://audio/zeus-game-over.ogg" id="33_kq1c5"]
 [ext_resource type="Texture2D" uid="uid://5edc54shp1vq" path="res://Untitled_Artwork-8 2.png" id="34_j02gt"]
 [ext_resource type="Texture2D" uid="uid://faxosj3xtsuy" path="res://Hand-6.png" id="35_7plk7"]
@@ -68,9 +71,13 @@
 [ext_resource type="Texture2D" uid="uid://cjafge32gnqfq" path="res://Hand-5.png" id="36_fbwgr"]
 [ext_resource type="Texture2D" uid="uid://s2ugukdv35ha" path="res://Hand-4.png" id="37_7mj2a"]
 [ext_resource type="AudioStream" uid="uid://ccx6cx05rkwvy" path="res://audio/strangle.ogg" id="37_j02gt"]
+[ext_resource type="Texture2D" uid="uid://o0bj7pwg8c8k" path="res://animation/zeus/blink/ZeusBlink-7 3.png" id="37_pl55l"]
 [ext_resource type="Texture2D" uid="uid://dff7gid2ymowv" path="res://Hand-3.png" id="38_fshgd"]
+[ext_resource type="Texture2D" uid="uid://df6mem3aqs0gb" path="res://animation/zeus/blink/ZeusBlink-8 3.png" id="38_j1mq8"]
 [ext_resource type="Script" uid="uid://bjaa4qp81yg03" path="res://zeus_hurt_box.gd" id="39_037st"]
+[ext_resource type="Texture2D" uid="uid://he856it77fsb" path="res://animation/zeus/blink/ZeusBlink-9 3.png" id="39_jik6k"]
 [ext_resource type="Texture2D" uid="uid://d1pc62arefead" path="res://Hand-2.png" id="39_lbrxf"]
+[ext_resource type="Texture2D" uid="uid://diayhwse2jb2l" path="res://animation/zeus/blink/ZeusBlink-10.png" id="40_hd8li"]
 [ext_resource type="Texture2D" uid="uid://gu1u8c37bpsl" path="res://Hand-1.png" id="40_xjt7e"]
 [ext_resource type="Script" uid="uid://xadxndgnm5tw" path="res://large_bolt.gd" id="42_2v765"]
 [ext_resource type="Texture2D" uid="uid://bmcww7mxrinqr" path="res://enemies/happycloud/happy_thunder-1 6.png" id="42_thyvg"]
@@ -156,6 +163,35 @@ animations = [{
 "loop": false,
 "name": &"default",
 "speed": 8.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ctgg3"]
+animations = [{
+"frames": [{
+"duration": 1.51,
+"texture": ExtResource("31_ojpun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_xke0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_53ibr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_pl55l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_j1mq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_jik6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_hd8li")
+}],
+"loop": true,
+"name": &"blink",
+"speed": 1.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rj586"]
@@ -715,9 +751,17 @@ scale = Vector2(1.1650759, 0.90014344)
 texture = ExtResource("5_c7o6v")
 
 [node name="Zeus" type="AnimatedSprite2D" parent="Pausable/Sky"]
-position = Vector2(59, -124)
+visible = false
+position = Vector2(19.3, -180)
 scale = Vector2(1.2478814, 1.2615854)
 sprite_frames = SubResource("SpriteFrames_jinwr")
+
+[node name="ZeusBlink" type="AnimatedSprite2D" parent="Pausable/Sky"]
+position = Vector2(19.3, -180)
+scale = Vector2(1.2536585, 1.2536585)
+sprite_frames = SubResource("SpriteFrames_ctgg3")
+animation = &"blink"
+autoplay = "blink"
 script = ExtResource("7_24dk6")
 
 [node name="Parallax2D2" type="Parallax2D" parent="Pausable/Sky"]
@@ -725,6 +769,7 @@ repeat_size = Vector2(4000, 0)
 autoscroll = Vector2(-15, 0)
 
 [node name="Sprite2D4" type="Sprite2D" parent="Pausable/Sky/Parallax2D2"]
+position = Vector2(0, 272)
 texture = ExtResource("11_e8f3a")
 
 [node name="Parallax2D4" type="Parallax2D" parent="Pausable/Sky"]
@@ -791,7 +836,7 @@ scale = Vector2(0.18948922, 0.18948922)
 sprite_frames = SubResource("SpriteFrames_xotjc")
 animation = &"falling"
 autoplay = "falling"
-frame_progress = 0.00737568
+frame_progress = 0.7119959
 
 [node name="Coin" type="Area2D" parent="Pausable" groups=["coin"]]
 script = ExtResource("23_qphy4")
@@ -1118,6 +1163,7 @@ anchor_right = 1.0
 offset_left = -263.3999
 offset_bottom = 158.79999
 grow_horizontal = 0
+theme_override_colors/default_color = Color(1, 0.827451, 0, 1)
 theme_override_font_sizes/normal_font_size = 129
 bbcode_enabled = true
 fit_content = true
