@@ -16,12 +16,13 @@ var invincibility_duration := 2.0  # Increased to match usage
 @onready var game_over_card := get_tree().current_scene.get_node("Pausable/UI/GameOver")
 @onready var distanceText = get_tree().current_scene.get_node("Pausable/UI/Distance")
 @onready var feathers:int = 0
+@onready var coins: int = 0
 
 func fall_damage():
 	if IS_DEAD or is_invincible:
 		return  # Ignore damage if dead or invincible
 	
-	get_tree().current_scene.get_node("Pausable/FallDamage").play()
+	get_tree().current_scene.get_node("Pausable/Audio/FallDamage").play()
 	# Start invincibility period
 	remove_heart()  # Only call once
 	is_invincible = true
@@ -55,9 +56,13 @@ func add_heart():
 func heal(amount: int): 
 	for i in range(amount):
 		add_heart()
-	feathers += 1
-	distanceText.text = str(feathers)
 	print("Healed! Current health: ", HEARTS, "/", MAX_HEARTS)
+	
+func addCoin(amount: int):
+	coins += 10
+	distanceText.text = str(coins)
+	print("Coin added! Current coins: ", coins)
+	
 
 func _ready() -> void:
 	distanceText.text = str(feathers)
@@ -77,6 +82,8 @@ func _on_body_entered(body):
 		take_damage()
 	if body.is_in_group("heal"):
 		heal(1)
+	if body.is_in_group("coins"):
+		addCoin(1)
 
 	
 func hide_body():
@@ -133,13 +140,13 @@ func die():
 	get_tree().current_scene.get_node("Control/Paper").play()
 	await get_tree().create_timer(0.5).timeout
 	scrollSprite.play()
-	var music = get_tree().current_scene.get_node("Pausable/Music")
+	var music = get_tree().current_scene.get_node("Pausable/Audio/Music")
 	music.stop()
 	await get_tree().create_timer(1).timeout
 	get_tree().current_scene.get_node("Pausable/Bird").visible = false
-	get_tree().current_scene.get_node("Pausable/GameOver").play()
+	get_tree().current_scene.get_node("Pausable/Audio/GameOver").play()
 	await get_tree().create_timer(5.0).timeout
-	get_tree().current_scene.get_node("Pausable/ZeusRant2").play()
+	get_tree().current_scene.get_node("Pausable/Audio/ZeusRant2").play()
 	
 func respawn() -> void:
 	position.x = -100

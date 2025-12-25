@@ -1,13 +1,13 @@
 extends Node
 @onready var enemies = [
-	$ZeusFist,
-	$ZeusHurtBox,
+	#$ZeusFist,
+	#$ZeusHurtBox,
 	$LargeBolt,
 ]
 var current_enemy_index := 0
-var display_duration := 30.0   # seconds per enemy
-var enemy_buffer := 5.0
-var initial_delay := 10.0
+var display_duration := 60.0   # seconds per enemy
+var enemy_buffer := 10.0
+var initial_delay := 0.0
 
 func _ready():
 	await get_tree().create_timer(initial_delay).timeout
@@ -27,6 +27,8 @@ func cycle_enemies() -> void:
 		# Enable and show it
 		current_enemy.process_mode = Node.PROCESS_MODE_INHERIT
 		current_enemy.activate()
+		var thunder = get_tree().current_scene.get_node("Pausable/Audio/Thunder")
+		thunder.play()
 		print("enemy process mode", current_enemy.process_mode)
 		# wait for its display time
 		await get_tree().create_timer(display_duration).timeout

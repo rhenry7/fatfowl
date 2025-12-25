@@ -1,4 +1,4 @@
-[gd_scene load_steps=171 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=168 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -28,8 +28,10 @@
 [ext_resource type="Texture2D" uid="uid://o0jujcwlusy3" path="res://clouds/AngryCloud-3.png" id="21_037st"]
 [ext_resource type="Script" uid="uid://t763jfb8brkm" path="res://game_over_button.gd" id="21_ld5wt"]
 [ext_resource type="Texture2D" uid="uid://swxsy2dhp21f" path="res://clouds/AngryCloud-4.png" id="22_6orn5"]
+[ext_resource type="Texture2D" uid="uid://dkfpk0kwffnse" path="res://animation/Lightning3/Coin.png" id="22_aq07h"]
 [ext_resource type="Texture2D" uid="uid://c51bq08yu7lxx" path="res://gameoverscrolls/GAMEOVER-1.png" id="22_r8aua"]
 [ext_resource type="Texture2D" uid="uid://dgu0uwo4c6dgf" path="res://animation/pausemenu/pause-menu-1.png" id="23_4rgxs"]
+[ext_resource type="Script" uid="uid://ciulpp0iiiy8f" path="res://coin.gd" id="23_qphy4"]
 [ext_resource type="Texture2D" uid="uid://dmic8iiibtpyn" path="res://gameoverscrolls/GAMEOVER-2.png" id="23_sduiw"]
 [ext_resource type="Texture2D" uid="uid://drydettk4u5kc" path="res://clouds/AngryCloud-5.png" id="23_whnp6"]
 [ext_resource type="Texture2D" uid="uid://cvlwnph2bk5pv" path="res://clouds/AngryCloud-6.png" id="24_22e24"]
@@ -48,26 +50,20 @@
 [ext_resource type="Texture2D" uid="uid://bfxc7kq2e73pg" path="res://animation/pausemenu/pause-menu-5.png" id="27_7kqy5"]
 [ext_resource type="Texture2D" uid="uid://dy87jlh28gqpo" path="res://clouds/AngryCloud-9.png" id="27_fkgk1"]
 [ext_resource type="Script" uid="uid://dm0awobaq716y" path="res://feather.gd" id="27_j02gt"]
-[ext_resource type="Texture2D" uid="uid://c0vj0l5kurjd6" path="res://Untitled_Artwork-1 4.png" id="27_t3mf0"]
 [ext_resource type="Texture2D" uid="uid://ckvkgj1dairjn" path="res://gameoverscrolls/GAMEOVER-6.png" id="27_xgqcr"]
 [ext_resource type="Texture2D" uid="uid://c105vq25jss5f" path="res://gameoverscrolls/GAMEOVER-7.png" id="28_6jj3b"]
 [ext_resource type="Texture2D" uid="uid://esj77d451khr" path="res://animation/pausemenu/pause-menu-6.png" id="28_e1h34"]
-[ext_resource type="Texture2D" uid="uid://cd8vl2eoaejt8" path="res://Untitled_Artwork-2 4.png" id="28_kejda"]
 [ext_resource type="Texture2D" uid="uid://sqquem4dop3l" path="res://game-over-card.png" id="29_24dk6"]
 [ext_resource type="Script" uid="uid://827l47dwryni" path="res://game_over_scroll.gd" id="29_sduiw"]
-[ext_resource type="Texture2D" uid="uid://burruk55unybg" path="res://Untitled_Artwork-3 4.png" id="29_uqk8q"]
 [ext_resource type="Texture2D" uid="uid://drp6fjuqoyjur" path="res://animation/pausemenu/pause-menu-7.png" id="29_ywe1r"]
 [ext_resource type="Texture2D" uid="uid://po6x3uugsypu" path="res://Untitled_Artwork-4 4.png" id="30_6uidu"]
 [ext_resource type="AudioStream" uid="uid://cmwicrc4ner01" path="res://audio/bird-beat-2.ogg" id="30_24dk6"]
 [ext_resource type="AudioStream" uid="uid://dgfdklhnah2rf" path="res://audio/zapped-sound.ogg" id="31_24dk6"]
 [ext_resource type="Texture2D" uid="uid://bjx86nawr6pso" path="res://Untitled_Artwork-5 3.png" id="31_qu7as"]
-[ext_resource type="Texture2D" uid="uid://46jmvj6f3qbu" path="res://Untitled_Artwork-6 2.png" id="32_lyuya"]
 [ext_resource type="AudioStream" uid="uid://d368vnlo65joe" path="res://audio/zeus-intro.ogg" id="32_mryly"]
-[ext_resource type="Texture2D" uid="uid://baop5edhc8igj" path="res://Untitled_Artwork-7 2.png" id="33_5fipt"]
 [ext_resource type="AudioStream" uid="uid://ntaaruhwoknc" path="res://audio/zeus-game-over.ogg" id="33_kq1c5"]
 [ext_resource type="Texture2D" uid="uid://5edc54shp1vq" path="res://Untitled_Artwork-8 2.png" id="34_j02gt"]
 [ext_resource type="Texture2D" uid="uid://faxosj3xtsuy" path="res://Hand-6.png" id="35_7plk7"]
-[ext_resource type="Texture2D" uid="uid://j0th5tamsrky" path="res://Untitled_Artwork-9 2.png" id="35_thyvg"]
 [ext_resource type="AudioStream" uid="uid://bgsblpl3pr1lt" path="res://audio/laugh.ogg" id="36_5fipt"]
 [ext_resource type="Texture2D" uid="uid://cjafge32gnqfq" path="res://Hand-5.png" id="36_fbwgr"]
 [ext_resource type="Texture2D" uid="uid://s2ugukdv35ha" path="res://Hand-4.png" id="37_7mj2a"]
@@ -199,43 +195,39 @@ radius = 173.97128
 [sub_resource type="CircleShape2D" id="CircleShape2D_fs4d3"]
 radius = 177.0452
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_nsnm2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thyvg"]
+size = Vector2(164, 106)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xotjc"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("27_t3mf0")
+"texture": ExtResource("31_qu7as")
 }, {
 "duration": 1.0,
-"texture": ExtResource("28_kejda")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_uqk8q")
+"texture": ExtResource("34_j02gt")
 }, {
 "duration": 1.0,
 "texture": ExtResource("30_6uidu")
 }, {
 "duration": 1.0,
 "texture": ExtResource("31_qu7as")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_lyuya")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_5fipt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("34_j02gt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_thyvg")
 }],
 "loop": true,
 "name": &"falling",
-"speed": 10.0
+"speed": 3.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_thyvg"]
-size = Vector2(203, 116)
+[sub_resource type="SpriteFrames" id="SpriteFrames_nsnm2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_aq07h")
+}],
+"loop": true,
+"name": &"CoinDrop",
+"speed": 10.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ld5wt"]
 radius = 508.56317
@@ -586,109 +578,176 @@ metadata/_edit_horizontal_guides_ = [-904.0, 1416.0]
 [node name="Pausable" type="Node2D" parent="."]
 process_mode = 1
 
+[node name="Audio" type="Node2D" parent="Pausable"]
+
+[node name="Zapped" type="AudioStreamPlayer2D" parent="Pausable/Audio"]
+stream = ExtResource("31_24dk6")
+
+[node name="ZeusIntro" type="AudioStreamPlayer2D" parent="Pausable/Audio"]
+stream = ExtResource("32_mryly")
+
+[node name="Thunder" type="AudioStreamPlayer2D" parent="Pausable/Audio"]
+stream = ExtResource("25_037st")
+
+[node name="ZeusOutro" type="AudioStreamPlayer2D" parent="Pausable/Audio"]
+stream = ExtResource("33_kq1c5")
+
+[node name="ZeusLaugh" type="AudioStreamPlayer2D" parent="Pausable/Audio"]
+stream = ExtResource("36_5fipt")
+volume_db = 6.842
+
+[node name="Strangle" type="AudioStreamPlayer2D" parent="Pausable/Audio"]
+stream = ExtResource("37_j02gt")
+
+[node name="ZeusRant1" type="AudioStreamPlayer2D" parent="Pausable/Audio"]
+stream = ExtResource("48_bxemi")
+
+[node name="ZeusRant2" type="AudioStreamPlayer2D" parent="Pausable/Audio"]
+stream = ExtResource("49_qoxh5")
+
+[node name="ZeusRant3" type="AudioStreamPlayer2D" parent="Pausable/Audio"]
+stream = ExtResource("50_d8e56")
+
+[node name="AcceptYourFate" type="AudioStreamPlayer2D" parent="Pausable/Audio"]
+stream = ExtResource("51_jinwr")
+
+[node name="FearThePower" type="AudioStreamPlayer2D" parent="Pausable/Audio"]
+stream = ExtResource("52_qwoqy")
+
+[node name="Annihilation" type="AudioStreamPlayer2D" parent="Pausable/Audio"]
+stream = ExtResource("53_dkifn")
+
+[node name="Demise" type="AudioStreamPlayer2D" parent="Pausable/Audio"]
+stream = ExtResource("54_oixsq")
+
+[node name="GrabTaunt" type="AudioStreamPlayer2D" parent="Pausable/Audio"]
+stream = ExtResource("55_uo258")
+
+[node name="GameOver" type="AudioStreamPlayer2D" parent="Pausable/Audio"]
+stream = ExtResource("56_d8e56")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="Pausable/Audio"]
+stream = ExtResource("30_24dk6")
+volume_db = -6.304
+autoplay = true
+
+[node name="Bloop" type="AudioStreamPlayer2D" parent="Pausable/Audio"]
+stream = ExtResource("56_qoxh5")
+
+[node name="Prepare" type="AudioStreamPlayer2D" parent="Pausable/Audio"]
+stream = ExtResource("44_pjm8v")
+
+[node name="Punch" type="AudioStreamPlayer2D" parent="Pausable/Audio"]
+stream = ExtResource("45_aq07h")
+
+[node name="FallDamage" type="AudioStreamPlayer2D" parent="Pausable/Audio"]
+stream = ExtResource("46_qphy4")
+
 [node name="Sprite2D2" type="Sprite2D" parent="Pausable"]
 position = Vector2(311, 0)
 scale = Vector2(8.044, 11.418)
 texture = ExtResource("2_py13h")
 
-[node name="Parallax2D3" type="Parallax2D" parent="Pausable"]
+[node name="Sky" type="Node2D" parent="Pausable"]
+
+[node name="Parallax2D3" type="Parallax2D" parent="Pausable/Sky"]
 scale = Vector2(40.627876, 2.2419608)
 scroll_scale = Vector2(0.5, 1)
 autoscroll = Vector2(-10, 0)
 
-[node name="Sprite2D5" type="Sprite2D" parent="Pausable/Parallax2D3"]
+[node name="Sprite2D5" type="Sprite2D" parent="Pausable/Sky/Parallax2D3"]
 position = Vector2(31, 0)
 scale = Vector2(-54.61519, 8.456075)
 texture = ExtResource("3_py13h")
 
-[node name="Sprite2D3" type="Sprite2D" parent="Pausable"]
+[node name="Sprite2D3" type="Sprite2D" parent="Pausable/Sky"]
 visible = false
 
-[node name="Sprite2D" type="Sprite2D" parent="Pausable"]
+[node name="Sprite2D" type="Sprite2D" parent="Pausable/Sky"]
 visible = false
 scale = Vector2(1.0603372, 1.1955034)
 texture = ExtResource("2_qphy4")
 
-[node name="Camera2D" type="Camera2D" parent="Pausable"]
+[node name="Camera2D" type="Camera2D" parent="Pausable/Sky"]
 visible = false
 position = Vector2(-66, -129)
 
-[node name="clouds-back" type="Parallax2D" parent="Pausable"]
+[node name="clouds-back" type="Parallax2D" parent="Pausable/Sky"]
 visible = false
 repeat_size = Vector2(4496, 0)
 autoscroll = Vector2(-30, 0)
 repeat_times = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Pausable/clouds-back"]
+[node name="Sprite2D" type="Sprite2D" parent="Pausable/Sky/clouds-back"]
 position = Vector2(83, -486)
 scale = Vector2(1.4018586, 1.371701)
 texture = ExtResource("3_nlgyc")
 
-[node name="clouds-front" type="Parallax2D" parent="Pausable"]
+[node name="clouds-front" type="Parallax2D" parent="Pausable/Sky"]
 visible = false
 repeat_size = Vector2(4481, 0)
 autoscroll = Vector2(-80, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Pausable/clouds-front"]
+[node name="Sprite2D" type="Sprite2D" parent="Pausable/Sky/clouds-front"]
 position = Vector2(-1021, -756)
 scale = Vector2(1.1884496, 0.9515381)
 texture = ExtResource("9_43vxp")
 
-[node name="clouds-middle" type="Parallax2D" parent="Pausable"]
+[node name="clouds-middle" type="Parallax2D" parent="Pausable/Sky"]
 scale = Vector2(1, 0.9988938)
 repeat_size = Vector2(4481, 0)
 autoscroll = Vector2(-25, 0)
 repeat_times = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Pausable/clouds-middle"]
+[node name="Sprite2D" type="Sprite2D" parent="Pausable/Sky/clouds-middle"]
 visible = false
 position = Vector2(-50.812, -264.812)
 scale = Vector2(-0.7419037, 0.7906267)
 texture = ExtResource("4_oojoh")
 
-[node name="clouds-front2" type="Parallax2D" parent="Pausable"]
+[node name="clouds-front2" type="Parallax2D" parent="Pausable/Sky"]
 repeat_size = Vector2(4481, 0)
 autoscroll = Vector2(-100, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Pausable/clouds-front2"]
-position = Vector2(-302, -142)
+[node name="Sprite2D" type="Sprite2D" parent="Pausable/Sky/clouds-front2"]
+position = Vector2(-302.00003, -179.99998)
 scale = Vector2(1.1650759, 0.90014344)
 texture = ExtResource("5_c7o6v")
 
-[node name="Zeus" type="AnimatedSprite2D" parent="Pausable"]
+[node name="Zeus" type="AnimatedSprite2D" parent="Pausable/Sky"]
 position = Vector2(59, -124)
 scale = Vector2(1.2478814, 1.2615854)
 sprite_frames = SubResource("SpriteFrames_jinwr")
 script = ExtResource("7_24dk6")
 
-[node name="Parallax2D2" type="Parallax2D" parent="Pausable"]
+[node name="Parallax2D2" type="Parallax2D" parent="Pausable/Sky"]
 repeat_size = Vector2(4000, 0)
 autoscroll = Vector2(-15, 0)
 
-[node name="Sprite2D4" type="Sprite2D" parent="Pausable/Parallax2D2"]
+[node name="Sprite2D4" type="Sprite2D" parent="Pausable/Sky/Parallax2D2"]
 texture = ExtResource("11_e8f3a")
 
-[node name="Parallax2D4" type="Parallax2D" parent="Pausable"]
+[node name="Parallax2D4" type="Parallax2D" parent="Pausable/Sky"]
 repeat_size = Vector2(3000, 0)
 autoscroll = Vector2(-25, 0)
 
-[node name="Sprite2D6" type="Sprite2D" parent="Pausable/Parallax2D4"]
+[node name="Sprite2D6" type="Sprite2D" parent="Pausable/Sky/Parallax2D4"]
 texture = ExtResource("12_mxju4")
 
-[node name="Parallax2D" type="Parallax2D" parent="Pausable"]
-scroll_scale = Vector2(0.5, 1)
+[node name="Parallax2D" type="Parallax2D" parent="Pausable/Sky"]
+scroll_scale = Vector2(1.5, 1)
 repeat_size = Vector2(3666, 0)
 autoscroll = Vector2(-5, 0)
 
-[node name="Sprite2D7" type="Sprite2D" parent="Pausable/Parallax2D"]
+[node name="Sprite2D7" type="Sprite2D" parent="Pausable/Sky/Parallax2D"]
 texture = ExtResource("3_py13h")
 
-[node name="clouds-front3" type="Parallax2D" parent="Pausable"]
+[node name="clouds-front3" type="Parallax2D" parent="Pausable/Sky"]
 visible = false
 repeat_size = Vector2(4481, 0)
 autoscroll = Vector2(-40, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Pausable/clouds-front3"]
+[node name="Sprite2D" type="Sprite2D" parent="Pausable/Sky/clouds-front3"]
 visible = false
 position = Vector2(-1083, -73)
 scale = Vector2(0.7844207, 0.8372803)
@@ -722,81 +781,31 @@ shape = SubResource("CircleShape2D_fs4d3")
 [node name="Feather" type="Area2D" parent="Pausable"]
 script = ExtResource("27_j02gt")
 
-[node name="FallingFeather" type="AnimatedSprite2D" parent="Pausable/Feather"]
-position = Vector2(-1390, 559)
-scale = Vector2(0.15396003, 0.15396005)
-sprite_frames = SubResource("SpriteFrames_nsnm2")
-animation = &"falling"
-autoplay = "falling"
-frame_progress = 0.26487443
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Feather"]
-position = Vector2(-1399, 582)
+position = Vector2(-1593, 255)
 shape = SubResource("RectangleShape2D_thyvg")
 
-[node name="Music" type="AudioStreamPlayer2D" parent="Pausable"]
-visible = false
-stream = ExtResource("30_24dk6")
-volume_db = -6.304
-autoplay = true
+[node name="Feather" type="AnimatedSprite2D" parent="Pausable/Feather"]
+position = Vector2(-1598.9999, 222.00002)
+scale = Vector2(0.18948922, 0.18948922)
+sprite_frames = SubResource("SpriteFrames_xotjc")
+animation = &"falling"
+autoplay = "falling"
+frame_progress = 0.00737568
 
-[node name="Zapped" type="AudioStreamPlayer2D" parent="Pausable"]
-stream = ExtResource("31_24dk6")
+[node name="Coin" type="Area2D" parent="Pausable" groups=["coin"]]
+script = ExtResource("23_qphy4")
 
-[node name="ZeusIntro" type="AudioStreamPlayer2D" parent="Pausable"]
-stream = ExtResource("32_mryly")
+[node name="Coin" type="AnimatedSprite2D" parent="Pausable/Coin"]
+position = Vector2(-1390, 559)
+scale = Vector2(1.0493829, 1.0493829)
+sprite_frames = SubResource("SpriteFrames_nsnm2")
+animation = &"CoinDrop"
+autoplay = "CoinDrop"
 
-[node name="Thunder" type="AudioStreamPlayer2D" parent="Pausable"]
-stream = ExtResource("25_037st")
-
-[node name="ZeusOutro" type="AudioStreamPlayer2D" parent="Pausable"]
-stream = ExtResource("33_kq1c5")
-
-[node name="ZeusLaugh" type="AudioStreamPlayer2D" parent="Pausable"]
-stream = ExtResource("36_5fipt")
-volume_db = 6.842
-
-[node name="Strangle" type="AudioStreamPlayer2D" parent="Pausable"]
-stream = ExtResource("37_j02gt")
-
-[node name="ZeusRant1" type="AudioStreamPlayer2D" parent="Pausable"]
-stream = ExtResource("48_bxemi")
-
-[node name="ZeusRant2" type="AudioStreamPlayer2D" parent="Pausable"]
-stream = ExtResource("49_qoxh5")
-
-[node name="ZeusRant3" type="AudioStreamPlayer2D" parent="Pausable"]
-stream = ExtResource("50_d8e56")
-
-[node name="AcceptYourFate" type="AudioStreamPlayer2D" parent="Pausable"]
-stream = ExtResource("51_jinwr")
-
-[node name="FearThePower" type="AudioStreamPlayer2D" parent="Pausable"]
-stream = ExtResource("52_qwoqy")
-
-[node name="Annihilation" type="AudioStreamPlayer2D" parent="Pausable"]
-stream = ExtResource("53_dkifn")
-
-[node name="Demise" type="AudioStreamPlayer2D" parent="Pausable"]
-stream = ExtResource("54_oixsq")
-
-[node name="GrabTaunt" type="AudioStreamPlayer2D" parent="Pausable"]
-stream = ExtResource("55_uo258")
-
-[node name="GameOver" type="AudioStreamPlayer2D" parent="Pausable"]
-stream = ExtResource("56_d8e56")
-
-[node name="Bloop" type="AudioStreamPlayer2D" parent="Pausable"]
-stream = ExtResource("56_qoxh5")
-
-[node name="Prepare" type="AudioStreamPlayer2D" parent="Pausable"]
-stream = ExtResource("44_pjm8v")
-
-[node name="Punch" type="AudioStreamPlayer2D" parent="Pausable"]
-stream = ExtResource("45_aq07h")
-
-[node name="FallDamage" type="AudioStreamPlayer2D" parent="Pausable"]
-stream = ExtResource("46_qphy4")
+[node name="CoinShape" type="CollisionShape2D" parent="Pausable/Coin"]
+position = Vector2(-1357.25, 560)
+shape = SubResource("RectangleShape2D_thyvg")
 
 [node name="Enemies" type="Node2D" parent="Pausable"]
 visible = false
@@ -804,6 +813,7 @@ script = ExtResource("26_s32dh")
 
 [node name="ZeusHurtBox" type="Area2D" parent="Pausable/Enemies"]
 process_mode = 4
+visible = false
 position = Vector2(58, 995)
 collision_layer = 2
 collision_mask = 2
@@ -830,14 +840,17 @@ autoplay = "HandWave"
 
 [node name="LargeBolt" type="Area2D" parent="Pausable/Enemies"]
 process_mode = 4
+visible = false
 position = Vector2(-142, -6)
 script = ExtResource("42_2v765")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Enemies/LargeBolt"]
+visible = false
 position = Vector2(705.5, 199)
 shape = SubResource("RectangleShape2D_ma08v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Enemies/LargeBolt"]
+visible = false
 position = Vector2(686, 454)
 scale = Vector2(0.39355466, 2.0163572)
 sprite_frames = SubResource("SpriteFrames_kfelt")
@@ -868,10 +881,12 @@ position = Vector2(-37.5, 232)
 shape = SubResource("RectangleShape2D_pjm8v")
 
 [node name="Enemies2" type="Node2D" parent="Pausable"]
+visible = false
 script = ExtResource("87_iukfe")
 
 [node name="ZeusHurtBox" type="Area2D" parent="Pausable/Enemies2"]
 process_mode = 4
+visible = false
 position = Vector2(58, 995)
 collision_layer = 2
 collision_mask = 2
@@ -899,7 +914,8 @@ flip_h = true
 
 [node name="LargeBolt" type="Area2D" parent="Pausable/Enemies2"]
 process_mode = 4
-position = Vector2(-142, -6)
+visible = false
+position = Vector2(-13, -6)
 script = ExtResource("42_2v765")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Enemies2/LargeBolt"]
@@ -915,6 +931,7 @@ frame_progress = 0.3673437
 
 [node name="ZeusFist" type="Area2D" parent="Pausable/Enemies2"]
 process_mode = 4
+visible = false
 position = Vector2(-72.5, 232)
 script = ExtResource("58_qwoqy")
 
@@ -1184,6 +1201,7 @@ animation = &"pause"
 script = ExtResource("124_4rgxs")
 
 [connection signal="body_entered" from="Pausable/Feather" to="Pausable/Bird" method="_on_body_entered"]
+[connection signal="body_entered" from="Pausable/Coin" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Pausable/Enemies/ZeusHurtBox" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Pausable/Enemies/LargeBolt" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Pausable/Enemies/ZeusFist" to="Pausable/Bird" method="_on_body_entered"]

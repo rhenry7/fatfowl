@@ -46,12 +46,12 @@ func _ready():
 
 func _on_hit(body: Node2D) -> void:
 	if body.name == "Bird":
-		var zapped = get_tree().current_scene.get_node("Pausable/Zapped")
+		var zapped = get_tree().current_scene.get_node("Pausable/Audio/Zapped")
 		zapped.play()
 		body.take_damage()
 		
 func speed_increase_loop() -> void:
 	print("current speed", speed)
-	if speed >= 1000:
+	if speed >= 1500:
 		return
 	speed += 50

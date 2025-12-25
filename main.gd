@@ -3,6 +3,7 @@ extends Node2D
 @onready var lifebar = $"Pausable/UI"
 @onready var cloudEnemies = $"Pausable/CloudEnemies"
 @onready var zeusBody = $"Pausable/Enemies"
+@onready var lightning = $"Pausable/Enemies2"
 @onready var player = $"Pausable/Bird"
 @onready var surfer = $"Pausable/Surfer"
 @onready var zeusFist = $Pausable/Enemies/ZeusFist
@@ -16,6 +17,7 @@ func _ready() -> void:
 	cloudEnemies.visible = false
 	zeusBody.visible = false
 	player.visible = false
+	lightning.visible = false
 	surfer.visible = false
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	get_tree().paused = true
@@ -54,8 +56,9 @@ func _on_start_button_pressed() -> void:
 	cloudEnemies.visible = true
 	zeusBody.visible = true
 	player.visible = true
+	lightning.visible = true
 	await get_tree().create_timer(1, false, true).timeout
-	get_tree().current_scene.get_node("Pausable/Prepare").play()
+	get_tree().current_scene.get_node("Pausable/Audio/Prepare").play()
 	await get_tree().create_timer(3, false, true).timeout
-	get_tree().current_scene.get_node("Pausable/Thunder").play()
+	get_tree().current_scene.get_node("Pausable/Audio/Thunder").play()
 	surfer.visible = true

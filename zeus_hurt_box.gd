@@ -40,9 +40,9 @@ func _ready():
 
 func _on_hit(body: Node2D) -> void:
 	if body.name == "Bird":
-		var strangle = get_tree().current_scene.get_node("Pausable/Strangle")
+		var strangle = get_tree().current_scene.get_node("Pausable/Audio/Strangle")
 		strangle.play()
-		var laugh = get_tree().current_scene.get_node("Pausable/ZeusLaugh")
+		var laugh = get_tree().current_scene.get_node("Pausable/Audio/ZeusLaugh")
 		laugh.play()
 		body.take_damage()
 		body.hide_body()

@@ -1,5 +1,7 @@
 extends Area2D
-var max_right := 500;
+var max_right := 100;
+var speed := 0;
+
 
 func disable_collision():
 	monitoring = false
@@ -27,6 +29,13 @@ func deactivate():
 	process_mode = Node.PROCESS_MODE_DISABLED
 	
 	
+func speed_increase_loop() -> void:
+	print("current speed", speed)
+	if speed >= 1500:
+		return
+	speed += 50
+	
+	
 func activate():
 	position.x = max_right
 	visible = true
@@ -43,14 +52,26 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_DISABLED
 	add_to_group("hazard")
 	connect("body_entered", Callable(self, "_on_hit"))
+# Left edge center
+	var left = Vector2(0, get_viewport_rect().size.y / 2)
+	# Right edge center
+	var right = Vector2(get_viewport_rect().size.x, get_viewport_rect().size.y / 2)
+	# Top center
+	var top = Vector2(get_viewport_rect().size.x / 2, 0)
+	# Bottom center
+	var bottom = Vector2(get_viewport_rect().size.x / 2, get_viewport_rect().size.y)
+	# Center of viewport
+	var center = get_viewport_rect().size / 2
 	respawn()
 	
 func _on_hit(body: Node2D) -> void:
 	if body.name == "Bird":
-		var zapped = get_tree().current_scene.get_node("Pausable/Zapped")
+		var zapped = get_tree().current_scene.get_node("Pausable/Audio/Zapped")
 		zapped.play()
-		get_tree().current_scene.get_node("Pausable/FearThePower").play()
+		get_tree().current_scene.get_node("Pausable/Audio/FearThePower").play()
 		body.take_damage()
+		get_tree().current_scene.get_node("Pausable/Audio/ZeusLaugh").play()
+		
 		
 func respawn() -> void:
 	while true:
@@ -64,6 +85,7 @@ func respawn() -> void:
 		
 		if not get_tree().paused:
 			# Fade in - lightning appears
+			get_tree().current_scene.get_node("Pausable/Audio/Thunder").play()
 			var tween = create_tween()
 			#var thunder = get_tree().current_scene.get_node("Pausable/Thunder")
 			#thunder.play()		

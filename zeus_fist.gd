@@ -1,6 +1,7 @@
 extends Area2D
 @onready var hand := $"."
 @onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
+@onready var vert = randf_range(-500, 500)
 var max_left = -1000
 var max_right = 600
 
@@ -15,7 +16,8 @@ func deactivate():
 			child.disabled = true
 
 func activate():
-	position.y = 2000
+	position.y = 1000
+	position.x = 500
 	visible = true
 	set_physics_process(true)
 	set_process(true)
@@ -30,7 +32,7 @@ func _process(delta: float) -> void:
 
 func _ready():  
 	#process_mode = Node.PROCESS_MODE_DISABLED
-	global_position = Vector2(2000, 2000)
+	position.x = vert
 	add_to_group("hazard")
 	add_to_group("ZeusHand")
 	connect("body_entered", Callable(self, "_on_hit"))
@@ -39,10 +41,10 @@ func _ready():
 func _on_hit(body: Node2D) -> void:
 	if body.name == "Bird":
 		body.take_damage()
-		get_tree().current_scene.get_node("Pausable/Punch").play()
-		get_tree().current_scene.get_node("Pausable/FallDamage").play()
+		get_tree().current_scene.get_node("Pausable/Audio/Punch").play()
+		get_tree().current_scene.get_node("Pausable/Audio/FallDamage").play()
 		await get_tree().create_timer(0.5, false, true).timeout
-		get_tree().current_scene.get_node("Pausable/AcceptYourFate").play()
+		get_tree().current_scene.get_node("Pausable/Audio/AcceptYourFate").play()
 		#var off_screen_pos: Vector2 = Vector2(randf_range(-100, 1000), 1000)  # or wherever "out of frame" is
 		#var tween_out = create_tween()
 		#tween_out.tween_property(hand, "position", off_screen_pos, 4.0)
@@ -54,20 +56,20 @@ func respawn() -> void:
 		# Wait 15 seconds before starting
 		#await get_tree().create_timer(0, false, true).timeout
 		if not get_tree().paused:
-			var vert = randf_range(-1000, 1000)
 			# Slide hand into frame
-			var final_pos: Vector2 = Vector2(vert, 0) 
+			var newVert = randf_range(-800, 800)
+			var final_pos: Vector2 = Vector2(newVert, 100) 
 			var tween = create_tween()
-			tween.tween_property(hand, "position", final_pos, 10.0)
+			tween.tween_property(hand, "position", final_pos, 1.0)
 			## Wait for tween to finish
 			await tween.finished
-			
+			 
 			# Stay on screen time
 			await get_tree().create_timer(1, false, true).timeout
 			
-			var off_screen_pos: Vector2 = Vector2(vert, 4000)  # or wherever "out of frame" is
+			var off_screen_pos: Vector2 = Vector2(newVert, 1000)  # or wherever "out of frame" is
 			var tween_out = create_tween()
-			tween_out.tween_property(hand, "position", off_screen_pos, 5.0)
+			tween_out.tween_property(hand, "position", off_screen_pos, 2.0)
 			
 			# Wait for exit animation to finish
 			await tween_out.finished

@@ -23,7 +23,7 @@ func _ready():
 
 func _on_hit(body: Node2D) -> void:
 	if body.name == "Bird":
-		var zapped = get_tree().current_scene.get_node("Pausable/Zapped")
+		var zapped = get_tree().current_scene.get_node("Pausable/Audio/Zapped")
 		zapped.play()
 		body.take_damage()
 		
