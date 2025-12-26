@@ -6,7 +6,7 @@ const FLAP_STRENGTH_X = 400.0
 const SPEED = 10.0 
 const TOP_Y = -850
 const BOTTOM_Y = 1500 
-const MAX_HEARTS := 5   
+const MAX_HEARTS := 3   
 var HEARTS := 3
 var IS_DEAD := false
 var is_invincible := false
@@ -81,9 +81,10 @@ func _ready() -> void:
 
 func _track_distance():
 	while tracking:
-		await get_tree().create_timer(2).timeout
-		distance += 1
-		distanceDisplay.text =  str(distance) + " Meters"
+		if !get_tree().paused:
+			await get_tree().create_timer(2).timeout
+			distance += 1
+			distanceDisplay.text =  str(distance) + " Meters"
 
 func _on_body_entered(body):
 	print("Collision with:", body.name)

@@ -32,7 +32,7 @@ func respawn() -> void:
 	# Reset feather to top of screen
 	position.y = -2000
 	position.x = randf_range(400, 2000)
-	# Randomize horizontal position for variety
+	# Randomize horizontal position for variety 
 
 func _on_body_entered(body):
 	# Check if the object that collided is the player
@@ -44,6 +44,6 @@ func _on_body_entered(body):
 			body.addCoin(1)
 			position.y = -3000
 			position.x = randf_range(400, 2000)
-			get_tree().current_scene.get_node("Pausable/Audio/Bloop").play()
+			get_tree().current_scene.get_node("Pausable/Audio/Coin").play()
 
 		# Respawn feather at top immediately after collection

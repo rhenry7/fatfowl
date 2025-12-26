@@ -58,7 +58,7 @@ func respawn() -> void:
 		#await get_tree().create_timer(0, false, true).timeout
 		if not get_tree().paused:
 			# Slide hand into frame
-			var newVert = randf_range(-100, 600)
+			var newVert = randf_range(-100, 100)
 			var final_pos: Vector2 = Vector2(200, newVert) 
 			var tween = create_tween()
 			tween.tween_property(hand, "position", final_pos, 1.0)

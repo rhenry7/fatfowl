@@ -1,4 +1,4 @@
-[gd_scene load_steps=194 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=203 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -28,7 +28,9 @@
 [ext_resource type="Texture2D" uid="uid://o0jujcwlusy3" path="res://clouds/AngryCloud-3.png" id="21_037st"]
 [ext_resource type="Script" uid="uid://t763jfb8brkm" path="res://game_over_button.gd" id="21_ld5wt"]
 [ext_resource type="Texture2D" uid="uid://swxsy2dhp21f" path="res://clouds/AngryCloud-4.png" id="22_6orn5"]
+[ext_resource type="AudioStream" uid="uid://wns0nt1suxnu" path="res://audio/Coin.ogg" id="22_oilbd"]
 [ext_resource type="Texture2D" uid="uid://c51bq08yu7lxx" path="res://gameoverscrolls/GAMEOVER-1.png" id="22_r8aua"]
+[ext_resource type="Texture2D" uid="uid://bhdcu55e67lvx" path="res://background/background_style.png" id="23_0sqyy"]
 [ext_resource type="Texture2D" uid="uid://dgu0uwo4c6dgf" path="res://animation/pausemenu/pause-menu-1.png" id="23_4rgxs"]
 [ext_resource type="Script" uid="uid://ciulpp0iiiy8f" path="res://coin.gd" id="23_qphy4"]
 [ext_resource type="Texture2D" uid="uid://dmic8iiibtpyn" path="res://gameoverscrolls/GAMEOVER-2.png" id="23_sduiw"]
@@ -169,6 +171,11 @@
 [ext_resource type="Texture2D" uid="uid://b6g4btwsfg0ct" path="res://animation/zeus/shoot/Shoot-3 5.png" id="156_yxl61"]
 [ext_resource type="Texture2D" uid="uid://bdy5ptatlna1c" path="res://animation/zeus/shoot/Shoot-4 5.png" id="157_0sqyy"]
 [ext_resource type="Texture2D" uid="uid://cgjfhhdtqvpk0" path="res://animation/zeus/shoot/Shoot-5 4.png" id="158_oilbd"]
+[ext_resource type="Script" uid="uid://cflfartcvvdu6" path="res://pegasus_area.gd" id="163_ileqp"]
+[ext_resource type="Texture2D" uid="uid://bxanil3k6qas7" path="res://animation/Pegasus/Pegasus-1 8.png" id="163_vbp07"]
+[ext_resource type="Texture2D" uid="uid://cuc3c0gphxfc4" path="res://animation/Pegasus/Pegasus-2 5.png" id="164_ileqp"]
+[ext_resource type="Texture2D" uid="uid://x8484rfv2god" path="res://animation/Pegasus/Pegasus-3 5.png" id="165_f3pq4"]
+[ext_resource type="Texture2D" uid="uid://bq1mo2iy76gwy" path="res://animation/Pegasus/Pegasus-4 5.png" id="166_88rqo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jinwr"]
 animations = [{
@@ -646,6 +653,29 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iukfe"]
 size = Vector2(148, 169)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_fc4gm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("163_vbp07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_ileqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_f3pq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_88rqo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3pq4"]
+size = Vector2(437, 357)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_5mre3"]
 animations = [{
 "frames": [{
@@ -748,12 +778,19 @@ stream = ExtResource("45_aq07h")
 [node name="FallDamage" type="AudioStreamPlayer2D" parent="Pausable/Audio"]
 stream = ExtResource("46_qphy4")
 
+[node name="Coin" type="AudioStreamPlayer2D" parent="Pausable/Audio"]
+stream = ExtResource("22_oilbd")
+
 [node name="Sprite2D2" type="Sprite2D" parent="Pausable"]
 position = Vector2(311, 0)
 scale = Vector2(8.044, 11.418)
 texture = ExtResource("2_py13h")
 
 [node name="Sky" type="Node2D" parent="Pausable"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="Pausable/Sky"]
+position = Vector2(0, -1)
+texture = ExtResource("23_0sqyy")
 
 [node name="Parallax2D3" type="Parallax2D" parent="Pausable/Sky"]
 scale = Vector2(40.627876, 2.2419608)
@@ -885,7 +922,6 @@ scale = Vector2(0.22, 0.211)
 sprite_frames = SubResource("SpriteFrames_rj586")
 animation = &"fly"
 autoplay = "fly"
-frame_progress = 0.5928339
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Bird"]
 position = Vector2(-1232, 161)
@@ -1324,6 +1360,22 @@ visible = false
 position = Vector2(733, 4.5)
 scale = Vector2(0.52, 1)
 shape = SubResource("RectangleShape2D_iukfe")
+
+[node name="Pegasus" type="Node" parent="Pausable"]
+
+[node name="PegasusArea" type="Area2D" parent="Pausable/Pegasus"]
+position = Vector2(-2500, 0)
+script = ExtResource("163_ileqp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Pegasus/PegasusArea"]
+scale = Vector2(0.31835938, 0.31835938)
+sprite_frames = SubResource("SpriteFrames_fc4gm")
+autoplay = "default"
+frame_progress = 0.034847815
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Pegasus/PegasusArea"]
+position = Vector2(0.5, -11.5)
+shape = SubResource("RectangleShape2D_f3pq4")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

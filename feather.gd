@@ -2,8 +2,8 @@
 extends Area2D
 
 # === Export Variables (adjustable in Inspector) ===
-@export var fall_speed: float = 100.0  # Pixels per second the feather falls
-@export var bottom_limit: float = 1600.0  # Y position where feather respawns if missed
+@export var fall_speed: float = 50.0  # Pixels per second the feather falls
+@export var bottom_limit: float = 2000.0  # Y position where feather respawns if missed
 @onready var animated_sprite = $Feather  # Reference to the animated sprite
 @onready var collision = $CollisionShape2D
 

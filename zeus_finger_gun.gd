@@ -53,9 +53,9 @@ func activate():
 	process_mode = Node.PROCESS_MODE_INHERIT
 	
 func _ready() -> void:
-	process_mode = Node.PROCESS_MODE_DISABLED
+	position.x = -3000
 	position.y = basePosition
-	position.x = 100
+	process_mode = Node.PROCESS_MODE_DISABLED
 	add_to_group("hazard")
 	connect("body_entered", Callable(self, "_on_hit"))
 # Left edge center
@@ -83,12 +83,9 @@ func respawn() -> void:
 	while true:		
 		if not get_tree().paused:
 			var newVert = randf_range(-800, 800)
-			var final_pos: Vector2 = Vector2(100, basePosition) 
+			var new_position_x = randf_range(-800, 800)
+			var final_pos: Vector2 = Vector2(-2000, basePosition) 
 			#var tween = create_tween()
-			#tween.tween_property(shooter, "position", final_pos, 3.0)
-			### Wait for tween to finish
-			#await tween.finished
-			 
 			# Stay on screen time
 			await get_tree().create_timer(1, false, true).timeout
 			
