@@ -937,7 +937,6 @@ script = ExtResource("26_s32dh")
 
 [node name="ZeusHurtBox" type="Area2D" parent="Pausable/Enemies"]
 process_mode = 4
-visible = false
 position = Vector2(58, 995)
 collision_layer = 2
 collision_mask = 2
@@ -1005,6 +1004,7 @@ position = Vector2(-37.5, 232)
 shape = SubResource("RectangleShape2D_pjm8v")
 
 [node name="ZeusFingerGun" type="Area2D" parent="Pausable/Enemies"]
+visible = false
 script = ExtResource("154_5chwk")
 
 [node name="ZeusLightArea" type="CollisionShape2D" parent="Pausable/Enemies/ZeusFingerGun"]

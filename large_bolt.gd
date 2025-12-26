@@ -82,7 +82,7 @@ func respawn() -> void:
 		
 		# Always spawn at max_right position
 		position.x = max_right
-		max_right -= 500
+		max_right -= 300
 		
 		if not get_tree().paused:
 			# Fade in - lightning appears
@@ -106,4 +106,5 @@ func respawn() -> void:
 			disable_collision()
 			
 			await tween_out.finished
+			await get_tree().create_timer(5.0 , false, true).timeout
 			print("Lightning at x:", max_right, "- Collision disabled")

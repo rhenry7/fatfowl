@@ -32,7 +32,8 @@ func _process(delta: float) -> void:
 
 func _ready():  
 	#process_mode = Node.PROCESS_MODE_DISABLED
-	position.x = vert
+	position.x = 200
+	position.y = 100
 	add_to_group("hazard")
 	add_to_group("ZeusHand")
 	connect("body_entered", Callable(self, "_on_hit"))
@@ -57,8 +58,8 @@ func respawn() -> void:
 		#await get_tree().create_timer(0, false, true).timeout
 		if not get_tree().paused:
 			# Slide hand into frame
-			var newVert = randf_range(-800, 800)
-			var final_pos: Vector2 = Vector2(newVert, 100) 
+			var newVert = randf_range(-100, 600)
+			var final_pos: Vector2 = Vector2(200, newVert) 
 			var tween = create_tween()
 			tween.tween_property(hand, "position", final_pos, 1.0)
 			## Wait for tween to finish
@@ -67,7 +68,7 @@ func respawn() -> void:
 			# Stay on screen time
 			await get_tree().create_timer(1, false, true).timeout
 			
-			var off_screen_pos: Vector2 = Vector2(newVert, 1000)  # or wherever "out of frame" is
+			var off_screen_pos: Vector2 = Vector2(200, 1000)  # or wherever "out of frame" is
 			var tween_out = create_tween()
 			tween_out.tween_property(hand, "position", off_screen_pos, 0.5)
 			

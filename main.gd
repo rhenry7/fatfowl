@@ -7,12 +7,12 @@ extends Node2D
 @onready var player = $"Pausable/Bird"
 @onready var surfer = $"Pausable/Surfer"
 @onready var zeusFist = $Pausable/Enemies/ZeusFist
-
-
+@onready var zeusFingerGun = $Pausable/Enemies/ZeusFingerGun
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	zeusFingerGun.visible = false
 	lifebar.visible = false
 	cloudEnemies.visible = false
 	zeusBody.visible = false
@@ -34,7 +34,6 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("toggle_pause"):
 		toggle_pause()
-
 
 
 

@@ -3,7 +3,6 @@ var max_right := 100;
 var speed := 0;
 @onready var sprite = $ZeusFingerShoot
 @onready var shooter = $"."
-
 @onready var hurtbox = $ZeusLightArea
 @onready var basePosition = randf_range(-700.00, 700.00)
 

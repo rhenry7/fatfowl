@@ -2,7 +2,6 @@
 extends Area2D
 
 # === Export Variables (adjustable in Inspector) ===
-@export var health_amount: int = 20  # Amount of health/hearts to give player
 @export var fall_speed: float = 100.0  # Pixels per second the feather falls
 @export var bottom_limit: float = 1600.0  # Y position where feather respawns if missed
 @onready var animated_sprite = $Feather  # Reference to the animated sprite
@@ -28,7 +27,6 @@ func _process(delta: float) -> void:
 		respawn()
 
 func respawn() -> void:
-	await get_tree().create_timer(2).timeout
 	# Reset feather to top of screen
 	position.y = -2000
 	position.x = randf_range(400, 2000)
@@ -40,7 +38,6 @@ func _on_body_entered(body):
 	if body.is_in_group("player"):
 		# Check if player has a heal method
 		if body.has_method("heal"):
-			# Give player 1 heart (change to health_amount if you want to use the export variable)
 			body.heal(1)
 			position.y = -3000
 			position.x = randf_range(400, 2000)
