@@ -826,7 +826,7 @@ repeat_size = Vector2(3666, 0)
 autoscroll = Vector2(-25, 0)
 
 [node name="Sprite2D7" type="Sprite2D" parent="Pausable/Sky/Parallax2D"]
-position = Vector2(256, 184)
+position = Vector2(256, 391)
 texture = ExtResource("3_py13h")
 
 [node name="Zeus" type="AnimatedSprite2D" parent="Pausable/Sky"]
@@ -933,6 +933,7 @@ position = Vector2(-1389, 556)
 shape = SubResource("RectangleShape2D_thyvg")
 
 [node name="Enemies" type="Node2D" parent="Pausable"]
+visible = false
 script = ExtResource("26_s32dh")
 
 [node name="ZeusHurtBox" type="Area2D" parent="Pausable/Enemies"]
@@ -1250,14 +1251,14 @@ script = ExtResource("21_ld5wt")
 
 [node name="Coins" type="RichTextLabel" parent="Pausable/UI"]
 anchors_preset = -1
-anchor_left = 0.97
-anchor_top = 0.05
-anchor_right = 0.97
-anchor_bottom = 0.05
-offset_left = -191.0
-offset_top = -16.0
-offset_right = 72.3999
-offset_bottom = 142.79999
+anchor_left = 0.87900007
+anchor_top = 0.116000004
+anchor_right = 0.87900007
+anchor_bottom = 0.116000004
+offset_left = -131.6001
+offset_top = -61.600006
+offset_right = 131.7998
+offset_bottom = 62.399994
 grow_horizontal = 0
 theme_override_colors/default_color = Color(0.99215686, 0.90588236, 0.29803923, 1)
 theme_override_fonts/normal_font = ExtResource("136_pl55l")
@@ -1265,6 +1266,24 @@ theme_override_font_sizes/normal_font_size = 129
 bbcode_enabled = true
 fit_content = true
 tab_size = 6
+
+[node name="Distance" type="RichTextLabel" parent="Pausable/UI"]
+anchors_preset = -1
+anchor_left = 0.53000003
+anchor_top = 0.117000006
+anchor_right = 0.53000003
+anchor_bottom = 0.117000006
+offset_left = -245.00012
+offset_top = -48.200012
+offset_right = 686.9999
+offset_bottom = 47.799988
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.99215686, 0.90588236, 0.8745098, 1)
+theme_override_fonts/normal_font = ExtResource("136_pl55l")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+fit_content = true
 
 [node name="Feathers_" type="RichTextLabel" parent="Pausable/UI"]
 visible = false

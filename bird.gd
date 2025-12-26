@@ -16,8 +16,11 @@ var invincibility_duration := 2.0  # Increased to match usage
 @onready var hearts_container := get_tree().current_scene.get_node("Pausable/UI/HeartsContainer")
 @onready var game_over_card := get_tree().current_scene.get_node("Pausable/UI/GameOver")
 @onready var coinDisplay = get_tree().current_scene.get_node("Pausable/UI/Coins")
+@onready var distanceDisplay = get_tree().current_scene.get_node("Pausable/UI/Distance")
 @onready var feathers:int = 0
 @onready var coins: int = 0
+@onready var distance:int = 0
+var tracking = true
 
 func fall_damage():
 	if IS_DEAD or is_invincible:
@@ -73,7 +76,14 @@ func _ready() -> void:
 	position.y = -500
 	$BirdHurtBox.body_entered.connect(_on_body_entered)
 	sprite.play("fly")
+	_track_distance()
 
+
+func _track_distance():
+	while tracking:
+		await get_tree().create_timer(2).timeout
+		distance += 1
+		distanceDisplay.text =  str(distance) + " Meters"
 
 func _on_body_entered(body):
 	print("Collision with:", body.name)
@@ -133,6 +143,7 @@ func start_invincibility_visual():
 
 func die():
 	IS_DEAD = true
+	tracking = false
 	print("GAME OVER")
 	get_tree().current_scene.get_node("Pausable/Bird").process_mode = Node.PROCESS_MODE_DISABLED
 	var scrollSprite: AnimatedSprite2D = get_tree().current_scene.get_node("Pausable/UI/GameOverScroll")
