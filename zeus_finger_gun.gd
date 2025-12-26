@@ -2,8 +2,10 @@ extends Area2D
 var max_right := 100;
 var speed := 0;
 @onready var sprite = $ZeusFingerShoot
+@onready var shooter = $"."
 
 @onready var hurtbox = $ZeusLightArea
+@onready var basePosition = randf_range(-700.00, 700.00)
 
 
 func disable_collision():
@@ -53,7 +55,8 @@ func activate():
 	
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_DISABLED
-	position.y = randf_range(-700.00, 700.00)
+	position.y = basePosition
+	position.x = 100
 	add_to_group("hazard")
 	connect("body_entered", Callable(self, "_on_hit"))
 # Left edge center
@@ -80,17 +83,20 @@ func _on_hit(body: Node2D) -> void:
 func respawn() -> void:
 	while true:		
 		if not get_tree().paused:
-			# Fade in - lightning appears
-			#var thunder = get_tree().current_scene.get_node("Pausable/Thunder")
-			#thunder.play()		
-			# Enable collision when fully visible
-			enable_collision()
+			var newVert = randf_range(-800, 800)
+			var final_pos: Vector2 = Vector2(100, basePosition) 
+			#var tween = create_tween()
+			#tween.tween_property(shooter, "position", final_pos, 3.0)
+			### Wait for tween to finish
+			#await tween.finished
+			 
+			# Stay on screen time
+			await get_tree().create_timer(1, false, true).timeout
 			
-			# Wait while visible and active
-			await get_tree().create_timer(2.0 , false, true).timeout
+			var off_screen_pos: Vector2 = Vector2(100, newVert)  # or wherever "out of frame" is
+			var tween_out = create_tween()
+			tween_out.tween_property(shooter, "position", off_screen_pos, 30.0)
 			
-			# Disable collision when starting to fade
-			disable_collision()
-			# HARD MODE
-			# position.y = randf_range(-700.00, 700.00)
+			# Wait for exit animation to finish
+			await tween_out.finished
 			

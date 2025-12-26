@@ -446,7 +446,7 @@ size = Vector2(681, 556)
 size = Vector2(526, 484)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vbp07"]
-size = Vector2(2210, 198)
+size = Vector2(2180, 98)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7vfuv"]
 animations = [{
@@ -811,6 +811,7 @@ scale = Vector2(-0.7419037, 0.7906267)
 texture = ExtResource("4_oojoh")
 
 [node name="clouds-front2" type="Parallax2D" parent="Pausable/Sky"]
+visible = false
 repeat_size = Vector2(4481, 0)
 autoscroll = Vector2(-100, 0)
 
@@ -932,7 +933,6 @@ position = Vector2(-1389, 556)
 shape = SubResource("RectangleShape2D_thyvg")
 
 [node name="Enemies" type="Node2D" parent="Pausable"]
-visible = false
 script = ExtResource("26_s32dh")
 
 [node name="ZeusHurtBox" type="Area2D" parent="Pausable/Enemies"]
@@ -1005,11 +1005,10 @@ position = Vector2(-37.5, 232)
 shape = SubResource("RectangleShape2D_pjm8v")
 
 [node name="ZeusFingerGun" type="Area2D" parent="Pausable/Enemies"]
-visible = false
 script = ExtResource("154_5chwk")
 
 [node name="ZeusLightArea" type="CollisionShape2D" parent="Pausable/Enemies/ZeusFingerGun"]
-position = Vector2(-277, -20)
+position = Vector2(-262, -18)
 shape = SubResource("RectangleShape2D_vbp07")
 
 [node name="ZeusFingerShoot" type="AnimatedSprite2D" parent="Pausable/Enemies/ZeusFingerGun"]
