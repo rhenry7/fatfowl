@@ -60,7 +60,7 @@ func respawn() -> void:
 			var newVert = randf_range(-800, 800)
 			var final_pos: Vector2 = Vector2(newVert, 100) 
 			var tween = create_tween()
-			tween.tween_property(hand, "position", final_pos, 10.0)
+			tween.tween_property(hand, "position", final_pos, 1.0)
 			## Wait for tween to finish
 			await tween.finished
 			 
@@ -69,7 +69,7 @@ func respawn() -> void:
 			
 			var off_screen_pos: Vector2 = Vector2(newVert, 1000)  # or wherever "out of frame" is
 			var tween_out = create_tween()
-			tween_out.tween_property(hand, "position", off_screen_pos, 2.0)
+			tween_out.tween_property(hand, "position", off_screen_pos, 0.5)
 			
 			# Wait for exit animation to finish
 			await tween_out.finished

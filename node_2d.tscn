@@ -1,4 +1,4 @@
-[gd_scene load_steps=185 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=194 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -151,6 +151,7 @@
 [ext_resource type="Texture2D" uid="uid://d3srd2sac0hwg" path="res://animation/Lightning3/Untitled_Artwork-14.png" id="77_pl55l"]
 [ext_resource type="Script" uid="uid://dbvo3nk4bwoue" path="res://enemies_2.gd" id="87_iukfe"]
 [ext_resource type="Script" uid="uid://cbruw0twcmkfo" path="res://enemies_cloud.gd" id="95_wnn4a"]
+[ext_resource type="Texture2D" uid="uid://cdq3i8hbu6ncl" path="res://animation/zeus/shoot/ZeusLight-8.png" id="107_vbp07"]
 [ext_resource type="Script" uid="uid://ca486p5afoxmf" path="res://start_menu.gd" id="124_4rgxs"]
 [ext_resource type="Script" uid="uid://dycgdx2yjrx87" path="res://surfer.gd" id="124_b481h"]
 [ext_resource type="Texture2D" uid="uid://coe0kgq6vsd3c" path="res://animation/SurferZeus/surfer-1 8.png" id="125_uhvdc"]
@@ -162,6 +163,12 @@
 [ext_resource type="Texture2D" uid="uid://cnb24yntl4aef" path="res://animation/SurferZeus/surfer-7 3.png" id="131_py13h"]
 [ext_resource type="Texture2D" uid="uid://48fw4ai3k3s1" path="res://animation/SurferZeus/surfer-8 3.png" id="132_e8f3a"]
 [ext_resource type="FontFile" uid="uid://b1qfifjoh852g" path="res://Greek-Freak.ttf" id="136_pl55l"]
+[ext_resource type="Script" uid="uid://oiym6t36rxyx" path="res://zeus_finger_gun.gd" id="154_5chwk"]
+[ext_resource type="Texture2D" uid="uid://wrn4reksni47" path="res://animation/zeus/shoot/Shoot-1 8.png" id="154_shleb"]
+[ext_resource type="Texture2D" uid="uid://dp2pqcfrbb874" path="res://animation/zeus/shoot/Shoot-2 5.png" id="155_4pqki"]
+[ext_resource type="Texture2D" uid="uid://b6g4btwsfg0ct" path="res://animation/zeus/shoot/Shoot-3 5.png" id="156_yxl61"]
+[ext_resource type="Texture2D" uid="uid://bdy5ptatlna1c" path="res://animation/zeus/shoot/Shoot-4 5.png" id="157_0sqyy"]
+[ext_resource type="Texture2D" uid="uid://cgjfhhdtqvpk0" path="res://animation/zeus/shoot/Shoot-5 4.png" id="158_oilbd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jinwr"]
 animations = [{
@@ -437,6 +444,35 @@ size = Vector2(681, 556)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjm8v"]
 size = Vector2(526, 484)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbp07"]
+size = Vector2(2210, 198)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7vfuv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("154_shleb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_vbp07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155_4pqki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("156_yxl61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("157_0sqyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_oilbd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
 size = Vector2(304, 453)
@@ -783,6 +819,15 @@ position = Vector2(-302.00003, -179.99998)
 scale = Vector2(1.1650759, 0.90014344)
 texture = ExtResource("5_c7o6v")
 
+[node name="Parallax2D" type="Parallax2D" parent="Pausable/Sky"]
+scroll_scale = Vector2(1.5, 1)
+repeat_size = Vector2(3666, 0)
+autoscroll = Vector2(-25, 0)
+
+[node name="Sprite2D7" type="Sprite2D" parent="Pausable/Sky/Parallax2D"]
+position = Vector2(256, 184)
+texture = ExtResource("3_py13h")
+
 [node name="Zeus" type="AnimatedSprite2D" parent="Pausable/Sky"]
 visible = false
 position = Vector2(19.3, -180)
@@ -812,16 +857,14 @@ autoscroll = Vector2(-25, 0)
 [node name="Sprite2D6" type="Sprite2D" parent="Pausable/Sky/Parallax2D4"]
 texture = ExtResource("12_mxju4")
 
-[node name="Parallax2D" type="Parallax2D" parent="Pausable/Sky"]
-scroll_scale = Vector2(1.5, 1)
-repeat_size = Vector2(3666, 0)
-autoscroll = Vector2(-5, 0)
+[node name="Parallax2D5" type="Parallax2D" parent="Pausable/Sky"]
+repeat_size = Vector2(3000, 0)
+autoscroll = Vector2(-25, 0)
 
-[node name="Sprite2D7" type="Sprite2D" parent="Pausable/Sky/Parallax2D"]
-texture = ExtResource("3_py13h")
+[node name="Sprite2D6" type="Sprite2D" parent="Pausable/Sky/Parallax2D5"]
+texture = ExtResource("12_mxju4")
 
 [node name="clouds-front3" type="Parallax2D" parent="Pausable/Sky"]
-visible = false
 repeat_size = Vector2(4481, 0)
 autoscroll = Vector2(-40, 0)
 
@@ -871,7 +914,7 @@ scale = Vector2(0.18948922, 0.18948922)
 sprite_frames = SubResource("SpriteFrames_xotjc")
 animation = &"falling"
 autoplay = "falling"
-frame_progress = 0.11172022
+frame_progress = 0.5827212
 
 [node name="Coin" type="Area2D" parent="Pausable" groups=["coin"]]
 script = ExtResource("23_qphy4")
@@ -882,7 +925,7 @@ scale = Vector2(0.32665637, 0.3266564)
 sprite_frames = SubResource("SpriteFrames_nsnm2")
 animation = &"CoinDrop"
 autoplay = "CoinDrop"
-frame_progress = 0.40777633
+frame_progress = 0.19333792
 
 [node name="CoinShape" type="CollisionShape2D" parent="Pausable/Coin"]
 position = Vector2(-1389, 556)
@@ -961,8 +1004,23 @@ position = Vector2(0, 232)
 position = Vector2(-37.5, 232)
 shape = SubResource("RectangleShape2D_pjm8v")
 
-[node name="Enemies2" type="Node2D" parent="Pausable"]
+[node name="ZeusFingerGun" type="Area2D" parent="Pausable/Enemies"]
 visible = false
+script = ExtResource("154_5chwk")
+
+[node name="ZeusLightArea" type="CollisionShape2D" parent="Pausable/Enemies/ZeusFingerGun"]
+position = Vector2(-277, -20)
+shape = SubResource("RectangleShape2D_vbp07")
+
+[node name="ZeusFingerShoot" type="AnimatedSprite2D" parent="Pausable/Enemies/ZeusFingerGun"]
+position = Vector2(361, 124)
+scale = Vector2(0.8984376, 0.89843756)
+sprite_frames = SubResource("SpriteFrames_7vfuv")
+autoplay = "default"
+frame = 1
+frame_progress = 0.72315323
+
+[node name="Enemies2" type="Node2D" parent="Pausable"]
 script = ExtResource("87_iukfe")
 
 [node name="ZeusHurtBox" type="Area2D" parent="Pausable/Enemies2"]
@@ -1203,7 +1261,7 @@ offset_top = -16.0
 offset_right = 72.3999
 offset_bottom = 142.79999
 grow_horizontal = 0
-theme_override_colors/default_color = Color(0.9406359, 0.94063586, 0.94063574, 1)
+theme_override_colors/default_color = Color(0.99215686, 0.90588236, 0.29803923, 1)
 theme_override_fonts/normal_font = ExtResource("136_pl55l")
 theme_override_font_sizes/normal_font_size = 129
 bbcode_enabled = true
@@ -1281,7 +1339,7 @@ offset_right = 841.75
 offset_bottom = 309.5
 
 [node name="StartMenu" type="AnimatedSprite2D" parent="Control"]
-position = Vector2(421.00003, -238.49998)
+position = Vector2(236.00003, -300.5)
 scale = Vector2(1.0043945, 0.9949807)
 sprite_frames = SubResource("SpriteFrames_5mre3")
 animation = &"pause"
@@ -1292,6 +1350,7 @@ script = ExtResource("124_4rgxs")
 [connection signal="body_entered" from="Pausable/Enemies/ZeusHurtBox" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Pausable/Enemies/LargeBolt" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Pausable/Enemies/ZeusFist" to="Pausable/Bird" method="_on_body_entered"]
+[connection signal="body_entered" from="Pausable/Enemies/ZeusFingerGun" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Pausable/Enemies2/ZeusHurtBox" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Pausable/Enemies2/LargeBolt" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Pausable/Enemies2/ZeusFist" to="Pausable/Bird" method="_on_body_entered"]
