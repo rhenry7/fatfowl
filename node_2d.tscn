@@ -1248,7 +1248,7 @@ grow_vertical = 2
 texture_normal = ExtResource("29_24dk6")
 script = ExtResource("21_ld5wt")
 
-[node name="Distance" type="RichTextLabel" parent="Pausable/UI"]
+[node name="Coins" type="RichTextLabel" parent="Pausable/UI"]
 anchors_preset = -1
 anchor_left = 0.97
 anchor_top = 0.05

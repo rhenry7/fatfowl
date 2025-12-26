@@ -15,7 +15,7 @@ var invincibility_duration := 2.0  # Increased to match usage
 @onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
 @onready var hearts_container := get_tree().current_scene.get_node("Pausable/UI/HeartsContainer")
 @onready var game_over_card := get_tree().current_scene.get_node("Pausable/UI/GameOver")
-@onready var distanceText = get_tree().current_scene.get_node("Pausable/UI/Distance")
+@onready var coinDisplay = get_tree().current_scene.get_node("Pausable/UI/Coins")
 @onready var feathers:int = 0
 @onready var coins: int = 0
 
@@ -61,12 +61,12 @@ func heal(amount: int):
 	
 func addCoin(amount: int):
 	coins += 10
-	distanceText.text = str(coins)
+	coinDisplay.text = str(coins)
 	print("Coin added! Current coins: ", coins)
 	
 
 func _ready() -> void:
-	distanceText.text = str(feathers)
+	coinDisplay.text = str(feathers)
 	add_to_group("player")
 	print("Global Position: ", global_position)
 	position.x = 300
