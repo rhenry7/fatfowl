@@ -446,7 +446,7 @@ size = Vector2(681, 556)
 size = Vector2(526, 484)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vbp07"]
-size = Vector2(2180, 98)
+size = Vector2(1798, 98)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7vfuv"]
 animations = [{
@@ -1004,11 +1004,10 @@ position = Vector2(-37.5, 232)
 shape = SubResource("RectangleShape2D_pjm8v")
 
 [node name="ZeusFingerGun" type="Area2D" parent="Pausable/Enemies"]
-visible = false
 script = ExtResource("154_5chwk")
 
 [node name="ZeusLightArea" type="CollisionShape2D" parent="Pausable/Enemies/ZeusFingerGun"]
-position = Vector2(-262, -18)
+position = Vector2(-453, -18)
 shape = SubResource("RectangleShape2D_vbp07")
 
 [node name="ZeusFingerShoot" type="AnimatedSprite2D" parent="Pausable/Enemies/ZeusFingerGun"]
