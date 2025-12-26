@@ -1,6 +1,7 @@
 extends Area2D
 var max_right := 100;
 var speed := 0;
+var delay := 10.0
 
 
 func disable_collision():
@@ -29,11 +30,7 @@ func deactivate():
 	process_mode = Node.PROCESS_MODE_DISABLED
 	
 	
-func speed_increase_loop() -> void:
-	print("current speed", speed)
-	if speed >= 1500:
-		return
-	speed += 50
+
 	
 	
 func activate():
@@ -64,6 +61,13 @@ func _ready() -> void:
 	# Center of viewport
 	var center = get_viewport_rect().size / 2
 	respawn()
+	
+	
+func delay_decrease_loop() -> void:
+	if delay <= 0.0:
+		return
+	delay -= 1.0
+	
 	
 func _on_hit(body: Node2D) -> void:
 	if body.name == "Bird":
@@ -106,5 +110,6 @@ func respawn() -> void:
 			disable_collision()
 			
 			await tween_out.finished
-			await get_tree().create_timer(5.0 , false, true).timeout
+			await get_tree().create_timer(delay, false, true).timeout
+			delay_decrease_loop()
 			print("Lightning at x:", max_right, "- Collision disabled")
