@@ -53,7 +53,7 @@ func activate():
 	process_mode = Node.PROCESS_MODE_INHERIT
 	
 func _ready() -> void:
-	position.x = -3000
+	position.x = -6000
 	position.y = basePosition
 	process_mode = Node.PROCESS_MODE_DISABLED
 	add_to_group("hazard")

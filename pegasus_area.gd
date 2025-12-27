@@ -1,11 +1,12 @@
 extends Area2D
 
-var speed := randf_range(300, 1000)
+var speed := randf_range(300, 500)
 @onready var load_y_position = randf_range(300, -500)
 
 func _process(delta: float) -> void:
 	position.x += speed * delta
-	if position.x > 3500:
+	print("pegasus position: ", position.x)
+	if position.x > 4500:
 		respawn()
 
 func respawn() -> void:

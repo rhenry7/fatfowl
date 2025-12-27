@@ -1,4 +1,4 @@
-[gd_scene load_steps=204 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=206 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -166,6 +166,8 @@
 [ext_resource type="Texture2D" uid="uid://cnb24yntl4aef" path="res://animation/SurferZeus/surfer-7 3.png" id="131_py13h"]
 [ext_resource type="Texture2D" uid="uid://48fw4ai3k3s1" path="res://animation/SurferZeus/surfer-8 3.png" id="132_e8f3a"]
 [ext_resource type="FontFile" uid="uid://b1qfifjoh852g" path="res://Greek-Freak.ttf" id="136_pl55l"]
+[ext_resource type="Script" uid="uid://c5x5qehv2bni3" path="res://sad_cloud.gd" id="141_fc4gm"]
+[ext_resource type="Script" uid="uid://c6ba7secjyt6" path="res://happy_cloud.gd" id="142_yl3ei"]
 [ext_resource type="Script" uid="uid://oiym6t36rxyx" path="res://zeus_finger_gun.gd" id="154_5chwk"]
 [ext_resource type="Texture2D" uid="uid://wrn4reksni47" path="res://animation/zeus/shoot/Shoot-1 8.png" id="154_shleb"]
 [ext_resource type="Texture2D" uid="uid://dp2pqcfrbb874" path="res://animation/zeus/shoot/Shoot-2 5.png" id="155_4pqki"]
@@ -483,7 +485,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
-size = Vector2(304, 453)
+size = Vector2(175, 355)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4d7sh"]
 animations = [{
@@ -973,7 +975,6 @@ position = Vector2(-1389, 556)
 shape = SubResource("RectangleShape2D_thyvg")
 
 [node name="Enemies" type="Node2D" parent="Pausable"]
-visible = false
 script = ExtResource("26_s32dh")
 
 [node name="ZeusHurtBox" type="Area2D" parent="Pausable/Enemies"]
@@ -1156,7 +1157,7 @@ autoplay = "mean"
 
 [node name="SadCloud" type="Area2D" parent="Pausable/CloudEnemies"]
 position = Vector2(568, 704)
-script = ExtResource("6_4d7sh")
+script = ExtResource("141_fc4gm")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Pausable/CloudEnemies/SadCloud"]
 position = Vector2(380, -789)
@@ -1176,7 +1177,7 @@ autoplay = "sad"
 
 [node name="HappyCloud" type="Area2D" parent="Pausable/CloudEnemies"]
 position = Vector2(568, 704)
-script = ExtResource("6_4d7sh")
+script = ExtResource("142_yl3ei")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Pausable/CloudEnemies/HappyCloud"]
 position = Vector2(380, -789)
@@ -1184,7 +1185,7 @@ rect = Rect2(672, -410, 405, 650)
 script = ExtResource("6_ir8iy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/CloudEnemies/HappyCloud"]
-position = Vector2(1255, -828)
+position = Vector2(1257.5, -749.5)
 shape = SubResource("RectangleShape2D_4d7sh")
 
 [node name="HappyCloud" type="AnimatedSprite2D" parent="Pausable/CloudEnemies/HappyCloud"]
@@ -1295,9 +1296,9 @@ anchor_left = 0.87900007
 anchor_top = 0.116000004
 anchor_right = 0.87900007
 anchor_bottom = 0.116000004
-offset_left = -131.6001
+offset_left = -264.6001
 offset_top = -61.600006
-offset_right = 131.7998
+offset_right = 227.3999
 offset_bottom = 62.399994
 grow_horizontal = 0
 theme_override_colors/default_color = Color(0.99215686, 0.90588236, 0.29803923, 1)
@@ -1373,7 +1374,7 @@ script = ExtResource("163_ileqp")
 scale = Vector2(0.20898436, 0.20898436)
 sprite_frames = SubResource("SpriteFrames_fc4gm")
 autoplay = "default"
-frame_progress = 0.6361378
+frame_progress = 0.4155057
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/PegasusArea"]
 position = Vector2(0.5, -11.5)
@@ -1404,13 +1405,13 @@ anchor_left = 0.5
 anchor_top = 0.347
 anchor_right = 0.5
 anchor_bottom = 0.347
-offset_left = -980.25
-offset_top = -518.5
-offset_right = 841.75
-offset_bottom = 309.5
+offset_left = -1184.25
+offset_top = -817.5
+offset_right = 923.75
+offset_bottom = 359.5
 
 [node name="StartMenu" type="AnimatedSprite2D" parent="Control"]
-position = Vector2(236.00003, -300.5)
+position = Vector2(245, -205.5)
 scale = Vector2(1.0043945, 0.9949807)
 sprite_frames = SubResource("SpriteFrames_5mre3")
 animation = &"pause"
