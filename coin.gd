@@ -41,7 +41,7 @@ func _on_body_entered(body):
 		# Check if player has a heal method
 		if body.has_method("addCoin"):
 			# Give player 1 heart (change to health_amount if you want to use the export variable)
-			body.addCoin(1)
+			body.addCoin(10)
 			position.y = -3000
 			position.x = randf_range(400, 2000)
 			get_tree().current_scene.get_node("Pausable/Audio/Coin").play()

@@ -63,7 +63,7 @@ func heal(amount: int):
 	print("Healed! Current health: ", HEARTS, "/", MAX_HEARTS)
 	
 func addCoin(amount: int):
-	coins += 10
+	coins += amount
 	coinDisplay.text = str(coins)
 	print("Coin added! Current coins: ", coins)
 	

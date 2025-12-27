@@ -1,4 +1,4 @@
-[gd_scene load_steps=203 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=204 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://c51bq08yu7lxx" path="res://gameoverscrolls/GAMEOVER-1.png" id="22_r8aua"]
 [ext_resource type="Texture2D" uid="uid://bhdcu55e67lvx" path="res://background/background_style.png" id="23_0sqyy"]
 [ext_resource type="Texture2D" uid="uid://dgu0uwo4c6dgf" path="res://animation/pausemenu/pause-menu-1.png" id="23_4rgxs"]
+[ext_resource type="AudioStream" uid="uid://bkaf5n2jifsmv" path="res://audio/coin_group_pickup.ogg" id="23_f3pq4"]
 [ext_resource type="Script" uid="uid://ciulpp0iiiy8f" path="res://coin.gd" id="23_qphy4"]
 [ext_resource type="Texture2D" uid="uid://dmic8iiibtpyn" path="res://gameoverscrolls/GAMEOVER-2.png" id="23_sduiw"]
 [ext_resource type="Texture2D" uid="uid://drydettk4u5kc" path="res://clouds/AngryCloud-5.png" id="23_whnp6"]
@@ -674,7 +675,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3pq4"]
-size = Vector2(437, 357)
+size = Vector2(335, 285)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5mre3"]
 animations = [{
@@ -780,6 +781,9 @@ stream = ExtResource("46_qphy4")
 
 [node name="Coin" type="AudioStreamPlayer2D" parent="Pausable/Audio"]
 stream = ExtResource("22_oilbd")
+
+[node name="CoinGroup" type="AudioStreamPlayer2D" parent="Pausable/Audio"]
+stream = ExtResource("23_f3pq4")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Pausable"]
 position = Vector2(311, 0)
@@ -1361,19 +1365,17 @@ position = Vector2(733, 4.5)
 scale = Vector2(0.52, 1)
 shape = SubResource("RectangleShape2D_iukfe")
 
-[node name="Pegasus" type="Node" parent="Pausable"]
-
-[node name="PegasusArea" type="Area2D" parent="Pausable/Pegasus"]
-position = Vector2(-2500, 0)
+[node name="PegasusArea" type="Area2D" parent="Pausable" groups=["coin"]]
+position = Vector2(-2930, -500)
 script = ExtResource("163_ileqp")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Pegasus/PegasusArea"]
-scale = Vector2(0.31835938, 0.31835938)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/PegasusArea"]
+scale = Vector2(0.20898436, 0.20898436)
 sprite_frames = SubResource("SpriteFrames_fc4gm")
 autoplay = "default"
-frame_progress = 0.034847815
+frame_progress = 0.6361378
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Pegasus/PegasusArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/PegasusArea"]
 position = Vector2(0.5, -11.5)
 shape = SubResource("RectangleShape2D_f3pq4")
 
@@ -1429,4 +1431,5 @@ script = ExtResource("124_4rgxs")
 [connection signal="toggled" from="Pausable/UI/Pause_Play" to="." method="_on_pause_play_toggled"]
 [connection signal="pressed" from="Pausable/UI/GameOver" to="." method="_on_game_over_pressed"]
 [connection signal="body_entered" from="Pausable/Surfer" to="Pausable/Bird" method="_on_body_entered"]
+[connection signal="body_entered" from="Pausable/PegasusArea" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="pressed" from="Control/StartButton" to="." method="_on_start_button_pressed"]
