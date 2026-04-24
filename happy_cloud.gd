@@ -1,9 +1,6 @@
 extends Area2D
 
-var speed := randf_range(500, 800)
-@onready var right_spawn_x := 200.0
-@onready var top_y := 300.0
-@onready var bottom_y := 100.0
+var speed := randf_range(700, 1000)
 
 func deactivate():
 	visible = false
@@ -17,9 +14,16 @@ func deactivate():
 			child.disabled = true
 
 
+func _screen_y() -> float:
+	var inv = get_canvas_transform().affine_inverse()
+	var vp = get_viewport_rect()
+	var y_min = (inv * vp.position).y + 50.0
+	var y_max = (inv * (vp.position + vp.size)).y - 50.0
+	return randf_range(y_min, y_max)
+
 func activate():
 	position.x = 500
-	position.y = randf_range(top_y, bottom_y)
+	position.y = _screen_y()
 	visible = true
 	set_physics_process(true)
 	set_process(true)
@@ -35,13 +39,13 @@ func _process(delta: float) -> void:
 
 func respawn() -> void:
 	await get_tree().create_timer(5.0 , false, true).timeout
-	position.y = randf_range(-100, 1000)
+	position.y = _screen_y()
 	position.x = randf_range(100, 2000)
 	speed_increase_loop()
 
 func _ready():
 	position.x = 2000
-	position.y = randf_range(400, 2000)
+	position.y = _screen_y()
 	add_to_group("hazard")
 	connect("body_entered", Callable(self, "_on_hit"))
 
@@ -55,4 +59,4 @@ func speed_increase_loop() -> void:
 	print("current speed", speed)
 	if speed >= 2000:
 		speed = 500
-	speed += 10
+	speed += randf_range(100, 200)

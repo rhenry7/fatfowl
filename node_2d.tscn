@@ -1065,7 +1065,6 @@ script = ExtResource("87_iukfe")
 
 [node name="ZeusHurtBox" type="Area2D" parent="Pausable/Enemies2"]
 process_mode = 4
-visible = false
 position = Vector2(58, 995)
 collision_layer = 2
 collision_mask = 2
@@ -1136,7 +1135,7 @@ shape = SubResource("RectangleShape2D_pjm8v")
 script = ExtResource("95_wnn4a")
 
 [node name="Cloud" type="Area2D" parent="Pausable/CloudEnemies"]
-position = Vector2(568, 704)
+position = Vector2(568, 1000)
 script = ExtResource("6_4d7sh")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Pausable/CloudEnemies/Cloud"]
@@ -1156,7 +1155,7 @@ animation = &"mean"
 autoplay = "mean"
 
 [node name="SadCloud" type="Area2D" parent="Pausable/CloudEnemies"]
-position = Vector2(568, 704)
+position = Vector2(568, 1000)
 script = ExtResource("141_fc4gm")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Pausable/CloudEnemies/SadCloud"]
@@ -1176,7 +1175,7 @@ animation = &"sad"
 autoplay = "sad"
 
 [node name="HappyCloud" type="Area2D" parent="Pausable/CloudEnemies"]
-position = Vector2(568, 704)
+position = Vector2(568, 1000)
 script = ExtResource("142_yl3ei")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Pausable/CloudEnemies/HappyCloud"]
@@ -1416,6 +1415,9 @@ scale = Vector2(1.0043945, 0.9949807)
 sprite_frames = SubResource("SpriteFrames_5mre3")
 animation = &"pause"
 script = ExtResource("124_4rgxs")
+
+[node name="ZeusGameOver" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("33_kq1c5")
 
 [connection signal="body_entered" from="Pausable/Feather" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Pausable/Coin" to="Pausable/Bird" method="_on_body_entered"]

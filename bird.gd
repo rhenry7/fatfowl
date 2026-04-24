@@ -85,6 +85,8 @@ func _track_distance():
 			await get_tree().create_timer(2).timeout
 			distance += 1
 			distanceDisplay.text =  str(distance) + " Meters"
+		else:
+			await get_tree().process_frame
 
 func _on_body_entered(body):
 	print("Collision with:", body.name)
@@ -146,20 +148,24 @@ func die():
 	IS_DEAD = true
 	tracking = false
 	print("GAME OVER")
-	get_tree().current_scene.get_node("Pausable/Bird").process_mode = Node.PROCESS_MODE_DISABLED
-	var scrollSprite: AnimatedSprite2D = get_tree().current_scene.get_node("Pausable/UI/GameOverScroll")
-	get_tree().current_scene.get_node("Pausable/UI/GameOverScroll").visible = true
-	get_tree().current_scene.get_node("Pausable/UI/GameOver").visible = true
-	get_tree().current_scene.get_node("Control/Paper").play()
+	var scene = get_tree().current_scene
+	scene.get_node("Pausable/Bird").process_mode = Node.PROCESS_MODE_DISABLED
+	scene.get_node("Pausable/Enemies").process_mode = Node.PROCESS_MODE_DISABLED
+	scene.get_node("Pausable/Enemies2").process_mode = Node.PROCESS_MODE_DISABLED
+	scene.get_node("Pausable/CloudEnemies").process_mode = Node.PROCESS_MODE_DISABLED
+	var audio_root = scene.get_node("Pausable/Audio")
+	for child in audio_root.get_children():
+		if (child is AudioStreamPlayer or child is AudioStreamPlayer2D) and child.name != "Music":
+			child.stop()
+	var scrollSprite: AnimatedSprite2D = scene.get_node("Pausable/UI/GameOverScroll")
+	scene.get_node("Pausable/UI/GameOverScroll").visible = true
+	scene.get_node("Pausable/UI/GameOver").visible = true
+	scene.get_node("Control/Paper").play()
 	await get_tree().create_timer(0.5).timeout
 	scrollSprite.play()
-	var music = get_tree().current_scene.get_node("Pausable/Audio/Music")
-	music.stop()
 	await get_tree().create_timer(1).timeout
-	get_tree().current_scene.get_node("Pausable/Bird").visible = false
-	get_tree().current_scene.get_node("Pausable/Audio/GameOver").play()
-	await get_tree().create_timer(5.0).timeout
-	get_tree().current_scene.get_node("Pausable/Audio/ZeusRant2").play()
+	scene.get_node("Control/ZeusGameOver").play()
+	scene.get_node("Pausable/Bird").visible = false
 	
 func respawn() -> void:
 	position.x = -100

@@ -81,3 +81,5 @@ func respawn() -> void:
 			
 			# Wait for exit animation to finish
 			await tween_out.finished
+		else:
+			await get_tree().process_frame

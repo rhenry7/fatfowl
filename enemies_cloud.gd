@@ -6,7 +6,7 @@ extends Node
 ]
 var current_enemy_index := 0
 var display_duration := 10.0   # seconds per enemy
-var enemy_buffer := 7.0
+var enemy_buffer := 3.0
 var initial_delay := 0.0
 
 func _ready():

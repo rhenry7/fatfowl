@@ -91,6 +91,7 @@ func respawn() -> void:
 		if not get_tree().paused:
 			# Fade in - lightning appears
 			get_tree().current_scene.get_node("Pausable/Audio/Thunder").play()
+
 			var tween = create_tween()
 			#var thunder = get_tree().current_scene.get_node("Pausable/Thunder")
 			#thunder.play()		
@@ -113,3 +114,5 @@ func respawn() -> void:
 			await get_tree().create_timer(delay, false, true).timeout
 			delay_decrease_loop()
 			print("Lightning at x:", max_right, "- Collision disabled")
+		else:
+			await get_tree().process_frame

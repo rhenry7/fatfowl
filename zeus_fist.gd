@@ -30,8 +30,8 @@ func activate():
 func _process(delta: float) -> void:
 	pass
 
-func _ready():  
-	#process_mode = Node.PROCESS_MODE_DISABLED
+func _ready():
+	process_mode = Node.PROCESS_MODE_DISABLED
 	position.x = 200
 	position.y = 100
 	add_to_group("hazard")
@@ -74,3 +74,5 @@ func respawn() -> void:
 			
 			# Wait for exit animation to finish
 			await tween_out.finished
+		else:
+			await get_tree().process_frame
