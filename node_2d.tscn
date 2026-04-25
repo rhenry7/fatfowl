@@ -997,8 +997,8 @@ position = Vector2(748, 751)
 shape = SubResource("CircleShape2D_wcv2n")
 
 [node name="ZeusHandAnimation" type="AnimatedSprite2D" parent="Pausable/Enemies/ZeusHurtBox/ZeusHand"]
-position = Vector2(779.00006, 881)
-scale = Vector2(0.7934134, 0.69866747)
+position = Vector2(756, 725)
+scale = Vector2(0.52977604, 0.4665126)
 sprite_frames = SubResource("SpriteFrames_0xo8l")
 animation = &"HandWave"
 autoplay = "HandWave"
@@ -1061,6 +1061,7 @@ frame = 1
 frame_progress = 0.72315323
 
 [node name="Enemies2" type="Node2D" parent="Pausable"]
+position = Vector2(-1801, -459)
 script = ExtResource("87_iukfe")
 
 [node name="ZeusHurtBox" type="Area2D" parent="Pausable/Enemies2"]
@@ -1076,15 +1077,15 @@ rotation = -0.7853982
 shape = SubResource("CircleShape2D_ld5wt")
 
 [node name="ZeusHand" type="CharacterBody2D" parent="Pausable/Enemies2/ZeusHurtBox"]
-position = Vector2(-58, -995)
+position = Vector2(-50, -817)
 
 [node name="ZeusHandHurtBox" type="CollisionShape2D" parent="Pausable/Enemies2/ZeusHurtBox/ZeusHand"]
 position = Vector2(748, 751)
 shape = SubResource("CircleShape2D_wcv2n")
 
 [node name="ZeusHandAnimation" type="AnimatedSprite2D" parent="Pausable/Enemies2/ZeusHurtBox/ZeusHand"]
-position = Vector2(779.00006, 881)
-scale = Vector2(0.7934134, 0.69866747)
+position = Vector2(765, 798.00006)
+scale = Vector2(0.6631728, 0.5839797)
 sprite_frames = SubResource("SpriteFrames_0xo8l")
 animation = &"HandWave"
 autoplay = "HandWave"
