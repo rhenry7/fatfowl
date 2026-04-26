@@ -17,8 +17,8 @@ func deactivate():
 func _screen_y() -> float:
 	var inv = get_canvas_transform().affine_inverse()
 	var vp = get_viewport_rect()
-	var y_min = (inv * vp.position).y + 50.0
-	var y_max = (inv * (vp.position + vp.size)).y - 50.0
+	var y_min = (inv * vp.position).y + 500
+	var y_max = (inv * (vp.position + vp.size)).y + 1000
 	return randf_range(y_min, y_max)
 
 func activate():
@@ -34,7 +34,8 @@ func activate():
 
 func _process(delta: float) -> void:
 	position.x -= speed * delta
-	if position.x < -3500:
+	# need to optimize to respawn when passed edge of viewable screen
+	if position.x < -2500:
 		respawn()
 
 func respawn() -> void:
@@ -43,7 +44,7 @@ func respawn() -> void:
 	speed_increase_loop()
 
 func _ready():
-	position.x = 2000
+	position.x = 1200
 	position.y = _screen_y()
 	add_to_group("hazard")
 	connect("body_entered", Callable(self, "_on_hit"))

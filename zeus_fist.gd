@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_DISABLED
-	position.x = 200
+	position.x = 500
 	position.y = 100
 	add_to_group("hazard")
 	add_to_group("ZeusHand")
