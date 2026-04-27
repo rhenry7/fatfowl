@@ -311,7 +311,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ld5wt"]
-radius = 508.56317
+radius = 468.10953
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wcv2n"]
 radius = 404.04083
@@ -1044,7 +1044,7 @@ collision_mask = 2
 script = ExtResource("39_037st")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Enemies2/ZeusHurtBox"]
-position = Vector2(695.5, -231.5)
+position = Vector2(686.5, -23.5)
 rotation = -0.7853982
 shape = SubResource("CircleShape2D_ld5wt")
 
