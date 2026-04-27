@@ -44,8 +44,8 @@ func respawn() -> void:
 	speed_increase_loop()
 
 func _ready():
-	position.x = 2000
-	position.y = _screen_y()
+	position.x = 700
+	position.y = -1000
 	add_to_group("hazard")
 	connect("body_entered", Callable(self, "_on_hit"))
 
