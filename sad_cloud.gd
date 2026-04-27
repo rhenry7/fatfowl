@@ -1,4 +1,4 @@
-extends Area2D
+extends "res://cloud_base.gd"
 
 var speed := randf_range(100, 150)
 
@@ -8,22 +8,13 @@ func deactivate():
 	set_process(false)
 	speed = 0.0
 
-
 	for child in get_children():
 		if child is CollisionShape2D:
 			child.disabled = true
 
-
-func _screen_y() -> float:
-	var inv = get_canvas_transform().affine_inverse()
-	var vp = get_viewport_rect()
-	var y_min = (inv * vp.position).y + 500
-	var y_max = (inv * (vp.position + vp.size)).y + 1000
-	return randf_range(y_min, y_max)
-
 func activate():
 	position.x = 500
-	position.y = _screen_y()
+	position.y = screen_y()
 	visible = true
 	set_physics_process(true)
 	set_process(true)
@@ -34,12 +25,11 @@ func activate():
 
 func _process(delta: float) -> void:
 	position.x -= speed * delta
-	# need to optimize to respawn when passed edge of viewable screen
 	if position.x < -3000:
 		respawn()
 
 func respawn() -> void:
-	position.y = _screen_y()
+	position.y = screen_y()
 	position.x = randf_range(100, 2000)
 	speed_increase_loop()
 
@@ -48,6 +38,7 @@ func _ready():
 	position.y = -1000
 	add_to_group("hazard")
 	connect("body_entered", Callable(self, "_on_hit"))
+	cache_sprite_y_bounds()
 
 func _on_hit(body: Node2D) -> void:
 	if body.name == "Bird":

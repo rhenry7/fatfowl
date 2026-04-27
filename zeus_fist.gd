@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_DISABLED
-	position.x = 500
+	position.x = 1000
 	position.y = 100
 	add_to_group("hazard")
 	add_to_group("ZeusHand")
@@ -58,7 +58,7 @@ func respawn() -> void:
 		#await get_tree().create_timer(0, false, true).timeout
 		if not get_tree().paused:
 			# Slide hand into frame
-			var newVert = randf_range(-100, 100)
+			var newVert = randf_range(-10, 500)
 			var final_pos: Vector2 = Vector2(200, newVert) 
 			var tween = create_tween()
 			tween.tween_property(hand, "position", final_pos, 1.0)
