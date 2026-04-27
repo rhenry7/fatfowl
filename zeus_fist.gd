@@ -1,9 +1,6 @@
 extends Area2D
 @onready var hand := $"."
 @onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
-@onready var vert = randf_range(-500, 500)
-var max_left = -1000
-var max_right = 600
 
 func deactivate():
 	visible = false
@@ -32,7 +29,7 @@ func _process(delta: float) -> void:
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_DISABLED
-	position.x = 1000
+	position.x = 100
 	position.y = 100
 	add_to_group("hazard")
 	add_to_group("ZeusHand")
@@ -59,7 +56,7 @@ func respawn() -> void:
 		if not get_tree().paused:
 			# Slide hand into frame
 			var newVert = randf_range(-10, 500)
-			var final_pos: Vector2 = Vector2(200, newVert) 
+			var final_pos: Vector2 = Vector2(500, newVert) 
 			var tween = create_tween()
 			tween.tween_property(hand, "position", final_pos, 1.0)
 			## Wait for tween to finish
@@ -68,7 +65,7 @@ func respawn() -> void:
 			# Stay on screen time
 			await get_tree().create_timer(1, false, true).timeout
 			
-			var off_screen_pos: Vector2 = Vector2(200, 1000)  # or wherever "out of frame" is
+			var off_screen_pos: Vector2 = Vector2(500, 1000)  # or wherever "out of frame" is
 			var tween_out = create_tween()
 			tween_out.tween_property(hand, "position", off_screen_pos, 0.5)
 			

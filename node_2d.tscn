@@ -997,7 +997,7 @@ frame_progress = 0.3673437
 [node name="ZeusFist" type="Area2D" parent="Pausable/Enemies"]
 process_mode = 4
 visible = false
-position = Vector2(-72.5, 232)
+position = Vector2(400, 50)
 script = ExtResource("58_qwoqy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Enemies/ZeusFist"]
