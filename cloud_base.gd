@@ -22,6 +22,8 @@ func cache_sprite_y_bounds() -> void:
 			return
 
 func screen_y() -> float:
+	if not is_inside_tree():
+		return position.y
 	var inv = get_canvas_transform().affine_inverse()
 	var vp = get_viewport_rect()
 	var viewport_top = (inv * vp.position).y

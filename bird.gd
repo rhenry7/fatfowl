@@ -145,14 +145,14 @@ func start_invincibility_visual():
 	sprite.modulate.a = 1.0
 
 func die():
+	if IS_DEAD:
+		return
 	IS_DEAD = true
 	tracking = false
+	velocity = Vector2.ZERO
 	print("GAME OVER")
+	call_deferred("_disable_gameplay_for_game_over")
 	var scene = get_tree().current_scene
-	scene.get_node("Pausable/Bird").process_mode = Node.PROCESS_MODE_DISABLED
-	scene.get_node("Pausable/Enemies").process_mode = Node.PROCESS_MODE_DISABLED
-	scene.get_node("Pausable/Enemies2").process_mode = Node.PROCESS_MODE_DISABLED
-	scene.get_node("Pausable/CloudEnemies").process_mode = Node.PROCESS_MODE_DISABLED
 	var audio_root = scene.get_node("Pausable/Audio")
 	for child in audio_root.get_children():
 		if (child is AudioStreamPlayer or child is AudioStreamPlayer2D) and child.name != "Music":
@@ -166,10 +166,20 @@ func die():
 	await get_tree().create_timer(1).timeout
 	scene.get_node("Control/ZeusGameOver").play()
 	scene.get_node("Pausable/Bird").visible = false
-	
+
+func _disable_gameplay_for_game_over() -> void:
+	var scene = get_tree().current_scene
+	scene.get_node("Pausable/Bird").process_mode = Node.PROCESS_MODE_DISABLED
+	scene.get_node("Pausable/Enemies").process_mode = Node.PROCESS_MODE_DISABLED
+	scene.get_node("Pausable/Enemies2").process_mode = Node.PROCESS_MODE_DISABLED
+	scene.get_node("Pausable/CloudEnemies").process_mode = Node.PROCESS_MODE_DISABLED
+		
 func respawn() -> void:
 	position.x = -100
 	position.y = -1350
+
+func _on_area_2d_body_entered(body):
+	_on_body_entered(body)
 
 func _physics_process(delta: float) -> void:
 	if IS_DEAD:

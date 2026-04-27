@@ -11,10 +11,10 @@ func _ready() -> void:
 	#get_tree().current_scene.get_node("Pausable/FearThePower").play()
 	var tween = create_tween()
 	tween.tween_property(self, "modulate:a", 0.3, 120.0).from(0.0)
-	#await get_tree().create_timer(30).timeout
-	#get_tree().current_scene.get_node("Pausable/ZeusRant2").play()
-	#await get_tree().create_timer(30).timeout
-	#get_tree().current_scene.get_node("Pausable/ZeusRant3").play()
+	await get_tree().create_timer(30).timeout
+	get_tree().current_scene.get_node("Pausable/Audio/ZeusRant2").play()
+	await get_tree().create_timer(100).timeout
+	get_tree().current_scene.get_node("Pausable/Audio/ZeusRant3").play()
 
 
 
