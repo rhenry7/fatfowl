@@ -1246,6 +1246,17 @@ action_mode = 0
 texture_normal = ExtResource("24_gt76g")
 texture_pressed = ExtResource("25_1fr6y")
 
+[node name="Mute" type="TextureButton" parent="Pausable/UI"]
+process_mode = 3
+visible = false
+offset_left = 2356.0
+offset_top = 85.0
+offset_right = 2484.0
+offset_bottom = 235.0
+focus_mode = 0
+toggle_mode = true
+action_mode = 0
+
 [node name="GameOver" type="TextureButton" parent="Pausable/UI"]
 visible = false
 anchors_preset = 8
@@ -1391,6 +1402,7 @@ stream = ExtResource("33_kq1c5")
 [connection signal="body_entered" from="Pausable/CloudEnemies/SadCloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Pausable/CloudEnemies/HappyCloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
 [connection signal="toggled" from="Pausable/UI/Pause_Play" to="." method="_on_pause_play_toggled"]
+[connection signal="toggled" from="Pausable/UI/Mute" to="." method="_on_mute_toggled"]
 [connection signal="pressed" from="Pausable/UI/GameOver" to="." method="_on_game_over_pressed"]
 [connection signal="body_entered" from="Pausable/Surfer" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="pressed" from="Control/StartButton" to="." method="_on_start_button_pressed"]
