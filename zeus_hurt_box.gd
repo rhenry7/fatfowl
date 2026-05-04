@@ -15,8 +15,6 @@ func deactivate():
 			child.disabled = true
 
 func activate():
-	position.x = 500
-	position.y = 2000
 	visible = true
 	set_physics_process(true)
 	set_process(true)
@@ -31,7 +29,7 @@ func _process(delta: float) -> void:
 
 func _ready():  
 	process_mode = Node.PROCESS_MODE_DISABLED
-	position.x = 500
+	position.x = -2000
 	position.y = 2000
 	add_to_group("hazard")
 	add_to_group("ZeusHand")
@@ -64,14 +62,14 @@ func respawn() -> void:
 		#await get_tree().create_timer(0, false, true).timeout
 		if not get_tree().paused:
 			# Slide hand into frame
-			var vert = randf_range(-500, 500)
+			var vert = randf_range(-700, -100)
 			var final_pos: Vector2 = Vector2(vert, 350)
 			var tween = create_tween()
 			tween.tween_property(hand, "position", final_pos, 6.0)
 			## Wait for tween to finish
 			await tween.finished
 			
-			# Stay on screen time
+			# Stay on screen time 
 			await get_tree().create_timer(3, false, true).timeout
 			
 			# Slide hand out of frame
