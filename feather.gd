@@ -1,32 +1,23 @@
 # Falling health pickup that continuously loops on screen
 extends Area2D
 
-@export var fall_speed: float = 100.0
-@onready var animated_sprite = $Feather
+# === Export Variables (adjustable in Inspector) ===
+@export var fall_speed: float = 50.0  # Pixels per second the feather falls
+@export var bottom_limit: float = 2000.0  # Y position where feather respawns if missed
+@onready var animated_sprite = $Feather  # Reference to the animated sprite
 @onready var collision = $CollisionShape2D
 
 func _ready():
+	# Set initial starting position
+	position.x = 2000
+	position.y = -3000
+	
+	# Connect the collision signal to detect when player touches feather
 	body_entered.connect(_on_body_entered)
+	
+	# Start playing the falling animation
 	if animated_sprite:
 		animated_sprite.play("falling")
-	_place_above_screen()
-
-func _process(delta: float) -> void:
-	position.y += fall_speed * delta
-	var bounds = _viewport_bounds()
-	if position.y > bounds.position.y + bounds.size.y:
-		respawn()
-
-func respawn() -> void:
-	await get_tree().create_timer(15).timeout
-	_place_above_screen()
-
-func _place_above_screen() -> void:
-	var bounds = _viewport_bounds()
-	# Land x strictly within the visible width
-	position.x = randf_range(bounds.position.x, bounds.position.x + bounds.size.x)
-	# Start just above the visible top so it falls into view
-	position.y = bounds.position.y - 150.0
 
 func _viewport_bounds() -> Rect2:
 	var inv = get_canvas_transform().affine_inverse()
@@ -35,9 +26,30 @@ func _viewport_bounds() -> Rect2:
 	var bottom_right = inv * (vp.position + vp.size)
 	return Rect2(top_left, bottom_right - top_left)
 
+func _process(delta: float) -> void:
+	# Move feather downward each frame
+	position.y += fall_speed * delta
+	# Check if feather has fallen past the bottom of the screen
+	if position.y > bottom_limit:
+		respawn()
+
+func respawn() -> void:
+	# Reset feather to top of screen
+	var bounds = _viewport_bounds()
+	# Land x strictly within the visible width
+	position.x = randf_range(bounds.position.x, bounds.position.x + bounds.size.x)
+	position.y = -2000
+	# Randomize horizontal position for variety
+
 func _on_body_entered(body):
+	# Check if the object that collided is the player
+	# call_deferred(collision).disabled = true
 	if body.is_in_group("player"):
+		# Check if player has a heal method
 		if body.has_method("heal"):
 			body.heal(1)
+			position.y = -3000
+			position.x = randf_range(400, 2000)
 			get_tree().current_scene.get_node("Pausable/Audio/Bloop").play()
-		respawn()
+
+		# Respawn feather at top immediately after collection

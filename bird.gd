@@ -22,6 +22,17 @@ var invincibility_duration := 2.0  # Increased to match usage
 @onready var distance:int = 0
 var tracking = true
 
+const DASH_MULTIPLIER := 3.0
+const DASH_DURATION := 0.25
+const DASH_COOLDOWN := 5.0
+const DOUBLE_TAP_WINDOW := 0.3
+
+var _dash_active := false
+var _dash_dir := 0
+var _dash_timer := 0.0
+var _cooldown_timer := 0.0
+var _last_tap_time := {"fly-left": -1.0, "fly-right": -1.0}
+
 func fall_damage():
 	if IS_DEAD or is_invincible:
 		return  # Ignore damage if dead or invincible
@@ -193,15 +204,44 @@ func _physics_process(delta: float) -> void:
 	
 	if(position.y > 1000):
 		fall_damage()
-		
+
+	_update_dash(delta)
+
 	if Input.is_action_just_pressed("fly"):
 		velocity.y = FLAP_STRENGTH
 		sprite.play("fly")
-	if Input.is_action_pressed("fly-right"):
-		velocity.x = FLAP_STRENGTH_X
-		sprite.play("fly")
-	elif Input.is_action_pressed("fly-left"):
-		velocity.x = -FLAP_STRENGTH_X
+
+	var move_x := _get_horizontal_velocity()
+	if move_x != 0.0:
+		velocity.x = move_x
 		sprite.play("fly")
 
 	move_and_slide()
+
+func _update_dash(delta: float) -> void:
+	if _dash_timer > 0.0:
+		_dash_timer -= delta
+		if _dash_timer <= 0.0:
+			_dash_active = false
+	if _cooldown_timer > 0.0:
+		_cooldown_timer -= delta
+
+	var now := Time.get_ticks_msec() / 1000.0
+	for action in ["fly-right", "fly-left"]:
+		if Input.is_action_just_pressed(action):
+			var dir := 1 if action == "fly-right" else -1
+			if now - _last_tap_time[action] <= DOUBLE_TAP_WINDOW and _cooldown_timer <= 0.0:
+				_dash_active = true
+				_dash_dir = dir
+				_dash_timer = DASH_DURATION
+				_cooldown_timer = DASH_COOLDOWN
+			_last_tap_time[action] = now
+
+func _get_horizontal_velocity() -> float:
+	if _dash_active:
+		return FLAP_STRENGTH_X * DASH_MULTIPLIER * _dash_dir
+	if Input.is_action_pressed("fly-right"):
+		return FLAP_STRENGTH_X
+	if Input.is_action_pressed("fly-left"):
+		return -FLAP_STRENGTH_X
+	return 0.0
