@@ -104,7 +104,7 @@ func _setup_dash_bar() -> void:
 	fill.corner_radius_bottom_right = 6
 	dash_bar.add_theme_stylebox_override("fill", fill)
 	var bg = StyleBoxFlat.new()
-	bg.bg_color = Color(0.05, 0.05, 0.05, 0.6)
+	bg.bg_color = Color(0.125, 0.102, 0.773, 0.6)
 	bg.corner_radius_top_left = 6
 	bg.corner_radius_top_right = 6
 	bg.corner_radius_bottom_left = 6
