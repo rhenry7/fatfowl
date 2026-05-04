@@ -22,9 +22,13 @@ var invincibility_duration := 2.0  # Increased to match usage
 @onready var distance:int = 0
 var tracking = true
 
-const DASH_MULTIPLIER := 3.0
+# multiply base speed
+const DASH_MULTIPLIER := 5.0
+# how long the burst lasts
 const DASH_DURATION := 0.25
-const DASH_COOLDOWN := 5.0
+# lockout before next dash
+const DASH_COOLDOWN := 2.0
+#  how fast the second tap must come in
 const DOUBLE_TAP_WINDOW := 0.3
 
 var _dash_active := false
@@ -223,6 +227,7 @@ func _update_dash(delta: float) -> void:
 		_dash_timer -= delta
 		if _dash_timer <= 0.0:
 			_dash_active = false
+			GRAVITY = 2000
 	if _cooldown_timer > 0.0:
 		_cooldown_timer -= delta
 
@@ -239,6 +244,7 @@ func _update_dash(delta: float) -> void:
 
 func _get_horizontal_velocity() -> float:
 	if _dash_active:
+		GRAVITY = 0
 		return FLAP_STRENGTH_X * DASH_MULTIPLIER * _dash_dir
 	if Input.is_action_pressed("fly-right"):
 		return FLAP_STRENGTH_X
