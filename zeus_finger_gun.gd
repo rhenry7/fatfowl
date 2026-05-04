@@ -7,9 +7,6 @@ var speed := 0
 @onready var hurtbox = $ZeusLightArea
 @onready var basePosition = randf_range(-700.00, 700.00)
 
-const SAFE_DURATION := 5.0    # seconds the hitbox is off
-const DANGER_DURATION := 1.5  # seconds the hitbox is hot
-
 var _is_active := false
 
 
@@ -56,17 +53,13 @@ func activate():
 	process_mode = Node.PROCESS_MODE_INHERIT
 	disable_collision()
 	_is_active = true
-	_pulse_danger()
 
-func _pulse_danger() -> void:
-	while _is_active:
-		await get_tree().create_timer(SAFE_DURATION, false, true).timeout
-		if not _is_active:
-			break
+func _process(_delta: float) -> void:
+	if not _is_active:
+		return
+	if sprite.frame == 1:
 		enable_collision()
-		await get_tree().create_timer(DANGER_DURATION, false, true).timeout
-		if not _is_active:
-			break
+	else:
 		disable_collision()
 
 func _ready() -> void:
