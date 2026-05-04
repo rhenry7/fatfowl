@@ -17,6 +17,7 @@ var invincibility_duration := 2.0  # Increased to match usage
 @onready var game_over_card := get_tree().current_scene.get_node("Pausable/UI/GameOver")
 @onready var coinDisplay = get_tree().current_scene.get_node("Pausable/UI/Coins")
 @onready var distanceDisplay = get_tree().current_scene.get_node("Pausable/UI/Distance")
+@onready var dash_bar: ProgressBar = get_tree().current_scene.get_node("Pausable/UI/DashBar")
 @onready var feathers:int = 0
 @onready var coins: int = 0
 @onready var distance:int = 0
@@ -91,7 +92,24 @@ func _ready() -> void:
 	position.y = -500
 	$BirdHurtBox.body_entered.connect(_on_body_entered)
 	sprite.play("fly")
+	_setup_dash_bar()
 	_track_distance()
+
+func _setup_dash_bar() -> void:
+	var fill = StyleBoxFlat.new()
+	fill.bg_color = Color(0.659, 0.996, 0.463, 0.949)
+	fill.corner_radius_top_left = 6
+	fill.corner_radius_top_right = 6
+	fill.corner_radius_bottom_left = 6
+	fill.corner_radius_bottom_right = 6
+	dash_bar.add_theme_stylebox_override("fill", fill)
+	var bg = StyleBoxFlat.new()
+	bg.bg_color = Color(0.05, 0.05, 0.05, 0.6)
+	bg.corner_radius_top_left = 6
+	bg.corner_radius_top_right = 6
+	bg.corner_radius_bottom_left = 6
+	bg.corner_radius_bottom_right = 6
+	dash_bar.add_theme_stylebox_override("background", bg)
 
 
 func _track_distance():
@@ -210,6 +228,7 @@ func _physics_process(delta: float) -> void:
 		fall_damage()
 
 	_update_dash(delta)
+	dash_bar.value = (1.0 - clamp(_cooldown_timer / DASH_COOLDOWN, 0.0, 1.0)) * 100.0
 
 	if Input.is_action_just_pressed("fly"):
 		velocity.y = FLAP_STRENGTH
