@@ -1,4 +1,4 @@
-[gd_scene load_steps=199 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=197 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -30,7 +30,6 @@
 [ext_resource type="Texture2D" uid="uid://swxsy2dhp21f" path="res://clouds/AngryCloud-4.png" id="22_6orn5"]
 [ext_resource type="AudioStream" uid="uid://wns0nt1suxnu" path="res://audio/Coin.ogg" id="22_oilbd"]
 [ext_resource type="Texture2D" uid="uid://c51bq08yu7lxx" path="res://gameoverscrolls/GAMEOVER-1.png" id="22_r8aua"]
-[ext_resource type="Texture2D" uid="uid://bhdcu55e67lvx" path="res://background/background_style.png" id="23_0sqyy"]
 [ext_resource type="Texture2D" uid="uid://dgu0uwo4c6dgf" path="res://animation/pausemenu/pause-menu-1.png" id="23_4rgxs"]
 [ext_resource type="AudioStream" uid="uid://bkaf5n2jifsmv" path="res://audio/coin_group_pickup.ogg" id="23_f3pq4"]
 [ext_resource type="Script" uid="uid://ciulpp0iiiy8f" path="res://coin.gd" id="23_qphy4"]
@@ -44,6 +43,7 @@
 [ext_resource type="AudioStream" uid="uid://bfpwb278uw6nd" path="res://thunder.ogg" id="25_037st"]
 [ext_resource type="Texture2D" uid="uid://btq1183f0obqr" path="res://animation/pausemenu/pause-menu-3.png" id="25_kkr25"]
 [ext_resource type="Texture2D" uid="uid://b6tbtvrerxu5q" path="res://clouds/AngryCloud-7.png" id="25_m7xe6"]
+[ext_resource type="Texture2D" uid="uid://bka3tmb1g5i4p" path="res://background/Background_Simple.png" id="25_oilbd"]
 [ext_resource type="Texture2D" uid="uid://c86npws5vfhpn" path="res://gameoverscrolls/GAMEOVER-4.png" id="25_wcv2n"]
 [ext_resource type="Texture2D" uid="uid://bgloa2mfu437l" path="res://gameoverscrolls/GAMEOVER-5.png" id="26_b0j31"]
 [ext_resource type="Texture2D" uid="uid://40mt6dtogqsp" path="res://animation/pausemenu/pause-menu-4.png" id="26_fibx4"]
@@ -106,24 +106,21 @@
 [ext_resource type="Texture2D" uid="uid://cym402crmco3d" path="res://BirdGrab-4.png" id="52_j02gt"]
 [ext_resource type="AudioStream" uid="uid://q1l7xvq3w2n3" path="res://audio/zeus/fear_the_power.ogg" id="52_qwoqy"]
 [ext_resource type="AudioStream" uid="uid://b2hpvxxxamx2x" path="res://audio/zeus/zeus_annihilation_taunt.ogg" id="53_dkifn"]
-[ext_resource type="Texture2D" uid="uid://5fd50bw0fh3n" path="res://animation/Coin/Coin-1 8.png" id="53_ohqex"]
 [ext_resource type="AudioStream" uid="uid://dg7f2mqkl855d" path="res://audio/zeus/zeus_demise_taunt.ogg" id="54_oixsq"]
-[ext_resource type="Texture2D" uid="uid://bwevnkkyee1hm" path="res://animation/Coin/Coin-2 5.png" id="54_pl55l"]
-[ext_resource type="Texture2D" uid="uid://cvip4bxets6j1" path="res://animation/Coin/Coin-3 5.png" id="55_j1mq8"]
 [ext_resource type="AudioStream" uid="uid://c3xumpaopglkf" path="res://audio/zeus/zeus_grab_taunt.ogg" id="55_uo258"]
 [ext_resource type="AudioStream" uid="uid://dkibprluixr8i" path="res://audio/zeus/game_over.ogg" id="56_d8e56"]
-[ext_resource type="Texture2D" uid="uid://dhjx1n8meecep" path="res://animation/Coin/Coin-4 5.png" id="56_jik6k"]
+[ext_resource type="Texture2D" uid="uid://dlw2ddijrfw0k" path="res://animation/Coin/coin_frames/coin_frame_0 copy.png" id="56_oilbd"]
 [ext_resource type="AudioStream" uid="uid://kxusgq0s5ovb" path="res://audio/blooop.ogg" id="56_qoxh5"]
-[ext_resource type="Texture2D" uid="uid://cwyyoxpaxme1u" path="res://animation/Coin/Coin-5 4.png" id="57_hd8li"]
-[ext_resource type="Texture2D" uid="uid://di4j21gpw6wtg" path="res://animation/Coin/Coin-6 3.png" id="58_ctgg3"]
+[ext_resource type="Texture2D" uid="uid://b31gk5j1cbx8e" path="res://animation/Coin/coin_frames/coin_frame_0.png" id="57_7vfuv"]
+[ext_resource type="Texture2D" uid="uid://byebyxdcn56is" path="res://animation/Coin/coin_frames/coin_frame_1.png" id="58_ludm0"]
 [ext_resource type="Script" uid="uid://cmspows46h524" path="res://zeus_fist.gd" id="58_qwoqy"]
-[ext_resource type="Texture2D" uid="uid://1a4lpilliag5" path="res://animation/Coin/Coin-7 3.png" id="59_shleb"]
+[ext_resource type="Texture2D" uid="uid://bt5jn3m4rn12h" path="res://animation/Coin/coin_frames/coin_frame_2.png" id="59_5chwk"]
 [ext_resource type="Texture2D" uid="uid://v7iyinduf2xn" path="res://animation/zeus/punch/zeus_punch-1 7.png" id="59_xa4jy"]
-[ext_resource type="Texture2D" uid="uid://bb40jvo8dajxh" path="res://animation/Coin/Coin-8 3.png" id="60_4pqki"]
 [ext_resource type="Texture2D" uid="uid://qy0ai2ga2k2r" path="res://animation/zeus/punch/zeus_punch-2 5.png" id="60_4rgxs"]
+[ext_resource type="Texture2D" uid="uid://sqpg2vy4d8kp" path="res://animation/Coin/coin_frames/coin_frame_3.png" id="60_vbp07"]
 [ext_resource type="Texture2D" uid="uid://c2w45oeghk6xd" path="res://animation/zeus/punch/zeus_punch-3 5.png" id="61_88olm"]
+[ext_resource type="Texture2D" uid="uid://l5e115yu8ys8" path="res://animation/Coin/coin_frames/coin_frame_4.png" id="61_ileqp"]
 [ext_resource type="Texture2D" uid="uid://b5p42h5tedng3" path="res://enemies/sadcloud/Background.png" id="61_n63ng"]
-[ext_resource type="Texture2D" uid="uid://bueabne5vlyr0" path="res://animation/Coin/Coin-9 3.png" id="61_yxl61"]
 [ext_resource type="Texture2D" uid="uid://ddgeni16hqala" path="res://animation/zeus/punch/zeus_punch-4 5.png" id="62_kkr25"]
 [ext_resource type="Texture2D" uid="uid://du5q5o7no3o4p" path="res://enemies/sadcloud/sad_thunder-2 5.png" id="62_wnn4a"]
 [ext_resource type="Texture2D" uid="uid://fx4s882hsbdk" path="res://enemies/sadcloud/sad_thunder-3 5.png" id="63_1aygh"]
@@ -253,7 +250,7 @@ radius = 577.99225
 radius = 177.0452
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thyvg"]
-size = Vector2(196, 196)
+size = Vector2(119.5, 135.5)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xotjc"]
 animations = [{
@@ -279,36 +276,30 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("53_ohqex")
+"texture": ExtResource("56_oilbd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("54_pl55l")
+"texture": ExtResource("57_7vfuv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("55_j1mq8")
+"texture": ExtResource("58_ludm0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("56_jik6k")
+"texture": ExtResource("59_5chwk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("57_hd8li")
+"texture": ExtResource("60_vbp07")
 }, {
 "duration": 1.0,
-"texture": ExtResource("58_ctgg3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("59_shleb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("60_4pqki")
-}, {
-"duration": 1.0,
-"texture": ExtResource("61_yxl61")
+"texture": ExtResource("61_ileqp")
 }],
 "loop": true,
 "name": &"CoinDrop",
 "speed": 5.0
 }]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oilbd"]
+radius = 54.00926
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ld5wt"]
 radius = 431.89865
@@ -767,8 +758,9 @@ texture = ExtResource("2_py13h")
 [node name="Sky" type="Node2D" parent="Pausable"]
 
 [node name="Sprite2D2" type="Sprite2D" parent="Pausable/Sky"]
-position = Vector2(0, -1)
-texture = ExtResource("23_0sqyy")
+position = Vector2(102.92255, 292.49994)
+scale = Vector2(1.4310446, 1.2694516)
+texture = ExtResource("25_oilbd")
 
 [node name="Parallax2D3" type="Parallax2D" parent="Pausable/Sky"]
 scale = Vector2(40.627876, 2.2419608)
@@ -851,7 +843,7 @@ scale = Vector2(1.2478814, 1.2615854)
 sprite_frames = SubResource("SpriteFrames_jinwr")
 
 [node name="ZeusBlink" type="AnimatedSprite2D" parent="Pausable/Sky"]
-position = Vector2(19.3, -180)
+position = Vector2(100.99999, 54)
 scale = Vector2(1.2536585, 1.2536585)
 sprite_frames = SubResource("SpriteFrames_ctgg3")
 animation = &"blink"
@@ -890,6 +882,8 @@ position = Vector2(-1083, -73)
 scale = Vector2(0.7844207, 0.8372803)
 texture = ExtResource("8_5i8vy")
 
+[node name="Sprite2D4" type="Sprite2D" parent="Pausable/Sky"]
+
 [node name="Bird" type="CharacterBody2D" parent="Pausable" groups=["player"]]
 position = Vector2(-812, 114)
 script = ExtResource("1_0hol4")
@@ -920,7 +914,7 @@ shape = SubResource("CircleShape2D_fs4d3")
 script = ExtResource("27_j02gt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Feather"]
-position = Vector2(-1593, 255)
+position = Vector2(-1583, 248.25)
 shape = SubResource("RectangleShape2D_thyvg")
 
 [node name="Feather" type="AnimatedSprite2D" parent="Pausable/Feather"]
@@ -935,16 +929,15 @@ frame_progress = 0.5827212
 script = ExtResource("23_qphy4")
 
 [node name="Coin" type="AnimatedSprite2D" parent="Pausable/Coin"]
-position = Vector2(-1390, 559)
-scale = Vector2(0.32665637, 0.3266564)
+position = Vector2(-1389.807, 559)
+scale = Vector2(3.1008725, 5.8877425)
 sprite_frames = SubResource("SpriteFrames_nsnm2")
 animation = &"CoinDrop"
 autoplay = "CoinDrop"
-frame_progress = 0.19333792
 
 [node name="CoinShape" type="CollisionShape2D" parent="Pausable/Coin"]
-position = Vector2(-1389, 556)
-shape = SubResource("RectangleShape2D_thyvg")
+position = Vector2(-1390, 560)
+shape = SubResource("CircleShape2D_oilbd")
 
 [node name="Enemies" type="Node2D" parent="Pausable"]
 script = ExtResource("26_s32dh")
