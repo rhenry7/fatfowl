@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://db4omlokrpovc"]
+
+[ext_resource type="Script" uid="uid://cul8x8riga63m" path="res://fireball.gd" id="1_nix7o"]
+[ext_resource type="Texture2D" uid="uid://d3kd3cslpaasg" path="res://animation/Fireball/Fireball_1.png" id="2_nix7o"]
+[ext_resource type="Texture2D" uid="uid://wpwwfqybtdpt" path="res://animation/Fireball/Fireball_2.png" id="3_m4vqi"]
+[ext_resource type="Texture2D" uid="uid://l7eatcb6bf3o" path="res://animation/Fireball/Fireball_3.png" id="4_lk87q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lk87q"]
+size = Vector2(248, 136)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gveuj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nix7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_m4vqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lk87q")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 5.0
+}]
+
+[node name="Fireball" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_nix7o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(119, 67)
+shape = SubResource("RectangleShape2D_lk87q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+position = Vector2(117, 66.99999)
+scale = Vector2(0.2989473, 0.2989473)
+sprite_frames = SubResource("SpriteFrames_gveuj")
+animation = &"fire"
+frame_progress = 0.31364873

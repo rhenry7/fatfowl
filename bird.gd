@@ -11,6 +11,7 @@ var HEARTS := 3
 var IS_DEAD := false
 var is_invincible := false
 var invincibility_duration := 2.0  # Increased to match usage
+var fireball = preload("res://fireball.tscn")
 
 @onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
 @onready var hearts_container := get_tree().current_scene.get_node("Pausable/UI/HeartsContainer")
@@ -82,6 +83,11 @@ func addCoin(amount: int):
 	coins += amount
 	coinDisplay.text = str(coins)
 	print("Coin added! Current coins: ", coins)
+	
+func shoot():
+	var bullet = fireball.instantiate()
+	get_tree().current_scene.add_child(bullet)
+	bullet.global_position = $Muzzle.global_position
 	
 
 func _ready() -> void:
@@ -229,7 +235,11 @@ func _physics_process(delta: float) -> void:
 
 	_update_dash(delta)
 	dash_bar.value = (1.0 - clamp(_cooldown_timer / DASH_COOLDOWN, 0.0, 1.0)) * 100.0
-
+	
+	if Input.is_action_just_pressed("Fire"):
+		sprite.play("shoot")
+		shoot()
+	
 	if Input.is_action_just_pressed("fly"):
 		velocity.y = FLAP_STRENGTH
 		sprite.play("fly")
