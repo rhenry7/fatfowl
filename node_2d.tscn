@@ -1,4 +1,4 @@
-[gd_scene load_steps=198 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=201 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -476,11 +476,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 8.0
+"speed": 3.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
-size = Vector2(175, 355)
+size = Vector2(171, 426.5)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4d7sh"]
 animations = [{
@@ -586,6 +586,15 @@ animations = [{
 "name": &"sad",
 "speed": 12.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vfuv"]
+size = Vector2(352, 332)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ludm0"]
+size = Vector2(353.5, 248.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5chwk"]
+size = Vector2(340.5, 291)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pjm8v"]
 animations = [{
@@ -1028,10 +1037,12 @@ visible = false
 script = ExtResource("154_5chwk")
 
 [node name="ZeusLightArea" type="CollisionShape2D" parent="Pausable/Enemies/ZeusFingerGun"]
+visible = false
 position = Vector2(-453, -18)
 shape = SubResource("RectangleShape2D_vbp07")
 
 [node name="ZeusFingerShoot" type="AnimatedSprite2D" parent="Pausable/Enemies/ZeusFingerGun"]
+visible = false
 position = Vector2(361, 124)
 scale = Vector2(0.8984376, 0.89843756)
 sprite_frames = SubResource("SpriteFrames_7vfuv")
@@ -1134,6 +1145,10 @@ sprite_frames = SubResource("SpriteFrames_4d7sh")
 animation = &"mean"
 autoplay = "mean"
 
+[node name="VulnerableArea" type="CollisionShape2D" parent="Pausable/CloudEnemies/Cloud"]
+position = Vector2(1300, -905)
+shape = SubResource("RectangleShape2D_7vfuv")
+
 [node name="SadCloud" type="Area2D" parent="Pausable/CloudEnemies"]
 position = Vector2(568, 1000)
 script = ExtResource("141_fc4gm")
@@ -1144,7 +1159,7 @@ rect = Rect2(672, -410, 405, 650)
 script = ExtResource("6_ir8iy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/CloudEnemies/SadCloud"]
-position = Vector2(1255, -828)
+position = Vector2(1255, -792.25)
 shape = SubResource("RectangleShape2D_4d7sh")
 
 [node name="SadCloud" type="AnimatedSprite2D" parent="Pausable/CloudEnemies/SadCloud"]
@@ -1153,6 +1168,10 @@ scale = Vector2(0.38551843, 0.36438224)
 sprite_frames = SubResource("SpriteFrames_4d7sh")
 animation = &"sad"
 autoplay = "sad"
+
+[node name="VulnerableArea" type="CollisionShape2D" parent="Pausable/CloudEnemies/SadCloud"]
+position = Vector2(1296.25, -952.25)
+shape = SubResource("RectangleShape2D_ludm0")
 
 [node name="HappyCloud" type="Area2D" parent="Pausable/CloudEnemies"]
 position = Vector2(568, 1000)
@@ -1164,7 +1183,7 @@ rect = Rect2(672, -410, 405, 650)
 script = ExtResource("6_ir8iy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/CloudEnemies/HappyCloud"]
-position = Vector2(1257.5, -749.5)
+position = Vector2(1255.5, -749.5)
 shape = SubResource("RectangleShape2D_4d7sh")
 
 [node name="HappyCloud" type="AnimatedSprite2D" parent="Pausable/CloudEnemies/HappyCloud"]
@@ -1173,6 +1192,10 @@ scale = Vector2(0.38551843, 0.36438224)
 sprite_frames = SubResource("SpriteFrames_4d7sh")
 animation = &"happy"
 autoplay = "happy"
+
+[node name="VulnerableArea" type="CollisionShape2D" parent="Pausable/CloudEnemies/HappyCloud"]
+position = Vector2(1295.75, -926.5)
+shape = SubResource("RectangleShape2D_5chwk")
 
 [node name="UI" type="CanvasLayer" parent="Pausable"]
 
