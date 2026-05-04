@@ -1,7 +1,7 @@
 extends CharacterBody2D
 var GRAVITY = 2000
 # const FLAP_STRENGTH = -350.0 # original speed 
-const FLAP_STRENGTH = -500.0
+const FLAP_STRENGTH = -700.0
 const FLAP_STRENGTH_X = 400.0 
 const SPEED = 10.0 
 const TOP_Y = -850
@@ -28,7 +28,7 @@ const DASH_MULTIPLIER := 5.0
 # how long the burst lasts
 const DASH_DURATION := 0.25
 # lockout before next dash
-const DASH_COOLDOWN := 2.0
+const DASH_COOLDOWN := 3.0
 #  how fast the second tap must come in
 const DOUBLE_TAP_WINDOW := 0.3
 
