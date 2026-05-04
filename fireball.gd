@@ -12,8 +12,8 @@ func _physics_process(delta):
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.has_node("VulnerableArea"):
-		if area.has_method("respawn"):
-			area.respawn()
+		if area.has_method("on_hit"):
+			area.on_hit()
 		else:
 			area.queue_free()
 		queue_free()

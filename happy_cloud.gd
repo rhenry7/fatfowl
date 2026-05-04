@@ -1,6 +1,6 @@
 extends "res://cloud_base.gd"
 
-var speed := randf_range(700, 1000)
+var speed := randf_range(100, 600)
 
 func deactivate():
 	visible = false
@@ -49,6 +49,6 @@ func _on_hit(body: Node2D) -> void:
 
 func speed_increase_loop() -> void:
 	print("current speed", speed)
-	if speed >= 2000:
+	if speed >= 1000:
 		speed = 500
 	speed += randf_range(100, 200)

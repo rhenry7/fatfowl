@@ -21,6 +21,29 @@ func cache_sprite_y_bounds() -> void:
 			_sprite_y_max = child.position.y + half_h
 			return
 
+func on_hit() -> void:
+	visible = false
+	set_process(false)
+	set_physics_process(false)
+	monitoring = false
+	monitorable = false
+	for child in get_children():
+		if child is CollisionShape2D:
+			child.set_deferred("disabled", true)
+	await get_tree().create_timer(3.0, false, true).timeout
+	if not is_inside_tree():
+		return
+	position.x = randf_range(2500, 3000)
+	position.y = screen_y()
+	visible = true
+	set_process(true)
+	set_physics_process(true)
+	monitoring = true
+	monitorable = true
+	for child in get_children():
+		if child is CollisionShape2D:
+			child.set_deferred("disabled", false)
+
 func screen_y() -> float:
 	if not is_inside_tree():
 		return position.y
