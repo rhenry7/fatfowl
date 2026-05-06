@@ -29,12 +29,7 @@ func deactivate():
 			child.disabled = true
 	process_mode = Node.PROCESS_MODE_DISABLED
 	
-	
-
-	
-	
 func activate():
-	position.x = 100
 	visible = true
 	set_physics_process(true)
 	set_process(true)
@@ -47,10 +42,9 @@ func activate():
 	
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_DISABLED
-	position.x = 500
 	add_to_group("hazard")
 	connect("body_entered", Callable(self, "_on_hit"))
-# Left edge center
+	# Left edge center
 	var left = Vector2(0, get_viewport_rect().size.y / 2)
 	# Right edge center
 	var right = Vector2(get_viewport_rect().size.x, get_viewport_rect().size.y / 2)
@@ -79,14 +73,16 @@ func _on_hit(body: Node2D) -> void:
 		
 		
 func respawn() -> void:
+	var screen_width = get_viewport().size.x
+	position.x = screen_width
 	while true:
-		# Reset to right side if too far left
+		## Reset to right side if too far left
 		if position.x < -2000:
-			max_right = 100
-		
-		# Always spawn at max_right position
-		position.x = max_right
-		max_right -= 300
+			position.x = screen_width * 0.8
+		#
+		## Always spawn at max_right position
+		#position.x = max_right
+		position.x -= 500
 		
 		if not get_tree().paused:
 			# Fade in - lightning appears
@@ -111,8 +107,7 @@ func respawn() -> void:
 			disable_collision()
 			
 			await tween_out.finished
-			await get_tree().create_timer(delay, false, true).timeout
-			delay_decrease_loop()
+			await get_tree().create_timer(2, false, true).timeout
 			print("Lightning at x:", max_right, "- Collision disabled")
 		else:
 			await get_tree().process_frame

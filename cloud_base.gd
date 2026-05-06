@@ -22,11 +22,11 @@ func cache_sprite_y_bounds() -> void:
 			return
 
 func on_hit() -> void:
-	visible = false
+	set_deferred("visible", false)
+	set_deferred("monitoring", false)
+	set_deferred("monitorable", false)
 	set_process(false)
 	set_physics_process(false)
-	monitoring = false
-	monitorable = false
 	for child in get_children():
 		if child is CollisionShape2D:
 			child.set_deferred("disabled", true)
@@ -36,10 +36,10 @@ func on_hit() -> void:
 	position.x = randf_range(2500, 3000)
 	position.y = screen_y()
 	visible = true
-	set_process(true)
-	set_physics_process(true)
 	monitoring = true
 	monitorable = true
+	set_process(true)
+	set_physics_process(true)
 	for child in get_children():
 		if child is CollisionShape2D:
 			child.set_deferred("disabled", false)
