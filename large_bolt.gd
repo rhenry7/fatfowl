@@ -1,8 +1,6 @@
 extends Area2D
 var max_right := 100;
 var speed := 0;
-var delay := 10.0
-
 
 func disable_collision():
 	monitoring = false
@@ -57,12 +55,6 @@ func _ready() -> void:
 	respawn()
 	
 	
-func delay_decrease_loop() -> void:
-	if delay <= 0.0:
-		return
-	delay -= 1.0
-	
-	
 func _on_hit(body: Node2D) -> void:
 	if body.name == "Bird":
 		var zapped = get_tree().current_scene.get_node("Pausable/Audio/Zapped")
@@ -74,7 +66,7 @@ func _on_hit(body: Node2D) -> void:
 		
 func respawn() -> void:
 	var screen_width = get_viewport().size.x
-	position.x = screen_width
+	position.x = screen_width + 500
 	while true:
 		## Reset to right side if too far left
 		if position.x < -2000:
@@ -107,7 +99,7 @@ func respawn() -> void:
 			disable_collision()
 			
 			await tween_out.finished
-			await get_tree().create_timer(2, false, true).timeout
+			await get_tree().create_timer(0.5, false, true).timeout
 			print("Lightning at x:", max_right, "- Collision disabled")
 		else:
 			await get_tree().process_frame

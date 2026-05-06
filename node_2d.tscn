@@ -994,14 +994,17 @@ frame_progress = 1.0
 
 [node name="LargeBolt" type="Area2D" parent="Pausable/Enemies"]
 process_mode = 4
+visible = false
 position = Vector2(1030, -6)
 script = ExtResource("42_2v765")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Enemies/LargeBolt"]
+visible = false
 position = Vector2(705.5, 199)
 shape = SubResource("RectangleShape2D_ma08v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Enemies/LargeBolt"]
+visible = false
 position = Vector2(686, 454)
 scale = Vector2(0.39355466, 2.0163572)
 sprite_frames = SubResource("SpriteFrames_kfelt")
