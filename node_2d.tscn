@@ -1,4 +1,4 @@
-[gd_scene load_steps=203 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=204 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -154,6 +154,7 @@
 [ext_resource type="Script" uid="uid://cbruw0twcmkfo" path="res://enemies_cloud.gd" id="95_wnn4a"]
 [ext_resource type="Texture2D" uid="uid://cdq3i8hbu6ncl" path="res://animation/zeus/shoot/ZeusLight-8.png" id="107_vbp07"]
 [ext_resource type="Script" uid="uid://cukk1by3pp6p0" path="res://large_bolt_2.gd" id="108_5chwk"]
+[ext_resource type="Script" uid="uid://bgfnefptohilc" path="res://zeus_fist_2.gd" id="109_vbp07"]
 [ext_resource type="Script" uid="uid://ca486p5afoxmf" path="res://start_menu.gd" id="124_4rgxs"]
 [ext_resource type="Script" uid="uid://dycgdx2yjrx87" path="res://surfer.gd" id="124_b481h"]
 [ext_resource type="Texture2D" uid="uid://coe0kgq6vsd3c" path="res://animation/SurferZeus/surfer-1 8.png" id="125_uhvdc"]
@@ -1102,7 +1103,7 @@ frame_progress = 0.3673437
 process_mode = 4
 visible = false
 position = Vector2(1000, 200)
-script = ExtResource("58_qwoqy")
+script = ExtResource("109_vbp07")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Enemies2/ZeusFist"]
 position = Vector2(-11, 232)

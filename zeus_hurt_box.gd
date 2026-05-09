@@ -24,9 +24,6 @@ func activate():
 		if child is CollisionShape2D:
 			child.disabled = false
 
-func _process(delta: float) -> void:
-	pass
-
 func _ready():  
 	process_mode = Node.PROCESS_MODE_DISABLED
 	position.x = -2000

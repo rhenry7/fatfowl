@@ -1,8 +1,9 @@
 extends "res://zeus_hurt_box.gd"
+@onready var positionx = get_viewport().size.x * 0.8
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_DISABLED
-	position = Vector2(get_viewport().size.x * 0.1, 2000)
+	position = Vector2(positionx, 500)
 	add_to_group("hazard")
 	add_to_group("ZeusHand")
 	connect("body_entered", Callable(self, "_on_hit"))
@@ -14,8 +15,7 @@ func respawn() -> void:
 		#await get_tree().create_timer(0, false, true).timeout
 		if not get_tree().paused:
 			# Slide hand into frame
-			var vert = get_viewport().size.x * 0.4
-			var final_pos: Vector2 = Vector2(vert, -500)
+			var final_pos: Vector2 = Vector2(positionx, -700)
 			var tween = create_tween()
 			tween.tween_property(hand, "position", final_pos, 6.0)
 			## Wait for tween to finish
@@ -25,7 +25,7 @@ func respawn() -> void:
 			await get_tree().create_timer(3, false, true).timeout
 			
 			# Slide hand out of frame
-			var off_screen_pos: Vector2 = Vector2(vert, 2000)  # or wherever "out of frame" is
+			var off_screen_pos: Vector2 = Vector2(positionx, 2000)  # or wherever "out of frame" is
 			var tween_out = create_tween()
 			tween_out.tween_property(hand, "position", off_screen_pos, 3.0)
 			

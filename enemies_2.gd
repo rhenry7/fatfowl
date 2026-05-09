@@ -1,13 +1,13 @@
 extends Node
 @onready var enemies = [
-	$LargeBolt,
 	$ZeusFist,
+	$LargeBolt,
 	$ZeusHurtBox
 ]
 var current_enemy_index := 0
 var display_duration := 30.0   # seconds per enemy
 var enemy_buffer := 10.0
-var initial_delay := 15.0
+var initial_delay := 5.0 # set to 15 when deploying
 
 func _ready():
 	await get_tree().create_timer(initial_delay).timeout
