@@ -29,15 +29,21 @@ const DASH_MULTIPLIER := 5.0
 # how long the burst lasts
 const DASH_DURATION := 0.25
 # lockout before next dash
-const DASH_COOLDOWN := 3.0
+const DASH_COOLDOWN := 2.0
 #  how fast the second tap must come in
 const DOUBLE_TAP_WINDOW := 0.3
+const FIRE_HEAT_PER_SHOT := 15.0
+const FIRE_HEAT_MAX := 100.0
+const FIRE_HEAT_RECOVERY_RATE := 10.0
+const FIRE_LOCKOUT_DURATION := 3.0
 
 var _dash_active := false
 var _dash_dir := 0
 var _dash_timer := 0.0
 var _cooldown_timer := 0.0
 var _last_tap_time := {"fly-left": -1.0, "fly-right": -1.0}
+var _fire_heat := 0.0
+var _fire_lockout_timer := 0.0
 
 func fall_damage():
 	if IS_DEAD or is_invincible:
@@ -102,15 +108,18 @@ func _ready() -> void:
 	_track_distance()
 
 func _setup_dash_bar() -> void:
+	dash_bar.min_value = 0.0
+	dash_bar.max_value = FIRE_HEAT_MAX
+	dash_bar.value = 0.0
 	var fill = StyleBoxFlat.new()
-	fill.bg_color = Color(0.659, 0.996, 0.463, 0.949)
+	fill.bg_color = Color("#ff3303")
 	fill.corner_radius_top_left = 6
 	fill.corner_radius_top_right = 6
 	fill.corner_radius_bottom_left = 6
 	fill.corner_radius_bottom_right = 6
 	dash_bar.add_theme_stylebox_override("fill", fill)
 	var bg = StyleBoxFlat.new()
-	bg.bg_color = Color(0.125, 0.102, 0.773, 0.6)
+	bg.bg_color = Color(0.125, 0.102, 0.773, 0.2)
 	bg.corner_radius_top_left = 6
 	bg.corner_radius_top_right = 6
 	bg.corner_radius_bottom_left = 6
@@ -234,11 +243,10 @@ func _physics_process(delta: float) -> void:
 		fall_damage()
 
 	_update_dash(delta)
-	dash_bar.value = (1.0 - clamp(_cooldown_timer / DASH_COOLDOWN, 0.0, 1.0)) * 100.0
+	dash_bar.value = _fire_heat
 	
 	if Input.is_action_just_pressed("Fire"):
-		sprite.play("shoot")
-		shoot()
+		_try_fire()
 	
 	if Input.is_action_just_pressed("fly"):
 		velocity.y = FLAP_STRENGTH
@@ -259,6 +267,11 @@ func _update_dash(delta: float) -> void:
 			GRAVITY = 2000
 	if _cooldown_timer > 0.0:
 		_cooldown_timer -= delta
+	if _fire_lockout_timer > 0.0:
+		_fire_lockout_timer = max(_fire_lockout_timer - delta, 0.0)
+		_fire_heat = (_fire_lockout_timer / FIRE_LOCKOUT_DURATION) * FIRE_HEAT_MAX
+	elif _fire_heat > 0.0:
+		_fire_heat = max(_fire_heat - FIRE_HEAT_RECOVERY_RATE * delta, 0.0)
 
 	var now := Time.get_ticks_msec() / 1000.0
 	for action in ["fly-right", "fly-left"]:
@@ -270,6 +283,27 @@ func _update_dash(delta: float) -> void:
 				_dash_timer = DASH_DURATION
 				_cooldown_timer = DASH_COOLDOWN
 			_last_tap_time[action] = now
+
+func _try_fire() -> void:
+	if _fire_lockout_timer > 0.0:
+		_show_fire_limit_feedback()
+		return
+
+	sprite.play("shoot")
+	shoot()
+	_fire_heat = min(_fire_heat + FIRE_HEAT_PER_SHOT, FIRE_HEAT_MAX)
+
+	if _fire_heat >= FIRE_HEAT_MAX:
+		_trigger_fire_lockout()
+		_show_fire_limit_feedback()
+
+func _trigger_fire_lockout() -> void:
+	_fire_heat = FIRE_HEAT_MAX
+	_fire_lockout_timer = FIRE_LOCKOUT_DURATION
+
+func _show_fire_limit_feedback() -> void:
+	print("cant fire anymore")
+	# TODO: Show the fire-limit warning sprite here once the art is ready.
 
 func _get_horizontal_velocity() -> float:
 	if _dash_active:

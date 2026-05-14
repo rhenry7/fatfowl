@@ -35,6 +35,7 @@ func _process(delta: float) -> void:
 
 func respawn() -> void:
 	# Reset feather to top of screen
+	await get_tree().create_timer(30).timeout
 	var bounds = _viewport_bounds()
 	# Land x strictly within the visible width
 	position.x = randf_range(bounds.position.x, bounds.position.x + bounds.size.x)
