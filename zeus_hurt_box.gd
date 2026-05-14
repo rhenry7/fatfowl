@@ -26,7 +26,7 @@ func activate():
 
 func _ready():  
 	process_mode = Node.PROCESS_MODE_DISABLED
-	position.x = -2000
+	position.x = get_viewport().size.x * 0.9
 	position.y = 2000
 	add_to_group("hazard")
 	add_to_group("ZeusHand")

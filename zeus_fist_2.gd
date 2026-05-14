@@ -1,6 +1,5 @@
 extends "res://zeus_fist.gd"
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_DISABLED
@@ -22,7 +21,7 @@ func respawn() -> void:
 		#await get_tree().create_timer(0, false, true).timeout
 		if not get_tree().paused:
 			# Slide hand into frame
-			var height = get_viewport().size.y * 0.3
+			var height = get_viewport().size.y * 0.2
 			var width = get_viewport().size.x * 1 
 			var final_pos: Vector2 = Vector2(width, height) 
 			var tween = create_tween()
