@@ -151,7 +151,7 @@
 [ext_resource type="Texture2D" uid="uid://b30bmrsg6ud6e" path="res://animation/Lightning3/Untitled_Artwork-13.png" id="76_ohqex"]
 [ext_resource type="Texture2D" uid="uid://d3srd2sac0hwg" path="res://animation/Lightning3/Untitled_Artwork-14.png" id="77_pl55l"]
 [ext_resource type="Script" uid="uid://dbvo3nk4bwoue" path="res://enemies_2.gd" id="87_iukfe"]
-[ext_resource type="Script" uid="uid://cbruw0twcmkfo" path="res://enemies_cloud.gd" id="95_wnn4a"]
+[ext_resource type="Script" path="res://cloud_spawner.gd" id="95_wnn4a"]
 [ext_resource type="Texture2D" uid="uid://cdq3i8hbu6ncl" path="res://animation/zeus/shoot/ZeusLight-8.png" id="107_vbp07"]
 [ext_resource type="Script" uid="uid://cukk1by3pp6p0" path="res://large_bolt_2.gd" id="108_5chwk"]
 [ext_resource type="Script" uid="uid://bgfnefptohilc" path="res://zeus_fist_2.gd" id="109_vbp07"]

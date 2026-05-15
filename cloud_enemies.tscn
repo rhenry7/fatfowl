@@ -1,0 +1,152 @@
+[gd_scene load_steps=34 format=3 uid="uid://ddhracyv4lsnl"]
+
+[ext_resource type="Script" path="res://cloud.gd" id="1_cloud"]
+[ext_resource type="Texture2D" path="res://clouds/AngryCloud-1.png" id="2_angry_1"]
+[ext_resource type="Texture2D" path="res://clouds/AngryCloud-2.png" id="3_angry_2"]
+[ext_resource type="Texture2D" path="res://clouds/AngryCloud-3.png" id="4_angry_3"]
+[ext_resource type="Texture2D" path="res://clouds/AngryCloud-4.png" id="5_angry_4"]
+[ext_resource type="Texture2D" path="res://clouds/AngryCloud-5.png" id="6_angry_5"]
+[ext_resource type="Texture2D" path="res://clouds/AngryCloud-6.png" id="7_angry_6"]
+[ext_resource type="Texture2D" path="res://clouds/AngryCloud-7.png" id="8_angry_7"]
+[ext_resource type="Texture2D" path="res://clouds/AngryCloud-8.png" id="9_angry_8"]
+[ext_resource type="Texture2D" path="res://clouds/AngryCloud-9.png" id="10_angry_9"]
+[ext_resource type="Texture2D" path="res://enemies/happycloud/happy_thunder-1 6.png" id="11_happy_1"]
+[ext_resource type="Texture2D" path="res://enemies/happycloud/happy_thunder-2 5.png" id="12_happy_2"]
+[ext_resource type="Texture2D" path="res://enemies/happycloud/happy_thunder-3 5.png" id="13_happy_3"]
+[ext_resource type="Texture2D" path="res://enemies/happycloud/happy_thunder-4 5.png" id="14_happy_4"]
+[ext_resource type="Texture2D" path="res://enemies/happycloud/happy_thunder-5 4.png" id="15_happy_5"]
+[ext_resource type="Texture2D" path="res://enemies/happycloud/happy_thunder-6 3.png" id="16_happy_6"]
+[ext_resource type="Texture2D" path="res://enemies/happycloud/happy_thunder-7 3.png" id="17_happy_7"]
+[ext_resource type="Texture2D" path="res://enemies/happycloud/happy_thunder-8 3.png" id="18_happy_8"]
+[ext_resource type="Texture2D" path="res://enemies/happycloud/happy_thunder-9 3.png" id="19_happy_9"]
+[ext_resource type="Texture2D" path="res://enemies/happycloud/happy_thunder-10.png" id="20_happy_10"]
+[ext_resource type="Texture2D" path="res://enemies/sadcloud/Background.png" id="21_sad_1"]
+[ext_resource type="Texture2D" path="res://enemies/sadcloud/sad_thunder-2 5.png" id="22_sad_2"]
+[ext_resource type="Texture2D" path="res://enemies/sadcloud/sad_thunder-3 5.png" id="23_sad_3"]
+[ext_resource type="Texture2D" path="res://enemies/sadcloud/sad_thunder-4 5.png" id="24_sad_4"]
+[ext_resource type="Texture2D" path="res://enemies/sadcloud/sad_thunder-5 4.png" id="25_sad_5"]
+[ext_resource type="Texture2D" path="res://enemies/sadcloud/sad_thunder-6 3.png" id="26_sad_6"]
+[ext_resource type="Texture2D" path="res://enemies/sadcloud/sad_thunder-7 3.png" id="27_sad_7"]
+[ext_resource type="Texture2D" path="res://enemies/sadcloud/sad_thunder-8 3.png" id="28_sad_8"]
+[ext_resource type="Texture2D" path="res://enemies/sadcloud/sad_thunder-9 3.png" id="29_sad_9"]
+[ext_resource type="Texture2D" path="res://enemies/sadcloud/sad_thunder-10.png" id="30_sad_10"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cloud"]
+size = Vector2(352, 332)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cloud"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_angry_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_angry_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_angry_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_angry_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_angry_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_angry_6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_angry_7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_angry_8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_angry_9")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_happy_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_happy_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_happy_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_happy_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_happy_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_happy_6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_happy_7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_happy_8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_happy_9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_happy_10")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_sad_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_sad_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_sad_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_sad_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_sad_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_sad_6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_sad_7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_sad_8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_sad_9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_sad_10")
+}],
+"loop": true,
+"name": &"sad",
+"speed": 5.0
+}]
+
+[node name="CloudEnemy" type="Area2D"]
+script = ExtResource("1_cloud")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.38551843, 0.36438224)
+sprite_frames = SubResource("SpriteFrames_cloud")
+animation = &"angry"
+autoplay = "angry"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cloud")
