@@ -31,7 +31,7 @@ func _apply_spawn_settings() -> void:
 		return
 	if animated_sprite.sprite_frames and animated_sprite.sprite_frames.has_animation(enemy_type):
 		animated_sprite.play(enemy_type)
-	speed = randf_range(min_speed, max_speed)
+	speed_increase_loop()
 	position.x = randf_range(spawn_x_min, spawn_x_max)
 	position.y = screen_y()
 	visible = true
@@ -70,3 +70,9 @@ func _disable_and_remove() -> void:
 		if child is CollisionShape2D:
 			child.set_deferred("disabled", true)
 	call_deferred("queue_free")
+
+func speed_increase_loop() -> void:
+	print("current speed", speed)
+	if speed >= 2000:
+		speed = 1000
+	speed += randf_range(150, 500)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=204 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=205 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -151,10 +151,11 @@
 [ext_resource type="Texture2D" uid="uid://b30bmrsg6ud6e" path="res://animation/Lightning3/Untitled_Artwork-13.png" id="76_ohqex"]
 [ext_resource type="Texture2D" uid="uid://d3srd2sac0hwg" path="res://animation/Lightning3/Untitled_Artwork-14.png" id="77_pl55l"]
 [ext_resource type="Script" uid="uid://dbvo3nk4bwoue" path="res://enemies_2.gd" id="87_iukfe"]
-[ext_resource type="Script" path="res://cloud_spawner.gd" id="95_wnn4a"]
+[ext_resource type="Script" uid="uid://dwldcarpq3cjm" path="res://cloud_spawner.gd" id="95_wnn4a"]
 [ext_resource type="Texture2D" uid="uid://cdq3i8hbu6ncl" path="res://animation/zeus/shoot/ZeusLight-8.png" id="107_vbp07"]
 [ext_resource type="Script" uid="uid://cukk1by3pp6p0" path="res://large_bolt_2.gd" id="108_5chwk"]
 [ext_resource type="Script" uid="uid://bgfnefptohilc" path="res://zeus_fist_2.gd" id="109_vbp07"]
+[ext_resource type="Script" uid="uid://b0vba07jnmu3c" path="res://enemies_3.gd" id="110_ileqp"]
 [ext_resource type="Script" uid="uid://ca486p5afoxmf" path="res://start_menu.gd" id="124_4rgxs"]
 [ext_resource type="Script" uid="uid://dycgdx2yjrx87" path="res://surfer.gd" id="124_b481h"]
 [ext_resource type="Texture2D" uid="uid://coe0kgq6vsd3c" path="res://animation/SurferZeus/surfer-1 8.png" id="125_uhvdc"]
@@ -1123,6 +1124,26 @@ position = Vector2(0, 232)
 position = Vector2(-37.5, 232)
 shape = SubResource("RectangleShape2D_pjm8v")
 
+[node name="Enemies3" type="Node2D" parent="Pausable"]
+position = Vector2(-1800, 0)
+script = ExtResource("110_ileqp")
+
+[node name="LargeBolt" type="Area2D" parent="Pausable/Enemies3"]
+process_mode = 4
+position = Vector2(5000, -6)
+script = ExtResource("108_5chwk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Enemies3/LargeBolt"]
+position = Vector2(711.5, 199)
+shape = SubResource("RectangleShape2D_ma08v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Enemies3/LargeBolt"]
+position = Vector2(701, 132.99991)
+scale = Vector2(0.2719727, 1.4517787)
+sprite_frames = SubResource("SpriteFrames_kfelt")
+autoplay = "default"
+frame_progress = 0.3673437
+
 [node name="CloudEnemies" type="Node2D" parent="Pausable"]
 script = ExtResource("95_wnn4a")
 
@@ -1437,6 +1458,7 @@ stream = ExtResource("33_kq1c5")
 [connection signal="body_entered" from="Pausable/Enemies2/ZeusHurtBox" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Pausable/Enemies2/LargeBolt" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Pausable/Enemies2/ZeusFist" to="Pausable/Bird" method="_on_body_entered"]
+[connection signal="body_entered" from="Pausable/Enemies3/LargeBolt" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Pausable/CloudEnemies/Cloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Pausable/CloudEnemies/SadCloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Pausable/CloudEnemies/HappyCloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]

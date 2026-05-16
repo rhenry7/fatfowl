@@ -1,0 +1,80 @@
+[gd_scene load_steps=17 format=3 uid="uid://d37ht4jxfae2r"]
+
+[ext_resource type="Texture2D" uid="uid://dric5maod06gx" path="res://animation/Lightning3/Untitled_Artwork-1 8.png" id="1_68goy"]
+[ext_resource type="Script" uid="uid://djuj32gqjfose" path="res://lightning_bolt.gd" id="1_fvtfr"]
+[ext_resource type="Texture2D" uid="uid://ctexoe6dkm2a0" path="res://animation/Lightning3/Untitled_Artwork-2 5.png" id="2_fvtfr"]
+[ext_resource type="Texture2D" uid="uid://b1syocr5t1vq4" path="res://animation/Lightning3/Untitled_Artwork-4 5.png" id="3_vdsre"]
+[ext_resource type="Texture2D" uid="uid://c2abl2gi8fxa" path="res://animation/Lightning3/Untitled_Artwork-5 4.png" id="4_lbify"]
+[ext_resource type="Texture2D" uid="uid://bsqqbg3ljndg5" path="res://animation/Lightning3/Untitled_Artwork-6 3.png" id="5_0xlgh"]
+[ext_resource type="Texture2D" uid="uid://bg22x52thoxj3" path="res://animation/Lightning3/Untitled_Artwork-7 3.png" id="6_gm871"]
+[ext_resource type="Texture2D" uid="uid://dqub8mckshcgy" path="res://animation/Lightning3/Untitled_Artwork-8 3.png" id="7_4w7w1"]
+[ext_resource type="Texture2D" uid="uid://cq4dw7myl2g4f" path="res://animation/Lightning3/Untitled_Artwork-9 3.png" id="8_fiavc"]
+[ext_resource type="Texture2D" uid="uid://cbg2goukeg6re" path="res://animation/Lightning3/Untitled_Artwork-10.png" id="9_xda5x"]
+[ext_resource type="Texture2D" uid="uid://bvns3v3iup31q" path="res://animation/Lightning3/Untitled_Artwork-11.png" id="10_n6yej"]
+[ext_resource type="Texture2D" uid="uid://qvb0q8xw23a0" path="res://animation/Lightning3/Untitled_Artwork-12.png" id="11_7rgnj"]
+[ext_resource type="Texture2D" uid="uid://b30bmrsg6ud6e" path="res://animation/Lightning3/Untitled_Artwork-13.png" id="12_hu6h6"]
+[ext_resource type="Texture2D" uid="uid://d3srd2sac0hwg" path="res://animation/Lightning3/Untitled_Artwork-14.png" id="13_cww8i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovcn1"]
+size = Vector2(346, 7082)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kpvi6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_68goy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fvtfr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vdsre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lbify")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0xlgh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gm871")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4w7w1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fiavc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xda5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_n6yej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7rgnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hu6h6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_cww8i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LightningCrawl" type="Area2D"]
+position = Vector2(2133, 100)
+script = ExtResource("1_fvtfr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(163, 996)
+shape = SubResource("RectangleShape2D_ovcn1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(182.5, 965)
+scale = Vector2(0.25341797, 3.4291995)
+sprite_frames = SubResource("SpriteFrames_kpvi6")
+frame_progress = 0.3163983

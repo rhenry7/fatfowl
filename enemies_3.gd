@@ -1,13 +1,10 @@
 extends Node
 @onready var enemies = [
 	$LargeBolt,
-	$ZeusFist,
-	$ZeusHurtBox,
 ]
 var current_enemy_index := 0
-var display_duration := 35.0   # seconds per enemy
-var enemy_buffer := 10.0
-var initial_delay := 5.0 # set to 15 when deploying
+var enemy_buffer := 5.0
+var initial_delay := 3.0 # set to 15 when deploying
 
 func _ready():
 	await get_tree().create_timer(initial_delay).timeout
@@ -15,26 +12,16 @@ func _ready():
 	
 func cycle_enemies() -> void:
 	while true:
-		# DEACTIVATE ALL first to ensure clean state
-		for e in enemies:
-			e.process_mode = Node.PROCESS_MODE_DISABLED
-			e.deactivate()
-			print("Going to deactivate", e)
-		
 		# get current enemy
 		var current_enemy = enemies[current_enemy_index]
+		current_enemy.process_mode = Node.PROCESS_MODE_DISABLED
+		current_enemy.deactivate()
 		print("now at current enemy", current_enemy)
 		# Enable and show it
 		current_enemy.process_mode = Node.PROCESS_MODE_INHERIT
 		current_enemy.activate()
 		var thunder = get_tree().current_scene.get_node("Pausable/Audio/Thunder")
 		thunder.play()
-		print("enemy process mode", current_enemy.process_mode)
-		# wait for its display time
-		await get_tree().create_timer(display_duration).timeout
-		# hide it afterwards
-		current_enemy.deactivate()
-		current_enemy.process_mode = Node.PROCESS_MODE_DISABLED
 		print("enemy process mode", current_enemy.process_mode)
 		await get_tree().create_timer(enemy_buffer).timeout
 		# move to next enemy (cyclic)

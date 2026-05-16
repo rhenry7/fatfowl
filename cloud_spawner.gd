@@ -22,9 +22,9 @@ const CLOUD_TYPES := [
 	},
 ]
 
-@export var max_active_enemies := 4
+@export var max_active_enemies := 5
 @export var min_enemies_per_wave := 1
-@export var max_enemies_per_wave := 2
+@export var max_enemies_per_wave := 3
 @export var spawn_delay_min := 1.2
 @export var spawn_delay_max := 2.4
 @export var intra_wave_delay := 0.35

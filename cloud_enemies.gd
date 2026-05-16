@@ -48,6 +48,6 @@ func _on_hit(body: Node2D) -> void:
 
 func speed_increase_loop() -> void:
 	print("current speed", speed)
-	if speed >= 1000:
-		speed = 700
+	if speed >= 2000:
+		speed = 1000
 	speed += randf_range(150, 300)
