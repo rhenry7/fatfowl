@@ -57,7 +57,7 @@ func respawn() -> void:
 			var width = -550
 			var final_pos: Vector2 = Vector2(width, height) 
 			var tween = create_tween()
-			tween.tween_property(hand, "position", final_pos, 0.8)
+			tween.tween_property(hand, "position", final_pos, 2)
 			## Wait for tween to finish
 			await tween.finished
 			 

@@ -79,11 +79,12 @@ func _on_hit(body: Node2D) -> void:
 		get_tree().current_scene.get_node("Pausable/Audio/ZeusLaugh").play()
 
 func respawn() -> void:
+	await get_tree().create_timer(3, false, true).timeout
 	while true:
 		if not get_tree().paused:
 			var newVert = randf_range(-800, 800)
 			var off_screen_pos: Vector2 = Vector2(100, newVert)
 			await get_tree().create_timer(1, false, true).timeout
 			var tween_out = create_tween()
-			tween_out.tween_property(shooter, "position", off_screen_pos, 30.0)
+			tween_out.tween_property(shooter, "position", off_screen_pos, 10.0)
 			await tween_out.finished
