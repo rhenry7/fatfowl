@@ -101,7 +101,7 @@ func _ready() -> void:
 	add_to_group("player")
 	print("Global Position: ", global_position)
 	position.x = 300
-	position.y = -500
+	position.y = -100
 	$BirdHurtBox.body_entered.connect(_on_body_entered)
 	sprite.play("fly")
 	_setup_dash_bar()

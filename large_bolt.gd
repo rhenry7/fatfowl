@@ -78,7 +78,7 @@ func respawn() -> void:
 		
 		if not get_tree().paused:
 			# Fade in - lightning appears
-			get_tree().current_scene.get_node("Pausable/Audio/Thunder").play()
+			# get_tree().current_scene.get_node("Pausable/Audio/Thunder").play()
 
 			var tween = create_tween()
 			#var thunder = get_tree().current_scene.get_node("Pausable/Thunder")

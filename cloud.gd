@@ -75,4 +75,4 @@ func speed_increase_loop() -> void:
 	print("current speed", speed)
 	if speed >= 5000:
 		speed = 1000
-	speed += randf_range(300, 700)
+	speed += randf_range(100, 800)

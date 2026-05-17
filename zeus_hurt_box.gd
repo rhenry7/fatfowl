@@ -59,15 +59,16 @@ func respawn() -> void:
 		#await get_tree().create_timer(0, false, true).timeout
 		if not get_tree().paused:
 			# Slide hand into frame
+			position.y = 2000
 			var vert = randf_range(-700, -100)
 			var final_pos: Vector2 = Vector2(vert, 350)
 			var tween = create_tween()
-			tween.tween_property(hand, "position", final_pos, 6.0)
+			tween.tween_property(hand, "position", final_pos, 3.0)
 			## Wait for tween to finish
 			await tween.finished
 			
 			# Stay on screen time 
-			await get_tree().create_timer(3, false, true).timeout
+			await get_tree().create_timer(1, false, true).timeout
 			
 			# Slide hand out of frame
 			var off_screen_pos: Vector2 = Vector2(vert, 2000)  # or wherever "out of frame" is

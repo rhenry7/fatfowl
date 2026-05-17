@@ -781,8 +781,8 @@ texture = ExtResource("2_py13h")
 [node name="Sky" type="Node2D" parent="Pausable"]
 
 [node name="Sprite2D2" type="Sprite2D" parent="Pausable/Sky"]
-position = Vector2(102.92255, 292.49994)
-scale = Vector2(1.4310446, 1.2694516)
+position = Vector2(38.49986, 126.49995)
+scale = Vector2(1.4252349, 1.1023499)
 texture = ExtResource("25_oilbd")
 
 [node name="Parallax2D3" type="Parallax2D" parent="Pausable/Sky"]
