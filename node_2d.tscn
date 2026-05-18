@@ -1,4 +1,4 @@
-[gd_scene load_steps=205 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=223 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -175,6 +175,22 @@
 [ext_resource type="Texture2D" uid="uid://b6g4btwsfg0ct" path="res://animation/zeus/shoot/Shoot-3 5.png" id="156_yxl61"]
 [ext_resource type="Texture2D" uid="uid://bdy5ptatlna1c" path="res://animation/zeus/shoot/Shoot-4 5.png" id="157_0sqyy"]
 [ext_resource type="Texture2D" uid="uid://cgjfhhdtqvpk0" path="res://animation/zeus/shoot/Shoot-5 4.png" id="158_oilbd"]
+[ext_resource type="Script" uid="uid://cc3wr8807f8eb" path="res://zeus_snake.gd" id="168_d5x2o"]
+[ext_resource type="Texture2D" uid="uid://7w7dvuk7msc8" path="res://animation/snake_idle/snake-1 10.png" id="168_hcvxu"]
+[ext_resource type="Texture2D" uid="uid://dwj5ul26lxwvm" path="res://animation/snake_idle/snake-2 7.png" id="169_d5x2o"]
+[ext_resource type="Texture2D" uid="uid://b0wyy5v3mgxa1" path="res://animation/snake_attack/snake-attack-7.png" id="169_s1om5"]
+[ext_resource type="Texture2D" uid="uid://bp46pviqcgevt" path="res://animation/snake_attack/snake-attack-6.png" id="170_awqbt"]
+[ext_resource type="Texture2D" uid="uid://d1j2p0ok5g3ex" path="res://animation/snake_idle/snake-3 7.png" id="170_p6xvf"]
+[ext_resource type="Texture2D" uid="uid://tfv14tl0ru4i" path="res://animation/snake_idle/snake-4 7.png" id="171_hq8ct"]
+[ext_resource type="Texture2D" uid="uid://uwojjxd5rr2i" path="res://animation/snake_attack/snake-attack-5.png" id="171_xdyyu"]
+[ext_resource type="Texture2D" uid="uid://b8vlamyafr5kl" path="res://animation/snake_attack/snake-attack-4.png" id="172_b36m8"]
+[ext_resource type="Texture2D" uid="uid://bijtt6t8n658n" path="res://animation/snake_idle/snake-5 6.png" id="172_dmhti"]
+[ext_resource type="Texture2D" uid="uid://b5ah05qhgms1a" path="res://animation/snake_idle/snake-6 5.png" id="173_6qmhe"]
+[ext_resource type="Texture2D" uid="uid://bq5ga7o5s32c5" path="res://animation/snake_attack/snake-attack-3.png" id="173_ml7eq"]
+[ext_resource type="Texture2D" uid="uid://405kj46ndsyo" path="res://animation/snake_attack/snake-attack-2.png" id="174_43lxy"]
+[ext_resource type="Texture2D" uid="uid://d3hdgibky4fui" path="res://animation/snake_idle/snake-7 4.png" id="174_qf637"]
+[ext_resource type="Texture2D" uid="uid://o81po3ixvf76" path="res://animation/snake_idle/snake-8 4.png" id="175_bs3kq"]
+[ext_resource type="Texture2D" uid="uid://bbonifur2udht" path="res://animation/snake_attack/snake-attack-1.png" id="175_jqeos"]
 [ext_resource type="Script" uid="uid://nya7sbmesolg" path="res://zeus_hurt_box_2.gd" id="200_zhtb2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jinwr"]
@@ -664,6 +680,67 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iukfe"]
 size = Vector2(148, 169)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_s1om5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("169_s1om5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_awqbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_xdyyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_b36m8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173_ml7eq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_43lxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_jqeos")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("168_hcvxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_d5x2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_p6xvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_hq8ct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_dmhti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173_6qmhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_qf637")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_bs3kq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awqbt"]
+size = Vector2(2009, 631)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_5mre3"]
 animations = [{
 "frames": [{
@@ -908,6 +985,7 @@ texture = ExtResource("8_5i8vy")
 [node name="Sprite2D4" type="Sprite2D" parent="Pausable/Sky"]
 
 [node name="Bird" type="CharacterBody2D" parent="Pausable" groups=["player"]]
+visible = false
 position = Vector2(-812, 114)
 script = ExtResource("1_0hol4")
 
@@ -937,6 +1015,7 @@ shape = SubResource("CircleShape2D_fs4d3")
 position = Vector2(-1092, 131)
 
 [node name="Feather" type="Area2D" parent="Pausable"]
+visible = false
 script = ExtResource("27_j02gt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Feather"]
@@ -952,6 +1031,7 @@ autoplay = "falling"
 frame_progress = 0.5827212
 
 [node name="Coin" type="Area2D" parent="Pausable" groups=["coin"]]
+visible = false
 script = ExtResource("23_qphy4")
 
 [node name="Coin" type="AnimatedSprite2D" parent="Pausable/Coin"]
@@ -966,6 +1046,7 @@ position = Vector2(-1390, 560)
 shape = SubResource("CircleShape2D_oilbd")
 
 [node name="Enemies" type="Node2D" parent="Pausable"]
+visible = false
 script = ExtResource("26_s32dh")
 
 [node name="ZeusHurtBox" type="Area2D" parent="Pausable/Enemies"]
@@ -1054,6 +1135,7 @@ frame = 1
 frame_progress = 0.72315323
 
 [node name="Enemies2" type="Node2D" parent="Pausable"]
+visible = false
 position = Vector2(-1800, 0)
 script = ExtResource("87_iukfe")
 
@@ -1126,6 +1208,7 @@ position = Vector2(-37.5, 232)
 shape = SubResource("RectangleShape2D_pjm8v")
 
 [node name="Enemies3" type="Node2D" parent="Pausable"]
+visible = false
 position = Vector2(-1800, 0)
 script = ExtResource("110_ileqp")
 
@@ -1146,6 +1229,7 @@ autoplay = "default"
 frame_progress = 0.3673437
 
 [node name="CloudEnemies" type="Node2D" parent="Pausable"]
+visible = false
 script = ExtResource("95_wnn4a")
 
 [node name="Cloud" type="Area2D" parent="Pausable/CloudEnemies"]
@@ -1410,6 +1494,23 @@ position = Vector2(733, 4.5)
 scale = Vector2(0.52, 1)
 shape = SubResource("RectangleShape2D_iukfe")
 
+[node name="SnakeBoss" type="Node2D" parent="Pausable"]
+
+[node name="zeus_snake" type="Area2D" parent="Pausable/SnakeBoss"]
+position = Vector2(710, -20)
+script = ExtResource("168_d5x2o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/SnakeBoss/zeus_snake"]
+position = Vector2(-39.000015, 85)
+scale = Vector2(0.7631124, 0.7631124)
+sprite_frames = SubResource("SpriteFrames_s1om5")
+animation = &"attack"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/SnakeBoss/zeus_snake"]
+position = Vector2(77.5, 127.499985)
+shape = SubResource("RectangleShape2D_awqbt")
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 8
@@ -1436,9 +1537,9 @@ anchor_top = 0.347
 anchor_right = 0.5
 anchor_bottom = 0.347
 offset_left = -1184.25
-offset_top = -817.5
+offset_top = -768.5
 offset_right = 923.75
-offset_bottom = 359.5
+offset_bottom = 408.5
 
 [node name="StartMenu" type="AnimatedSprite2D" parent="Control"]
 position = Vector2(245, -205.5)
