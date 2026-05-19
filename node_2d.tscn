@@ -327,6 +327,58 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_oilbd"]
 radius = 54.00926
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_s1om5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("169_s1om5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_awqbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_xdyyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_b36m8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173_ml7eq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_43lxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_jqeos")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("176_6qmhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_qf637")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_bs3kq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_s1om5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_awqbt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awqbt"]
+size = Vector2(2009, 631)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ld5wt"]
 radius = 431.89865
 
@@ -677,58 +729,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iukfe"]
 size = Vector2(148, 169)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_s1om5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("169_s1om5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("170_awqbt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("171_xdyyu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("172_b36m8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("173_ml7eq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("174_43lxy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("175_jqeos")
-}],
-"loop": false,
-"name": &"attack",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("176_6qmhe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("177_qf637")
-}, {
-"duration": 1.0,
-"texture": ExtResource("178_bs3kq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("179_s1om5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("180_awqbt")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_awqbt"]
-size = Vector2(2009, 631)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_5mre3"]
 animations = [{
 "frames": [{
@@ -1036,6 +1036,20 @@ shape = SubResource("CircleShape2D_oilbd")
 [node name="Enemies" type="Node2D" parent="Pausable"]
 visible = false
 script = ExtResource("26_s32dh")
+
+[node name="ZeusSnake" type="Area2D" parent="Pausable/Enemies"]
+position = Vector2(710, -20)
+script = ExtResource("168_d5x2o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Enemies/ZeusSnake"]
+position = Vector2(-39.000015, 85)
+scale = Vector2(0.7631124, 0.7631124)
+sprite_frames = SubResource("SpriteFrames_s1om5")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Enemies/ZeusSnake"]
+position = Vector2(77.5, 127.499985)
+shape = SubResource("RectangleShape2D_awqbt")
 
 [node name="ZeusHurtBox" type="Area2D" parent="Pausable/Enemies"]
 process_mode = 4
@@ -1481,22 +1495,6 @@ visible = false
 position = Vector2(733, 4.5)
 scale = Vector2(0.52, 1)
 shape = SubResource("RectangleShape2D_iukfe")
-
-[node name="SnakeBoss" type="Node2D" parent="Pausable"]
-
-[node name="zeus_snake" type="Area2D" parent="Pausable/SnakeBoss"]
-position = Vector2(710, -20)
-script = ExtResource("168_d5x2o")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/SnakeBoss/zeus_snake"]
-position = Vector2(-39.000015, 85)
-scale = Vector2(0.7631124, 0.7631124)
-sprite_frames = SubResource("SpriteFrames_s1om5")
-autoplay = "default"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/SnakeBoss/zeus_snake"]
-position = Vector2(77.5, 127.499985)
-shape = SubResource("RectangleShape2D_awqbt")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

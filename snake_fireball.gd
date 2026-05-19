@@ -10,7 +10,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	position.x -= SPEED * delta
-	if global_position.x < -1500.0:
+	if global_position.x < -2500.0:
 		get_parent().queue_free()
 
 func _on_body_entered(body: Node2D) -> void:

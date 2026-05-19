@@ -33,7 +33,7 @@ func on_hit() -> void:
 	await get_tree().create_timer(3.0, false, true).timeout
 	if not is_inside_tree():
 		return
-	position.x = randf_range(2500, 3000)
+	position.x = randf_range(1000, 3000)
 	position.y = screen_y()
 	visible = true
 	monitoring = true
