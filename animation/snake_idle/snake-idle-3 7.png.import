@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1j2p0ok5g3ex"
-path="res://.godot/imported/snake-3 7.png-c9f5429901d61d9658ac50cf31d3a476.ctex"
+uid="uid://bgq0ndhi234cd"
+path="res://.godot/imported/snake-idle-3 7.png-87d4e530e97cf69dfb0343134c3a142a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animation/snake_idle/snake-3 7.png"
-dest_files=["res://.godot/imported/snake-3 7.png-c9f5429901d61d9658ac50cf31d3a476.ctex"]
+source_file="res://animation/snake_idle/snake-idle-3 7.png"
+dest_files=["res://.godot/imported/snake-idle-3 7.png-87d4e530e97cf69dfb0343134c3a142a.ctex"]
 
 [params]
 

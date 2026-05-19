@@ -1,4 +1,4 @@
-[gd_scene load_steps=223 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=220 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -176,21 +176,18 @@
 [ext_resource type="Texture2D" uid="uid://bdy5ptatlna1c" path="res://animation/zeus/shoot/Shoot-4 5.png" id="157_0sqyy"]
 [ext_resource type="Texture2D" uid="uid://cgjfhhdtqvpk0" path="res://animation/zeus/shoot/Shoot-5 4.png" id="158_oilbd"]
 [ext_resource type="Script" uid="uid://cc3wr8807f8eb" path="res://zeus_snake.gd" id="168_d5x2o"]
-[ext_resource type="Texture2D" uid="uid://7w7dvuk7msc8" path="res://animation/snake_idle/snake-1 10.png" id="168_hcvxu"]
-[ext_resource type="Texture2D" uid="uid://dwj5ul26lxwvm" path="res://animation/snake_idle/snake-2 7.png" id="169_d5x2o"]
 [ext_resource type="Texture2D" uid="uid://b0wyy5v3mgxa1" path="res://animation/snake_attack/snake-attack-7.png" id="169_s1om5"]
 [ext_resource type="Texture2D" uid="uid://bp46pviqcgevt" path="res://animation/snake_attack/snake-attack-6.png" id="170_awqbt"]
-[ext_resource type="Texture2D" uid="uid://d1j2p0ok5g3ex" path="res://animation/snake_idle/snake-3 7.png" id="170_p6xvf"]
-[ext_resource type="Texture2D" uid="uid://tfv14tl0ru4i" path="res://animation/snake_idle/snake-4 7.png" id="171_hq8ct"]
 [ext_resource type="Texture2D" uid="uid://uwojjxd5rr2i" path="res://animation/snake_attack/snake-attack-5.png" id="171_xdyyu"]
 [ext_resource type="Texture2D" uid="uid://b8vlamyafr5kl" path="res://animation/snake_attack/snake-attack-4.png" id="172_b36m8"]
-[ext_resource type="Texture2D" uid="uid://bijtt6t8n658n" path="res://animation/snake_idle/snake-5 6.png" id="172_dmhti"]
-[ext_resource type="Texture2D" uid="uid://b5ah05qhgms1a" path="res://animation/snake_idle/snake-6 5.png" id="173_6qmhe"]
 [ext_resource type="Texture2D" uid="uid://bq5ga7o5s32c5" path="res://animation/snake_attack/snake-attack-3.png" id="173_ml7eq"]
 [ext_resource type="Texture2D" uid="uid://405kj46ndsyo" path="res://animation/snake_attack/snake-attack-2.png" id="174_43lxy"]
-[ext_resource type="Texture2D" uid="uid://d3hdgibky4fui" path="res://animation/snake_idle/snake-7 4.png" id="174_qf637"]
-[ext_resource type="Texture2D" uid="uid://o81po3ixvf76" path="res://animation/snake_idle/snake-8 4.png" id="175_bs3kq"]
 [ext_resource type="Texture2D" uid="uid://bbonifur2udht" path="res://animation/snake_attack/snake-attack-1.png" id="175_jqeos"]
+[ext_resource type="Texture2D" uid="uid://cmeyw3f4arcih" path="res://animation/snake_idle/snake-idle-1 10.png" id="176_6qmhe"]
+[ext_resource type="Texture2D" uid="uid://cww1m43huktoa" path="res://animation/snake_idle/snake-idle-2 7.png" id="177_qf637"]
+[ext_resource type="Texture2D" uid="uid://bgq0ndhi234cd" path="res://animation/snake_idle/snake-idle-3 7.png" id="178_bs3kq"]
+[ext_resource type="Texture2D" uid="uid://clef4wxanxbau" path="res://animation/snake_idle/snake-idle-4 7.png" id="179_s1om5"]
+[ext_resource type="Texture2D" uid="uid://b5i8y08pppdn2" path="res://animation/snake_idle/snake-idle-5 6.png" id="180_awqbt"]
 [ext_resource type="Script" uid="uid://nya7sbmesolg" path="res://zeus_hurt_box_2.gd" id="200_zhtb2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jinwr"]
@@ -710,28 +707,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("168_hcvxu")
+"texture": ExtResource("176_6qmhe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("169_d5x2o")
+"texture": ExtResource("177_qf637")
 }, {
 "duration": 1.0,
-"texture": ExtResource("170_p6xvf")
+"texture": ExtResource("178_bs3kq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("171_hq8ct")
+"texture": ExtResource("179_s1om5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("172_dmhti")
-}, {
-"duration": 1.0,
-"texture": ExtResource("173_6qmhe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("174_qf637")
-}, {
-"duration": 1.0,
-"texture": ExtResource("175_bs3kq")
+"texture": ExtResource("180_awqbt")
 }],
 "loop": true,
 "name": &"default",
@@ -1504,7 +1492,6 @@ script = ExtResource("168_d5x2o")
 position = Vector2(-39.000015, 85)
 scale = Vector2(0.7631124, 0.7631124)
 sprite_frames = SubResource("SpriteFrames_s1om5")
-animation = &"attack"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/SnakeBoss/zeus_snake"]
