@@ -5,24 +5,24 @@ const CLOUD_TYPES := [
 	{
 		"enemy_type": "angry",
 		"min_speed": 260.0,
-		"max_speed": 420.0,
+		"max_speed": 1020.0,
 		"weight": 4.0,
 	},
 	{
 		"enemy_type": "happy",
 		"min_speed": 180.0,
-		"max_speed": 320.0,
-		"weight": 3.0,
+		"max_speed": 620.0,
+		"weight": 1.0,
 	},
 	{
 		"enemy_type": "sad",
 		"min_speed": 120.0,
 		"max_speed": 240.0,
-		"weight": 2.0,
+		"weight": 8.0,
 	},
 ]
 
-@export var max_active_enemies := 5
+@export var max_active_enemies := 3
 @export var min_enemies_per_wave := 1
 @export var max_enemies_per_wave := 3
 @export var spawn_delay_min := 1.2
@@ -50,6 +50,7 @@ func _spawn_loop() -> void:
 	while true:
 		if get_tree().paused or not visible:
 			await get_tree().process_frame
+			max_active_enemies += 1
 			continue
 
 		var open_slots = max_active_enemies - _active_enemy_count()
@@ -94,3 +95,4 @@ func _pick_enemy_type() -> Dictionary:
 			return config.duplicate()
 
 	return CLOUD_TYPES.back().duplicate()
+	

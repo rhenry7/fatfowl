@@ -1,32 +1,48 @@
 [gd_scene load_steps=12 format=3 uid="uid://c4oq0i8t0mhcu"]
 
 [ext_resource type="Script" uid="uid://cc3wr8807f8eb" path="res://zeus_snake.gd" id="1_bev7f"]
-[ext_resource type="Texture2D" uid="uid://d1j2p0ok5g3ex" path="res://animation/snake_idle/snake-3 7.png" id="2_461dy"]
-[ext_resource type="Texture2D" uid="uid://tfv14tl0ru4i" path="res://animation/snake_idle/snake-4 7.png" id="3_1pmc5"]
-[ext_resource type="Texture2D" uid="uid://b5ah05qhgms1a" path="res://animation/snake_idle/snake-6 5.png" id="4_m5kc0"]
-[ext_resource type="Texture2D" path="res://animation/snake_idle/snake-1 10.png" id="5_atk1"]
-[ext_resource type="Texture2D" path="res://animation/snake_idle/snake-2 7.png" id="6_atk2"]
-[ext_resource type="Texture2D" path="res://animation/snake_idle/snake-5 6.png" id="7_atk3"]
-[ext_resource type="Texture2D" path="res://animation/snake_idle/snake-7 4.png" id="8_atk4"]
-[ext_resource type="Texture2D" path="res://animation/snake_idle/snake-8 4.png" id="9_atk5"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iadjg"]
+load_path = "res://.godot/imported/snake-1 10.png-d0715fff0f054887c3c2412941c41527.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_880vg"]
+load_path = "res://.godot/imported/snake-2 7.png-aaa779fbadfe79acc47d7c71dc7439ed.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hsveb"]
+load_path = "res://.godot/imported/snake-5 6.png-bb738485dd670a7bd260f75a64cccf0c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bev7f"]
+load_path = "res://.godot/imported/snake-7 4.png-efc5c491cea086a89166e5000e6a5b1d.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_461dy"]
+load_path = "res://.godot/imported/snake-8 4.png-c0a66dcdb0fa06b937daa9dc0b24e756.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1pmc5"]
+load_path = "res://.godot/imported/snake-3 7.png-c9f5429901d61d9658ac50cf31d3a476.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m5kc0"]
+load_path = "res://.godot/imported/snake-4 7.png-3638b5ed49f02fc95dfe5b4c71fc4c8b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lnosk"]
+load_path = "res://.godot/imported/snake-6 5.png-0899eccf7e01a2de3da3ca1b9b35e2a2.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lnosk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_atk1")
+"texture": SubResource("CompressedTexture2D_iadjg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_atk2")
+"texture": SubResource("CompressedTexture2D_880vg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_atk3")
+"texture": SubResource("CompressedTexture2D_hsveb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_atk4")
+"texture": SubResource("CompressedTexture2D_bev7f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_atk5")
+"texture": SubResource("CompressedTexture2D_461dy")
 }],
 "loop": false,
 "name": &"attack",
@@ -34,13 +50,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_461dy")
+"texture": SubResource("CompressedTexture2D_1pmc5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_1pmc5")
+"texture": SubResource("CompressedTexture2D_m5kc0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_m5kc0")
+"texture": SubResource("CompressedTexture2D_lnosk")
 }],
 "loop": true,
 "name": &"default",

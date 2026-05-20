@@ -1,14 +1,14 @@
 extends Node
 @onready var enemies = [
-	$ZeusSnake,
 	$ZeusFingerGun,
 	$ZeusFist,
 	$ZeusHurtBox, # the hand grabber TODO: Rename to "Hand Grabber"
+	$ZeusSnake,
 ]
 var current_enemy_index := 0
-var display_duration := 15.0   # seconds per enemy
+var display_duration := 30.0   # seconds per enemy
 var enemy_buffer := 10.0
-var initial_delay := 0.0
+var initial_delay := 30.0 #set 30 for live
 
 func _ready():
 	await get_tree().create_timer(initial_delay).timeout
@@ -38,3 +38,4 @@ func cycle_enemies() -> void:
 		await get_tree().create_timer(enemy_buffer).timeout
 		# move to next enemy (cyclic)
 		current_enemy_index = (current_enemy_index + 1) % enemies.size()
+		enemy_buffer += 2.0

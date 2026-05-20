@@ -3,9 +3,9 @@ extends Node
 	$LargeBolt,
 ]
 var current_enemy_index := 0
-var display_duration := 120.0   # seconds per enemy
-var enemy_buffer := 1.0
-var initial_delay := 7.0 # set to 15 when deploying
+var display_duration := 30.0   # seconds per enemy
+var enemy_buffer := 5.0
+var initial_delay := 3.0 
 
 func _ready():
 	await get_tree().create_timer(initial_delay).timeout

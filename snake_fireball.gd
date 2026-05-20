@@ -15,5 +15,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Bird":
+		print("Fireball hits Bird")
 		body.take_damage()
 		get_parent().queue_free()

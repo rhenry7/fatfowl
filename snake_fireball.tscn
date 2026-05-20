@@ -1,21 +1,29 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8g6i0gqj4qp3"]
+[gd_scene load_steps=9 format=3 uid="uid://c8g6i0gqj4qp3"]
 
 [ext_resource type="Script" uid="uid://7i1yioneiak6" path="res://snake_fireball.gd" id="0_script"]
-[ext_resource type="Texture2D" uid="uid://d0my083j1sq0l" path="res://animation/snake_fireball/snake_fireball.png" id="1_h5j7w"]
-[ext_resource type="Texture2D" uid="uid://2gmwcek6cy6f" path="res://animation/snake_fireball/snake_fireball_3.png" id="2_jtnav"]
-[ext_resource type="Texture2D" uid="uid://drlugycpec6jl" path="res://animation/snake_fireball/snake_fireball_4.png" id="3_ripho"]
+[ext_resource type="Texture2D" uid="uid://c8d0rkj0bvdv7" path="res://animation/snake_fireball/Untitled_Artwork-1 10.png" id="2_a3dgp"]
+[ext_resource type="Texture2D" uid="uid://bt7hekubsbgkv" path="res://animation/snake_fireball/Untitled_Artwork-2 7.png" id="3_wiuuk"]
+[ext_resource type="Texture2D" uid="uid://dg84y1x00ybbi" path="res://animation/snake_fireball/Untitled_Artwork-3 7.png" id="4_by43y"]
+[ext_resource type="Texture2D" uid="uid://c1gi2qraf272o" path="res://animation/snake_fireball/Untitled_Artwork-4 7.png" id="5_usa0g"]
+[ext_resource type="Texture2D" uid="uid://nibkvqkhl52q" path="res://animation/snake_fireball/Untitled_Artwork-5 6.png" id="6_w5gw5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a3dgp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_h5j7w")
+"texture": ExtResource("2_a3dgp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_jtnav")
+"texture": ExtResource("3_wiuuk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ripho")
+"texture": ExtResource("4_by43y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_usa0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w5gw5")
 }],
 "loop": true,
 "name": &"default",
@@ -23,7 +31,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jtnav"]
-radius = 266.0169
+radius = 367.04904
 
 [node name="Snake_Fireball" type="Node2D"]
 
@@ -32,11 +40,11 @@ position = Vector2(357, 301)
 script = ExtResource("0_script")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
-position = Vector2(110, 192)
-scale = Vector2(0.36080658, 0.36080688)
+position = Vector2(334, 71)
+scale = Vector2(0.9798258, 0.97982705)
 sprite_frames = SubResource("SpriteFrames_a3dgp")
 frame_progress = 0.31994733
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(6, 193)
+position = Vector2(79, 172)
 shape = SubResource("CircleShape2D_jtnav")

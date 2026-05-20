@@ -61,7 +61,7 @@ func respawn() -> void:
 			# Slide hand into frame
 			position.y = 2000
 			var vert = randf_range(-700, -100)
-			var final_pos: Vector2 = Vector2(vert, 350)
+			var final_pos: Vector2 = Vector2(vert, 150)
 			var tween = create_tween()
 			tween.tween_property(hand, "position", final_pos, 3.0)
 			## Wait for tween to finish

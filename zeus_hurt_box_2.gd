@@ -16,7 +16,7 @@ func respawn() -> void:
 		if not get_tree().paused:
 			# Slide hand into frame
 			position.y = 2000
-			var final_pos: Vector2 = Vector2(positionx, -400)
+			var final_pos: Vector2 = Vector2(positionx, -100)
 			var tween = create_tween()
 			tween.tween_property(hand, "position", final_pos, 6.0)
 			## Wait for tween to finish
