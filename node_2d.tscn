@@ -327,10 +327,10 @@ animations = [{
 radius = 54.00926
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ld5wt"]
-radius = 287.79602
+radius = 566.74194
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wcv2n"]
-radius = 521.98944
+radius = 210.26233
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0xo8l"]
 animations = [{
@@ -842,8 +842,8 @@ texture = ExtResource("2_py13h")
 [node name="Sky" type="Node2D" parent="Pausable"]
 
 [node name="Sprite2D2" type="Sprite2D" parent="Pausable/Sky"]
-position = Vector2(20.725754, -91.24999)
-scale = Vector2(0.97256553, 0.873368)
+position = Vector2(13.000002, -114.62501)
+scale = Vector2(0.8969703, 0.88107055)
 texture = ExtResource("25_oilbd")
 
 [node name="Parallax2D3" type="Parallax2D" parent="Pausable/Sky"]
@@ -939,7 +939,8 @@ repeat_size = Vector2(4000, 0)
 autoscroll = Vector2(-15, 0)
 
 [node name="Sprite2D4" type="Sprite2D" parent="Pausable/Sky/Parallax2D2"]
-position = Vector2(0, 272)
+position = Vector2(0, 451)
+scale = Vector2(0.5556136, 0.5556136)
 texture = ExtResource("11_e8f3a")
 
 [node name="Parallax2D4" type="Parallax2D" parent="Pausable/Sky"]
@@ -1038,7 +1039,7 @@ collision_mask = 2
 script = ExtResource("39_037st")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Enemies/ZeusHurtBox"]
-position = Vector2(718.5, 639.5)
+position = Vector2(718.5, 620.0001)
 rotation = -0.7853982
 shape = SubResource("CircleShape2D_ld5wt")
 
@@ -1115,6 +1116,7 @@ frame = 1
 frame_progress = 0.72315323
 
 [node name="ZeusSnake" type="Area2D" parent="Pausable/Enemies"]
+visible = false
 position = Vector2(710, -20)
 script = ExtResource("168_d5x2o")
 
@@ -1148,7 +1150,7 @@ shape = SubResource("CircleShape2D_ld5wt")
 position = Vector2(-50, -817)
 
 [node name="ZeusHandHurtBox" type="CollisionShape2D" parent="Pausable/Enemies2/ZeusHurtBox/ZeusHand"]
-position = Vector2(638, 1006)
+position = Vector2(692, 1086)
 shape = SubResource("CircleShape2D_wcv2n")
 
 [node name="ZeusHandAnimation" type="AnimatedSprite2D" parent="Pausable/Enemies2/ZeusHurtBox/ZeusHand"]

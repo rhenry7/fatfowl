@@ -3,28 +3,20 @@
 [ext_resource type="Script" uid="uid://cc3wr8807f8eb" path="res://zeus_snake.gd" id="1_bev7f"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iadjg"]
-load_path = "res://.godot/imported/snake-1 10.png-d0715fff0f054887c3c2412941c41527.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_880vg"]
-load_path = "res://.godot/imported/snake-2 7.png-aaa779fbadfe79acc47d7c71dc7439ed.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hsveb"]
-load_path = "res://.godot/imported/snake-5 6.png-bb738485dd670a7bd260f75a64cccf0c.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bev7f"]
-load_path = "res://.godot/imported/snake-7 4.png-efc5c491cea086a89166e5000e6a5b1d.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_461dy"]
-load_path = "res://.godot/imported/snake-8 4.png-c0a66dcdb0fa06b937daa9dc0b24e756.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1pmc5"]
-load_path = "res://.godot/imported/snake-3 7.png-c9f5429901d61d9658ac50cf31d3a476.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m5kc0"]
-load_path = "res://.godot/imported/snake-4 7.png-3638b5ed49f02fc95dfe5b4c71fc4c8b.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lnosk"]
-load_path = "res://.godot/imported/snake-6 5.png-0899eccf7e01a2de3da3ca1b9b35e2a2.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lnosk"]
 animations = [{

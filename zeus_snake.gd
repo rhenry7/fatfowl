@@ -2,7 +2,7 @@ extends Area2D
 
 const FIREBALL_SCENE := preload("res://snake_fireball.tscn")
 
-@export var amplitude: float = 4.0 # how far back the snake goes to the right off the screen
+@export var amplitude: float = -5.0 # how far back the snake goes to the right off the screen
 @export var frequency: float = 2.0 # how far to the right
 
 @onready var sprite = $AnimatedSprite2D
@@ -44,7 +44,7 @@ func _run_attack_loop() -> void:
 			continue
 		sprite.play("attack")
 		await get_tree().create_timer(0.5, false).timeout
-		_fire()
+		# _fire()
 		await sprite.animation_finished
 		sprite.play("default")
 
