@@ -1,0 +1,130 @@
+[gd_scene load_steps=27 format=3 uid="uid://6ts0w223ibb5"]
+
+[ext_resource type="Texture2D" uid="uid://i8k10v013mao" path="res://animation/ZeusBarf/Untitled_Artwork-1 13.png" id="1_engeb"]
+[ext_resource type="Texture2D" uid="uid://bgpm4pvgglbqj" path="res://animation/ZeusBarf/Untitled_Artwork-2 9.png" id="2_gmf4h"]
+[ext_resource type="Texture2D" uid="uid://g35ucayauvsf" path="res://animation/ZeusBarf/Untitled_Artwork-3 8.png" id="3_xxq5w"]
+[ext_resource type="Texture2D" uid="uid://bjmtfcghtdt4x" path="res://animation/ZeusBarf/Untitled_Artwork-4 8.png" id="4_gc3df"]
+[ext_resource type="Texture2D" uid="uid://dv4w3ut0asyxm" path="res://animation/ZeusBarf/Untitled_Artwork-5 7.png" id="5_skun7"]
+[ext_resource type="Texture2D" uid="uid://cct1bmv6jb35m" path="res://animation/ZeusBarf/Untitled_Artwork-6 6.png" id="6_su4l1"]
+[ext_resource type="Texture2D" uid="uid://b6d7m3hldm180" path="res://animation/ZeusBarf/Untitled_Artwork-7 5.png" id="7_cjf18"]
+[ext_resource type="Texture2D" uid="uid://cmni83lw3nxib" path="res://animation/ZeusBarf/Untitled_Artwork-8 5.png" id="8_siwnq"]
+[ext_resource type="Texture2D" uid="uid://cim2y4b4vwf6h" path="res://animation/ZeusBarf/Untitled_Artwork-9 5.png" id="9_3ei2m"]
+[ext_resource type="Texture2D" uid="uid://b7bpmc8hgqmi3" path="res://animation/ZeusBarf/Untitled_Artwork-10 3.png" id="10_irg5j"]
+[ext_resource type="Texture2D" uid="uid://b22dnpjf15xao" path="res://animation/ZeusBarf/Untitled_Artwork-11 3.png" id="11_tlskf"]
+[ext_resource type="Texture2D" uid="uid://c5gnjaixoxlla" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-1 13.png" id="12_hlfof"]
+[ext_resource type="Texture2D" uid="uid://dvwc3y0r6tkc1" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-2 9.png" id="13_ia5mj"]
+[ext_resource type="Texture2D" uid="uid://cgr3g222p74xj" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-3 8.png" id="14_lclwv"]
+[ext_resource type="Texture2D" uid="uid://j4tk5nijofvb" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-4 8.png" id="15_puepu"]
+[ext_resource type="Texture2D" uid="uid://2sgydg6o41ug" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-5 7.png" id="16_xmjmq"]
+[ext_resource type="Texture2D" uid="uid://c68s6c3omppri" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-6 6.png" id="17_e8yh2"]
+[ext_resource type="Texture2D" uid="uid://djchqy7imnfah" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-7 5.png" id="18_dldu6"]
+[ext_resource type="Texture2D" uid="uid://5rawyp70tn6b" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-8 5.png" id="19_13cjl"]
+[ext_resource type="Texture2D" uid="uid://dlcgok0ne50l" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-9 5.png" id="20_e8cn4"]
+[ext_resource type="Texture2D" uid="uid://cij1ru64co4qq" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-10 3.png" id="21_i7vd8"]
+[ext_resource type="Texture2D" uid="uid://c6kpsp3yhfi5c" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-11 3.png" id="22_0sjqc"]
+[ext_resource type="Texture2D" uid="uid://camaws2yw5eso" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-12 3.png" id="23_o6scc"]
+[ext_resource type="Texture2D" uid="uid://6fbe1c3f4q4q" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-13 2.png" id="24_nwr7b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j8bcu"]
+size = Vector2(794, 1493.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_18t4i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_engeb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gmf4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xxq5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gc3df")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_skun7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_su4l1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cjf18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_siwnq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3ei2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_irg5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tlskf")
+}],
+"loop": true,
+"name": &"barf",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_hlfof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ia5mj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_lclwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_puepu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_xmjmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_e8yh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_dldu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_13cjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_e8cn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_i7vd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_0sjqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_o6scc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_nwr7b")
+}],
+"loop": true,
+"name": &"eyeblast",
+"speed": 5.0
+}]
+
+[node name="ZeusBoss" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1307, 772.75)
+shape = SubResource("RectangleShape2D_j8bcu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+position = Vector2(1417, 789.0001)
+scale = Vector2(1.4378045, 1.4378045)
+sprite_frames = SubResource("SpriteFrames_18t4i")
+animation = &"eyeblast"
+autoplay = "eyeblast"
+frame_progress = 0.52991533
