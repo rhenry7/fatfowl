@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bugt75wcwpsf5"
-path="res://.godot/imported/Untitled_Artwork-1 10.png-b79734bfbefb33e59f0f3a506e232923.ctex"
+uid="uid://dekku644a40jk"
+path="res://.godot/imported/Untitled_Artwork-1 13.png-63b557b0c28be9ef06d6a719adb06711.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animation/snake_idle/Untitled_Artwork-1 10.png"
-dest_files=["res://.godot/imported/Untitled_Artwork-1 10.png-b79734bfbefb33e59f0f3a506e232923.ctex"]
+source_file="res://animation/snake_idle/Untitled_Artwork-1 13.png"
+dest_files=["res://.godot/imported/Untitled_Artwork-1 13.png-63b557b0c28be9ef06d6a719adb06711.ctex"]
 
 [params]
 

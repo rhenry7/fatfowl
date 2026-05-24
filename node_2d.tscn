@@ -1,4 +1,4 @@
-[gd_scene load_steps=218 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=219 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -149,17 +149,12 @@
 [ext_resource type="Texture2D" uid="uid://b1syocr5t1vq4" path="res://animation/Lightning3/Untitled_Artwork-4 5.png" id="67_6knet"]
 [ext_resource type="Texture2D" uid="uid://mjtdiahqcnhu" path="res://animation/snake_attack/Untitled_Artwork-3 7.png" id="67_hq8ct"]
 [ext_resource type="Texture2D" uid="uid://c2abl2gi8fxa" path="res://animation/Lightning3/Untitled_Artwork-5 4.png" id="68_c3urr"]
-[ext_resource type="Texture2D" uid="uid://bugt75wcwpsf5" path="res://animation/snake_idle/Untitled_Artwork-1 10.png" id="68_dmhti"]
 [ext_resource type="Texture2D" uid="uid://c6weo3fo8hcl4" path="res://enemies/sadcloud/sad_thunder-8 3.png" id="68_j2pq0"]
-[ext_resource type="Texture2D" uid="uid://b5xvmo70f6urh" path="res://animation/snake_idle/Untitled_Artwork-2 7.png" id="69_6qmhe"]
 [ext_resource type="Texture2D" uid="uid://bsqqbg3ljndg5" path="res://animation/Lightning3/Untitled_Artwork-6 3.png" id="69_nlac5"]
 [ext_resource type="Texture2D" uid="uid://b1j8f7f44lndw" path="res://enemies/sadcloud/sad_thunder-9 3.png" id="69_r8aua"]
 [ext_resource type="Texture2D" uid="uid://bg22x52thoxj3" path="res://animation/Lightning3/Untitled_Artwork-7 3.png" id="70_er4ii"]
-[ext_resource type="Texture2D" uid="uid://b5csmhlgn3ged" path="res://animation/snake_idle/Untitled_Artwork-3 7.png" id="70_qf637"]
 [ext_resource type="Texture2D" uid="uid://d0jxvnea7f5mr" path="res://enemies/sadcloud/sad_thunder-10.png" id="70_sduiw"]
-[ext_resource type="Texture2D" uid="uid://cewq10htv61jx" path="res://animation/snake_idle/Untitled_Artwork-4 7.png" id="71_bs3kq"]
 [ext_resource type="Texture2D" uid="uid://dqub8mckshcgy" path="res://animation/Lightning3/Untitled_Artwork-8 3.png" id="71_ojpun"]
-[ext_resource type="Texture2D" uid="uid://dao5ajqlvngbe" path="res://animation/snake_idle/Untitled_Artwork-5 6.png" id="72_s1om5"]
 [ext_resource type="Texture2D" uid="uid://cq4dw7myl2g4f" path="res://animation/Lightning3/Untitled_Artwork-9 3.png" id="72_xke0j"]
 [ext_resource type="Texture2D" uid="uid://cbg2goukeg6re" path="res://animation/Lightning3/Untitled_Artwork-10.png" id="73_53ibr"]
 [ext_resource type="Texture2D" uid="uid://bvns3v3iup31q" path="res://animation/Lightning3/Untitled_Artwork-11.png" id="74_2n56i"]
@@ -175,7 +170,13 @@
 [ext_resource type="Script" uid="uid://b0vba07jnmu3c" path="res://enemies_3.gd" id="110_ileqp"]
 [ext_resource type="Texture2D" uid="uid://cifysqim6oj7m" path="res://animation/snake_attack/Untitled_Artwork-5 6.png" id="111_6qmhe"]
 [ext_resource type="Texture2D" uid="uid://kn55wrdcpkd2" path="res://animation/snake_attack/Untitled_Artwork-6 5.png" id="112_qf637"]
+[ext_resource type="Texture2D" uid="uid://dekku644a40jk" path="res://animation/snake_idle/Untitled_Artwork-1 13.png" id="121_dmhti"]
+[ext_resource type="Texture2D" uid="uid://d0ieo4wddyk0n" path="res://animation/snake_idle/Untitled_Artwork-2 9.png" id="122_6qmhe"]
+[ext_resource type="Texture2D" uid="uid://bjll6iqvrhq3n" path="res://animation/snake_idle/Untitled_Artwork-3 8.png" id="123_qf637"]
 [ext_resource type="Script" uid="uid://ca486p5afoxmf" path="res://start_menu.gd" id="124_4rgxs"]
+[ext_resource type="Texture2D" uid="uid://cb3cs24csbij6" path="res://animation/snake_idle/Untitled_Artwork-4 8.png" id="124_bs3kq"]
+[ext_resource type="Texture2D" uid="uid://q2dve1jhospf" path="res://animation/snake_idle/Untitled_Artwork-5 7.png" id="125_s1om5"]
+[ext_resource type="Texture2D" uid="uid://c78wkirtlc6dc" path="res://animation/snake_idle/Untitled_Artwork-6 6.png" id="126_awqbt"]
 [ext_resource type="FontFile" uid="uid://b1qfifjoh852g" path="res://Greek-Freak.ttf" id="136_pl55l"]
 [ext_resource type="Script" uid="uid://c5x5qehv2bni3" path="res://sad_cloud.gd" id="141_fc4gm"]
 [ext_resource type="Script" uid="uid://c6ba7secjyt6" path="res://happy_cloud.gd" id="142_yl3ei"]
@@ -521,19 +522,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("68_dmhti")
+"texture": ExtResource("121_dmhti")
 }, {
 "duration": 1.0,
-"texture": ExtResource("69_6qmhe")
+"texture": ExtResource("122_6qmhe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("70_qf637")
+"texture": ExtResource("123_qf637")
 }, {
 "duration": 1.0,
-"texture": ExtResource("71_bs3kq")
+"texture": ExtResource("124_bs3kq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("72_s1om5")
+"texture": ExtResource("125_s1om5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_awqbt")
 }],
 "loop": true,
 "name": &"default",
