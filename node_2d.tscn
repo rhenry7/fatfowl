@@ -545,7 +545,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_awqbt"]
-size = Vector2(2027, 478)
+size = Vector2(1418, 288)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
 size = Vector2(171, 426.5)
@@ -1155,18 +1155,17 @@ frame = 1
 frame_progress = 0.72315323
 
 [node name="ZeusSnake" type="Area2D" parent="Pausable/Enemies"]
-visible = false
 position = Vector2(710, -20)
 script = ExtResource("168_d5x2o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Enemies/ZeusSnake"]
-position = Vector2(-39.000015, 85)
-scale = Vector2(0.87608063, 0.87608063)
+position = Vector2(184.99998, 85)
+scale = Vector2(0.49106625, 0.49106625)
 sprite_frames = SubResource("SpriteFrames_s1om5")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Enemies/ZeusSnake"]
-position = Vector2(100.5, 134)
+position = Vector2(405, 128)
 shape = SubResource("RectangleShape2D_awqbt")
 
 [node name="Enemies2" type="Node2D" parent="Pausable"]

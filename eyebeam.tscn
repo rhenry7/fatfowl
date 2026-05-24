@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://7p2keb62joxv"]
+
+[ext_resource type="Texture2D" uid="uid://y180c3w315wk" path="res://animation/ZeusEyeBlast/Untitled_Artwork-1 13.png" id="1_xrudq"]
+[ext_resource type="Texture2D" uid="uid://bmydh14pxmcyg" path="res://animation/ZeusEyeBlast/Untitled_Artwork-3 8.png" id="2_3ai6u"]
+[ext_resource type="Texture2D" uid="uid://0cbva6uangnf" path="res://animation/ZeusEyeBlast/Untitled_Artwork-5 7.png" id="3_lrncd"]
+[ext_resource type="Texture2D" uid="uid://bl1g15mka4kq4" path="res://animation/ZeusEyeBlast/Untitled_Artwork-7 5.png" id="4_ex5b7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dcxix"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xrudq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3ai6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lrncd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ex5b7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ioxh"]
+size = Vector2(1596, 188)
+
+[node name="Eyebeam" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2106, 772)
+scale = Vector2(1.7889831, 1.3756098)
+sprite_frames = SubResource("SpriteFrames_dcxix")
+frame_progress = 0.23635946
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(792, 673)
+shape = SubResource("RectangleShape2D_5ioxh")

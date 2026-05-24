@@ -2,8 +2,8 @@ extends Area2D
 
 const FIREBALL_SCENE := preload("res://snake_fireball.tscn")
 
-@export var amplitude: float = -5.0 # how far back the snake goes to the right off the screen
-@export var frequency: float = 2.0 # how far to the right
+@export var amplitude: float = 2.0 # how far back the snake goes to the right off the screen
+@export var frequency: float = 4.0 # how far to the right
 
 @onready var sprite = $AnimatedSprite2D
 
@@ -54,7 +54,7 @@ func _fire() -> void:
 		get_parent().add_child(fireball)
 		# Offset counters the Area2D + sprite internal positions in snake_fireball.tscn
 		# so the fireball visually appears at the snake's mouth
-		fireball.global_position = sprite.global_position - Vector2(1298, 396)
+		fireball.global_position = sprite.global_position - Vector2(1000, 396)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Bird":

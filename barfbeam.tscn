@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://blbrar7wesr3"]
+
+[ext_resource type="Texture2D" uid="uid://c6ruq618jiqos" path="res://animation/ZeusBarkAttackFrames/Untitled_Artwork-1 13.png" id="1_0yrys"]
+[ext_resource type="Texture2D" uid="uid://clvkcdawsuvg8" path="res://animation/ZeusBarkAttackFrames/Untitled_Artwork-2 9.png" id="2_4ett3"]
+[ext_resource type="Texture2D" uid="uid://4fxf1iurlymo" path="res://animation/ZeusBarkAttackFrames/Untitled_Artwork-3 8.png" id="3_rvn46"]
+[ext_resource type="Texture2D" uid="uid://bslgh8kiwct4t" path="res://animation/ZeusBarkAttackFrames/Untitled_Artwork-4 8.png" id="4_lb1j8"]
+[ext_resource type="Texture2D" uid="uid://cy4icnvym5h2r" path="res://animation/ZeusBarkAttackFrames/Untitled_Artwork-5 7.png" id="5_pxxd7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dt6aj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0yrys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4ett3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rvn46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lb1j8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pxxd7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ly3yl"]
+size = Vector2(1937, 212)
+
+[node name="barfbeam" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+position = Vector2(2410, 679)
+scale = Vector2(2.065854, 2.0658538)
+sprite_frames = SubResource("SpriteFrames_dt6aj")
+autoplay = "default"
+frame_progress = 0.84177387
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(964.5, 1079)
+shape = SubResource("RectangleShape2D_ly3yl")

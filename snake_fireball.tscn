@@ -35,11 +35,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 12.0
+"speed": 16.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jtnav"]
-radius = 418.0012
+radius = 316.0775
 
 [node name="Snake_Fireball" type="Node2D"]
 
@@ -49,7 +49,7 @@ script = ExtResource("0_script")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 position = Vector2(46, 247)
-scale = Vector2(0.5869141, 0.5869149)
+scale = Vector2(0.4492187, 0.44921932)
 sprite_frames = SubResource("SpriteFrames_a3dgp")
 autoplay = "default"
 frame_progress = 0.31994733
