@@ -11,13 +11,13 @@ func _process(delta: float) -> void:
 		respawn()
 
 func respawn() -> void:
-	position.y = randf_range(-500, 3000)
-	position.x = 4000 
+	position.y = 1000
+	position.x = 400 
 	# speed_increase_loop()
 
 func _ready():
-	await get_tree().create_timer(20, false, true).timeout
-	position.x = 4000
+	process_mode = Node.PROCESS_MODE_INHERIT
+	position.x = 400
 	add_to_group("hazard")
 	connect("body_entered", Callable(self, "_on_hit"))
 

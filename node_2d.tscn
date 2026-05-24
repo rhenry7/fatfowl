@@ -1,4 +1,4 @@
-[gd_scene load_steps=219 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=218 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -43,8 +43,8 @@
 [ext_resource type="AudioStream" uid="uid://bfpwb278uw6nd" path="res://thunder.ogg" id="25_037st"]
 [ext_resource type="Texture2D" uid="uid://btq1183f0obqr" path="res://animation/pausemenu/pause-menu-3.png" id="25_kkr25"]
 [ext_resource type="Texture2D" uid="uid://b6tbtvrerxu5q" path="res://clouds/AngryCloud-7.png" id="25_m7xe6"]
-[ext_resource type="Texture2D" uid="uid://bka3tmb1g5i4p" path="res://background/Background_Simple.png" id="25_oilbd"]
 [ext_resource type="Texture2D" uid="uid://c86npws5vfhpn" path="res://gameoverscrolls/GAMEOVER-4.png" id="25_wcv2n"]
+[ext_resource type="Texture2D" uid="uid://350sc2bejg34" path="res://background/SkyBG_Ikarus/Untitled_Artwork 2.png" id="25_xdyyu"]
 [ext_resource type="Texture2D" uid="uid://bgloa2mfu437l" path="res://gameoverscrolls/GAMEOVER-5.png" id="26_b0j31"]
 [ext_resource type="Texture2D" uid="uid://40mt6dtogqsp" path="res://animation/pausemenu/pause-menu-4.png" id="26_fibx4"]
 [ext_resource type="Script" uid="uid://b47yv7wncgea2" path="res://enemies.gd" id="26_s32dh"]
@@ -84,23 +84,31 @@
 [ext_resource type="Script" uid="uid://xadxndgnm5tw" path="res://large_bolt.gd" id="42_2v765"]
 [ext_resource type="Texture2D" uid="uid://bmcww7mxrinqr" path="res://enemies/happycloud/happy_thunder-1 6.png" id="42_thyvg"]
 [ext_resource type="Texture2D" uid="uid://k4jms15hw4jt" path="res://enemies/happycloud/happy_thunder-2 5.png" id="43_nsnm2"]
+[ext_resource type="Texture2D" uid="uid://ecqn20ewalhh" path="res://background/SkyBG_Ikarus/Untitled_Artwork-7 4.png" id="44_b36m8"]
 [ext_resource type="Texture2D" uid="uid://bvyj1sxj8qaab" path="res://enemies/happycloud/happy_thunder-3 5.png" id="44_f8kvm"]
 [ext_resource type="AudioStream" uid="uid://caw0owvqbqr32" path="res://audio/zeus/prepare2.ogg" id="44_pjm8v"]
 [ext_resource type="Texture2D" uid="uid://tfuqegekcjgp" path="res://enemies/happycloud/happy_thunder-4 5.png" id="45_3hhlv"]
 [ext_resource type="AudioStream" uid="uid://du5wn1hft4166" path="res://audio/punch.ogg" id="45_aq07h"]
+[ext_resource type="Texture2D" uid="uid://dweoh2onl30x5" path="res://background/SkyBG_Ikarus/Untitled_Artwork-8 4.png" id="45_ml7eq"]
 [ext_resource type="AudioStream" uid="uid://b0twa32ldpfl5" path="res://audio/paper.ogg" id="45_uhvdc"]
+[ext_resource type="Texture2D" uid="uid://cr1cp1d3lk2f3" path="res://background/SkyBG_Ikarus/Untitled_Artwork-2 7.png" id="46_43lxy"]
 [ext_resource type="Texture2D" uid="uid://cmowkrdk52l4" path="res://enemies/happycloud/happy_thunder-5 4.png" id="46_d88dk"]
 [ext_resource type="AudioStream" uid="uid://cg1am88lwblej" path="res://audio/fall_damage.ogg" id="46_qphy4"]
 [ext_resource type="Texture2D" uid="uid://2xjnnb2tibf1" path="res://enemies/happycloud/happy_thunder-6 3.png" id="47_122lf"]
+[ext_resource type="Texture2D" uid="uid://d4jhgno077wc5" path="res://background/SkyBG_Ikarus/Untitled_Artwork-3 7.png" id="47_jqeos"]
+[ext_resource type="Texture2D" uid="uid://b43h6f26au6xd" path="res://background/SkyBG_Ikarus/Untitled_Artwork-11 2.png" id="48_4mm8g"]
 [ext_resource type="AudioStream" uid="uid://mjclw1xun8ur" path="res://audio/zeus/zeus_rant_1.ogg" id="48_bxemi"]
 [ext_resource type="Texture2D" uid="uid://cf2mfosywro2v" path="res://enemies/happycloud/happy_thunder-7 3.png" id="48_r3ryn"]
 [ext_resource type="Texture2D" uid="uid://du3k5dxbh0ql2" path="res://enemies/happycloud/happy_thunder-8 3.png" id="49_7ct8v"]
+[ext_resource type="Texture2D" uid="uid://bn0gatyv4wd0t" path="res://background/SkyBG_Ikarus/Untitled_Artwork-5 6.png" id="49_kaf2f"]
 [ext_resource type="AudioStream" uid="uid://bnchmbuo6rkhd" path="res://audio/zeus/zeus_rant_2.ogg" id="49_qoxh5"]
 [ext_resource type="Texture2D" uid="uid://bafieualswj0e" path="res://BirdGrab-1.png" id="49_qu7as"]
+[ext_resource type="Texture2D" uid="uid://dv455lx7sg7s7" path="res://background/SkyBG_Ikarus/Untitled_Artwork-4 7.png" id="50_3r3gr"]
 [ext_resource type="AudioStream" uid="uid://b8w05j4qevf0b" path="res://audio/zeus/zeus_rant_3.ogg" id="50_d8e56"]
 [ext_resource type="Texture2D" uid="uid://bdevpd2sa045e" path="res://BirdGrab-2.png" id="50_lyuya"]
 [ext_resource type="Texture2D" uid="uid://fa5rdwqw35s5" path="res://enemies/happycloud/happy_thunder-9 3.png" id="50_sg3tl"]
 [ext_resource type="Texture2D" uid="uid://pgqv6mpr0iuu" path="res://enemies/happycloud/happy_thunder-10.png" id="51_0fsb4"]
+[ext_resource type="Texture2D" uid="uid://drbgfomf317o7" path="res://background/SkyBG_Ikarus/Untitled_Artwork-1 12.png" id="51_2djs3"]
 [ext_resource type="Texture2D" uid="uid://p0q6nn4r117x" path="res://BirdGrab-3.png" id="51_5fipt"]
 [ext_resource type="Texture2D" uid="uid://dpy6fiy4pbccm" path="res://animation/Fireball/Bird_Shoot.png" id="51_7vfuv"]
 [ext_resource type="AudioStream" uid="uid://bjax2maov1yb8" path="res://audio/zeus/accept_your_fate.ogg" id="51_jinwr"]
@@ -168,15 +176,6 @@
 [ext_resource type="Texture2D" uid="uid://cifysqim6oj7m" path="res://animation/snake_attack/Untitled_Artwork-5 6.png" id="111_6qmhe"]
 [ext_resource type="Texture2D" uid="uid://kn55wrdcpkd2" path="res://animation/snake_attack/Untitled_Artwork-6 5.png" id="112_qf637"]
 [ext_resource type="Script" uid="uid://ca486p5afoxmf" path="res://start_menu.gd" id="124_4rgxs"]
-[ext_resource type="Script" uid="uid://dycgdx2yjrx87" path="res://surfer.gd" id="124_b481h"]
-[ext_resource type="Texture2D" uid="uid://coe0kgq6vsd3c" path="res://animation/SurferZeus/surfer-1 8.png" id="125_uhvdc"]
-[ext_resource type="Texture2D" uid="uid://bwlqvwrq318xr" path="res://animation/SurferZeus/surfer-2 5.png" id="126_aq07h"]
-[ext_resource type="Texture2D" uid="uid://3uktsvdgvtmj" path="res://animation/SurferZeus/surfer-3 5.png" id="127_qphy4"]
-[ext_resource type="Texture2D" uid="uid://cyg2g17snj4l" path="res://animation/SurferZeus/surfer-4 5.png" id="128_oxvno"]
-[ext_resource type="Texture2D" uid="uid://bepr0ivo1urk7" path="res://animation/SurferZeus/surfer-5 4.png" id="129_xotjc"]
-[ext_resource type="Texture2D" uid="uid://ceypxfnkusdxp" path="res://animation/SurferZeus/surfer-6 3.png" id="130_5f7vl"]
-[ext_resource type="Texture2D" uid="uid://cnb24yntl4aef" path="res://animation/SurferZeus/surfer-7 3.png" id="131_py13h"]
-[ext_resource type="Texture2D" uid="uid://48fw4ai3k3s1" path="res://animation/SurferZeus/surfer-8 3.png" id="132_e8f3a"]
 [ext_resource type="FontFile" uid="uid://b1qfifjoh852g" path="res://Greek-Freak.ttf" id="136_pl55l"]
 [ext_resource type="Script" uid="uid://c5x5qehv2bni3" path="res://sad_cloud.gd" id="141_fc4gm"]
 [ext_resource type="Script" uid="uid://c6ba7secjyt6" path="res://happy_cloud.gd" id="142_yl3ei"]
@@ -692,38 +691,14 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mxju4"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("125_uhvdc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("126_aq07h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("127_qphy4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("128_oxvno")
-}, {
-"duration": 1.0,
-"texture": ExtResource("129_xotjc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("130_5f7vl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("131_py13h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("132_e8f3a")
-}],
+"frames": [],
 "loop": true,
 "name": &"default",
-"speed": 12.0
+"speed": 2.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iukfe"]
-size = Vector2(148, 169)
+size = Vector2(1034.8003, 506.0113)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5mre3"]
 animations = [{
@@ -844,7 +819,11 @@ texture = ExtResource("2_py13h")
 [node name="Sprite2D2" type="Sprite2D" parent="Pausable/Sky"]
 position = Vector2(13.000002, -114.62501)
 scale = Vector2(0.8969703, 0.88107055)
-texture = ExtResource("25_oilbd")
+texture = ExtResource("25_xdyyu")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Pausable/Sky"]
+position = Vector2(28, -3)
+texture = ExtResource("46_43lxy")
 
 [node name="Parallax2D3" type="Parallax2D" parent="Pausable/Sky"]
 scale = Vector2(40.627876, 2.2419608)
@@ -926,6 +905,9 @@ position = Vector2(19.3, -180)
 scale = Vector2(1.2478814, 1.2615854)
 sprite_frames = SubResource("SpriteFrames_jinwr")
 
+[node name="Sprite2D13" type="Sprite2D" parent="Pausable/Sky"]
+texture = ExtResource("51_2djs3")
+
 [node name="ZeusBlink" type="AnimatedSprite2D" parent="Pausable/Sky"]
 position = Vector2(100.99999, 54)
 scale = Vector2(1.2536585, 1.2536585)
@@ -967,7 +949,60 @@ position = Vector2(-1083, -73)
 scale = Vector2(0.7844207, 0.8372803)
 texture = ExtResource("8_5i8vy")
 
-[node name="Sprite2D4" type="Sprite2D" parent="Pausable/Sky"]
+[node name="Parallax2D6" type="Parallax2D" parent="Pausable/Sky"]
+repeat_size = Vector2(5000, 0)
+autoscroll = Vector2(15, 0)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Pausable/Sky/Parallax2D6"]
+position = Vector2(-926, 978)
+scale = Vector2(1.4420413, 1.3926893)
+texture = ExtResource("44_b36m8")
+
+[node name="Parallax2D8" type="Parallax2D" parent="Pausable/Sky"]
+repeat_size = Vector2(5000, 0)
+autoscroll = Vector2(15, 0)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Pausable/Sky/Parallax2D8"]
+position = Vector2(-486, 438)
+scale = Vector2(0.96244234, 0.929504)
+texture = ExtResource("44_b36m8")
+
+[node name="Parallax2D7" type="Parallax2D" parent="Pausable/Sky"]
+repeat_size = Vector2(7000, 0)
+autoscroll = Vector2(-20, 0)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Pausable/Sky/Parallax2D7"]
+position = Vector2(890, 746)
+scale = Vector2(1.2543082, 1.2543081)
+texture = ExtResource("45_ml7eq")
+
+[node name="Parallax2D12" type="Parallax2D" parent="Pausable/Sky"]
+repeat_size = Vector2(6000, 0)
+autoscroll = Vector2(10, 0)
+
+[node name="Sprite2D8" type="Sprite2D" parent="Pausable/Sky/Parallax2D12"]
+texture = ExtResource("47_jqeos")
+
+[node name="Parallax2D9" type="Parallax2D" parent="Pausable/Sky"]
+repeat_size = Vector2(2000, 0)
+autoscroll = Vector2(-5, 0)
+
+[node name="Sprite2D9" type="Sprite2D" parent="Pausable/Sky/Parallax2D9"]
+texture = ExtResource("48_4mm8g")
+
+[node name="Parallax2D11" type="Parallax2D" parent="Pausable/Sky"]
+repeat_size = Vector2(10000, 0)
+autoscroll = Vector2(-20, 0)
+
+[node name="Sprite2D11" type="Sprite2D" parent="Pausable/Sky/Parallax2D11"]
+texture = ExtResource("49_kaf2f")
+
+[node name="Parallax2D10" type="Parallax2D" parent="Pausable/Sky"]
+repeat_size = Vector2(5000, 0)
+autoscroll = Vector2(20, 0)
+
+[node name="Sprite2D12" type="Sprite2D" parent="Pausable/Sky/Parallax2D10"]
+texture = ExtResource("50_3r3gr")
 
 [node name="Bird" type="CharacterBody2D" parent="Pausable" groups=["player"]]
 visible = false
@@ -1475,19 +1510,16 @@ script = ExtResource("29_sduiw")
 [node name="Surfer" type="Area2D" parent="Pausable"]
 process_mode = 4
 visible = false
-script = ExtResource("124_b481h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Surfer"]
-visible = false
-position = Vector2(768, 0)
-scale = Vector2(0.15254459, 0.15254465)
+position = Vector2(746.4519, 95.994354)
+scale = Vector2(0.2890359, 0.28903598)
 sprite_frames = SubResource("SpriteFrames_mxju4")
 autoplay = "default"
 frame_progress = 0.73266757
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Surfer"]
-visible = false
-position = Vector2(733, 4.5)
+position = Vector2(741.9519, 106.994354)
 scale = Vector2(0.52, 1)
 shape = SubResource("RectangleShape2D_iukfe")
 

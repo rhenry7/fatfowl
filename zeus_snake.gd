@@ -39,12 +39,12 @@ func _process(delta: float) -> void:
 
 func _run_attack_loop() -> void:
 	while true:
-		await get_tree().create_timer(2.0, false).timeout
+		await get_tree().create_timer(5.0, false).timeout
 		if not visible:
 			continue
 		sprite.play("attack")
 		await get_tree().create_timer(0.5, false).timeout
-		# _fire()
+		_fire()
 		await sprite.animation_finished
 		sprite.play("default")
 

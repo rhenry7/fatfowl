@@ -1,9 +1,9 @@
 extends Node
 @onready var enemies = [
+	$ZeusSnake,
 	$ZeusFingerGun,
 	$ZeusFist,
 	$ZeusHurtBox, # the hand grabber TODO: Rename to "Hand Grabber"
-	$ZeusSnake,
 ]
 var current_enemy_index := 0
 var display_duration := 30.0   # seconds per enemy
