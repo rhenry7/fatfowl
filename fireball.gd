@@ -14,14 +14,17 @@ func _on_area_entered(area: Area2D) -> void:
 	if not area.has_method("on_hit") and not area.has_node("VulnerableArea"):
 		return
 
+	var coin_bonus := 100
 	if area.has_method("on_hit"):
-		area.on_hit()
+		var result = area.on_hit()
+		if result is int:
+			coin_bonus = result
 	else:
 		area.queue_free()
 
 	var bird = get_tree().current_scene.get_node("Pausable/Bird")
 	if bird.has_method("addCoin"):
-		bird.addCoin(100)
+		bird.addCoin(coin_bonus)
 
 	_free_projectile()
 

@@ -8,7 +8,8 @@ extends Node2D
 @onready var surfer = $"Pausable/Surfer"
 @onready var zeusFist = $Pausable/Enemies/ZeusFist
 @onready var zeusFingerGun = $Pausable/Enemies/ZeusFingerGun
-@onready var zeusSnake = $Pausable/Enemies/ZeusSnake
+@onready var zeusSnake = $Pausable/BossEnemies/ZeusSnake
+@onready var zeusBossHead = $Pausable/BossEnemies/ZeusBossHead
 
 
 # Called when the node enters the scene tree for the first time.
@@ -22,6 +23,7 @@ func _ready() -> void:
 	lightning.visible = false
 	surfer.visible = false
 	zeusSnake.visible = false
+	zeusBossHead.visible = false
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	get_tree().paused = true
 	zeusFist.position = Vector2(2000, 2000)

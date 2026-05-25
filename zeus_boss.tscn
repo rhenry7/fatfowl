@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://6fbe1c3f4q4q" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-13 2.png" id="24_nwr7b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j8bcu"]
-size = Vector2(794, 1493.5)
+size = Vector2(931, 1532)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_18t4i"]
 animations = [{
@@ -118,13 +118,13 @@ animations = [{
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1307, 772.75)
+position = Vector2(641.5, 941)
 shape = SubResource("RectangleShape2D_j8bcu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
-position = Vector2(1417, 789.0001)
-scale = Vector2(1.4378045, 1.4378045)
+position = Vector2(757, 883.99994)
+scale = Vector2(1.7511967, 1.7219512)
 sprite_frames = SubResource("SpriteFrames_18t4i")
 animation = &"eyeblast"
 autoplay = "eyeblast"
-frame_progress = 0.52991533
+frame_progress = 0.61468405

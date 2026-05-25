@@ -1,21 +1,11 @@
 extends Area2D
 
-const FIREBALL_SCENE := preload("res://snake_fireball.tscn")
+const EYEBEAM_SCENE := preload("res://eyebeam.tscn")
 
-@export var amplitude: float = 2.0 # how far back the snake goes to the right off the screen
-@export var frequency: float = 4.0 # how far to the right
+@export var amplitude: float = 0.5 # how far back the snake goes to the right off the screen
+@export var frequency: float = 0.5 # how far to the right
 
 @onready var sprite = $AnimatedSprite2D
-
-var hit_count := 0
-
-func on_hit() -> int:
-	hit_count += 1
-	if hit_count >= 5:
-		hit_count = 0
-		deactivate()
-		return 1000
-	return 0
 
 func deactivate():
 	visible = false
@@ -43,28 +33,25 @@ func _ready() -> void:
 	sprite.play("default")
 	body_entered.connect(_on_body_entered)
 	_run_attack_loop()
-
+	
+	
 func _process(delta: float) -> void:
 	position.x = position.x + sin(Time.get_ticks_msec() / 1000.0 * frequency) * amplitude
-
+	
 func _run_attack_loop() -> void:
 	while true:
-		await get_tree().create_timer(5.0, false).timeout
+		await get_tree().create_timer(10.0, false).timeout
 		if not visible:
 			continue
-		sprite.play("attack")
-		await get_tree().create_timer(0.5, false).timeout
 		_fire()
-		await sprite.animation_finished
-		sprite.play("default")
 
 func _fire() -> void:
 	if visible:
-		var fireball = FIREBALL_SCENE.instantiate()
-		get_parent().add_child(fireball)
+		var beam = EYEBEAM_SCENE.instantiate()
+		get_parent().add_child(beam)
 		# Offset counters the Area2D + sprite internal positions in snake_fireball.tscn
 		# so the fireball visually appears at the snake's mouth
-		fireball.global_position = sprite.global_position - Vector2(1000, 396)
+		beam.global_position = sprite.global_position - Vector2(1610, 180)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Bird":
