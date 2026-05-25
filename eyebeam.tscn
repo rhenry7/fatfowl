@@ -27,7 +27,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ioxh"]
-size = Vector2(4204, 483)
+size = Vector2(4242, 356)
 
 [node name="Eyebeam" type="Node2D"]
 
@@ -35,12 +35,12 @@ size = Vector2(4204, 483)
 script = ExtResource("1_3ai6u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
-position = Vector2(2131.9998, 287)
-scale = Vector2(4.5755477, 3.5182931)
+position = Vector2(2131.9998, 283.49963)
+scale = Vector2(4.5755477, 3.39939)
 sprite_frames = SubResource("SpriteFrames_dcxix")
 autoplay = "default"
-frame_progress = 0.9726642
+frame_progress = 0.64888775
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1150, 11.5)
+position = Vector2(-1152, 36)
 shape = SubResource("RectangleShape2D_5ioxh")

@@ -2,8 +2,8 @@ extends Area2D
 
 const EYEBEAM_SCENE := preload("res://eyebeam.tscn")
 
-@export var amplitude: float = 0.5 # how far back the snake goes to the right off the screen
-@export var frequency: float = 0.5 # how far to the right
+@export var amplitude: float = 0 # how far back it goes to right
+@export var frequency: float = 2 # how far to the left
 
 @onready var sprite = $AnimatedSprite2D
 

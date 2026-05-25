@@ -4,15 +4,15 @@ const CLOUD_SCENE = preload("res://cloud_enemies.tscn")
 const CLOUD_TYPES := [
 	{
 		"enemy_type": "angry",
-		"min_speed": 260.0,
-		"max_speed": 1020.0,
+		"min_speed": 60.0,
+		"max_speed": 120.0,
 		"weight": 4.0,
 	},
 	{
 		"enemy_type": "happy",
 		"min_speed": 180.0,
-		"max_speed": 620.0,
-		"weight": 1.0,
+		"max_speed": 320.0,
+		"weight": 4.0,
 	},
 	{
 		"enemy_type": "sad",
@@ -22,11 +22,11 @@ const CLOUD_TYPES := [
 	},
 ]
 
-@export var max_active_enemies := 3
+@export var max_active_enemies := 1
 @export var min_enemies_per_wave := 1
-@export var max_enemies_per_wave := 3
+@export var max_enemies_per_wave := 2
 @export var spawn_delay_min := 1.2
-@export var spawn_delay_max := 2.4
+@export var spawn_delay_max := 5.0
 @export var intra_wave_delay := 0.35
 @export var spawn_x_min := 2500.0
 @export var spawn_x_max := 3200.0

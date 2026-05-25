@@ -65,6 +65,7 @@ func _process(_delta: float) -> void:
 func _ready() -> void:
 	position.x = -6000
 	position.y = basePosition
+	await get_tree().create_timer(2, false, true).timeout
 	process_mode = Node.PROCESS_MODE_DISABLED
 	add_to_group("hazard")
 	connect("body_entered", Callable(self, "_on_hit"))
@@ -79,7 +80,7 @@ func _on_hit(body: Node2D) -> void:
 		get_tree().current_scene.get_node("Pausable/Audio/ZeusLaugh").play()
 
 func respawn() -> void:
-	await get_tree().create_timer(3, false, true).timeout
+	await get_tree().create_timer(5, false, true).timeout
 	while true:
 		if not get_tree().paused:
 			var newVert = randf_range(-800, 800)

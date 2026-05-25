@@ -1,10 +1,12 @@
 extends Node
 @onready var enemies = [
 	$LargeBolt,
+	$LargeBolt,
+	$LargeBolt,
 ]
 var current_enemy_index := 0
 var display_duration := 30.0   # seconds per enemy
-var enemy_buffer := 8.0
+var enemy_buffer := 5.0
 var initial_delay := 2.0 
 
 func _ready():
