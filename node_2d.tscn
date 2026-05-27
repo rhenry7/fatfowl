@@ -1,4 +1,4 @@
-[gd_scene load_steps=232 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=235 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -47,8 +47,10 @@
 [ext_resource type="Texture2D" uid="uid://350sc2bejg34" path="res://background/SkyBG_Ikarus/Untitled_Artwork 2.png" id="25_xdyyu"]
 [ext_resource type="Texture2D" uid="uid://bgloa2mfu437l" path="res://gameoverscrolls/GAMEOVER-5.png" id="26_b0j31"]
 [ext_resource type="Texture2D" uid="uid://40mt6dtogqsp" path="res://animation/pausemenu/pause-menu-4.png" id="26_fibx4"]
+[ext_resource type="Script" uid="uid://dqnadb1tbcfub" path="res://bg_1.gd" id="26_kaf2f"]
 [ext_resource type="Script" uid="uid://b47yv7wncgea2" path="res://enemies.gd" id="26_s32dh"]
 [ext_resource type="Texture2D" uid="uid://b8t1p3vtq31p" path="res://clouds/AngryCloud-8.png" id="26_wqmsq"]
+[ext_resource type="Texture2D" uid="uid://cydwsyihoy53e" path="res://background/bg_sky/Untitled_Artwork 4.png" id="27_3r3gr"]
 [ext_resource type="Texture2D" uid="uid://bfxc7kq2e73pg" path="res://animation/pausemenu/pause-menu-5.png" id="27_7kqy5"]
 [ext_resource type="Texture2D" uid="uid://dy87jlh28gqpo" path="res://clouds/AngryCloud-9.png" id="27_fkgk1"]
 [ext_resource type="Script" uid="uid://dm0awobaq716y" path="res://feather.gd" id="27_j02gt"]
@@ -171,6 +173,7 @@
 [ext_resource type="Texture2D" uid="uid://cifysqim6oj7m" path="res://animation/snake_attack/Untitled_Artwork-5 6.png" id="111_6qmhe"]
 [ext_resource type="Texture2D" uid="uid://kn55wrdcpkd2" path="res://animation/snake_attack/Untitled_Artwork-6 5.png" id="112_qf637"]
 [ext_resource type="Script" uid="uid://b1d6syi2k80u0" path="res://boss_enemies.gd" id="119_4mm8g"]
+[ext_resource type="Script" uid="uid://cyr6kjmkouxtt" path="res://enemies_4.gd" id="121_2djs3"]
 [ext_resource type="Texture2D" uid="uid://dekku644a40jk" path="res://animation/snake_idle/Untitled_Artwork-1 13.png" id="121_dmhti"]
 [ext_resource type="Texture2D" uid="uid://d0ieo4wddyk0n" path="res://animation/snake_idle/Untitled_Artwork-2 9.png" id="122_6qmhe"]
 [ext_resource type="Texture2D" uid="uid://bjll6iqvrhq3n" path="res://animation/snake_idle/Untitled_Artwork-3 8.png" id="123_qf637"]
@@ -280,10 +283,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rjqkl"]
-radius = 577.99225
+radius = 337.53653
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fs4d3"]
-radius = 177.0452
+radius = 110.76772
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thyvg"]
 size = Vector2(242, 195)
@@ -483,10 +486,10 @@ size = Vector2(1798, 98)
 [sub_resource type="SpriteFrames" id="SpriteFrames_7vfuv"]
 animations = [{
 "frames": [{
-"duration": 6.0,
+"duration": 12.0,
 "texture": ExtResource("154_shleb")
 }, {
-"duration": 1.0,
+"duration": 0.51,
 "texture": ExtResource("107_vbp07")
 }, {
 "duration": 1.0,
@@ -498,12 +501,12 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("157_0sqyy")
 }, {
-"duration": 1.0,
+"duration": 24.0,
 "texture": ExtResource("158_oilbd")
 }],
 "loop": true,
 "name": &"default",
-"speed": 3.0
+"speed": 7.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s1om5"]
@@ -862,17 +865,22 @@ stream = ExtResource("22_oilbd")
 stream = ExtResource("23_f3pq4")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Pausable"]
-visible = false
 position = Vector2(517, -1396)
 scale = Vector2(8.044, 11.418)
 texture = ExtResource("2_py13h")
 
 [node name="Sky" type="Node2D" parent="Pausable"]
 
-[node name="Sprite2D2" type="Sprite2D" parent="Pausable/Sky"]
+[node name="Bg2" type="Sprite2D" parent="Pausable/Sky"]
+position = Vector2(0, -64)
+scale = Vector2(0.8877285, 0.88772845)
+texture = ExtResource("27_3r3gr")
+
+[node name="Bg1" type="Sprite2D" parent="Pausable/Sky"]
 position = Vector2(13.000002, -114.62501)
 scale = Vector2(0.8969703, 0.88107055)
 texture = ExtResource("25_xdyyu")
+script = ExtResource("26_kaf2f")
 
 [node name="Sprite2D7" type="Sprite2D" parent="Pausable/Sky"]
 position = Vector2(28, -3)
@@ -925,7 +933,6 @@ texture = ExtResource("9_43vxp")
 scale = Vector2(1, 0.9988938)
 repeat_size = Vector2(4481, 0)
 autoscroll = Vector2(-25, 0)
-repeat_times = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Pausable/Sky/clouds-middle"]
 visible = false
@@ -947,6 +954,7 @@ texture = ExtResource("5_c7o6v")
 scroll_scale = Vector2(1.5, 1)
 repeat_size = Vector2(3666, 0)
 autoscroll = Vector2(-25, 0)
+repeat_times = 9
 
 [node name="Sprite2D7" type="Sprite2D" parent="Pausable/Sky/Parallax2D"]
 position = Vector2(256, 391)
@@ -972,6 +980,7 @@ script = ExtResource("7_24dk6")
 [node name="Parallax2D2" type="Parallax2D" parent="Pausable/Sky"]
 repeat_size = Vector2(4000, 0)
 autoscroll = Vector2(-15, 0)
+repeat_times = 5
 
 [node name="Sprite2D4" type="Sprite2D" parent="Pausable/Sky/Parallax2D2"]
 position = Vector2(0, 451)
@@ -988,6 +997,7 @@ texture = ExtResource("12_mxju4")
 [node name="Parallax2D5" type="Parallax2D" parent="Pausable/Sky"]
 repeat_size = Vector2(3000, 0)
 autoscroll = Vector2(-25, 0)
+repeat_times = 4
 
 [node name="Sprite2D6" type="Sprite2D" parent="Pausable/Sky/Parallax2D5"]
 texture = ExtResource("12_mxju4")
@@ -1005,6 +1015,7 @@ texture = ExtResource("8_5i8vy")
 [node name="Parallax2D6" type="Parallax2D" parent="Pausable/Sky"]
 repeat_size = Vector2(5000, 0)
 autoscroll = Vector2(15, 0)
+repeat_times = 13
 
 [node name="Sprite2D5" type="Sprite2D" parent="Pausable/Sky/Parallax2D6"]
 position = Vector2(-926, 978)
@@ -1014,6 +1025,7 @@ texture = ExtResource("44_b36m8")
 [node name="Parallax2D8" type="Parallax2D" parent="Pausable/Sky"]
 repeat_size = Vector2(5000, 0)
 autoscroll = Vector2(15, 0)
+repeat_times = 9
 
 [node name="Sprite2D5" type="Sprite2D" parent="Pausable/Sky/Parallax2D8"]
 position = Vector2(-486, 438)
@@ -1023,6 +1035,7 @@ texture = ExtResource("44_b36m8")
 [node name="Parallax2D7" type="Parallax2D" parent="Pausable/Sky"]
 repeat_size = Vector2(7000, 0)
 autoscroll = Vector2(-20, 0)
+repeat_times = 14
 
 [node name="Sprite2D6" type="Sprite2D" parent="Pausable/Sky/Parallax2D7"]
 position = Vector2(890, 746)
@@ -1058,13 +1071,12 @@ autoscroll = Vector2(20, 0)
 texture = ExtResource("50_3r3gr")
 
 [node name="Bird" type="CharacterBody2D" parent="Pausable" groups=["player"]]
-visible = false
 position = Vector2(-812, 114)
 script = ExtResource("1_0hol4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Bird"]
-position = Vector2(-1201, 153)
-scale = Vector2(0.22, 0.211)
+position = Vector2(-1212, 145)
+scale = Vector2(0.16796872, 0.16109726)
 sprite_frames = SubResource("SpriteFrames_rj586")
 animation = &"shoot"
 autoplay = "fly"
@@ -1293,6 +1305,26 @@ sprite_frames = SubResource("SpriteFrames_kfelt")
 autoplay = "default"
 frame_progress = 0.3673437
 
+[node name="Enemies4" type="Node2D" parent="Pausable"]
+position = Vector2(-1800, 0)
+script = ExtResource("121_2djs3")
+
+[node name="LargeBolt" type="Area2D" parent="Pausable/Enemies4"]
+process_mode = 4
+position = Vector2(5000, -6)
+script = ExtResource("108_5chwk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Enemies4/LargeBolt"]
+position = Vector2(711.5, 199)
+shape = SubResource("RectangleShape2D_ma08v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Enemies4/LargeBolt"]
+position = Vector2(701, 132.99991)
+scale = Vector2(0.2719727, 1.4517787)
+sprite_frames = SubResource("SpriteFrames_kfelt")
+autoplay = "default"
+frame_progress = 0.3673437
+
 [node name="BossEnemies" type="Node" parent="Pausable"]
 script = ExtResource("119_4mm8g")
 
@@ -1319,7 +1351,7 @@ shape = SubResource("RectangleShape2D_awudv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/BossEnemies/ZeusBossHead"]
 position = Vector2(1082.0001, -94.00001)
-scale = Vector2(2.180488, 2.1804876)
+scale = Vector2(2.55366, 2.5536587)
 sprite_frames = SubResource("SpriteFrames_uxnn6")
 autoplay = "default"
 
@@ -1644,6 +1676,7 @@ stream = ExtResource("33_kq1c5")
 [connection signal="body_entered" from="Pausable/Enemies2/LargeBolt" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Pausable/Enemies2/ZeusFist" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Pausable/Enemies3/LargeBolt" to="Pausable/Bird" method="_on_body_entered"]
+[connection signal="body_entered" from="Pausable/Enemies4/LargeBolt" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Pausable/CloudEnemies/Cloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Pausable/CloudEnemies/SadCloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Pausable/CloudEnemies/HappyCloud" to="Pausable/Bird" method="_on_area_2d_body_entered"]

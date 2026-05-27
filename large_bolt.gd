@@ -52,6 +52,7 @@ func _ready() -> void:
 	var bottom = Vector2(get_viewport_rect().size.x / 2, get_viewport_rect().size.y)
 	# Center of viewport
 	var center = get_viewport_rect().size / 2
+	position.x = get_viewport_rect().size.x 
 	respawn()
 	
 	
@@ -65,12 +66,11 @@ func _on_hit(body: Node2D) -> void:
 		
 		
 func respawn() -> void:
-	var screen_width = get_viewport().size.x
-	position.x = screen_width + 500
+	position.x = get_viewport_rect().size.x
 	while true:
 		## Reset to right side if too far left
 		if position.x < -2000:
-			position.x = screen_width * 0.8
+			position.x = get_viewport_rect().size.x
 		#
 		## Always spawn at max_right position
 		#position.x = max_right

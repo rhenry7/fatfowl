@@ -1,0 +1,36 @@
+extends Node
+@onready var enemies = [
+	$LargeBolt,
+	$LargeBolt,
+	$LargeBolt,
+]
+var current_enemy_index := 0
+var display_duration := 20.0   # seconds per enemy
+var enemy_buffer := 5.0
+var initial_delay := 60.0 
+
+func _ready():
+	await get_tree().create_timer(initial_delay).timeout
+	cycle_enemies()
+	
+func cycle_enemies() -> void:
+	while true:
+		# DEACTIVATE ALL first to ensure clean state
+		for e in enemies:
+			e.process_mode = Node.PROCESS_MODE_DISABLED
+			e.deactivate()
+			print("Going to deactivate", e)
+		
+		# get current enemy
+		var current_enemy = enemies[current_enemy_index]
+		current_enemy.process_mode = Node.PROCESS_MODE_DISABLED
+		print("now at current enemy", current_enemy)
+		# Enable and show it
+		current_enemy.process_mode = Node.PROCESS_MODE_INHERIT
+		current_enemy.activate()
+		var thunder = get_tree().current_scene.get_node("Pausable/Audio/Thunder")
+		thunder.play()
+		print("enemy process mode", current_enemy.process_mode)
+		await get_tree().create_timer(enemy_buffer).timeout
+		# move to next enemy (cyclic)
+		current_enemy_index = (current_enemy_index + 1) % enemies.size()
