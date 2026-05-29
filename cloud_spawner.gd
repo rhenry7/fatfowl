@@ -1,6 +1,7 @@
 extends Node2D
 
 const CLOUD_SCENE = preload("res://cloud_enemies.tscn")
+const ADVANCED_CLOUD = preload("res://advanced_clouds.tscn")
 const CLOUD_TYPES := [
 	{
 		"enemy_type": "angry",
@@ -16,13 +17,31 @@ const CLOUD_TYPES := [
 	},
 	{
 		"enemy_type": "sad",
-		"min_speed": 120.0,
-		"max_speed": 240.0,
-		"weight": 8.0,
+		"min_speed": 180.0,
+		"max_speed": 320.0,
+		"weight": 4.0,
+	},
+	{
+		"enemy_type": "flex",
+		"min_speed": 180.0,
+		"max_speed": 320.0,
+		"weight": 2.0,
+	},
+	{
+		"enemy_type": "spear",
+		"min_speed": 180.0,
+		"max_speed": 320.0,
+		"weight": 2.0,
+	},
+	{
+		"enemy_type": "stab",
+		"min_speed": 180.0,
+		"max_speed": 320.0,
+		"weight": 2.0,
 	},
 ]
 
-@export var max_active_enemies := 1
+@export var max_active_enemies := 3
 @export var min_enemies_per_wave := 1
 @export var max_enemies_per_wave := 2
 @export var spawn_delay_min := 1.2
@@ -30,7 +49,7 @@ const CLOUD_TYPES := [
 @export var intra_wave_delay := 0.35
 @export var spawn_x_min := 2500.0
 @export var spawn_x_max := 3200.0
-@export var despawn_x := -900.0
+@export var despawn_x := -1400.0
 
 var _rng := RandomNumberGenerator.new()
 
@@ -64,14 +83,17 @@ func _spawn_loop() -> void:
 		var delay = _rng.randf_range(spawn_delay_min, spawn_delay_max)
 		await get_tree().create_timer(delay, false).timeout
 
-func _spawn_enemy() -> void:
-	var enemy = CLOUD_SCENE.instantiate()
-	add_child(enemy)
+const ADVANCED_TYPES := ["flex", "spear", "stab"]
 
+func _spawn_enemy() -> void:
 	var config = _pick_enemy_type()
 	config["spawn_x_min"] = spawn_x_min
 	config["spawn_x_max"] = spawn_x_max
 	config["despawn_x"] = despawn_x
+
+	var scene = ADVANCED_CLOUD if config["enemy_type"] in ADVANCED_TYPES else CLOUD_SCENE
+	var enemy = scene.instantiate()
+	add_child(enemy)
 
 	if enemy.has_method("configure"):
 		enemy.configure(config)
@@ -85,6 +107,7 @@ func _active_enemy_count() -> int:
 
 func _pick_enemy_type() -> Dictionary:
 	var total_weight := 0.0
+	
 	for config in CLOUD_TYPES:
 		total_weight += float(config.get("weight", 1.0))
 

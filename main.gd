@@ -7,6 +7,8 @@ extends Node2D
 @onready var player = $"Pausable/Bird"
 @onready var surfer = $"Pausable/Surfer"
 @onready var zeusFist = $Pausable/Enemies/ZeusFist
+@onready var lightningBolt4 = $Pausable/Enemies4/LargeBolt
+@onready var lightningBolt3 = $Pausable/Enemies3/LargeBolt
 @onready var zeusFingerGun = $Pausable/Enemies/ZeusFingerGun
 @onready var zeusSnake = $Pausable/BossEnemies/ZeusSnake
 @onready var zeusBossHead = $Pausable/BossEnemies/ZeusBossHead
@@ -21,6 +23,8 @@ func _ready() -> void:
 	zeusBody.visible = false
 	player.visible = false
 	lightning.visible = false
+	lightningBolt4.visible = false
+	lightningBolt3.visible = false
 	surfer.visible = false
 	zeusSnake.visible = false
 	zeusBossHead.visible = false
@@ -60,9 +64,11 @@ func _on_start_button_pressed() -> void:
 	cloudEnemies.visible = true
 	zeusBody.visible = true
 	player.visible = true
-	lightning.visible = true
 	await get_tree().create_timer(1, false, true).timeout
 	get_tree().current_scene.get_node("Pausable/Audio/Prepare").play()
 	await get_tree().create_timer(3, false, true).timeout
 	get_tree().current_scene.get_node("Pausable/Audio/Thunder").play()
 	surfer.visible = true
+	lightning.visible = true
+	lightningBolt4.visible = true
+	lightningBolt3.visible = true

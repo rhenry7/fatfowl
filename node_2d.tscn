@@ -1,4 +1,4 @@
-[gd_scene load_steps=235 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=242 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -41,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://bsijxscg8dr6s" path="res://gameoverscrolls/GAMEOVER-3.png" id="24_ld5wt"]
 [ext_resource type="Texture2D" uid="uid://do1b0o07d8yly" path="res://audio/pause-btn.png" id="25_1fr6y"]
 [ext_resource type="AudioStream" uid="uid://bfpwb278uw6nd" path="res://thunder.ogg" id="25_037st"]
+[ext_resource type="Texture2D" uid="uid://duijgwhc4r44l" path="res://background/bg_sky/Untitled_Artwork 3.png" id="25_iunxo"]
 [ext_resource type="Texture2D" uid="uid://btq1183f0obqr" path="res://animation/pausemenu/pause-menu-3.png" id="25_kkr25"]
 [ext_resource type="Texture2D" uid="uid://b6tbtvrerxu5q" path="res://clouds/AngryCloud-7.png" id="25_m7xe6"]
 [ext_resource type="Texture2D" uid="uid://c86npws5vfhpn" path="res://gameoverscrolls/GAMEOVER-4.png" id="25_wcv2n"]
@@ -50,7 +51,6 @@
 [ext_resource type="Script" uid="uid://dqnadb1tbcfub" path="res://bg_1.gd" id="26_kaf2f"]
 [ext_resource type="Script" uid="uid://b47yv7wncgea2" path="res://enemies.gd" id="26_s32dh"]
 [ext_resource type="Texture2D" uid="uid://b8t1p3vtq31p" path="res://clouds/AngryCloud-8.png" id="26_wqmsq"]
-[ext_resource type="Texture2D" uid="uid://cydwsyihoy53e" path="res://background/bg_sky/Untitled_Artwork 4.png" id="27_3r3gr"]
 [ext_resource type="Texture2D" uid="uid://bfxc7kq2e73pg" path="res://animation/pausemenu/pause-menu-5.png" id="27_7kqy5"]
 [ext_resource type="Texture2D" uid="uid://dy87jlh28gqpo" path="res://clouds/AngryCloud-9.png" id="27_fkgk1"]
 [ext_resource type="Script" uid="uid://dm0awobaq716y" path="res://feather.gd" id="27_j02gt"]
@@ -159,7 +159,9 @@
 [ext_resource type="Texture2D" uid="uid://dqub8mckshcgy" path="res://animation/Lightning3/Untitled_Artwork-8 3.png" id="71_ojpun"]
 [ext_resource type="Texture2D" uid="uid://cq4dw7myl2g4f" path="res://animation/Lightning3/Untitled_Artwork-9 3.png" id="72_xke0j"]
 [ext_resource type="Texture2D" uid="uid://cbg2goukeg6re" path="res://animation/Lightning3/Untitled_Artwork-10.png" id="73_53ibr"]
+[ext_resource type="Texture2D" uid="uid://dr663jmwue3uj" path="res://animation/Coin_Gems 2/MonedaD.png" id="73_sadjv"]
 [ext_resource type="Texture2D" uid="uid://bvns3v3iup31q" path="res://animation/Lightning3/Untitled_Artwork-11.png" id="74_2n56i"]
+[ext_resource type="Texture2D" uid="uid://8on7rty7qfrk" path="res://animation/Coin_Gems 2/MonedaR.png" id="74_siusr"]
 [ext_resource type="Texture2D" uid="uid://qvb0q8xw23a0" path="res://animation/Lightning3/Untitled_Artwork-12.png" id="75_djas3"]
 [ext_resource type="Texture2D" uid="uid://b30bmrsg6ud6e" path="res://animation/Lightning3/Untitled_Artwork-13.png" id="76_ohqex"]
 [ext_resource type="Texture2D" uid="uid://d3srd2sac0hwg" path="res://animation/Lightning3/Untitled_Artwork-14.png" id="77_pl55l"]
@@ -176,23 +178,18 @@
 [ext_resource type="Script" uid="uid://cyr6kjmkouxtt" path="res://enemies_4.gd" id="121_2djs3"]
 [ext_resource type="Texture2D" uid="uid://dekku644a40jk" path="res://animation/snake_idle/Untitled_Artwork-1 13.png" id="121_dmhti"]
 [ext_resource type="Texture2D" uid="uid://d0ieo4wddyk0n" path="res://animation/snake_idle/Untitled_Artwork-2 9.png" id="122_6qmhe"]
+[ext_resource type="Script" uid="uid://baxppqul2vvgf" path="res://large_bolt_4.gd" id="122_iunxo"]
 [ext_resource type="Texture2D" uid="uid://bjll6iqvrhq3n" path="res://animation/snake_idle/Untitled_Artwork-3 8.png" id="123_qf637"]
 [ext_resource type="Script" uid="uid://ca486p5afoxmf" path="res://start_menu.gd" id="124_4rgxs"]
 [ext_resource type="Texture2D" uid="uid://cb3cs24csbij6" path="res://animation/snake_idle/Untitled_Artwork-4 8.png" id="124_bs3kq"]
 [ext_resource type="Texture2D" uid="uid://q2dve1jhospf" path="res://animation/snake_idle/Untitled_Artwork-5 7.png" id="125_s1om5"]
 [ext_resource type="Texture2D" uid="uid://c78wkirtlc6dc" path="res://animation/snake_idle/Untitled_Artwork-6 6.png" id="126_awqbt"]
 [ext_resource type="Script" uid="uid://behstjykld6qh" path="res://zeus_boss_head.gd" id="127_jqeos"]
-[ext_resource type="Texture2D" uid="uid://2sgydg6o41ug" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-5 7.png" id="131_siusr"]
-[ext_resource type="Texture2D" uid="uid://c68s6c3omppri" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-6 6.png" id="132_71iuk"]
-[ext_resource type="Texture2D" uid="uid://djchqy7imnfah" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-7 5.png" id="133_c0f20"]
-[ext_resource type="Texture2D" uid="uid://5rawyp70tn6b" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-8 5.png" id="134_5i1yl"]
-[ext_resource type="Texture2D" uid="uid://dlcgok0ne50l" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-9 5.png" id="135_l75je"]
-[ext_resource type="Texture2D" uid="uid://cij1ru64co4qq" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-10 3.png" id="136_82a7c"]
 [ext_resource type="FontFile" uid="uid://b1qfifjoh852g" path="res://Greek-Freak.ttf" id="136_pl55l"]
-[ext_resource type="Texture2D" uid="uid://c6kpsp3yhfi5c" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-11 3.png" id="137_bfoml"]
-[ext_resource type="Texture2D" uid="uid://camaws2yw5eso" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-12 3.png" id="138_0oep5"]
-[ext_resource type="Texture2D" uid="uid://6fbe1c3f4q4q" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-13 2.png" id="139_2xgaa"]
+[ext_resource type="Texture2D" uid="uid://ck1nhdxtvcrux" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-1 14.png" id="140_2aqrj"]
 [ext_resource type="Script" uid="uid://c5x5qehv2bni3" path="res://sad_cloud.gd" id="141_fc4gm"]
+[ext_resource type="Texture2D" uid="uid://yhs0eonkdajg" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-2 10.png" id="141_sadjv"]
+[ext_resource type="Texture2D" uid="uid://bdge2y1lrpbew" path="res://animation/ZeusEyeAttackFrames/Untitled_Artwork-3 9.png" id="142_siusr"]
 [ext_resource type="Script" uid="uid://c6ba7secjyt6" path="res://happy_cloud.gd" id="142_yl3ei"]
 [ext_resource type="Script" uid="uid://oiym6t36rxyx" path="res://zeus_finger_gun.gd" id="154_5chwk"]
 [ext_resource type="Texture2D" uid="uid://wrn4reksni47" path="res://animation/zeus/shoot/Shoot-1 8.png" id="154_shleb"]
@@ -311,6 +308,46 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_71iuk"]
+atlas = ExtResource("73_sadjv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0f20"]
+atlas = ExtResource("73_sadjv")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5i1yl"]
+atlas = ExtResource("73_sadjv")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l75je"]
+atlas = ExtResource("73_sadjv")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82a7c"]
+atlas = ExtResource("73_sadjv")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfoml"]
+atlas = ExtResource("74_siusr")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0oep5"]
+atlas = ExtResource("74_siusr")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xgaa"]
+atlas = ExtResource("74_siusr")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awudv"]
+atlas = ExtResource("74_siusr")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxnn6"]
+atlas = ExtResource("74_siusr")
+region = Rect2(64, 0, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_nsnm2"]
 animations = [{
 "frames": [{
@@ -334,6 +371,46 @@ animations = [{
 }],
 "loop": true,
 "name": &"CoinDrop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71iuk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0f20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5i1yl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l75je")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82a7c")
+}],
+"loop": true,
+"name": &"Gold",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfoml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0oep5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xgaa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awudv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxnn6")
+}],
+"loop": true,
+"name": &"Ruby",
 "speed": 5.0
 }]
 
@@ -562,39 +639,30 @@ animations = [{
 size = Vector2(1418, 288)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_awudv"]
-size = Vector2(1005, 1656)
+size = Vector2(852, 1656)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uxnn6"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("131_siusr")
+"duration": 24.0,
+"texture": ExtResource("141_sadjv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("132_71iuk")
+"texture": ExtResource("142_siusr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("133_c0f20")
+"texture": ExtResource("140_2aqrj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("134_5i1yl")
+"texture": ExtResource("141_sadjv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("135_l75je")
+"texture": ExtResource("142_siusr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("136_82a7c")
-}, {
-"duration": 1.0,
-"texture": ExtResource("137_bfoml")
-}, {
-"duration": 1.0,
-"texture": ExtResource("138_0oep5")
-}, {
-"duration": 48.0,
-"texture": ExtResource("139_2xgaa")
+"texture": ExtResource("140_2aqrj")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 6.0
 }]
@@ -866,7 +934,7 @@ stream = ExtResource("23_f3pq4")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Pausable"]
 position = Vector2(517, -1396)
-scale = Vector2(8.044, 11.418)
+scale = Vector2(4.7400665, 6.7282557)
 texture = ExtResource("2_py13h")
 
 [node name="Sky" type="Node2D" parent="Pausable"]
@@ -874,7 +942,7 @@ texture = ExtResource("2_py13h")
 [node name="Bg2" type="Sprite2D" parent="Pausable/Sky"]
 position = Vector2(0, -64)
 scale = Vector2(0.8877285, 0.88772845)
-texture = ExtResource("27_3r3gr")
+texture = ExtResource("25_iunxo")
 
 [node name="Bg1" type="Sprite2D" parent="Pausable/Sky"]
 position = Vector2(13.000002, -114.62501)
@@ -1018,8 +1086,8 @@ autoscroll = Vector2(15, 0)
 repeat_times = 13
 
 [node name="Sprite2D5" type="Sprite2D" parent="Pausable/Sky/Parallax2D6"]
-position = Vector2(-926, 978)
-scale = Vector2(1.4420413, 1.3926893)
+position = Vector2(-926, 1365)
+scale = Vector2(0.9992098, 0.965013)
 texture = ExtResource("44_b36m8")
 
 [node name="Parallax2D8" type="Parallax2D" parent="Pausable/Sky"]
@@ -1028,7 +1096,7 @@ autoscroll = Vector2(15, 0)
 repeat_times = 9
 
 [node name="Sprite2D5" type="Sprite2D" parent="Pausable/Sky/Parallax2D8"]
-position = Vector2(-486, 438)
+position = Vector2(-347, 867.99994)
 scale = Vector2(0.96244234, 0.929504)
 texture = ExtResource("44_b36m8")
 
@@ -1121,8 +1189,7 @@ script = ExtResource("23_qphy4")
 position = Vector2(-1389.807, 559)
 scale = Vector2(3.1008725, 5.8877425)
 sprite_frames = SubResource("SpriteFrames_nsnm2")
-animation = &"CoinDrop"
-autoplay = "CoinDrop"
+animation = &"Ruby"
 
 [node name="CoinShape" type="CollisionShape2D" parent="Pausable/Coin"]
 position = Vector2(-1390, 560)
@@ -1248,15 +1315,15 @@ flip_h = true
 
 [node name="LargeBolt" type="Area2D" parent="Pausable/Enemies2"]
 process_mode = 4
-position = Vector2(5000, -6)
+position = Vector2(2990, -25)
 script = ExtResource("108_5chwk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Enemies2/LargeBolt"]
-position = Vector2(711.5, 199)
+position = Vector2(1423, 193)
 shape = SubResource("RectangleShape2D_ma08v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Enemies2/LargeBolt"]
-position = Vector2(701, 132.99991)
+position = Vector2(1448, 137.99998)
 scale = Vector2(0.2719727, 1.4517787)
 sprite_frames = SubResource("SpriteFrames_kfelt")
 autoplay = "default"
@@ -1291,15 +1358,15 @@ script = ExtResource("110_ileqp")
 
 [node name="LargeBolt" type="Area2D" parent="Pausable/Enemies3"]
 process_mode = 4
-position = Vector2(5000, -6)
+position = Vector2(3016, 47)
 script = ExtResource("108_5chwk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Enemies3/LargeBolt"]
-position = Vector2(711.5, 199)
+position = Vector2(1922, 199)
 shape = SubResource("RectangleShape2D_ma08v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Enemies3/LargeBolt"]
-position = Vector2(701, 132.99991)
+position = Vector2(1951, 137.99998)
 scale = Vector2(0.2719727, 1.4517787)
 sprite_frames = SubResource("SpriteFrames_kfelt")
 autoplay = "default"
@@ -1311,15 +1378,15 @@ script = ExtResource("121_2djs3")
 
 [node name="LargeBolt" type="Area2D" parent="Pausable/Enemies4"]
 process_mode = 4
-position = Vector2(5000, -6)
-script = ExtResource("108_5chwk")
+position = Vector2(2992, 14)
+script = ExtResource("122_iunxo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Enemies4/LargeBolt"]
-position = Vector2(711.5, 199)
+position = Vector2(2467, 199)
 shape = SubResource("RectangleShape2D_ma08v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Enemies4/LargeBolt"]
-position = Vector2(701, 132.99991)
+position = Vector2(2477, 132.99998)
 scale = Vector2(0.2719727, 1.4517787)
 sprite_frames = SubResource("SpriteFrames_kfelt")
 autoplay = "default"
@@ -1346,12 +1413,12 @@ shape = SubResource("RectangleShape2D_awqbt")
 script = ExtResource("127_jqeos")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/BossEnemies/ZeusBossHead"]
-position = Vector2(943.5, 21)
+position = Vector2(1020, 21)
 shape = SubResource("RectangleShape2D_awudv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/BossEnemies/ZeusBossHead"]
-position = Vector2(1082.0001, -94.00001)
-scale = Vector2(2.55366, 2.5536587)
+position = Vector2(902, 172.00002)
+scale = Vector2(1.4757131, 1.4757121)
 sprite_frames = SubResource("SpriteFrames_uxnn6")
 autoplay = "default"
 

@@ -40,9 +40,9 @@ func _process(delta: float) -> void:
 	
 func _run_attack_loop() -> void:
 	while true:
-		await get_tree().create_timer(10.0, false).timeout
-		if not visible:
-			continue
+		sprite.play("default")
+		# await get_tree().create_timer(2.0, false).timeout
+		await sprite.animation_finished
 		_fire()
 
 func _fire() -> void:
@@ -51,7 +51,7 @@ func _fire() -> void:
 		get_parent().add_child(beam)
 		# Offset counters the Area2D + sprite internal positions in snake_fireball.tscn
 		# so the fireball visually appears at the snake's mouth
-		beam.global_position = sprite.global_position - Vector2(1610, 180)
+		beam.global_position = sprite.global_position - Vector2(1410, 280)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Bird":

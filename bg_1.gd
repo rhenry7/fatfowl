@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 func fade_out():
 	var tween = create_tween()
 	# Fades the alpha (opacity) to 0.0 over 1.0 seconds
-	tween.tween_property(self, "modulate:a", 0.5, 640.0)
+	tween.tween_property(self, "modulate:a", 0.3, 120.0)
 	
 	# Optional: Delete the node when the fade finishes
 	await tween.finished
