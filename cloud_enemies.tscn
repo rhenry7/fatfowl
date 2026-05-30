@@ -137,7 +137,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cloud"]
-size = Vector2(244, 175)
+size = Vector2(244, 298)
 
 [node name="CloudEnemy" type="Area2D"]
 script = ExtResource("1_cloud")
@@ -146,9 +146,10 @@ script = ExtResource("1_cloud")
 position = Vector2(-4.000002, 63)
 scale = Vector2(0.29157636, 0.27559054)
 sprite_frames = SubResource("SpriteFrames_cloud")
-animation = &"angry"
+animation = &"happy"
 autoplay = "angry"
+frame_progress = 0.9176908
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(10, -12.5)
+position = Vector2(10, 49)
 shape = SubResource("RectangleShape2D_cloud")

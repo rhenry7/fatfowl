@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://be1pnfmrsibld" path="res://animation/CloudStab/Untitled_Artwork-14 2.png" id="14_i3m7a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wilhh"]
-size = Vector2(665, 273)
+size = Vector2(542, 273)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jx3a6"]
 animations = [{
@@ -83,12 +83,12 @@ animations = [{
 script = ExtResource("1_tdu2g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(374.5, 174.5)
+position = Vector2(313, 174.5)
 shape = SubResource("RectangleShape2D_wilhh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(355, 205)
-scale = Vector2(0.42257214, 0.42257214)
+position = Vector2(313, 266)
+scale = Vector2(0.48293966, 0.48293966)
 sprite_frames = SubResource("SpriteFrames_jx3a6")
-animation = &"flex"
+animation = &"spear"
 autoplay = "flex"

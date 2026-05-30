@@ -40,8 +40,8 @@
 [ext_resource type="Texture2D" uid="uid://34racowvu7w8" path="res://play-btn.png" id="24_gt76g"]
 [ext_resource type="Texture2D" uid="uid://bsijxscg8dr6s" path="res://gameoverscrolls/GAMEOVER-3.png" id="24_ld5wt"]
 [ext_resource type="Texture2D" uid="uid://do1b0o07d8yly" path="res://audio/pause-btn.png" id="25_1fr6y"]
+[ext_resource type="Texture2D" uid="uid://cnd77monw3yig" path="res://background/Untitled_Artwork 6.png" id="25_4mm8g"]
 [ext_resource type="AudioStream" uid="uid://bfpwb278uw6nd" path="res://thunder.ogg" id="25_037st"]
-[ext_resource type="Texture2D" uid="uid://duijgwhc4r44l" path="res://background/bg_sky/Untitled_Artwork 3.png" id="25_iunxo"]
 [ext_resource type="Texture2D" uid="uid://btq1183f0obqr" path="res://animation/pausemenu/pause-menu-3.png" id="25_kkr25"]
 [ext_resource type="Texture2D" uid="uid://b6tbtvrerxu5q" path="res://clouds/AngryCloud-7.png" id="25_m7xe6"]
 [ext_resource type="Texture2D" uid="uid://c86npws5vfhpn" path="res://gameoverscrolls/GAMEOVER-4.png" id="25_wcv2n"]
@@ -942,7 +942,7 @@ texture = ExtResource("2_py13h")
 [node name="Bg2" type="Sprite2D" parent="Pausable/Sky"]
 position = Vector2(0, -64)
 scale = Vector2(0.8877285, 0.88772845)
-texture = ExtResource("25_iunxo")
+texture = ExtResource("25_4mm8g")
 
 [node name="Bg1" type="Sprite2D" parent="Pausable/Sky"]
 position = Vector2(13.000002, -114.62501)
