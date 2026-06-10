@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://btjna10obvcuc" path="res://animation/advancedClouds2/Untitled_Artwork-8 6.png" id="13_ob75o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wilhh"]
-size = Vector2(542, 273)
+size = Vector2(747, 259)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jx3a6"]
 animations = [{
@@ -92,13 +92,13 @@ animations = [{
 script = ExtResource("1_tdu2g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(313, 174.5)
+position = Vector2(469.5, 205.5)
 shape = SubResource("RectangleShape2D_wilhh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(312.00003, 176)
-scale = Vector2(0.34878328, 0.3487833)
+position = Vector2(468, 275.99997)
+scale = Vector2(0.60367465, 0.60367453)
 sprite_frames = SubResource("SpriteFrames_jx3a6")
-animation = &"horse"
+animation = &"stab"
 autoplay = "flex"
-frame_progress = 0.6221099
+frame_progress = 0.22656652

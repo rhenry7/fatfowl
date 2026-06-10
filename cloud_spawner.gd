@@ -2,6 +2,7 @@ extends Node2D
 
 const CLOUD_SCENE = preload("res://cloud_enemies.tscn")
 const ADVANCED_CLOUD = preload("res://advanced_clouds.tscn")
+const ADVANCED_TYPES := ["horse", "stab", "spear", "flex"]
 const CLOUD_TYPES := [
 	{
 		"enemy_type": "angry",
@@ -89,7 +90,7 @@ func _spawn_loop() -> void:
 		var delay = _rng.randf_range(spawn_delay_min, spawn_delay_max)
 		await get_tree().create_timer(delay, false).timeout
 
-const ADVANCED_TYPES := ["horse"]
+
 
 func _spawn_enemy() -> void:
 	var config = _pick_enemy_type()
