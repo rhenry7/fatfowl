@@ -1,37 +1,29 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8g6i0gqj4qp3"]
+[gd_scene load_steps=9 format=3 uid="uid://c8g6i0gqj4qp3"]
 
 [ext_resource type="Script" uid="uid://7i1yioneiak6" path="res://snake_fireball.gd" id="0_script"]
-[ext_resource type="Texture2D" uid="uid://bqumcwrxd6pw5" path="res://animation/ElectricSaw/Untitled_Artwork-1 13.png" id="2_by43y"]
-[ext_resource type="Texture2D" uid="uid://qxvye516bw2u" path="res://animation/ElectricSaw/Untitled_Artwork-2 9.png" id="3_usa0g"]
-[ext_resource type="Texture2D" uid="uid://3xnega62mchj" path="res://animation/ElectricSaw/Untitled_Artwork-3 8.png" id="4_w5gw5"]
-[ext_resource type="Texture2D" uid="uid://bd0iaid1o2edh" path="res://animation/ElectricSaw/Untitled_Artwork-4 8.png" id="5_w8e3n"]
-[ext_resource type="Texture2D" uid="uid://chpy41agwtdsl" path="res://animation/ElectricSaw/Untitled_Artwork-5 7.png" id="6_40nmx"]
-[ext_resource type="Texture2D" uid="uid://cs10l7g5mgfn0" path="res://animation/ElectricSaw/Untitled_Artwork-6 6.png" id="7_tfuym"]
-[ext_resource type="Texture2D" uid="uid://eltewjlqdfoe" path="res://animation/ElectricSaw/Untitled_Artwork-7 5.png" id="8_qq5u2"]
+[ext_resource type="Texture2D" uid="uid://bfnblpmvuykqn" path="res://animation/Pegasus2/Untitled_Artwork-1 10.png" id="2_a3dgp"]
+[ext_resource type="Texture2D" uid="uid://dsfpgbtwhg3ft" path="res://animation/Pegasus2/Untitled_Artwork-2 7.png" id="3_wiuuk"]
+[ext_resource type="Texture2D" uid="uid://duwxu5p8nohwc" path="res://animation/Pegasus2/Untitled_Artwork-3 7.png" id="4_by43y"]
+[ext_resource type="Texture2D" uid="uid://dphdr100rh4bj" path="res://animation/Pegasus2/Untitled_Artwork-4 7.png" id="5_usa0g"]
+[ext_resource type="Texture2D" uid="uid://b7db2o7lhu265" path="res://animation/Pegasus2/Untitled_Artwork-5 6.png" id="6_w5gw5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a3dgp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_by43y")
+"texture": ExtResource("2_a3dgp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_usa0g")
+"texture": ExtResource("3_wiuuk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_w5gw5")
+"texture": ExtResource("4_by43y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_w8e3n")
+"texture": ExtResource("5_usa0g")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_40nmx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_tfuym")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_qq5u2")
+"texture": ExtResource("6_w5gw5")
 }],
 "loop": true,
 "name": &"default",
@@ -39,7 +31,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jtnav"]
-radius = 316.0775
+radius = 316.51224
 
 [node name="Snake_Fireball" type="Node2D"]
 
@@ -48,11 +40,11 @@ position = Vector2(357, 301)
 script = ExtResource("0_script")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
-position = Vector2(46, 247)
-scale = Vector2(0.4492187, 0.44921932)
+position = Vector2(282, 168)
+scale = Vector2(0.90950835, 0.90951)
 sprite_frames = SubResource("SpriteFrames_a3dgp")
 autoplay = "default"
-frame_progress = 0.31994733
+frame_progress = 0.89919066
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(63, 265)

@@ -6,46 +6,52 @@ const CLOUD_TYPES := [
 	{
 		"enemy_type": "angry",
 		"min_speed": 60.0,
-		"max_speed": 120.0,
+		"max_speed": 1000.0,
 		"weight": 4.0,
 	},
 	{
 		"enemy_type": "happy",
 		"min_speed": 180.0,
-		"max_speed": 320.0,
+		"max_speed": 1500.0,
 		"weight": 4.0,
 	},
 	{
 		"enemy_type": "sad",
 		"min_speed": 180.0,
-		"max_speed": 320.0,
+		"max_speed": 820.0,
 		"weight": 4.0,
 	},
 	{
 		"enemy_type": "flex",
 		"min_speed": 180.0,
-		"max_speed": 320.0,
-		"weight": 2.0,
+		"max_speed": 300.0,
+		"weight": 6.0,
 	},
 	{
 		"enemy_type": "spear",
 		"min_speed": 180.0,
-		"max_speed": 320.0,
-		"weight": 2.0,
+		"max_speed": 300.0,
+		"weight": 4.0,
 	},
 	{
 		"enemy_type": "stab",
 		"min_speed": 180.0,
-		"max_speed": 320.0,
-		"weight": 2.0,
+		"max_speed": 500.0,
+		"weight": 5.0,
+	},
+	{
+		"enemy_type": "horse",
+		"min_speed": 180.0,
+		"max_speed": 500.0,
+		"weight": 8.0,
 	},
 ]
 
-@export var max_active_enemies := 3
+@export var max_active_enemies := 5
 @export var min_enemies_per_wave := 1
-@export var max_enemies_per_wave := 2
-@export var spawn_delay_min := 1.2
-@export var spawn_delay_max := 5.0
+@export var max_enemies_per_wave := 3
+@export var spawn_delay_min := 5.0
+@export var spawn_delay_max := 10.0
 @export var intra_wave_delay := 0.35
 @export var spawn_x_min := 2500.0
 @export var spawn_x_max := 3200.0
@@ -83,7 +89,7 @@ func _spawn_loop() -> void:
 		var delay = _rng.randf_range(spawn_delay_min, spawn_delay_max)
 		await get_tree().create_timer(delay, false).timeout
 
-const ADVANCED_TYPES := ["flex", "spear", "stab"]
+const ADVANCED_TYPES := ["horse"]
 
 func _spawn_enemy() -> void:
 	var config = _pick_enemy_type()

@@ -1,20 +1,21 @@
-[gd_scene load_steps=18 format=3 uid="uid://bufxbrsklejeo"]
+[gd_scene load_steps=19 format=3 uid="uid://bufxbrsklejeo"]
 
-[ext_resource type="Texture2D" uid="uid://0fruwmba3vwn" path="res://animation/CloudFlex/Untitled_Artwork-1 13.png" id="1_fbkf6"]
 [ext_resource type="Script" uid="uid://dxse351lngvy2" path="res://cloud.gd" id="1_tdu2g"]
-[ext_resource type="Texture2D" uid="uid://dj14kltkx8l4a" path="res://animation/CloudFlex/Untitled_Artwork-2 9.png" id="2_tdu2g"]
-[ext_resource type="Texture2D" uid="uid://c1pya7hfh8efn" path="res://animation/CloudFlex/Untitled_Artwork-3 8.png" id="3_5f6e6"]
-[ext_resource type="Texture2D" uid="uid://dbdhyp8uq2pan" path="res://animation/CloudFlex/Untitled_Artwork-4 8.png" id="4_2h4tw"]
-[ext_resource type="Texture2D" uid="uid://bef0bxsdc4o8f" path="res://animation/CloudSpear/Untitled_Artwork-5 7.png" id="5_ujiub"]
-[ext_resource type="Texture2D" uid="uid://dydv8pe7msvfd" path="res://animation/CloudSpear/Untitled_Artwork-6 6.png" id="6_xae8k"]
-[ext_resource type="Texture2D" uid="uid://dkdo82u647gaa" path="res://animation/CloudSpear/Untitled_Artwork-7 5.png" id="7_2i77s"]
-[ext_resource type="Texture2D" uid="uid://o28us2346sn8" path="res://animation/CloudSpear/Untitled_Artwork-8 5.png" id="8_wgkfv"]
-[ext_resource type="Texture2D" uid="uid://byw30oi0m88j8" path="res://animation/CloudStab/Untitled_Artwork-9 5.png" id="9_c0xpc"]
-[ext_resource type="Texture2D" uid="uid://q0sl4e7pchoa" path="res://animation/CloudStab/Untitled_Artwork-10 3.png" id="10_juorq"]
-[ext_resource type="Texture2D" uid="uid://bphr85m2ngve4" path="res://animation/CloudStab/Untitled_Artwork-11 3.png" id="11_ob75o"]
-[ext_resource type="Texture2D" uid="uid://dso3aabyxaey0" path="res://animation/CloudStab/Untitled_Artwork-12 3.png" id="12_xwm0p"]
-[ext_resource type="Texture2D" uid="uid://ge0mhacm3ul" path="res://animation/CloudStab/Untitled_Artwork-13 2.png" id="13_wagt0"]
-[ext_resource type="Texture2D" uid="uid://be1pnfmrsibld" path="res://animation/CloudStab/Untitled_Artwork-14 2.png" id="14_i3m7a"]
+[ext_resource type="Texture2D" uid="uid://ecnjhd21riyr" path="res://animation/advancedClouds2/Untitled_Artwork-1 20.png" id="2_pnjwf"]
+[ext_resource type="Texture2D" uid="uid://d2bnrkqp4kh66" path="res://animation/advancedClouds2/Untitled_Artwork-2 15.png" id="3_fbkf6"]
+[ext_resource type="Texture2D" uid="uid://b038xbminwtga" path="res://animation/advancedClouds2/Untitled_Artwork-3 13.png" id="4_tdu2g"]
+[ext_resource type="Texture2D" uid="uid://fjg5cwv6ee6b" path="res://animation/advancedClouds2/Untitled_Artwork-4 12.png" id="5_5f6e6"]
+[ext_resource type="Texture2D" uid="uid://dpxdthriemd33" path="res://animation/advancedClouds2/Untitled_Artwork-9 6.png" id="6_2h4tw"]
+[ext_resource type="Texture2D" uid="uid://dggvpjwsvows0" path="res://animation/Pegasus2/Untitled_Artwork-1 20.png" id="6_5f6e6"]
+[ext_resource type="Texture2D" uid="uid://cuqqrkqxuj38i" path="res://animation/Pegasus2/Untitled_Artwork-2 15.png" id="7_2h4tw"]
+[ext_resource type="Texture2D" uid="uid://ccrq7sob0p326" path="res://animation/advancedClouds2/Untitled_Artwork-10 4.png" id="7_ujiub"]
+[ext_resource type="Texture2D" uid="uid://dd0rnr3l12ao8" path="res://animation/Pegasus2/Untitled_Artwork-3 13.png" id="8_ujiub"]
+[ext_resource type="Texture2D" uid="uid://ceyw52o37yfp" path="res://animation/advancedClouds2/Untitled_Artwork-11 4.png" id="8_xae8k"]
+[ext_resource type="Texture2D" uid="uid://ckflpu8fvkw5d" path="res://animation/advancedClouds2/Untitled_Artwork-12 4.png" id="9_2i77s"]
+[ext_resource type="Texture2D" uid="uid://tcm3l6vfqvde" path="res://animation/advancedClouds2/Untitled_Artwork-5 9.png" id="10_wgkfv"]
+[ext_resource type="Texture2D" uid="uid://cmy305f65p4w1" path="res://animation/advancedClouds2/Untitled_Artwork-6 8.png" id="11_c0xpc"]
+[ext_resource type="Texture2D" uid="uid://bmv0bykkjy4s1" path="res://animation/advancedClouds2/Untitled_Artwork-7 6.png" id="12_juorq"]
+[ext_resource type="Texture2D" uid="uid://btjna10obvcuc" path="res://animation/advancedClouds2/Untitled_Artwork-8 6.png" id="13_ob75o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wilhh"]
 size = Vector2(542, 273)
@@ -23,16 +24,16 @@ size = Vector2(542, 273)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_fbkf6")
+"texture": ExtResource("2_pnjwf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_tdu2g")
+"texture": ExtResource("3_fbkf6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_5f6e6")
+"texture": ExtResource("4_tdu2g")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_2h4tw")
+"texture": ExtResource("5_5f6e6")
 }],
 "loop": true,
 "name": &"flex",
@@ -40,22 +41,30 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_c0xpc")
+"texture": ExtResource("6_5f6e6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_juorq")
+"texture": ExtResource("7_2h4tw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_ob75o")
+"texture": ExtResource("8_ujiub")
+}],
+"loop": true,
+"name": &"horse",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_2h4tw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_xwm0p")
+"texture": ExtResource("7_ujiub")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_wagt0")
+"texture": ExtResource("8_xae8k")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_i3m7a")
+"texture": ExtResource("9_2i77s")
 }],
 "loop": true,
 "name": &"spear",
@@ -63,16 +72,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_ujiub")
+"texture": ExtResource("10_wgkfv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_xae8k")
+"texture": ExtResource("11_c0xpc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_2i77s")
+"texture": ExtResource("12_juorq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_wgkfv")
+"texture": ExtResource("13_ob75o")
 }],
 "loop": true,
 "name": &"stab",
@@ -87,8 +96,9 @@ position = Vector2(313, 174.5)
 shape = SubResource("RectangleShape2D_wilhh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(313, 266)
-scale = Vector2(0.48293966, 0.48293966)
+position = Vector2(312.00003, 176)
+scale = Vector2(0.34878328, 0.3487833)
 sprite_frames = SubResource("SpriteFrames_jx3a6")
-animation = &"spear"
+animation = &"horse"
 autoplay = "flex"
+frame_progress = 0.6221099

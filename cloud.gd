@@ -1,6 +1,6 @@
 extends CloudBase
 
-@export_enum("angry", "happy", "sad") var enemy_type := "angry"
+@export_enum("angry", "happy", "sad", "horse", "stab", "spear", "flex") var enemy_type := "angry"
 @export var min_speed := 10.0
 @export var max_speed := 2000.0
 @export var spawn_x_min := 1000.0

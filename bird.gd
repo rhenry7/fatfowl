@@ -290,7 +290,9 @@ func _try_fire() -> void:
 		return
 
 	sprite.play("shoot")
+	sprite.animation_finished
 	shoot()
+	# sprite.play("fly")
 	_fire_heat = min(_fire_heat + FIRE_HEAT_PER_SHOT, FIRE_HEAT_MAX)
 
 	if _fire_heat >= FIRE_HEAT_MAX:
