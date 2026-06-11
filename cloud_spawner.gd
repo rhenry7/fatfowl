@@ -8,43 +8,43 @@ const CLOUD_TYPES := [
 		"enemy_type": "angry",
 		"min_speed": 60.0,
 		"max_speed": 1000.0,
-		"weight": 4.0,
+		"weight": 5.0,
 	},
 	{
 		"enemy_type": "happy",
 		"min_speed": 180.0,
 		"max_speed": 1500.0,
-		"weight": 4.0,
+		"weight": 6.0,
 	},
 	{
 		"enemy_type": "sad",
 		"min_speed": 180.0,
 		"max_speed": 820.0,
-		"weight": 4.0,
+		"weight": 4.5,
 	},
 	{
 		"enemy_type": "flex",
 		"min_speed": 180.0,
-		"max_speed": 300.0,
-		"weight": 6.0,
+		"max_speed": 250.0,
+		"weight": 4.0,
 	},
 	{
 		"enemy_type": "spear",
 		"min_speed": 180.0,
-		"max_speed": 300.0,
-		"weight": 4.0,
+		"max_speed": 600.0,
+		"weight": 3.2,
 	},
 	{
 		"enemy_type": "stab",
 		"min_speed": 180.0,
-		"max_speed": 500.0,
-		"weight": 5.0,
+		"max_speed": 200.0,
+		"weight": 3.5,
 	},
 	{
 		"enemy_type": "horse",
 		"min_speed": 180.0,
-		"max_speed": 500.0,
-		"weight": 8.0,
+		"max_speed": 700.0,
+		"weight": 2.0,
 	},
 ]
 
@@ -53,7 +53,7 @@ const CLOUD_TYPES := [
 @export var max_enemies_per_wave := 3
 @export var spawn_delay_min := 5.0
 @export var spawn_delay_max := 10.0
-@export var intra_wave_delay := 0.35
+@export var intra_wave_delay := 0.2
 @export var spawn_x_min := 2500.0
 @export var spawn_x_max := 3200.0
 @export var despawn_x := -1400.0

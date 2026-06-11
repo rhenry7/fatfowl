@@ -648,7 +648,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_awqbt"]
-size = Vector2(1418, 288)
+size = Vector2(2059, 433)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_awudv"]
 size = Vector2(852, 1656)
@@ -1091,7 +1091,7 @@ autoscroll = Vector2(16, 0)
 repeat_times = 10
 
 [node name="Sprite2D5" type="Sprite2D" parent="Pausable/Sky/Parallax2D6"]
-position = Vector2(-2470, 1047)
+position = Vector2(-2470, 327)
 scale = Vector2(0.9992098, 0.965013)
 texture = ExtResource("44_b36m8")
 
@@ -1143,30 +1143,33 @@ autoscroll = Vector2(20, 0)
 [node name="Sprite2D12" type="Sprite2D" parent="Pausable/Sky/Parallax2D10"]
 texture = ExtResource("50_3r3gr")
 
-[node name="Parallax2D15" type="Parallax2D" parent="Pausable/Sky"]
-visible = false
-scroll_offset = Vector2(-1.5, 341)
-autoscroll = Vector2(-50, 0)
-
-[node name="Sprite2D2" type="Sprite2D" parent="Pausable/Sky/Parallax2D15"]
-texture = ExtResource("54_iunxo")
-
 [node name="Parallax2D13" type="Parallax2D" parent="Pausable/Sky"]
-visible = false
 scroll_offset = Vector2(88, 0)
 repeat_size = Vector2(5000, 0)
 autoscroll = Vector2(20, 0)
+repeat_times = 10
 
 [node name="Sprite2D2" type="Sprite2D" parent="Pausable/Sky/Parallax2D13"]
 position = Vector2(4802, 202)
 texture = ExtResource("54_3r3gr")
 
+[node name="Parallax2D15" type="Parallax2D" parent="Pausable/Sky"]
+scroll_offset = Vector2(0, 1)
+repeat_size = Vector2(2000, 0)
+autoscroll = Vector2(-50, 0)
+repeat_times = 10
+
+[node name="Sprite2D2" type="Sprite2D" parent="Pausable/Sky/Parallax2D15"]
+position = Vector2(0, 519.6)
+texture = ExtResource("54_iunxo")
+
 [node name="Parallax2D14" type="Parallax2D" parent="Pausable/Sky"]
-visible = false
-autoscroll = Vector2(-20, 0)
-repeat_times = 7
+repeat_size = Vector2(3000, 10)
+autoscroll = Vector2(-70, 0)
+repeat_times = 10
 
 [node name="Sprite2D2" type="Sprite2D" parent="Pausable/Sky/Parallax2D14"]
+position = Vector2(150, 818)
 texture = ExtResource("56_2aqrj")
 
 [node name="Bird" type="CharacterBody2D" parent="Pausable" groups=["player"]]
@@ -1432,13 +1435,13 @@ position = Vector2(710, -20)
 script = ExtResource("168_d5x2o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/BossEnemies/ZeusSnake"]
-position = Vector2(184.99998, 85)
-scale = Vector2(0.49106625, 0.49106625)
+position = Vector2(-166.00005, 99)
+scale = Vector2(0.69740623, 0.6974063)
 sprite_frames = SubResource("SpriteFrames_s1om5")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/BossEnemies/ZeusSnake"]
-position = Vector2(405, 128)
+position = Vector2(85.5, 146.5)
 shape = SubResource("RectangleShape2D_awqbt")
 
 [node name="ZeusBossHead" type="Area2D" parent="Pausable/BossEnemies"]

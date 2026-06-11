@@ -31,7 +31,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jtnav"]
-radius = 316.51224
+radius = 164.3046
 
 [node name="Snake_Fireball" type="Node2D"]
 
@@ -40,11 +40,11 @@ position = Vector2(357, 301)
 script = ExtResource("0_script")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
-position = Vector2(282, 168)
-scale = Vector2(0.90950835, 0.90951)
+position = Vector2(191, 214)
+scale = Vector2(0.5268002, 0.52680117)
 sprite_frames = SubResource("SpriteFrames_a3dgp")
 autoplay = "default"
-frame_progress = 0.89919066
+frame_progress = 0.32747856
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(63, 265)

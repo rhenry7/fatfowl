@@ -1,12 +1,12 @@
 extends Node
 @onready var enemies = [
-	$ZeusBossHead,
 	$ZeusSnake,
+	$ZeusBossHead,
 ]
 var current_enemy_index := 0
 var display_duration := 60.0   # seconds per enemy
-var enemy_buffer := 60.0
-var initial_delay := 0.0 #set 30 for live
+var enemy_buffer := 30.0
+var initial_delay := 60.0 #set 30 for live
 
 func _ready():
 	await get_tree().create_timer(initial_delay).timeout
