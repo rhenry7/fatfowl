@@ -3,6 +3,7 @@ extends CloudBase
 @export_enum("angry", "happy", "sad", "horse", "stab", "spear", "flex") var enemy_type := "angry"
 @export var min_speed := 10.0
 @export var max_speed := 2000.0
+@export var spawn_speed_bonus := 0.0
 @export var spawn_x_min := 1000.0
 @export var spawn_x_max := 3200.0
 @export var despawn_x := -2500.0
@@ -21,6 +22,7 @@ func configure(config: Dictionary) -> void:
 	enemy_type = str(config.get("enemy_type", enemy_type))
 	min_speed = float(config.get("min_speed", min_speed))
 	max_speed = float(config.get("max_speed", max_speed))
+	spawn_speed_bonus = float(config.get("spawn_speed_bonus", spawn_speed_bonus))
 	spawn_x_min = float(config.get("spawn_x_min", spawn_x_min))
 	spawn_x_max = float(config.get("spawn_x_max", spawn_x_max))
 	despawn_x = float(config.get("despawn_x", despawn_x))
@@ -72,7 +74,10 @@ func _disable_and_remove() -> void:
 	call_deferred("queue_free")
 
 func speed_increase_loop() -> void:
+	_apply_spawn_speed()
+
+func _apply_spawn_speed() -> void:
+	var effective_min_speed := min_speed + spawn_speed_bonus
+	var effective_max_speed := max_speed + spawn_speed_bonus
+	speed = randf_range(effective_min_speed, effective_max_speed)
 	print("current speed", speed)
-	if speed >= 5000:
-		speed = 1000
-	speed += randf_range(100, 500)
