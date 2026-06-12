@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://dy4pr42igo4hi"]
+
+[ext_resource type="Texture2D" uid="uid://0pep08c2d3n2" path="res://animation/cyclops/Untitled_Artwork-1 21.png" id="1_o125n"]
+[ext_resource type="Texture2D" uid="uid://mdq3i2dgwumk" path="res://animation/cyclops/Untitled_Artwork-2 16.png" id="2_usuck"]
+[ext_resource type="Texture2D" uid="uid://uxtbjbavu2k4" path="res://animation/cyclops/Untitled_Artwork-3 14.png" id="3_pqogg"]
+[ext_resource type="Texture2D" uid="uid://bq24yrfg06fb" path="res://animation/cyclops/Untitled_Artwork-4 13.png" id="4_mwuk7"]
+[ext_resource type="Script" uid="uid://c2ycl0psg4d7" path="res://cyclops.gd" id="5_cyclps"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcpm1"]
+size = Vector2(370, 906)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_14s5y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o125n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_usuck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pqogg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mwuk7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Cyclops" type="Area2D"]
+script = ExtResource("5_cyclps")
+
+[node name="ShapeCast2D" type="CollisionShape2D" parent="."]
+position = Vector2(175, 473)
+shape = SubResource("RectangleShape2D_bcpm1")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(304, 515)
+scale = Vector2(0.6010793, 0.6010793)
+sprite_frames = SubResource("SpriteFrames_14s5y")
+frame_progress = 0.990935

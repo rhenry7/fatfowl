@@ -33,26 +33,26 @@ const ADVANCED_CLOUD_TYPES := [
 		"enemy_type": "spear",
 		"min_speed": 180.0,
 		"max_speed": 200.0,
-		"weight": 2.0,
+		"weight": 3.0,
 	},
 	{
 		"enemy_type": "stab",
 		"min_speed": 180.0,
-		"max_speed": 200.0,
-		"weight": 2.0,
+		"max_speed": 200.0,      
+		"weight": 3.0,
 	},
 	{
 		"enemy_type": "horse",
 		"min_speed": 180.0,
-		"max_speed": 700.0,
-		"weight": 1.0,
+		"max_speed": 1000.0,
+		"weight": 3.0,
 	},
 ]
 
 @export var max_active_enemies := 7
 @export var normal_min_enemies_per_wave := 2
 @export var normal_max_enemies_per_wave := 5
-@export var advanced_min_enemies_per_wave := 1
+@export var advanced_min_enemies_per_wave := 0
 @export var advanced_max_enemies_per_wave := 1
 @export var spawn_delay_min := 3.0
 @export var spawn_delay_max := 5.0

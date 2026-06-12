@@ -1,4 +1,4 @@
-[gd_scene load_steps=246 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=249 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -41,9 +41,10 @@
 [ext_resource type="Texture2D" uid="uid://bsijxscg8dr6s" path="res://gameoverscrolls/GAMEOVER-3.png" id="24_ld5wt"]
 [ext_resource type="Texture2D" uid="uid://do1b0o07d8yly" path="res://audio/pause-btn.png" id="25_1fr6y"]
 [ext_resource type="AudioStream" uid="uid://bfpwb278uw6nd" path="res://thunder.ogg" id="25_037st"]
-[ext_resource type="Texture2D" uid="uid://bq0ya5vkrr0w8" path="res://background/bg_sky/Untitled_Artwork 8.png" id="25_kaf2f"]
+[ext_resource type="Texture2D" uid="uid://c1iy5pqjv0kb5" path="res://background/Untitled_Artwork 9.png" id="25_iunxo"]
 [ext_resource type="Texture2D" uid="uid://btq1183f0obqr" path="res://animation/pausemenu/pause-menu-3.png" id="25_kkr25"]
 [ext_resource type="Texture2D" uid="uid://b6tbtvrerxu5q" path="res://clouds/AngryCloud-7.png" id="25_m7xe6"]
+[ext_resource type="Texture2D" uid="uid://dralhydcxrb3n" path="res://Untitled_Artwork 10.png" id="25_sadjv"]
 [ext_resource type="Texture2D" uid="uid://c86npws5vfhpn" path="res://gameoverscrolls/GAMEOVER-4.png" id="25_wcv2n"]
 [ext_resource type="Texture2D" uid="uid://350sc2bejg34" path="res://background/SkyBG_Ikarus/Untitled_Artwork 2.png" id="25_xdyyu"]
 [ext_resource type="Texture2D" uid="uid://bgloa2mfu437l" path="res://gameoverscrolls/GAMEOVER-5.png" id="26_b0j31"]
@@ -54,6 +55,7 @@
 [ext_resource type="Texture2D" uid="uid://bfxc7kq2e73pg" path="res://animation/pausemenu/pause-menu-5.png" id="27_7kqy5"]
 [ext_resource type="Texture2D" uid="uid://dy87jlh28gqpo" path="res://clouds/AngryCloud-9.png" id="27_fkgk1"]
 [ext_resource type="Script" uid="uid://dm0awobaq716y" path="res://feather.gd" id="27_j02gt"]
+[ext_resource type="Script" uid="uid://cxtd6d58myluu" path="res://bg_2.gd" id="27_siusr"]
 [ext_resource type="Texture2D" uid="uid://ckvkgj1dairjn" path="res://gameoverscrolls/GAMEOVER-6.png" id="27_xgqcr"]
 [ext_resource type="Texture2D" uid="uid://c105vq25jss5f" path="res://gameoverscrolls/GAMEOVER-7.png" id="28_6jj3b"]
 [ext_resource type="Texture2D" uid="uid://esj77d451khr" path="res://animation/pausemenu/pause-menu-6.png" id="28_e1h34"]
@@ -179,6 +181,7 @@
 [ext_resource type="Script" uid="uid://baxppqul2vvgf" path="res://large_bolt_4.gd" id="122_iunxo"]
 [ext_resource type="Script" uid="uid://ca486p5afoxmf" path="res://start_menu.gd" id="124_4rgxs"]
 [ext_resource type="Script" uid="uid://behstjykld6qh" path="res://zeus_boss_head.gd" id="127_jqeos"]
+[ext_resource type="PackedScene" uid="uid://dy4pr42igo4hi" path="res://cyclops.tscn" id="127_cyclps"]
 [ext_resource type="Texture2D" uid="uid://d1y7n6o7asl3i" path="res://animation/snake_attack/Untitled_Artwork-1 18.png" id="130_kaf2f"]
 [ext_resource type="Texture2D" uid="uid://bkd1q4xx4rxht" path="res://animation/snake_attack/Untitled_Artwork-2 13.png" id="131_3r3gr"]
 [ext_resource type="Texture2D" uid="uid://ccjaar64lkx48" path="res://animation/snake_attack/Untitled_Artwork-3 11.png" id="132_2djs3"]
@@ -942,10 +945,14 @@ texture = ExtResource("2_py13h")
 
 [node name="Sky" type="Node2D" parent="Pausable"]
 
+[node name="Bg3" type="Sprite2D" parent="Pausable/Sky"]
+texture = ExtResource("25_sadjv")
+
 [node name="Bg2" type="Sprite2D" parent="Pausable/Sky"]
 position = Vector2(0, -64)
 scale = Vector2(0.9827679, 0.9827677)
-texture = ExtResource("25_kaf2f")
+texture = ExtResource("25_iunxo")
+script = ExtResource("27_siusr")
 
 [node name="Bg1" type="Sprite2D" parent="Pausable/Sky"]
 position = Vector2(13.000002, -114.62501)
@@ -1091,7 +1098,7 @@ autoscroll = Vector2(16, 0)
 repeat_times = 10
 
 [node name="Sprite2D5" type="Sprite2D" parent="Pausable/Sky/Parallax2D6"]
-position = Vector2(-2470, 327)
+position = Vector2(-1956, 252)
 scale = Vector2(0.9992098, 0.965013)
 texture = ExtResource("44_b36m8")
 
@@ -1317,6 +1324,9 @@ autoplay = "default"
 frame = 1
 frame_progress = 0.72315323
 
+[node name="Cyclops" parent="Pausable/Enemies" instance=ExtResource("127_cyclps")]
+visible = false
+
 [node name="Enemies2" type="Node2D" parent="Pausable"]
 position = Vector2(-1800, 0)
 script = ExtResource("87_iukfe")
@@ -1453,7 +1463,7 @@ shape = SubResource("RectangleShape2D_awudv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/BossEnemies/ZeusBossHead"]
 position = Vector2(931.00006, -108.999985)
-scale = Vector2(0.687741, 0.68774045)
+scale = Vector2(0.9622205, 0.9622198)
 sprite_frames = SubResource("SpriteFrames_uxnn6")
 autoplay = "default"
 

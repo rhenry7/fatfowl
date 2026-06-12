@@ -16,7 +16,7 @@ func _on_area_entered(area: Area2D) -> void:
 
 	var coin_bonus := 100
 	if area.has_method("on_hit"):
-		var result = area.on_hit()
+		var result = await area.on_hit()
 		if result is int:
 			coin_bonus = result
 	else:
