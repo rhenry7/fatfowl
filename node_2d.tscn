@@ -29,25 +29,20 @@
 [ext_resource type="Script" uid="uid://t763jfb8brkm" path="res://game_over_button.gd" id="21_ld5wt"]
 [ext_resource type="Texture2D" uid="uid://swxsy2dhp21f" path="res://clouds/AngryCloud-4.png" id="22_6orn5"]
 [ext_resource type="AudioStream" uid="uid://wns0nt1suxnu" path="res://audio/Coin.ogg" id="22_oilbd"]
-[ext_resource type="Texture2D" uid="uid://c51bq08yu7lxx" path="res://gameoverscrolls/GAMEOVER-1.png" id="22_r8aua"]
 [ext_resource type="Texture2D" uid="uid://dgu0uwo4c6dgf" path="res://animation/pausemenu/pause-menu-1.png" id="23_4rgxs"]
 [ext_resource type="AudioStream" uid="uid://bkaf5n2jifsmv" path="res://audio/coin_group_pickup.ogg" id="23_f3pq4"]
 [ext_resource type="Script" uid="uid://ciulpp0iiiy8f" path="res://coin.gd" id="23_qphy4"]
-[ext_resource type="Texture2D" uid="uid://dmic8iiibtpyn" path="res://gameoverscrolls/GAMEOVER-2.png" id="23_sduiw"]
 [ext_resource type="Texture2D" uid="uid://drydettk4u5kc" path="res://clouds/AngryCloud-5.png" id="23_whnp6"]
 [ext_resource type="Texture2D" uid="uid://cvlwnph2bk5pv" path="res://clouds/AngryCloud-6.png" id="24_22e24"]
 [ext_resource type="Texture2D" uid="uid://dgswdqubh31fq" path="res://animation/pausemenu/pause-menu-2.png" id="24_88olm"]
 [ext_resource type="Texture2D" uid="uid://34racowvu7w8" path="res://play-btn.png" id="24_gt76g"]
-[ext_resource type="Texture2D" uid="uid://bsijxscg8dr6s" path="res://gameoverscrolls/GAMEOVER-3.png" id="24_ld5wt"]
 [ext_resource type="Texture2D" uid="uid://do1b0o07d8yly" path="res://audio/pause-btn.png" id="25_1fr6y"]
 [ext_resource type="AudioStream" uid="uid://bfpwb278uw6nd" path="res://thunder.ogg" id="25_037st"]
 [ext_resource type="Texture2D" uid="uid://c1iy5pqjv0kb5" path="res://background/Untitled_Artwork 9.png" id="25_iunxo"]
 [ext_resource type="Texture2D" uid="uid://btq1183f0obqr" path="res://animation/pausemenu/pause-menu-3.png" id="25_kkr25"]
 [ext_resource type="Texture2D" uid="uid://b6tbtvrerxu5q" path="res://clouds/AngryCloud-7.png" id="25_m7xe6"]
 [ext_resource type="Texture2D" uid="uid://dralhydcxrb3n" path="res://Untitled_Artwork 10.png" id="25_sadjv"]
-[ext_resource type="Texture2D" uid="uid://c86npws5vfhpn" path="res://gameoverscrolls/GAMEOVER-4.png" id="25_wcv2n"]
 [ext_resource type="Texture2D" uid="uid://350sc2bejg34" path="res://background/SkyBG_Ikarus/Untitled_Artwork 2.png" id="25_xdyyu"]
-[ext_resource type="Texture2D" uid="uid://bgloa2mfu437l" path="res://gameoverscrolls/GAMEOVER-5.png" id="26_b0j31"]
 [ext_resource type="Texture2D" uid="uid://40mt6dtogqsp" path="res://animation/pausemenu/pause-menu-4.png" id="26_fibx4"]
 [ext_resource type="Script" uid="uid://dqnadb1tbcfub" path="res://bg_1.gd" id="26_kaf2f"]
 [ext_resource type="Script" uid="uid://b47yv7wncgea2" path="res://enemies.gd" id="26_s32dh"]
@@ -56,8 +51,6 @@
 [ext_resource type="Texture2D" uid="uid://dy87jlh28gqpo" path="res://clouds/AngryCloud-9.png" id="27_fkgk1"]
 [ext_resource type="Script" uid="uid://dm0awobaq716y" path="res://feather.gd" id="27_j02gt"]
 [ext_resource type="Script" uid="uid://cxtd6d58myluu" path="res://bg_2.gd" id="27_siusr"]
-[ext_resource type="Texture2D" uid="uid://ckvkgj1dairjn" path="res://gameoverscrolls/GAMEOVER-6.png" id="27_xgqcr"]
-[ext_resource type="Texture2D" uid="uid://c105vq25jss5f" path="res://gameoverscrolls/GAMEOVER-7.png" id="28_6jj3b"]
 [ext_resource type="Texture2D" uid="uid://esj77d451khr" path="res://animation/pausemenu/pause-menu-6.png" id="28_e1h34"]
 [ext_resource type="Texture2D" uid="uid://sqquem4dop3l" path="res://game-over-card.png" id="29_24dk6"]
 [ext_resource type="Script" uid="uid://827l47dwryni" path="res://game_over_scroll.gd" id="29_sduiw"]
@@ -180,8 +173,8 @@
 [ext_resource type="Script" uid="uid://cyr6kjmkouxtt" path="res://enemies_4.gd" id="121_2djs3"]
 [ext_resource type="Script" uid="uid://baxppqul2vvgf" path="res://large_bolt_4.gd" id="122_iunxo"]
 [ext_resource type="Script" uid="uid://ca486p5afoxmf" path="res://start_menu.gd" id="124_4rgxs"]
-[ext_resource type="Script" uid="uid://behstjykld6qh" path="res://zeus_boss_head.gd" id="127_jqeos"]
 [ext_resource type="PackedScene" uid="uid://dy4pr42igo4hi" path="res://cyclops.tscn" id="127_cyclps"]
+[ext_resource type="Script" uid="uid://behstjykld6qh" path="res://zeus_boss_head.gd" id="127_jqeos"]
 [ext_resource type="Texture2D" uid="uid://d1y7n6o7asl3i" path="res://animation/snake_attack/Untitled_Artwork-1 18.png" id="130_kaf2f"]
 [ext_resource type="Texture2D" uid="uid://bkd1q4xx4rxht" path="res://animation/snake_attack/Untitled_Artwork-2 13.png" id="131_3r3gr"]
 [ext_resource type="Texture2D" uid="uid://ccjaar64lkx48" path="res://animation/snake_attack/Untitled_Artwork-3 11.png" id="132_2djs3"]
@@ -205,6 +198,13 @@
 [ext_resource type="Texture2D" uid="uid://bdy5ptatlna1c" path="res://animation/zeus/shoot/Shoot-4 5.png" id="157_0sqyy"]
 [ext_resource type="Texture2D" uid="uid://cgjfhhdtqvpk0" path="res://animation/zeus/shoot/Shoot-5 4.png" id="158_oilbd"]
 [ext_resource type="Script" uid="uid://cc3wr8807f8eb" path="res://zeus_snake.gd" id="168_d5x2o"]
+[ext_resource type="Texture2D" uid="uid://circnsowjfa2f" path="res://animation/blankScroll/GAMEOVER-1.png" id="190_siusr"]
+[ext_resource type="Texture2D" uid="uid://cpxjb46ee3b3c" path="res://animation/blankScroll/GAMEOVER-2.png" id="191_71iuk"]
+[ext_resource type="Texture2D" uid="uid://hjibxffcmo38" path="res://animation/blankScroll/GAMEOVER-3.png" id="192_c0f20"]
+[ext_resource type="Texture2D" uid="uid://bar0b71njxe00" path="res://animation/blankScroll/GAMEOVER-4.png" id="193_5i1yl"]
+[ext_resource type="Texture2D" uid="uid://hvgcl2mn03fl" path="res://animation/blankScroll/GAMEOVER-5.png" id="194_l75je"]
+[ext_resource type="Texture2D" uid="uid://d3vq6xktfrfqu" path="res://animation/blankScroll/GAMEOVER-6.png" id="195_82a7c"]
+[ext_resource type="Texture2D" uid="uid://box2754bm025o" path="res://animation/blankScroll/GAMEOVER-7.png" id="196_bfoml"]
 [ext_resource type="Script" uid="uid://nya7sbmesolg" path="res://zeus_hurt_box_2.gd" id="200_zhtb2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jinwr"]
@@ -794,25 +794,25 @@ size = Vector2(340.5, 291)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("22_r8aua")
+"texture": ExtResource("190_siusr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("23_sduiw")
+"texture": ExtResource("191_71iuk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_ld5wt")
+"texture": ExtResource("192_c0f20")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_wcv2n")
+"texture": ExtResource("193_5i1yl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_b0j31")
+"texture": ExtResource("194_l75je")
 }, {
 "duration": 1.0,
-"texture": ExtResource("27_xgqcr")
+"texture": ExtResource("195_82a7c")
 }, {
 "duration": 1.0,
-"texture": ExtResource("28_6jj3b")
+"texture": ExtResource("196_bfoml")
 }],
 "loop": false,
 "name": &"default",

@@ -13,6 +13,9 @@ func on_hit() -> int:
 	hit_count += 1
 	if hit_count >= 5:
 		hit_count = 0
+		var bird = get_tree().current_scene.get_node_or_null("Pausable/Bird")
+		if bird and bird.has_method("add_kill"):
+			bird.add_kill()
 		deactivate()
 		return 1000
 	return 0

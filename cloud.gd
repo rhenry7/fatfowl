@@ -61,6 +61,9 @@ func _on_body_entered(body: Node2D) -> void:
 	_disable_and_remove()
 
 func on_hit() -> void:
+	var bird = get_tree().current_scene.get_node_or_null("Pausable/Bird")
+	if bird and bird.has_method("add_kill"):
+		bird.add_kill()
 	_disable_and_remove()
 
 func _disable_and_remove() -> void:

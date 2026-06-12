@@ -1,17 +1,22 @@
 extends CharacterBody2D
 var GRAVITY = 2000
-# const FLAP_STRENGTH = -350.0 # original speed 
+# const FLAP_STRENGTH = -350.0 # original speed
 const FLAP_STRENGTH = -700.0
-const FLAP_STRENGTH_X = 400.0 
-const SPEED = 10.0 
+const FLAP_STRENGTH_X = 400.0
+const SPEED = 10.0
 const TOP_Y = -850
-const BOTTOM_Y = 1500 
-const MAX_HEARTS := 3   
+const BOTTOM_Y = 1500
+const MAX_HEARTS := 3
 var HEARTS := 3
 var IS_DEAD := false
 var is_invincible := false
 var invincibility_duration := 2.0  # Increased to match usage
 var fireball = preload("res://fireball.tscn")
+const GREEK_FREAK_FONT = preload("res://Greek-Freak.ttf")
+
+var shots_fired: int = 0
+var enemies_killed: int = 0
+var damage_taken: int = 0
 
 @onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
 @onready var hearts_container := get_tree().current_scene.get_node("Pausable/UI/HeartsContainer")
@@ -48,7 +53,7 @@ var _fire_lockout_timer := 0.0
 func fall_damage():
 	if IS_DEAD or is_invincible:
 		return  # Ignore damage if dead or invincible
-	
+	damage_taken += 1
 	get_tree().current_scene.get_node("Pausable/Audio/FallDamage").play()
 	# Start invincibility period
 	remove_heart()  # Only call once
@@ -91,6 +96,7 @@ func addCoin(amount: int):
 	print("Coin added! Current coins: ", coins)
 	
 func shoot():
+	shots_fired += 1
 	var bullet = fireball.instantiate()
 	get_tree().current_scene.add_child(bullet)
 	bullet.global_position = $Muzzle.global_position
@@ -160,11 +166,14 @@ func hide_body():
 	position.x = 300
 	position.y = -2000
 		
+func add_kill() -> void:
+	enemies_killed += 1
+
 func take_damage():
 	print("is invincible", is_invincible)
 	if IS_DEAD or is_invincible:
 		return  # Ignore damage if dead or invincible
-	
+	damage_taken += 1
 	# Start invincibility period
 	remove_heart()
 	is_invincible = true
@@ -214,6 +223,46 @@ func die():
 	await get_tree().create_timer(1).timeout
 	scene.get_node("Control/ZeusGameOver").play()
 	scene.get_node("Pausable/Bird").visible = false
+	await get_tree().create_timer(0.5).timeout
+	_show_game_over_stats()
+
+func _show_game_over_stats() -> void:
+	var ui: CanvasLayer = get_tree().current_scene.get_node("Pausable/UI")
+	var vp_center: Vector2 = get_viewport_rect().size / 2.0
+	var color = Color8(33, 27, 197)
+
+	var container = VBoxContainer.new()
+	container.position = vp_center + Vector2(-340, -230)
+	container.custom_minimum_size = Vector2(520, 340)
+	container.alignment = BoxContainer.ALIGNMENT_CENTER
+
+	var stats = [
+		["Shots Fired", shots_fired],
+		["Enemies Killed", enemies_killed],
+		["Damage Taken", damage_taken],
+		["Score", coins],
+		["Miles Traveled", distance],
+	]
+	var intro := Label.new()
+	intro.text = "GAME OVER"
+	intro.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	intro.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	intro.add_theme_font_override("font", GREEK_FREAK_FONT)
+	intro.add_theme_font_size_override("font_size", 125)
+	intro.add_theme_color_override("font_color", color)
+	container.add_child(intro)
+	
+	for stat in stats:
+		var label := Label.new()
+		label.text = "%s: %d" % [stat[0], stat[1]]
+		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		label.add_theme_font_override("font", GREEK_FREAK_FONT)
+		label.add_theme_font_size_override("font_size", 72)
+		label.add_theme_color_override("font_color", color)
+		container.add_child(label) 
+
+	ui.add_child(container)
 
 func _disable_gameplay_for_game_over() -> void:
 	var scene = get_tree().current_scene
