@@ -11,6 +11,7 @@ extends Node2D
 @onready var lightningBolt3 = $Pausable/Enemies3/LargeBolt
 @onready var zeusFingerGun = $Pausable/Enemies/ZeusFingerGun
 @onready var cyclops: CyclopsEnemy = $Pausable/Enemies/Cyclops
+@onready var harpy: CyclopsEnemy = $Pausable/Enemies/Harpy
 @onready var zeusSnake = $Pausable/BossEnemies/ZeusSnake
 @onready var zeusBossHead = $Pausable/BossEnemies/ZeusBossHead
 
@@ -21,6 +22,7 @@ func _ready() -> void:
 	lifebar.visible = false
 	zeusFist.visible = false
 	cyclops.visible = false
+	harpy.visible = false
 	cloudEnemies.visible = false
 	zeusBody.visible = false
 	player.visible = false
@@ -66,6 +68,7 @@ func _on_start_button_pressed() -> void:
 	cloudEnemies.visible = true
 	zeusBody.visible = true
 	cyclops.activate()
+	harpy.activate()
 	player.visible = true
 	await get_tree().create_timer(1, false, true).timeout
 	get_tree().current_scene.get_node("Pausable/Audio/Prepare").play()

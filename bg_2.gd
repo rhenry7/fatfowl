@@ -13,12 +13,8 @@ func _process(delta: float) -> void:
 
 
 func fade_out():
-	var tween = create_tween()
-	# wait thirty seconds before continuing
 	await get_tree().create_timer(120).timeout
-	# Fades the alpha (opacity) to 0.0 over 1.0 seconds
+	var tween = create_tween()
 	tween.tween_property(self, "modulate:a", 0.3, 240.0)
-	
-	# Optional: Delete the node when the fade finishes
 	await tween.finished
 	queue_free()

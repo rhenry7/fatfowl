@@ -206,6 +206,7 @@
 [ext_resource type="Texture2D" uid="uid://d3vq6xktfrfqu" path="res://animation/blankScroll/GAMEOVER-6.png" id="195_82a7c"]
 [ext_resource type="Texture2D" uid="uid://box2754bm025o" path="res://animation/blankScroll/GAMEOVER-7.png" id="196_bfoml"]
 [ext_resource type="Script" uid="uid://nya7sbmesolg" path="res://zeus_hurt_box_2.gd" id="200_zhtb2"]
+[ext_resource type="PackedScene" uid="uid://bharpytscn001" path="res://harpy.tscn" id="201_harpy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jinwr"]
 animations = [{
@@ -1325,6 +1326,9 @@ frame = 1
 frame_progress = 0.72315323
 
 [node name="Cyclops" parent="Pausable/Enemies" instance=ExtResource("127_cyclps")]
+visible = false
+
+[node name="Harpy" parent="Pausable/Enemies" instance=ExtResource("201_harpy")]
 visible = false
 
 [node name="Enemies2" type="Node2D" parent="Pausable"]

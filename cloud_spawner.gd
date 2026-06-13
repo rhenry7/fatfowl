@@ -49,9 +49,9 @@ const ADVANCED_CLOUD_TYPES := [
 	},
 ]
 
-@export var max_active_enemies := 7
-@export var normal_min_enemies_per_wave := 2
-@export var normal_max_enemies_per_wave := 5
+@export var max_active_enemies := 10
+@export var normal_min_enemies_per_wave := 3
+@export var normal_max_enemies_per_wave := 10
 @export var advanced_min_enemies_per_wave := 0
 @export var advanced_max_enemies_per_wave := 1
 @export var spawn_delay_min := 3.0
@@ -59,7 +59,7 @@ const ADVANCED_CLOUD_TYPES := [
 @export var intra_wave_delay := 1.0
 @export var spawn_x_min := 2500.0
 @export var spawn_x_max := 3200.0
-@export var despawn_x := -1400.0
+@export var despawn_x := -1600.0
 @export var wave_speed_step := 40.0
 @export var wave_speed_max_bonus := 600.0
 

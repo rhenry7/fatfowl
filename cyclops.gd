@@ -37,6 +37,8 @@ func activate() -> void:
 	monitorable = true
 	position.x = randf_range(spawn_x_min, spawn_x_max)
 	position.y = screen_y()
+	var random_delay = randf_range(0.0, 10.0)
+	await get_tree().create_timer(random_delay).timeout
 	speed = randf_range(min_speed, max_speed)
 	animated_sprite.play("default")
 	_set_collision_enabled(true)
@@ -77,8 +79,8 @@ func _begin_respawn() -> void:
 	_active = false
 	_respawning = true
 	visible = false
-	monitoring = false
-	monitorable = false
+	set_deferred("monitoring", false)
+	set_deferred("monitorable", false)
 	_set_collision_enabled(false)
 	await get_tree().create_timer(respawn_delay, false).timeout
 	if not is_inside_tree() or _game_finished():
