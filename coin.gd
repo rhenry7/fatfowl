@@ -8,7 +8,10 @@ extends Area2D
 @onready var animated_sprite = $Coin  # Reference to the animated sprite
 @onready var collision = $CoinShape
 
+var coins = ["Ruby", "Gold", "Silver"];
+var coin_type = "Silver"
 func _ready():
+	_randomize_coin()
 	# Set initial starting position
 	position.x = 2000
 	position.y = -3000
@@ -18,7 +21,7 @@ func _ready():
 	
 	# Start playing the falling animation
 	if animated_sprite:
-		animated_sprite.play("CoinDrop")
+		_randomize_coin()
 
 func _process(delta: float) -> void:
 	# Move feather downward each frame
@@ -28,20 +31,30 @@ func _process(delta: float) -> void:
 		respawn()
 
 func respawn() -> void:
+	_randomize_coin()
 	await get_tree().create_timer(0.5).timeout
 	# Reset feather to top of screen
 	position.y = -2000
 	position.x = randf_range(400, 2000)
 	# Randomize horizontal position for variety 
 
+func _randomize_coin() -> void:
+	coin_type = coins[randi() % coins.size()]
+	animated_sprite.play(coin_type)
+
 func _on_body_entered(body):
 	# Check if the object that collided is the player
 	# call_deferred(collision).disabled = true
 	if body.is_in_group("player"):
 		# Check if player has a heal method
-		if body.has_method("addCoin"):
+		if body.has_method("add_coin"):
 			# Give player 1 heart (change to health_amount if you want to use the export variable)
-			body.addCoin(10)
+			if coin_type == "Gold":
+				body.add_coin(5_000)
+			elif coin_type == "Ruby":
+				body.add_coin(1_500)
+			else: # else will be Silver
+				body.add_coin(500)
 			position.y = -3000
 			position.x = randf_range(400, 2000)
 			get_tree().current_scene.get_node("Pausable/Audio/Coin").play()

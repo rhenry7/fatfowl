@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://c8g6i0gqj4qp3"]
 
 [ext_resource type="Script" uid="uid://7i1yioneiak6" path="res://snake_fireball.gd" id="0_script"]
-[ext_resource type="Texture2D" uid="uid://bfnblpmvuykqn" path="res://animation/Pegasus2/Untitled_Artwork-1 10.png" id="2_a3dgp"]
-[ext_resource type="Texture2D" uid="uid://dsfpgbtwhg3ft" path="res://animation/Pegasus2/Untitled_Artwork-2 7.png" id="3_wiuuk"]
-[ext_resource type="Texture2D" uid="uid://duwxu5p8nohwc" path="res://animation/Pegasus2/Untitled_Artwork-3 7.png" id="4_by43y"]
-[ext_resource type="Texture2D" uid="uid://dphdr100rh4bj" path="res://animation/Pegasus2/Untitled_Artwork-4 7.png" id="5_usa0g"]
-[ext_resource type="Texture2D" uid="uid://b7db2o7lhu265" path="res://animation/Pegasus2/Untitled_Artwork-5 6.png" id="6_w5gw5"]
+[ext_resource type="Texture2D" uid="uid://c2k810fcpcsjs" path="res://animation/ZeusSpitBall/Untitled_Artwork-1 13.png" id="2_a3dgp"]
+[ext_resource type="Texture2D" uid="uid://b1h5jsdb2fc0g" path="res://animation/ZeusSpitBall/Untitled_Artwork-2 9.png" id="3_wiuuk"]
+[ext_resource type="Texture2D" uid="uid://bp2ixkpnorgi6" path="res://animation/ZeusSpitBall/Untitled_Artwork-3 8.png" id="4_by43y"]
+[ext_resource type="Texture2D" uid="uid://dapks2pq403b3" path="res://animation/ZeusSpitBall/Untitled_Artwork-4 8.png" id="5_usa0g"]
+[ext_resource type="Texture2D" uid="uid://b4ibpk088ts8h" path="res://animation/ZeusSpitBall/Untitled_Artwork-5 7.png" id="6_w5gw5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a3dgp"]
 animations = [{
@@ -31,7 +31,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jtnav"]
-radius = 164.3046
+radius = 132.67253
 
 [node name="Snake_Fireball" type="Node2D"]
 
@@ -40,12 +40,12 @@ position = Vector2(357, 301)
 script = ExtResource("0_script")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
-position = Vector2(191, 214)
-scale = Vector2(0.5268002, 0.52680117)
+position = Vector2(1085.9999, 73.000015)
+scale = Vector2(1.4292655, 1.4292682)
 sprite_frames = SubResource("SpriteFrames_a3dgp")
 autoplay = "default"
-frame_progress = 0.32747856
+frame_progress = 0.83091474
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(63, 265)
+position = Vector2(-191, 285)
 shape = SubResource("CircleShape2D_jtnav")

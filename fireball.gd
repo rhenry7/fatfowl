@@ -23,8 +23,8 @@ func _on_area_entered(area: Area2D) -> void:
 		area.queue_free()
 
 	var bird = get_tree().current_scene.get_node("Pausable/Bird")
-	if bird.has_method("addCoin"):
-		bird.addCoin(coin_bonus)
+	if bird.has_method("add_coin"):
+		bird.add_coin(coin_bonus)
 
 	_free_projectile()
 

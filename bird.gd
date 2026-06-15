@@ -37,7 +37,7 @@ const DASH_DURATION := 0.25
 const DASH_COOLDOWN := 2.0
 #  how fast the second tap must come in
 const DOUBLE_TAP_WINDOW := 0.3
-const FIRE_HEAT_PER_SHOT := 15.0
+const FIRE_HEAT_PER_SHOT := 25.0
 const FIRE_HEAT_MAX := 100.0
 const FIRE_HEAT_RECOVERY_RATE := 10.0
 const FIRE_LOCKOUT_DURATION := 3.0
@@ -90,7 +90,7 @@ func heal(amount: int):
 		add_heart()
 	print("Healed! Current health: ", HEARTS, "/", MAX_HEARTS)
 	
-func addCoin(amount: int):
+func add_coin(amount: int):
 	coins += amount
 	coinDisplay.text = str(coins)
 	print("Coin added! Current coins: ", coins)
@@ -151,7 +151,7 @@ func _on_body_entered(body):
 	if body.is_in_group("heal"):
 		heal(1)
 	if body.is_in_group("coins"):
-		addCoin(1)
+		add_coin(1)
 
 	
 func hide_body():
@@ -232,13 +232,14 @@ func _show_game_over_stats() -> void:
 	var color = Color8(33, 27, 197)
 
 	var container = VBoxContainer.new()
-	container.position = vp_center + Vector2(-340, -230)
+	container.position = vp_center + Vector2(-480, -300)
 	container.custom_minimum_size = Vector2(520, 340)
 	container.alignment = BoxContainer.ALIGNMENT_CENTER
 
 	var stats = [
 		["Shots Fired", shots_fired],
 		["Enemies Killed", enemies_killed],
+		["Accuracy", int((enemies_killed / float(shots_fired)) * 100) if shots_fired > 0 else 0],
 		["Damage Taken", damage_taken],
 		["Score", coins],
 		["Miles Traveled", distance],
@@ -254,7 +255,7 @@ func _show_game_over_stats() -> void:
 	
 	for stat in stats:
 		var label := Label.new()
-		label.text = "%s: %d" % [stat[0], stat[1]]
+		label.text = "%s ................ %d" % [stat[0], stat[1]]
 		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 		label.add_theme_font_override("font", GREEK_FREAK_FONT)
@@ -338,13 +339,14 @@ func _try_fire() -> void:
 		_show_fire_limit_feedback()
 		return
 
-	sprite.play("shoot")
+	# sprite.play("shoot")
 	sprite.animation_finished
 	shoot()
 	# sprite.play("fly")
 	_fire_heat = min(_fire_heat + FIRE_HEAT_PER_SHOT, FIRE_HEAT_MAX)
 
 	if _fire_heat >= FIRE_HEAT_MAX:
+		sprite.play("overheat")
 		_trigger_fire_lockout()
 		_show_fire_limit_feedback()
 

@@ -7,8 +7,8 @@ extends CloudBase
 @export var spawn_x_max: float = 3200.0
 @export var despawn_x: float = -2000.0
 @export var respawn_delay: float = 60.0
-
 @onready var animated_sprite: AnimatedSprite2D = $Sprite2D
+@onready var random_delay = randf_range(0.0, 60.0)
 
 var speed: float = 0.0
 var _active: bool = false
@@ -26,6 +26,7 @@ func _ready() -> void:
 	set_process(true)
 
 func activate() -> void:
+	await get_tree().create_timer(random_delay).timeout
 	if not is_inside_tree():
 		return
 
@@ -37,8 +38,6 @@ func activate() -> void:
 	monitorable = true
 	position.x = randf_range(spawn_x_min, spawn_x_max)
 	position.y = screen_y()
-	var random_delay = randf_range(0.0, 10.0)
-	await get_tree().create_timer(random_delay).timeout
 	speed = randf_range(min_speed, max_speed)
 	animated_sprite.play("default")
 	_set_collision_enabled(true)

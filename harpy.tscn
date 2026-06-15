@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bh4emeksf1rcx"]
+[gd_scene load_steps=10 format=3 uid="uid://bh4emeksf1rcx"]
 
 [ext_resource type="PackedScene" uid="uid://dy4pr42igo4hi" path="res://cyclops.tscn" id="1_base"]
 [ext_resource type="Texture2D" uid="uid://co3rjgyj8h6cx" path="res://animation/harpy/harpy-1 23.png" id="2_h1"]
@@ -31,16 +31,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 6.0
+"speed": 10.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lejy0"]
+size = Vector2(958, 904)
 
 [node name="Harpy" instance=ExtResource("1_base")]
 
-[node name="ShapeCast2D" parent="." index="0"]
-position = Vector2(568, 481)
-
-[node name="Sprite2D" parent="." index="1"]
-position = Vector2(722, 306)
-scale = Vector2(2.2068207, 2.257182)
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(624, 303)
+scale = Vector2(1.9955008, 2.0410397)
 sprite_frames = SubResource("SpriteFrames_harpy")
-frame_progress = 0.0
+frame_progress = 0.018988928
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2"]
+position = Vector2(472, 452)
+shape = SubResource("RectangleShape2D_lejy0")
