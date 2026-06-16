@@ -38,9 +38,10 @@ const DASH_COOLDOWN := 2.0
 #  how fast the second tap must come in
 const DOUBLE_TAP_WINDOW := 0.3
 const FIRE_HEAT_PER_SHOT := 25.0
-const FIRE_HEAT_MAX := 100.0
+var FIRE_HEAT_MAX := 100.0
 const FIRE_HEAT_RECOVERY_RATE := 10.0
 const FIRE_LOCKOUT_DURATION := 3.0
+# add boost based on Torch powerup, for each powerup, heatmax will increase
 
 var _dash_active := false
 var _dash_dir := 0
@@ -152,6 +153,8 @@ func _on_body_entered(body):
 		heal(1)
 	if body.is_in_group("coins"):
 		add_coin(1)
+	if body.is_in_group("torch"):
+		add_fire_heat_max(50)
 
 	
 func hide_body():
@@ -168,6 +171,10 @@ func hide_body():
 		
 func add_kill() -> void:
 	enemies_killed += 1
+
+func add_fire_heat_max(amount: float) -> void:
+	FIRE_HEAT_MAX += amount
+	dash_bar.max_value = FIRE_HEAT_MAX
 
 func take_damage():
 	print("is invincible", is_invincible)

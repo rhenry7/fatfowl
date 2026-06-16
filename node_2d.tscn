@@ -1,4 +1,4 @@
-[gd_scene load_steps=252 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=261 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -165,7 +165,14 @@
 [ext_resource type="Texture2D" uid="uid://qvb0q8xw23a0" path="res://animation/Lightning3/Untitled_Artwork-12.png" id="75_djas3"]
 [ext_resource type="Texture2D" uid="uid://b30bmrsg6ud6e" path="res://animation/Lightning3/Untitled_Artwork-13.png" id="76_ohqex"]
 [ext_resource type="Texture2D" uid="uid://d3srd2sac0hwg" path="res://animation/Lightning3/Untitled_Artwork-14.png" id="77_pl55l"]
+[ext_resource type="Texture2D" uid="uid://cwk3a2jydh8gy" path="res://animation/Torch/Untitled_Artwork-1 23.png" id="83_awudv"]
+[ext_resource type="Script" uid="uid://b4ir7wahq75x3" path="res://torch.gd" id="83_uxnn6"]
+[ext_resource type="Texture2D" uid="uid://dfkpahg8aen2x" path="res://animation/Torch/Untitled_Artwork-2 18.png" id="84_uxnn6"]
+[ext_resource type="Texture2D" uid="uid://cy3cxvllmardv" path="res://animation/Torch/Untitled_Artwork-3 16.png" id="85_h1o1m"]
+[ext_resource type="Texture2D" uid="uid://blrrvu15owumh" path="res://animation/Torch/Untitled_Artwork-4 15.png" id="86_786q6"]
+[ext_resource type="Texture2D" uid="uid://dtxfpok2yfxws" path="res://animation/Torch/Untitled_Artwork-5 10.png" id="87_acy1l"]
 [ext_resource type="Script" uid="uid://dbvo3nk4bwoue" path="res://enemies_2.gd" id="87_iukfe"]
+[ext_resource type="Texture2D" uid="uid://31tc04k1bgqd" path="res://animation/Torch/Untitled_Artwork-6 9.png" id="88_ihpkt"]
 [ext_resource type="Script" uid="uid://dwldcarpq3cjm" path="res://cloud_spawner.gd" id="95_wnn4a"]
 [ext_resource type="Texture2D" uid="uid://cdq3i8hbu6ncl" path="res://animation/zeus/shoot/ZeusLight-8.png" id="107_vbp07"]
 [ext_resource type="Script" uid="uid://cukk1by3pp6p0" path="res://large_bolt_2.gd" id="108_5chwk"]
@@ -393,29 +400,6 @@ region = Rect2(64, 0, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("56_oilbd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("57_7vfuv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("58_ludm0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("59_5chwk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("60_vbp07")
-}, {
-"duration": 1.0,
-"texture": ExtResource("61_ileqp")
-}],
-"loop": true,
-"name": &"Silver",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_71iuk")
 }, {
 "duration": 1.0,
@@ -453,10 +437,62 @@ animations = [{
 "loop": true,
 "name": &"Ruby",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56_oilbd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_7vfuv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_ludm0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_5chwk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_vbp07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_ileqp")
+}],
+"loop": true,
+"name": &"Silver",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oilbd"]
 radius = 54.00926
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tx8ir"]
+radius = 84.00595
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_026ba"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("83_awudv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_uxnn6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_h1o1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_786q6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_acy1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_ihpkt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ld5wt"]
 radius = 566.74194
@@ -1263,6 +1299,18 @@ animation = &"Ruby"
 position = Vector2(-1390, 560)
 shape = SubResource("CircleShape2D_oilbd")
 
+[node name="Torch" type="Area2D" parent="Pausable"]
+script = ExtResource("83_uxnn6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Torch"]
+position = Vector2(-1601, 402)
+shape = SubResource("CircleShape2D_tx8ir")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Torch"]
+position = Vector2(-1599, 388)
+scale = Vector2(0.12597656, 0.12597653)
+sprite_frames = SubResource("SpriteFrames_026ba")
+
 [node name="Enemies" type="Node2D" parent="Pausable"]
 script = ExtResource("26_s32dh")
 
@@ -1739,10 +1787,9 @@ fit_content = true
 tab_size = 6
 
 [node name="DashBar" type="ProgressBar" parent="Pausable/UI"]
-visible = false
-offset_left = 654.0
+offset_left = 69.0
 offset_top = 170.0
-offset_right = 954.0
+offset_right = 369.0
 offset_bottom = 208.0
 value = 100.0
 show_percentage = false
@@ -1799,7 +1846,7 @@ offset_right = 923.75
 offset_bottom = 408.5
 
 [node name="StartMenu" type="AnimatedSprite2D" parent="Control"]
-position = Vector2(245, -205.5)
+position = Vector2(226, -239.49998)
 scale = Vector2(1.0043945, 0.9949807)
 sprite_frames = SubResource("SpriteFrames_5mre3")
 animation = &"pause"
@@ -1810,6 +1857,7 @@ stream = ExtResource("33_kq1c5")
 
 [connection signal="body_entered" from="Pausable/Feather" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Pausable/Coin" to="Pausable/Bird" method="_on_body_entered"]
+[connection signal="body_entered" from="Pausable/Torch" to="Pausable/Bird" method="_on_torch_body_entered"]
 [connection signal="body_entered" from="Pausable/Enemies/ZeusHurtBox" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Pausable/Enemies/LargeBolt" to="Pausable/Bird" method="_on_body_entered"]
 [connection signal="body_entered" from="Pausable/Enemies/ZeusFist" to="Pausable/Bird" method="_on_body_entered"]
