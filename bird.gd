@@ -1,13 +1,13 @@
 extends CharacterBody2D
 var GRAVITY = 2000
 # const FLAP_STRENGTH = -350.0 # original speed
-const FLAP_STRENGTH = -700.0
+var FLAP_STRENGTH = -700.0
 const FLAP_STRENGTH_X = 400.0
 const SPEED = 10.0
 const TOP_Y = -850
 const BOTTOM_Y = 1500
-const MAX_HEARTS := 3
-var HEARTS := 3
+var MAX_HEARTS := 5
+var HEARTS := 5
 var IS_DEAD := false
 var is_invincible := false
 var invincibility_duration := 2.0  # Increased to match usage
@@ -175,6 +175,13 @@ func add_kill() -> void:
 func add_fire_heat_max(amount: float) -> void:
 	FIRE_HEAT_MAX += amount
 	dash_bar.max_value = FIRE_HEAT_MAX
+
+func add_max_hearts() -> void:
+	MAX_HEARTS += 1
+	HEARTS = min(HEARTS + 1, MAX_HEARTS)
+
+func add_flap_strength(amount: float) -> void:
+	FLAP_STRENGTH -= amount
 
 func take_damage():
 	print("is invincible", is_invincible)

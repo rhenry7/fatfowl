@@ -1,4 +1,4 @@
-[gd_scene load_steps=262 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=259 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -165,14 +165,11 @@
 [ext_resource type="Texture2D" uid="uid://qvb0q8xw23a0" path="res://animation/Lightning3/Untitled_Artwork-12.png" id="75_djas3"]
 [ext_resource type="Texture2D" uid="uid://b30bmrsg6ud6e" path="res://animation/Lightning3/Untitled_Artwork-13.png" id="76_ohqex"]
 [ext_resource type="Texture2D" uid="uid://d3srd2sac0hwg" path="res://animation/Lightning3/Untitled_Artwork-14.png" id="77_pl55l"]
-[ext_resource type="Texture2D" uid="uid://cwk3a2jydh8gy" path="res://animation/Torch/Untitled_Artwork-1 23.png" id="83_awudv"]
 [ext_resource type="Script" uid="uid://b4ir7wahq75x3" path="res://torch.gd" id="83_uxnn6"]
-[ext_resource type="Texture2D" uid="uid://dfkpahg8aen2x" path="res://animation/Torch/Untitled_Artwork-2 18.png" id="84_uxnn6"]
-[ext_resource type="Texture2D" uid="uid://cy3cxvllmardv" path="res://animation/Torch/Untitled_Artwork-3 16.png" id="85_h1o1m"]
-[ext_resource type="Texture2D" uid="uid://blrrvu15owumh" path="res://animation/Torch/Untitled_Artwork-4 15.png" id="86_786q6"]
-[ext_resource type="Texture2D" uid="uid://dtxfpok2yfxws" path="res://animation/Torch/Untitled_Artwork-5 10.png" id="87_acy1l"]
+[ext_resource type="Texture2D" uid="uid://b7qp0nlkeecw2" path="res://animation/Torch/Untitled_Artwork-4 19.png" id="84_2xgaa"]
+[ext_resource type="Texture2D" uid="uid://cnse17ggqo8hd" path="res://animation/Torch/Untitled_Artwork-7 7.png" id="85_awudv"]
+[ext_resource type="Texture2D" uid="uid://byw16g0l0yg7k" path="res://animation/Torch/Untitled_Artwork-6 11.png" id="86_uxnn6"]
 [ext_resource type="Script" uid="uid://dbvo3nk4bwoue" path="res://enemies_2.gd" id="87_iukfe"]
-[ext_resource type="Texture2D" uid="uid://31tc04k1bgqd" path="res://animation/Torch/Untitled_Artwork-6 9.png" id="88_ihpkt"]
 [ext_resource type="Script" uid="uid://dwldcarpq3cjm" path="res://cloud_spawner.gd" id="95_wnn4a"]
 [ext_resource type="Texture2D" uid="uid://cdq3i8hbu6ncl" path="res://animation/zeus/shoot/ZeusLight-8.png" id="107_vbp07"]
 [ext_resource type="Script" uid="uid://cukk1by3pp6p0" path="res://large_bolt_2.gd" id="108_5chwk"]
@@ -473,26 +470,27 @@ radius = 84.00595
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("83_awudv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("84_uxnn6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("85_h1o1m")
-}, {
-"duration": 1.0,
-"texture": ExtResource("86_786q6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("87_acy1l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("88_ihpkt")
+"texture": ExtResource("84_2xgaa")
 }],
 "loop": true,
-"name": &"default",
+"name": &"fire_rate",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("85_awudv")
+}],
+"loop": true,
+"name": &"flight_power",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("86_uxnn6")
+}],
+"loop": true,
+"name": &"life_limit",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ld5wt"]
@@ -1308,9 +1306,10 @@ position = Vector2(-1601, 402)
 shape = SubResource("CircleShape2D_tx8ir")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Torch"]
-position = Vector2(-1599, 388)
-scale = Vector2(0.12597656, 0.12597653)
+position = Vector2(-1614, 320.00003)
+scale = Vector2(0.2841797, 0.28417966)
 sprite_frames = SubResource("SpriteFrames_026ba")
+animation = &"life_limit"
 
 [node name="Enemies" type="Node2D" parent="Pausable"]
 script = ExtResource("26_s32dh")

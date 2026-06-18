@@ -55,8 +55,7 @@ func _on_body_entered(body):
 				body.add_coin(1_500)
 			else: # else will be Silver
 				body.add_coin(500)
-			position.y = -3000
-			position.x = randf_range(400, 2000)
+			respawn()
 			get_tree().current_scene.get_node("Pausable/Audio/Coin").play()
 
 		# Respawn feather at top immediately after collection
