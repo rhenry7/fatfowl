@@ -1,8 +1,8 @@
 class_name CyclopsEnemy
 extends CloudBase
 
-@export var min_speed: float = 180.0
-@export var max_speed: float = 360.0
+@export var min_speed: float = 100.0
+@export var max_speed: float = 200.0
 @export var spawn_x_min: float = 2500.0
 @export var spawn_x_max: float = 3200.0
 @export var despawn_x: float = -2000.0

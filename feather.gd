@@ -6,6 +6,7 @@ extends Area2D
 @export var bottom_limit: float = 2000.0  # Y position where feather respawns if missed
 @onready var animated_sprite = $Feather  # Reference to the animated sprite
 @onready var collision = $CollisionShape2D
+var _respawning := false
 
 func _ready():
 	# Set initial starting position
@@ -27,20 +28,20 @@ func _viewport_bounds() -> Rect2:
 	return Rect2(top_left, bottom_right - top_left)
 
 func _process(delta: float) -> void:
-	# Move feather downward each frame
+	if _respawning:
+		return
 	position.y += fall_speed * delta
-	# Check if feather has fallen past the bottom of the screen
 	if position.y > bottom_limit:
+		_respawning = true
 		respawn()
 
 func respawn() -> void:
-	# Reset feather to top of screen
-	await get_tree().create_timer(30).timeout
+	position.y = -5000
+	await get_tree().create_timer(0, false).timeout
 	var bounds = _viewport_bounds()
-	# Land x strictly within the visible width
 	position.x = randf_range(bounds.position.x, bounds.position.x + bounds.size.x)
 	position.y = -2000
-	# Randomize horizontal position for variety
+	_respawning = false
 
 func _on_body_entered(body):
 	# Check if the object that collided is the player

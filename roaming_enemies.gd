@@ -2,7 +2,7 @@ extends Node
 
 @onready var enemies: Array = [$Cyclops, $Harpy]
 var current_enemy_index := 0
-var display_duration := 30.0
+var display_duration := 40.0
 var enemy_buffer := 20.0
 var initial_delay := 5.0
 
