@@ -6,8 +6,8 @@ const FLAP_STRENGTH_X = 400.0
 const SPEED = 10.0
 const TOP_Y = -850
 const BOTTOM_Y = 1500
-var MAX_HEARTS := 5
-var HEARTS := 5
+var MAX_HEARTS := 3
+var HEARTS := 3
 var IS_DEAD := false
 var is_invincible := false
 var invincibility_duration := 2.0  # Increased to match usage
@@ -39,7 +39,7 @@ const DASH_COOLDOWN := 2.0
 const DOUBLE_TAP_WINDOW := 0.3
 const FIRE_HEAT_PER_SHOT := 25.0
 var FIRE_HEAT_MAX := 100.0
-const FIRE_HEAT_RECOVERY_RATE := 10.0
+var FIRE_HEAT_RECOVERY_RATE := 10.0
 const FIRE_LOCKOUT_DURATION := 3.0
 # add boost based on Torch powerup, for each powerup, heatmax will increase
 
@@ -153,8 +153,6 @@ func _on_body_entered(body):
 		heal(1)
 	if body.is_in_group("coins"):
 		add_coin(1)
-	if body.is_in_group("torch"):
-		add_fire_heat_max(50)
 
 	
 func hide_body():
@@ -178,10 +176,12 @@ func add_fire_heat_max(amount: float) -> void:
 
 func add_max_hearts() -> void:
 	MAX_HEARTS += 1
-	HEARTS = min(HEARTS + 1, MAX_HEARTS)
 
 func add_flap_strength(amount: float) -> void:
 	FLAP_STRENGTH -= amount
+
+func decrease_fire_cooldown(amount: float) -> void:
+	FIRE_HEAT_RECOVERY_RATE += amount
 
 func take_damage():
 	print("is invincible", is_invincible)

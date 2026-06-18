@@ -1,4 +1,4 @@
-[gd_scene load_steps=259 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=260 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -166,9 +166,10 @@
 [ext_resource type="Texture2D" uid="uid://b30bmrsg6ud6e" path="res://animation/Lightning3/Untitled_Artwork-13.png" id="76_ohqex"]
 [ext_resource type="Texture2D" uid="uid://d3srd2sac0hwg" path="res://animation/Lightning3/Untitled_Artwork-14.png" id="77_pl55l"]
 [ext_resource type="Script" uid="uid://b4ir7wahq75x3" path="res://torch.gd" id="83_uxnn6"]
-[ext_resource type="Texture2D" uid="uid://b7qp0nlkeecw2" path="res://animation/Torch/Untitled_Artwork-4 19.png" id="84_2xgaa"]
-[ext_resource type="Texture2D" uid="uid://cnse17ggqo8hd" path="res://animation/Torch/Untitled_Artwork-7 7.png" id="85_awudv"]
-[ext_resource type="Texture2D" uid="uid://byw16g0l0yg7k" path="res://animation/Torch/Untitled_Artwork-6 11.png" id="86_uxnn6"]
+[ext_resource type="Texture2D" uid="uid://xxt62qfpchqk" path="res://animation/Torch/Untitled_Artwork-1 28.png" id="84_2xgaa"]
+[ext_resource type="Texture2D" uid="uid://bw3ek1qgk728j" path="res://animation/Torch/Untitled_Artwork-1 29.png" id="84_awudv"]
+[ext_resource type="Texture2D" uid="uid://dcvteli0w8ktr" path="res://animation/Torch/Untitled_Artwork-2 22.png" id="85_awudv"]
+[ext_resource type="Texture2D" uid="uid://bsgvqqh6v0kjt" path="res://animation/Torch/Untitled_Artwork-3 20.png" id="86_uxnn6"]
 [ext_resource type="Script" uid="uid://dbvo3nk4bwoue" path="res://enemies_2.gd" id="87_iukfe"]
 [ext_resource type="Script" uid="uid://dwldcarpq3cjm" path="res://cloud_spawner.gd" id="95_wnn4a"]
 [ext_resource type="Texture2D" uid="uid://cdq3i8hbu6ncl" path="res://animation/zeus/shoot/ZeusLight-8.png" id="107_vbp07"]
@@ -468,6 +469,14 @@ radius = 84.00595
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_026ba"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("84_awudv")
+}],
+"loop": true,
+"name": &"fire_cooldown",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("84_2xgaa")
@@ -1306,10 +1315,11 @@ position = Vector2(-1601, 402)
 shape = SubResource("CircleShape2D_tx8ir")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pausable/Torch"]
-position = Vector2(-1614, 320.00003)
+position = Vector2(-1672.0001, 361)
 scale = Vector2(0.2841797, 0.28417966)
 sprite_frames = SubResource("SpriteFrames_026ba")
-animation = &"life_limit"
+animation = &"fire_cooldown"
+autoplay = "fire_rate"
 
 [node name="Enemies" type="Node2D" parent="Pausable"]
 script = ExtResource("26_s32dh")

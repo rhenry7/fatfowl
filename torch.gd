@@ -5,11 +5,12 @@ extends Area2D
 @export var respawn_wait: float = 30.0
 
 # Adjust these weights in the Inspector to tune drop rates (higher = more common)
-@export var weight_fire: float = 50.0
+@export var weight_fire: float = 25.0
 @export var weight_life_max: float = 25.0
 @export var weight_flight_power: float = 25.0
+@export var weight_fire_cooldown: float = 25.0
 
-var _current_type: String = "fire"
+var _current_type: String = "fire_rate"
 var _respawning: bool = false
 
 func _ready() -> void:
@@ -20,14 +21,22 @@ func _ready() -> void:
 	_pick_type()
 
 func _pick_type() -> void:
-	var total := weight_fire + weight_life_max + weight_flight_power
+	var options: Array = [
+		["fire_rate",    weight_fire],
+		["life_limit",   weight_life_max],
+		["flight_power", weight_flight_power],
+		["fire_cooldown", weight_fire_cooldown],
+	]
+	var total := 0.0
+	for o in options:
+		total += float(o[1])
 	var roll := randf() * total
-	if roll < weight_fire:
-		_current_type = "fire"
-	elif roll < weight_fire + weight_life_max:
-		_current_type = "life_max"
-	else:
-		_current_type = "flight_power"
+	var cumulative := 0.0
+	for o in options:
+		cumulative += float(o[1])
+		if roll < cumulative:
+			_current_type = str(o[0])
+			break
 	var sprite := $AnimatedSprite2D
 	if sprite.sprite_frames.has_animation(_current_type):
 		sprite.play(_current_type)
@@ -64,12 +73,15 @@ func _on_body_entered(body: Node) -> void:
 
 func _apply_effect(body: Node) -> void:
 	match _current_type:
-		"fire":
+		"fire_rate":
 			if body.has_method("add_fire_heat_max"):
 				body.add_fire_heat_max(50.0)
-		"life_max":
+		"life_limit":
 			if body.has_method("add_max_hearts"):
 				body.add_max_hearts()
 		"flight_power":
 			if body.has_method("add_flap_strength"):
 				body.add_flap_strength(100.0)
+		"fire_cooldown":
+			if body.has_method("decrease_fire_cooldown"):
+				body.decrease_fire_cooldown(5.0)
