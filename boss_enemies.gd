@@ -1,7 +1,7 @@
 extends Node
 @onready var enemies = [
-	$ZeusSnake,
 	$ZeusBossHead,
+	$ZeusSnake,
 ]
 var current_enemy_index := 0
 var display_duration := 20.0   # seconds per enemy

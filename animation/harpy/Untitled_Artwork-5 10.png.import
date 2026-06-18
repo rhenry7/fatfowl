@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eynkf3rou7ub"
-path="res://.godot/imported/Untitled_Artwork-4 14.png-ed50c4149f47ec0ce67584d9db21604d.ctex"
+uid="uid://b0u1kga040tp3"
+path="res://.godot/imported/Untitled_Artwork-5 10.png-914dd6d8bc18bd7024eb6fb973d10bde.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animation/cyclops/Untitled_Artwork-4 14.png"
-dest_files=["res://.godot/imported/Untitled_Artwork-4 14.png-ed50c4149f47ec0ce67584d9db21604d.ctex"]
+source_file="res://animation/harpy/Untitled_Artwork-5 10.png"
+dest_files=["res://.godot/imported/Untitled_Artwork-5 10.png-914dd6d8bc18bd7024eb6fb973d10bde.ctex"]
 
 [params]
 

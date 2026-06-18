@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://dy4pr42igo4hi"]
+[gd_scene load_steps=12 format=3 uid="uid://dy4pr42igo4hi"]
 
-[ext_resource type="Texture2D" uid="uid://cyfinm5v01dl4" path="res://animation/cyclops/Untitled_Artwork-1 22.png" id="2_usuck"]
-[ext_resource type="Texture2D" uid="uid://wkcxkigbapns" path="res://animation/cyclops/Untitled_Artwork-2 17.png" id="3_pqogg"]
-[ext_resource type="Texture2D" uid="uid://cyvf2uosywysd" path="res://animation/cyclops/Untitled_Artwork-3 15.png" id="4_mwuk7"]
-[ext_resource type="Texture2D" uid="uid://eynkf3rou7ub" path="res://animation/cyclops/Untitled_Artwork-4 14.png" id="5_bcpm1"]
+[ext_resource type="Texture2D" uid="uid://ddsal0hwhdt1m" path="res://animation/cyclops/Untitled_Artwork-1 23.png" id="2_usuck"]
+[ext_resource type="Texture2D" uid="uid://cen73mectrhfr" path="res://animation/cyclops/Untitled_Artwork-2 18.png" id="3_pqogg"]
+[ext_resource type="Texture2D" uid="uid://dvc7xw8ok5sun" path="res://animation/cyclops/Untitled_Artwork-3 16.png" id="4_mwuk7"]
+[ext_resource type="Texture2D" uid="uid://dufdlipt4lexf" path="res://animation/cyclops/Untitled_Artwork-4 15.png" id="5_bcpm1"]
 [ext_resource type="Script" uid="uid://c2ycl0psg4d7" path="res://cyclops.gd" id="5_cyclps"]
+[ext_resource type="Texture2D" uid="uid://c8faiukeot54x" path="res://animation/cyclops/Untitled_Artwork-1 24.png" id="6_14s5y"]
+[ext_resource type="Texture2D" uid="uid://cfd7yl5fmckgh" path="res://animation/cyclops/Untitled_Artwork-2 19.png" id="7_ik4kw"]
+[ext_resource type="Texture2D" uid="uid://bw8wjfci23i7l" path="res://animation/cyclops/Untitled_Artwork-3 17.png" id="8_jm3jx"]
+[ext_resource type="Texture2D" uid="uid://bx57kkl3hmcut" path="res://animation/cyclops/Untitled_Artwork-4 16.png" id="9_e3i54"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_14s5y"]
 animations = [{
@@ -24,20 +28,54 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_14s5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ik4kw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jm3jx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_e3i54")
+}],
+"loop": true,
+"name": &"gray",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_usuck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pqogg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mwuk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bcpm1")
+}],
+"loop": true,
+"name": &"orange",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_usuck"]
-size = Vector2(593, 942)
+size = Vector2(426, 594)
 
 [node name="Cyclops" type="Area2D"]
 script = ExtResource("5_cyclps")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(269, 463.00003)
-scale = Vector2(0.42839348, 0.42839366)
+position = Vector2(254, 282)
+scale = Vector2(1.070376, 1.0703765)
 sprite_frames = SubResource("SpriteFrames_14s5y")
-frame_progress = 0.5642082
+animation = &"orange"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(286.5, 461)
+position = Vector2(233, 287)
 shape = SubResource("RectangleShape2D_usuck")

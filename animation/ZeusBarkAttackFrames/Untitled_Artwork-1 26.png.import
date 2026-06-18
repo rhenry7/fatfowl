@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mdq3i2dgwumk"
-path="res://.godot/imported/Untitled_Artwork-2 16.png-d07e6eefa58f6bb825dd1c4b1b1f5266.ctex"
+uid="uid://box6d0dit5cnd"
+path="res://.godot/imported/Untitled_Artwork-1 26.png-87ddfa2ed1df87d60a3ad1a5bee7d9df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animation/cyclops/Untitled_Artwork-2 16.png"
-dest_files=["res://.godot/imported/Untitled_Artwork-2 16.png-d07e6eefa58f6bb825dd1c4b1b1f5266.ctex"]
+source_file="res://animation/ZeusBarkAttackFrames/Untitled_Artwork-1 26.png"
+dest_files=["res://.godot/imported/Untitled_Artwork-1 26.png-87ddfa2ed1df87d60a3ad1a5bee7d9df.ctex"]
 
 [params]
 

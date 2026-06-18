@@ -96,9 +96,8 @@ position = Vector2(469.5, 205.5)
 shape = SubResource("RectangleShape2D_wilhh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(468, 275.99997)
-scale = Vector2(0.60367465, 0.60367453)
+position = Vector2(416, 275)
+scale = Vector2(0.39513323, 0.3951332)
 sprite_frames = SubResource("SpriteFrames_jx3a6")
-animation = &"stab"
+animation = &"flex"
 autoplay = "flex"
-frame_progress = 0.22656652
