@@ -22,9 +22,11 @@ func cache_sprite_y_bounds() -> void:
 			return
 
 func on_hit() -> void:
+	var kill_pos := global_position
 	var bird = get_tree().current_scene.get_node_or_null("Pausable/Bird")
 	if bird and bird.has_method("add_kill"):
 		bird.add_kill()
+	ScorePopup.spawn(kill_pos, 100)
 	set_deferred("visible", false)
 	set_deferred("monitoring", false)
 	set_deferred("monitorable", false)

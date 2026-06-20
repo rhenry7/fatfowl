@@ -57,9 +57,11 @@ func on_hit() -> void:
 	_hit_count += 1
 	if _hit_count >= 5:
 		_hit_count = 0
+		var kill_pos := global_position
 		var bird = get_tree().current_scene.get_node_or_null("Pausable/Bird")
 		if bird and bird.has_method("add_kill"):
 			bird.add_kill()
+		ScorePopup.spawn(kill_pos, 500)
 		_begin_respawn()
 
 func _on_body_entered(body: Node2D) -> void:

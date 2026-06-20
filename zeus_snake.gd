@@ -16,6 +16,7 @@ func on_hit() -> int:
 		var bird = get_tree().current_scene.get_node_or_null("Pausable/Bird")
 		if bird and bird.has_method("add_kill"):
 			bird.add_kill()
+		ScorePopup.spawn(global_position, 1000)
 		deactivate()
 		return 1000
 	return 0

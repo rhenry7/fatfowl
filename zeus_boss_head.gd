@@ -51,7 +51,7 @@ func _fire() -> void:
 		get_parent().add_child(beam)
 		# Offset counters the Area2D + sprite internal positions in snake_fireball.tscn
 		# so the fireball visually appears at the snake's mouth
-		beam.global_position = sprite.global_position - Vector2(1300,180)
+		beam.global_position = sprite.global_position - Vector2(1250,150)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Bird":
