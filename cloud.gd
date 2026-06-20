@@ -7,10 +7,13 @@ extends CloudBase
 @export var spawn_x_min := 1000.0
 @export var spawn_x_max := 3200.0
 @export var despawn_x := -2500.0
+@export var hits_required: int = 1
+@export var kill_score: int = 100
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var speed := 0.0
+var _hit_count: int = 0
 
 func _ready() -> void:
 	add_to_group("hazard")
@@ -26,6 +29,9 @@ func configure(config: Dictionary) -> void:
 	spawn_x_min = float(config.get("spawn_x_min", spawn_x_min))
 	spawn_x_max = float(config.get("spawn_x_max", spawn_x_max))
 	despawn_x = float(config.get("despawn_x", despawn_x))
+	hits_required = int(config.get("hits_required", hits_required))
+	kill_score = int(config.get("kill_score", kill_score))
+	_hit_count = 0
 	_apply_spawn_settings()
 
 func _apply_spawn_settings() -> void:
@@ -60,13 +66,18 @@ func _on_body_entered(body: Node2D) -> void:
 	body.take_damage()
 	_disable_and_remove()
 
-func on_hit() -> void:
+func on_hit() -> int:
+	_hit_count += 1
+	if _hit_count < hits_required:
+		return 0
+	_hit_count = 0
 	var kill_pos := global_position
 	var bird = get_tree().current_scene.get_node_or_null("Pausable/Bird")
 	if bird and bird.has_method("add_kill"):
 		bird.add_kill()
-	ScorePopup.spawn(kill_pos, 100)
+	ScorePopup.spawn(kill_pos, kill_score)
 	_disable_and_remove()
+	return kill_score
 
 func _disable_and_remove() -> void:
 	visible = false

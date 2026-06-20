@@ -21,7 +21,7 @@ func cache_sprite_y_bounds() -> void:
 			_sprite_y_max = child.position.y + half_h
 			return
 
-func on_hit() -> void:
+func on_hit() -> int:
 	var kill_pos := global_position
 	var bird = get_tree().current_scene.get_node_or_null("Pausable/Bird")
 	if bird and bird.has_method("add_kill"):
@@ -35,6 +35,10 @@ func on_hit() -> void:
 	for child in get_children():
 		if child is CollisionShape2D:
 			child.set_deferred("disabled", true)
+	_respawn_after_delay()
+	return 100
+
+func _respawn_after_delay() -> void:
 	await get_tree().create_timer(3.0, false, true).timeout
 	if not is_inside_tree():
 		return

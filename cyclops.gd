@@ -53,7 +53,7 @@ func _process(delta: float) -> void:
 	if position.x < despawn_x:
 		_begin_respawn()
 
-func on_hit() -> void:
+func on_hit() -> int:
 	_hit_count += 1
 	if _hit_count >= 5:
 		_hit_count = 0
@@ -61,8 +61,10 @@ func on_hit() -> void:
 		var bird = get_tree().current_scene.get_node_or_null("Pausable/Bird")
 		if bird and bird.has_method("add_kill"):
 			bird.add_kill()
-		ScorePopup.spawn(kill_pos, 500)
+		ScorePopup.spawn(kill_pos, 1000)
 		_begin_respawn()
+		return 1000
+	return 0
 
 func _on_body_entered(body: Node2D) -> void:
 	if not _active or _respawning:

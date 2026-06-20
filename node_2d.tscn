@@ -1091,6 +1091,7 @@ scale = Vector2(1.1650759, 0.90014344)
 texture = ExtResource("5_c7o6v")
 
 [node name="Parallax2D" type="Parallax2D" parent="Pausable/Sky"]
+visible = false
 scroll_scale = Vector2(1.5, 1)
 repeat_size = Vector2(3666, 0)
 autoscroll = Vector2(-25, 0)

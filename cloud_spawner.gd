@@ -28,24 +28,32 @@ const ADVANCED_CLOUD_TYPES := [
 		"min_speed": 100.0,
 		"max_speed": 200.0,
 		"weight": 3.0,
+		"hits_required": 3,
+		"kill_score": 300,
 	},
 	{
 		"enemy_type": "spear",
 		"min_speed": 180.0,
 		"max_speed": 200.0,
 		"weight": 3.0,
+		"hits_required": 3,
+		"kill_score": 300,
 	},
 	{
 		"enemy_type": "stab",
 		"min_speed": 180.0,
-		"max_speed": 200.0,      
+		"max_speed": 200.0,
 		"weight": 3.0,
+		"hits_required": 3,
+		"kill_score": 300,
 	},
 	{
 		"enemy_type": "horse",
 		"min_speed": 180.0,
 		"max_speed": 1000.0,
 		"weight": 3.0,
+		"hits_required": 3,
+		"kill_score": 300,
 	},
 ]
 
@@ -60,8 +68,8 @@ const ADVANCED_CLOUD_TYPES := [
 @export var spawn_x_min := 2500.0
 @export var spawn_x_max := 3200.0
 @export var despawn_x := -1600.0
-@export var wave_speed_step := 100.0
-@export var wave_speed_max_bonus := 600.0
+@export var wave_speed_step := 300.0
+@export var wave_speed_max_bonus := 700.0
 
 var _rng := RandomNumberGenerator.new()
 # Keeps later waves faster than earlier ones.

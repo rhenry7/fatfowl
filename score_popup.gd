@@ -19,4 +19,4 @@ func _ready() -> void:
 	queue_free()
 
 func _draw() -> void:
-	draw_string(FONT, Vector2(-40, 0), _text, HORIZONTAL_ALIGNMENT_LEFT, -1, 72, Color(168.0/255.0, 254.0/255.0, 117.0/255.0, 1.0))
+	draw_string(FONT, Vector2(-40, 0), _text, HORIZONTAL_ALIGNMENT_LEFT, -1, 72, Color.WHITE)
