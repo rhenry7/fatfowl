@@ -38,11 +38,11 @@
 [ext_resource type="Texture2D" uid="uid://34racowvu7w8" path="res://play-btn.png" id="24_gt76g"]
 [ext_resource type="Texture2D" uid="uid://do1b0o07d8yly" path="res://audio/pause-btn.png" id="25_1fr6y"]
 [ext_resource type="AudioStream" uid="uid://bfpwb278uw6nd" path="res://thunder.ogg" id="25_037st"]
-[ext_resource type="Texture2D" uid="uid://c1iy5pqjv0kb5" path="res://background/Untitled_Artwork 9.png" id="25_iunxo"]
 [ext_resource type="Texture2D" uid="uid://btq1183f0obqr" path="res://animation/pausemenu/pause-menu-3.png" id="25_kkr25"]
 [ext_resource type="Texture2D" uid="uid://b6tbtvrerxu5q" path="res://clouds/AngryCloud-7.png" id="25_m7xe6"]
 [ext_resource type="Texture2D" uid="uid://dralhydcxrb3n" path="res://Untitled_Artwork 10.png" id="25_sadjv"]
 [ext_resource type="Texture2D" uid="uid://350sc2bejg34" path="res://background/SkyBG_Ikarus/Untitled_Artwork 2.png" id="25_xdyyu"]
+[ext_resource type="Texture2D" uid="uid://c1k74d1c8g838" path="res://background/Untitled_Artwork.png" id="26_0oep5"]
 [ext_resource type="Texture2D" uid="uid://40mt6dtogqsp" path="res://animation/pausemenu/pause-menu-4.png" id="26_fibx4"]
 [ext_resource type="Script" uid="uid://dqnadb1tbcfub" path="res://bg_1.gd" id="26_kaf2f"]
 [ext_resource type="Script" uid="uid://b47yv7wncgea2" path="res://enemies.gd" id="26_s32dh"]
@@ -896,6 +896,32 @@ size = Vector2(1034.8003, 506.0113)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("190_siusr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("191_71iuk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("192_c0f20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_5i1yl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("194_l75je")
+}, {
+"duration": 1.0,
+"texture": ExtResource("195_82a7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("196_bfoml")
+}],
+"loop": false,
+"name": &"intro",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("23_4rgxs")
 }, {
 "duration": 1.0,
@@ -1013,7 +1039,7 @@ texture = ExtResource("25_sadjv")
 [node name="Bg2" type="Sprite2D" parent="Pausable/Sky"]
 position = Vector2(0, -64)
 scale = Vector2(0.9827679, 0.9827677)
-texture = ExtResource("25_iunxo")
+texture = ExtResource("26_0oep5")
 script = ExtResource("27_siusr")
 
 [node name="Bg1" type="Sprite2D" parent="Pausable/Sky"]
@@ -1301,6 +1327,7 @@ position = Vector2(-1390, 560)
 shape = SubResource("CircleShape2D_oilbd")
 
 [node name="Torch" type="Area2D" parent="Pausable"]
+visible = false
 script = ExtResource("83_uxnn6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Torch"]
@@ -1853,7 +1880,7 @@ offset_bottom = 408.5
 position = Vector2(226, -239.49998)
 scale = Vector2(1.0043945, 0.9949807)
 sprite_frames = SubResource("SpriteFrames_5mre3")
-animation = &"pause"
+animation = &"intro"
 script = ExtResource("124_4rgxs")
 
 [node name="ZeusGameOver" type="AudioStreamPlayer" parent="Control"]

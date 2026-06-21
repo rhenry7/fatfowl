@@ -62,14 +62,14 @@ const ADVANCED_CLOUD_TYPES := [
 @export var normal_max_enemies_per_wave := 10
 @export var advanced_min_enemies_per_wave := 0
 @export var advanced_max_enemies_per_wave := 2
-@export var spawn_delay_min := 3.0
+@export var spawn_delay_min := 1.0
 @export var spawn_delay_max := 5.0
-@export var intra_wave_delay := 3.0
+@export var intra_wave_delay := 1.0
 @export var spawn_x_min := 2500.0
 @export var spawn_x_max := 3200.0
 @export var despawn_x := -1600.0
 @export var wave_speed_step := 300.0
-@export var wave_speed_max_bonus := 700.0
+@export var wave_speed_max_bonus := 800.0
 
 var _rng := RandomNumberGenerator.new()
 # Keeps later waves faster than earlier ones.
