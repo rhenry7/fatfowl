@@ -15,6 +15,6 @@ func _process(delta: float) -> void:
 func fade_out():
 	await get_tree().create_timer(120).timeout
 	var tween = create_tween()
-	tween.tween_property(self, "modulate:a", 0.3, 240.0)
+	tween.tween_property(self, "modulate:a", 0.1, 240.0)
 	await tween.finished
 	queue_free()

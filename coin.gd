@@ -3,7 +3,7 @@ extends Area2D
 
 # === Export Variables (adjustable in Inspector) ===
 @export var health_amount: int = 20  # Amount of health/hearts to give player
-@export var fall_speed: float = 1000.0  # Pixels per second the feather falls
+@export var fall_speed: float = 100.0  # Pixels per second the feather falls
 @export var bottom_limit: float = 1400.0  # Y position where feather respawns if missed
 @onready var animated_sprite = $Coin  # Reference to the animated sprite
 @onready var collision = $CoinShape
@@ -31,18 +31,19 @@ func _process(delta: float) -> void:
 		respawn()
 
 func respawn() -> void:
-	_randomize_coin()
-	await get_tree().create_timer(0.5).timeout
 	# Reset feather to top of screen
 	position.y = -2000
 	position.x = randf_range(400, 2000)
+	_randomize_coin()
+	await get_tree().create_timer(0.5).timeout
 	# Randomize horizontal position for variety 
 
 func _randomize_coin() -> void:
 	coin_type = coins[randi() % coins.size()]
 	animated_sprite.play(coin_type)
-
+	
 func _on_body_entered(body):
+	var pos: Vector2 = collision.global_position
 	# Check if the object that collided is the player
 	# call_deferred(collision).disabled = true
 	if body.is_in_group("player"):
@@ -51,11 +52,16 @@ func _on_body_entered(body):
 			# Give player 1 heart (change to health_amount if you want to use the export variable)
 			if coin_type == "Gold":
 				body.add_coin(5_000)
+				ScorePopup.spawn(pos, 5_000)
+				respawn()
 			elif coin_type == "Ruby":
-				body.add_coin(1_500)
+				body.add_fire_heat_max(80.0)
+				ScorePopup.spawn(pos, "Fire Heat")
+				respawn()
 			else: # else will be Silver
-				body.add_coin(500)
-			respawn()
+				body.add_flap_strength(100.0)
+				ScorePopup.spawn(pos, "Flight Bonus")
+				respawn()
 			get_tree().current_scene.get_node("Pausable/Audio/Coin").play()
 
 		# Respawn feather at top immediately after collection

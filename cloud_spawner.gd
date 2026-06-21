@@ -5,19 +5,19 @@ const ADVANCED_CLOUD_SCENE = preload("res://advanced_clouds.tscn")
 const NORMAL_CLOUD_TYPES := [
 	{
 		"enemy_type": "angry",
-		"min_speed": 800.0,
+		"min_speed": 10.0,
 		"max_speed": 1000.0,
 		"weight": 5.0,
 	},
 	{
 		"enemy_type": "happy",
-		"min_speed": 700.0,
+		"min_speed": 10.0,
 		"max_speed": 1500.0,
 		"weight": 5.0,
 	},
 	{
 		"enemy_type": "sad",
-		"min_speed": 500.0,
+		"min_speed": 10.0,
 		"max_speed": 820.0,
 		"weight": 5.5,
 	},
@@ -33,7 +33,7 @@ const ADVANCED_CLOUD_TYPES := [
 	},
 	{
 		"enemy_type": "spear",
-		"min_speed": 180.0,
+		"min_speed": 100.0,
 		"max_speed": 200.0,
 		"weight": 3.0,
 		"hits_required": 3,
@@ -41,7 +41,7 @@ const ADVANCED_CLOUD_TYPES := [
 	},
 	{
 		"enemy_type": "stab",
-		"min_speed": 180.0,
+		"min_speed": 100.0,
 		"max_speed": 200.0,
 		"weight": 3.0,
 		"hits_required": 3,
@@ -49,15 +49,15 @@ const ADVANCED_CLOUD_TYPES := [
 	},
 	{
 		"enemy_type": "horse",
-		"min_speed": 180.0,
-		"max_speed": 1000.0,
+		"min_speed": 50.0,
+		"max_speed": 100.0,
 		"weight": 3.0,
 		"hits_required": 3,
 		"kill_score": 300,
 	},
 ]
 
-@export var max_active_enemies := 10
+@export var max_active_enemies := 8
 @export var normal_min_enemies_per_wave := 3
 @export var normal_max_enemies_per_wave := 10
 @export var advanced_min_enemies_per_wave := 0

@@ -4,7 +4,7 @@ extends Node2D
 const FONT := preload("res://Greek-Freak.ttf")
 var _text: String = ""
 
-static func spawn(world_pos: Vector2, score: int) -> void:
+static func spawn(world_pos: Vector2, score: Variant) -> void:
 	var tree := Engine.get_main_loop() as SceneTree
 	if not tree:
 		return
