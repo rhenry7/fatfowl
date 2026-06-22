@@ -23,7 +23,7 @@ func respawn() -> void:
 			# Slide hand into frame
 			var height = get_viewport().size.y * 0.2
 			var width = get_viewport().size.x * 1 
-			var final_pos: Vector2 = Vector2(width, -1000) 
+			var final_pos: Vector2 = Vector2(width, -800) 
 			var tween = create_tween()
 			tween.tween_property(hand, "position", final_pos, 0.8)
 			## Wait for tween to finish

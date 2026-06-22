@@ -36,11 +36,11 @@
 [ext_resource type="Texture2D" uid="uid://cvlwnph2bk5pv" path="res://clouds/AngryCloud-6.png" id="24_22e24"]
 [ext_resource type="Texture2D" uid="uid://dgswdqubh31fq" path="res://animation/pausemenu/pause-menu-2.png" id="24_88olm"]
 [ext_resource type="Texture2D" uid="uid://34racowvu7w8" path="res://play-btn.png" id="24_gt76g"]
+[ext_resource type="Texture2D" uid="uid://wodlinxtqtqg" path="res://background/SkyBG_Ikarus/Untitled_Artwork 16.png" id="25_0oep5"]
 [ext_resource type="Texture2D" uid="uid://do1b0o07d8yly" path="res://audio/pause-btn.png" id="25_1fr6y"]
 [ext_resource type="AudioStream" uid="uid://bfpwb278uw6nd" path="res://thunder.ogg" id="25_037st"]
 [ext_resource type="Texture2D" uid="uid://btq1183f0obqr" path="res://animation/pausemenu/pause-menu-3.png" id="25_kkr25"]
 [ext_resource type="Texture2D" uid="uid://b6tbtvrerxu5q" path="res://clouds/AngryCloud-7.png" id="25_m7xe6"]
-[ext_resource type="Texture2D" uid="uid://dralhydcxrb3n" path="res://Untitled_Artwork 10.png" id="25_sadjv"]
 [ext_resource type="Texture2D" uid="uid://350sc2bejg34" path="res://background/SkyBG_Ikarus/Untitled_Artwork 2.png" id="25_xdyyu"]
 [ext_resource type="Texture2D" uid="uid://c1k74d1c8g838" path="res://background/Untitled_Artwork.png" id="26_0oep5"]
 [ext_resource type="Texture2D" uid="uid://40mt6dtogqsp" path="res://animation/pausemenu/pause-menu-4.png" id="26_fibx4"]
@@ -1034,7 +1034,8 @@ texture = ExtResource("2_py13h")
 [node name="Sky" type="Node2D" parent="Pausable"]
 
 [node name="Bg3" type="Sprite2D" parent="Pausable/Sky"]
-texture = ExtResource("25_sadjv")
+scale = Vector2(1.0882506, 1.0882506)
+texture = ExtResource("25_0oep5")
 
 [node name="Bg2" type="Sprite2D" parent="Pausable/Sky"]
 position = Vector2(0, -64)
