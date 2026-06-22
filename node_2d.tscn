@@ -1,4 +1,4 @@
-[gd_scene load_steps=258 format=3 uid="uid://bqstytux2devd"]
+[gd_scene load_steps=261 format=3 uid="uid://bqstytux2devd"]
 
 [ext_resource type="Script" uid="uid://b2e37cil2lsl7" path="res://bird.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://c0e8buo2coems" path="res://main.gd" id="1_2hxjc"]
@@ -118,17 +118,11 @@
 [ext_resource type="AudioStream" uid="uid://c3xumpaopglkf" path="res://audio/zeus/zeus_grab_taunt.ogg" id="55_uo258"]
 [ext_resource type="Texture2D" uid="uid://d1dclgtk50ryh" path="res://background/Untitled_Artwork-7 6.png" id="56_2aqrj"]
 [ext_resource type="AudioStream" uid="uid://dkibprluixr8i" path="res://audio/zeus/game_over.ogg" id="56_d8e56"]
-[ext_resource type="Texture2D" uid="uid://dlw2ddijrfw0k" path="res://animation/Coin/coin_frames/coin_frame_0 copy.png" id="56_oilbd"]
 [ext_resource type="AudioStream" uid="uid://kxusgq0s5ovb" path="res://audio/blooop.ogg" id="56_qoxh5"]
-[ext_resource type="Texture2D" uid="uid://b31gk5j1cbx8e" path="res://animation/Coin/coin_frames/coin_frame_0.png" id="57_7vfuv"]
-[ext_resource type="Texture2D" uid="uid://byebyxdcn56is" path="res://animation/Coin/coin_frames/coin_frame_1.png" id="58_ludm0"]
 [ext_resource type="Script" uid="uid://cmspows46h524" path="res://zeus_fist.gd" id="58_qwoqy"]
-[ext_resource type="Texture2D" uid="uid://bt5jn3m4rn12h" path="res://animation/Coin/coin_frames/coin_frame_2.png" id="59_5chwk"]
 [ext_resource type="Texture2D" uid="uid://v7iyinduf2xn" path="res://animation/zeus/punch/zeus_punch-1 7.png" id="59_xa4jy"]
 [ext_resource type="Texture2D" uid="uid://qy0ai2ga2k2r" path="res://animation/zeus/punch/zeus_punch-2 5.png" id="60_4rgxs"]
-[ext_resource type="Texture2D" uid="uid://sqpg2vy4d8kp" path="res://animation/Coin/coin_frames/coin_frame_3.png" id="60_vbp07"]
 [ext_resource type="Texture2D" uid="uid://c2w45oeghk6xd" path="res://animation/zeus/punch/zeus_punch-3 5.png" id="61_88olm"]
-[ext_resource type="Texture2D" uid="uid://l5e115yu8ys8" path="res://animation/Coin/coin_frames/coin_frame_4.png" id="61_ileqp"]
 [ext_resource type="Texture2D" uid="uid://b5p42h5tedng3" path="res://enemies/sadcloud/Background.png" id="61_n63ng"]
 [ext_resource type="Texture2D" uid="uid://cvmnbxwogx0o" path="res://animation/bird_flame2.png" id="62_3r3gr"]
 [ext_resource type="Texture2D" uid="uid://ddgeni16hqala" path="res://animation/zeus/punch/zeus_punch-4 5.png" id="62_kkr25"]
@@ -161,10 +155,12 @@
 [ext_resource type="Texture2D" uid="uid://cbg2goukeg6re" path="res://animation/Lightning3/Untitled_Artwork-10.png" id="73_53ibr"]
 [ext_resource type="Texture2D" uid="uid://dr663jmwue3uj" path="res://animation/Coin_Gems 2/MonedaD.png" id="73_sadjv"]
 [ext_resource type="Texture2D" uid="uid://bvns3v3iup31q" path="res://animation/Lightning3/Untitled_Artwork-11.png" id="74_2n56i"]
-[ext_resource type="Texture2D" uid="uid://8on7rty7qfrk" path="res://animation/Coin_Gems 2/MonedaR.png" id="74_siusr"]
 [ext_resource type="Texture2D" uid="uid://qvb0q8xw23a0" path="res://animation/Lightning3/Untitled_Artwork-12.png" id="75_djas3"]
+[ext_resource type="Texture2D" uid="uid://cquexmmxs26yw" path="res://animation/Coin/gems/spr_coin_strip4.png" id="76_5i1yl"]
 [ext_resource type="Texture2D" uid="uid://b30bmrsg6ud6e" path="res://animation/Lightning3/Untitled_Artwork-13.png" id="76_ohqex"]
+[ext_resource type="Texture2D" uid="uid://bbejiiyjsvneg" path="res://animation/Coin/gems/spr_coin_roj.png" id="77_l75je"]
 [ext_resource type="Texture2D" uid="uid://d3srd2sac0hwg" path="res://animation/Lightning3/Untitled_Artwork-14.png" id="77_pl55l"]
+[ext_resource type="Texture2D" uid="uid://cwm38a0g204c2" path="res://animation/Coin/gems/spr_coin_azu.png" id="78_82a7c"]
 [ext_resource type="Script" uid="uid://b4ir7wahq75x3" path="res://torch.gd" id="83_uxnn6"]
 [ext_resource type="Texture2D" uid="uid://xxt62qfpchqk" path="res://animation/Torch/Untitled_Artwork-1 28.png" id="84_2xgaa"]
 [ext_resource type="Texture2D" uid="uid://bw3ek1qgk728j" path="res://animation/Torch/Untitled_Artwork-1 29.png" id="84_awudv"]
@@ -374,24 +370,52 @@ atlas = ExtResource("73_sadjv")
 region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bfoml"]
-atlas = ExtResource("74_siusr")
+atlas = ExtResource("76_5i1yl")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0oep5"]
-atlas = ExtResource("74_siusr")
+atlas = ExtResource("76_5i1yl")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2xgaa"]
-atlas = ExtResource("74_siusr")
+atlas = ExtResource("76_5i1yl")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_awudv"]
-atlas = ExtResource("74_siusr")
+atlas = ExtResource("76_5i1yl")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uxnn6"]
-atlas = ExtResource("74_siusr")
-region = Rect2(64, 0, 16, 16)
+atlas = ExtResource("77_l75je")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1o1m"]
+atlas = ExtResource("77_l75je")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_786q6"]
+atlas = ExtResource("77_l75je")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acy1l"]
+atlas = ExtResource("77_l75je")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihpkt"]
+atlas = ExtResource("78_82a7c")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx8ir"]
+atlas = ExtResource("78_82a7c")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_026ba"]
+atlas = ExtResource("78_82a7c")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ihpl"]
+atlas = ExtResource("78_82a7c")
+region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nsnm2"]
 animations = [{
@@ -427,9 +451,23 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_awudv")
+}],
+"loop": true,
+"name": &"Life",
+"speed": 5.0
 }, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uxnn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1o1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_786q6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acy1l")
 }],
 "loop": true,
 "name": &"Ruby",
@@ -437,22 +475,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("56_oilbd")
+"texture": SubResource("AtlasTexture_ihpkt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("57_7vfuv")
+"texture": SubResource("AtlasTexture_tx8ir")
 }, {
 "duration": 1.0,
-"texture": ExtResource("58_ludm0")
+"texture": SubResource("AtlasTexture_026ba")
 }, {
 "duration": 1.0,
-"texture": ExtResource("59_5chwk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("60_vbp07")
-}, {
-"duration": 1.0,
-"texture": ExtResource("61_ileqp")
+"texture": SubResource("AtlasTexture_3ihpl")
 }],
 "loop": true,
 "name": &"Silver",
@@ -1321,7 +1353,7 @@ script = ExtResource("23_qphy4")
 position = Vector2(-1389.807, 559)
 scale = Vector2(3.1008725, 5.8877425)
 sprite_frames = SubResource("SpriteFrames_nsnm2")
-animation = &"Ruby"
+animation = &"Silver"
 
 [node name="CoinShape" type="CollisionShape2D" parent="Pausable/Coin"]
 position = Vector2(-1390, 560)
