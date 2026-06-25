@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 
 func respawn() -> void:
 	position.y = -5000
-	await get_tree().create_timer(0, false).timeout
+	await get_tree().create_timer(500, false).timeout
 	var bounds = _viewport_bounds()
 	position.x = randf_range(bounds.position.x, bounds.position.x + bounds.size.x)
 	position.y = -2000
