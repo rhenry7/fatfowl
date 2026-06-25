@@ -1,7 +1,7 @@
 extends CharacterBody2D
-var GRAVITY = 2000
+const GRAVITY = 0
 # const FLAP_STRENGTH = -350.0 # original speed
-var FLAP_STRENGTH = -700.0
+var FLAP_STRENGTH = -400.0
 const FLAP_STRENGTH_X = 400.0
 const SPEED = 10.0
 const TOP_Y = -850
@@ -10,14 +10,12 @@ var MAX_HEARTS := 3
 var HEARTS := 3
 var IS_DEAD := false
 var is_invincible := false
-var invincibility_duration := 2.0  # Increased to match usage
+var invincibility_duration := 3.0  # Increased to match usage
 var fireball = preload("res://fireball.tscn")
 const GREEK_FREAK_FONT = preload("res://Greek-Freak.ttf")
-
 var shots_fired: int = 0
 var enemies_killed: int = 0
 var damage_taken: int = 0
-
 @onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
 @onready var hearts_container := get_tree().current_scene.get_node("Pausable/UI/HeartsContainer")
 @onready var game_over_card := get_tree().current_scene.get_node("Pausable/UI/GameOver")
@@ -28,7 +26,6 @@ var damage_taken: int = 0
 @onready var coins: int = 0
 @onready var distance:int = 0
 var tracking = true
-
 # multiply base speed
 const DASH_MULTIPLIER := 5.0
 # how long the burst lasts
@@ -37,12 +34,11 @@ const DASH_DURATION := 0.25
 const DASH_COOLDOWN := 2.0
 #  how fast the second tap must come in
 const DOUBLE_TAP_WINDOW := 0.3
-const FIRE_HEAT_PER_SHOT := 25.0
+const FIRE_HEAT_PER_SHOT := 20.0
 var FIRE_HEAT_MAX := 100.0
 var FIRE_HEAT_RECOVERY_RATE := 10.0
 const FIRE_LOCKOUT_DURATION := 3.0
 # add boost based on Torch powerup, for each powerup, heatmax will increase
-
 var _dash_active := false
 var _dash_dir := 0
 var _dash_timer := 0.0
@@ -158,12 +154,10 @@ func _on_body_entered(body):
 func hide_body():
 	print("hide body function")
 	is_invincible = true
-	GRAVITY = 0 
 	sprite.visible = false
 	await get_tree().create_timer(3).timeout
 	sprite.visible = true
 	is_invincible = false
-	GRAVITY = 2000
 	position.x = 300
 	position.y = -2000
 		
@@ -312,8 +306,12 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Fire"):
 		_try_fire()
 	
-	if Input.is_action_just_pressed("fly"):
+	if Input.is_action_pressed("fly"):
 		velocity.y = FLAP_STRENGTH
+		sprite.play("fly")
+	
+	if Input.is_action_pressed("fly-down"):
+		velocity.y = -FLAP_STRENGTH
 		sprite.play("fly")
 
 	var move_x := _get_horizontal_velocity()
@@ -328,7 +326,6 @@ func _update_dash(delta: float) -> void:
 		_dash_timer -= delta
 		if _dash_timer <= 0.0:
 			_dash_active = false
-			GRAVITY = 2000
 	if _cooldown_timer > 0.0:
 		_cooldown_timer -= delta
 	if _fire_lockout_timer > 0.0:
@@ -374,7 +371,6 @@ func _show_fire_limit_feedback() -> void:
 
 func _get_horizontal_velocity() -> float:
 	if _dash_active:
-		GRAVITY = 0
 		return FLAP_STRENGTH_X * DASH_MULTIPLIER * _dash_dir
 	if Input.is_action_pressed("fly-right"):
 		return FLAP_STRENGTH_X

@@ -6,62 +6,62 @@ const NORMAL_CLOUD_TYPES := [
 	{
 		"enemy_type": "angry",
 		"min_speed": 10.0,
-		"max_speed": 1000.0,
+		"max_speed": 100.0,
 		"weight": 5.0,
 	},
 	{
 		"enemy_type": "happy",
 		"min_speed": 10.0,
-		"max_speed": 1500.0,
+		"max_speed": 100.0,
 		"weight": 5.0,
 	},
 	{
 		"enemy_type": "sad",
 		"min_speed": 10.0,
-		"max_speed": 820.0,
+		"max_speed": 100.0,
 		"weight": 5.5,
 	},
 ]
 const ADVANCED_CLOUD_TYPES := [
 	{
 		"enemy_type": "flex",
-		"min_speed": 100.0,
-		"max_speed": 200.0,
+		"min_speed": 10.0,
+		"max_speed": 150.0,
 		"weight": 3.0,
-		"hits_required": 3,
+		"hits_required": 1,
 		"kill_score": 300,
 	},
 	{
 		"enemy_type": "spear",
-		"min_speed": 100.0,
-		"max_speed": 200.0,
+		"min_speed": 10.0,
+		"max_speed": 175.0,
 		"weight": 3.0,
-		"hits_required": 3,
+		"hits_required": 2,
 		"kill_score": 300,
 	},
 	{
 		"enemy_type": "stab",
-		"min_speed": 100.0,
-		"max_speed": 200.0,
-		"weight": 3.0,
-		"hits_required": 3,
+		"min_speed": 10.0,
+		"max_speed": 100.0,
+		"weight": 1.5,
+		"hits_required": 2,
 		"kill_score": 300,
 	},
 	{
 		"enemy_type": "horse",
-		"min_speed": 50.0,
+		"min_speed": 10.0,
 		"max_speed": 100.0,
-		"weight": 3.0,
+		"weight": 1.0,
 		"hits_required": 3,
 		"kill_score": 300,
 	},
 ]
 
-@export var max_active_enemies := 8
+@export var max_active_enemies := 5
 @export var normal_min_enemies_per_wave := 3
-@export var normal_max_enemies_per_wave := 10
+@export var normal_max_enemies_per_wave := 5
 @export var advanced_min_enemies_per_wave := 0
-@export var advanced_max_enemies_per_wave := 2
+@export var advanced_max_enemies_per_wave := 1
 @export var spawn_delay_min := 1.0
 @export var spawn_delay_max := 5.0
 @export var intra_wave_delay := 1.0
