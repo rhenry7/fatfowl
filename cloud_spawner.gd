@@ -6,19 +6,19 @@ const NORMAL_CLOUD_TYPES := [
 	{
 		"enemy_type": "angry",
 		"min_speed": 10.0,
-		"max_speed": 100.0,
+		"max_speed": 50.0,
 		"weight": 5.0,
 	},
 	{
 		"enemy_type": "happy",
 		"min_speed": 10.0,
-		"max_speed": 100.0,
+		"max_speed": 50.0,
 		"weight": 5.0,
 	},
 	{
 		"enemy_type": "sad",
 		"min_speed": 10.0,
-		"max_speed": 100.0,
+		"max_speed": 50.0,
 		"weight": 5.5,
 	},
 ]
@@ -50,7 +50,7 @@ const ADVANCED_CLOUD_TYPES := [
 	{
 		"enemy_type": "horse",
 		"min_speed": 10.0,
-		"max_speed": 100.0,
+		"max_speed": 25.0,
 		"weight": 1.0,
 		"hits_required": 3,
 		"kill_score": 300,
